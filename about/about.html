@@ -32,6 +32,931 @@
    <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
    <link rel="stylesheet" href="../assets/css/spacing.css">
    <link rel="stylesheet" href="../assets/css/main.css">
+
+   <style>
+      :root {
+         --ab-navy: #0A1A3B;
+         --ab-red: #C0392B;
+         --ab-blue: #0752c5;
+      }
+
+      .ab-section-heading {
+         text-align: center;
+         margin-bottom: 50px;
+      }
+
+      .ab-section-heading h2 {
+         font-size: 42px;
+         font-weight: 700;
+         margin: 0 0 16px;
+         line-height: 1.2;
+      }
+
+      .ab-section-heading.light h2 { color: #fff; }
+      .ab-section-heading.dark h2 { color: var(--ab-navy); }
+
+      .ab-section-heading-inner {
+         display: inline-flex;
+         align-items: center;
+         gap: 18px;
+         margin-bottom: 14px;
+      }
+
+      .ab-section-heading-line {
+         width: 45px;
+         height: 3px;
+         background: var(--ab-red);
+      }
+
+      .ab-section-label {
+         color: var(--ab-red);
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 1.5px;
+         text-transform: uppercase;
+      }
+
+      .ab-section-heading.light .ab-section-label { color: rgba(255,255,255,0.85); }
+
+      .ab-section-subtitle {
+         color: #64748b;
+         font-size: 17px;
+         max-width: 700px;
+         margin: 0 auto;
+         line-height: 1.75;
+      }
+
+      /* Hero */
+      .ab-hero {
+         background: var(--ab-navy);
+         position: relative;
+         overflow: hidden;
+         padding: 125px 0 90px;
+         min-height: 620px;
+      }
+
+      .ab-hero-right {
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 55%;
+         height: 100%;
+         z-index: 1;
+      }
+
+      .ab-hero-right img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center top;
+      }
+
+      .ab-hero-right::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(90deg,
+               var(--ab-navy) 0%,
+               rgba(10, 26, 59, 0.92) 18%,
+               rgba(10, 26, 59, 0.55) 45%,
+               rgba(7, 82, 197, 0.2) 100%);
+      }
+
+      .ab-hero-inner {
+         position: relative;
+         z-index: 3;
+         min-height: 480px;
+      }
+
+      .ab-hero-content {
+         position: relative;
+         z-index: 3;
+         max-width: 500px;
+         color: #fff;
+         padding-top: 20px;
+      }
+
+      .ab-hero-eyebrow {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         margin-bottom: 28px;
+      }
+
+      .ab-hero-eyebrow-dash {
+         width: 24px;
+         height: 2px;
+         background: var(--ab-red);
+         flex-shrink: 0;
+      }
+
+      .ab-hero-eyebrow-text {
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 1.5px;
+         text-transform: uppercase;
+         color: #fff;
+      }
+
+      .ab-hero-title {
+         font-size: 62px;
+         font-weight: 700;
+         line-height: 1.08;
+         color: #fff;
+         margin-bottom: 28px;
+      }
+
+      .ab-hero-title .ab-hero-title-accent {
+         color: var(--ab-red);
+      }
+
+      .ab-hero-desc {
+         color: rgba(255, 255, 255, 0.9);
+         font-size: 17px;
+         line-height: 1.75;
+         margin-bottom: 36px;
+         max-width: 480px;
+      }
+
+      .ab-hero-actions {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 14px;
+         margin-bottom: 40px;
+      }
+
+      .ab-hero-breadcrumb {
+         position: relative;
+         z-index: 3;
+      }
+
+      .ab-hero-breadcrumb .tp-breadcrumb-list ul {
+         margin: 0;
+         padding: 0;
+      }
+
+      .ab-hero-breadcrumb .tp-breadcrumb-list ul li,
+      .ab-hero-breadcrumb .tp-breadcrumb-list ul li a {
+         color: rgba(147, 197, 253, 0.85) !important;
+         font-size: 15px;
+      }
+
+      .ab-hero-breadcrumb .tp-breadcrumb-list ul li:last-child {
+         color: #93c5fd !important;
+         font-weight: 600;
+      }
+
+      .ab-btn-red {
+         background: var(--ab-red);
+         color: #fff !important;
+         padding: 14px 30px;
+         border-radius: 50px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+         transition: all 0.3s ease;
+      }
+
+      .ab-btn-red:hover {
+         background: #a93226;
+         color: #fff !important;
+         transform: translateY(-2px);
+      }
+
+      .ab-btn-outline {
+         background: transparent;
+         color: #fff !important;
+         padding: 14px 30px;
+         border-radius: 50px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         border: 1.5px solid rgba(255, 255, 255, 0.55);
+         transition: all 0.3s ease;
+      }
+
+      .ab-btn-outline:hover {
+         border-color: #fff;
+         color: #fff !important;
+      }
+
+      .ab-hero-card {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-28%, -50%);
+         z-index: 5;
+         background: #fff;
+         border-radius: 20px;
+         padding: 28px 30px 22px;
+         width: 400px;
+         max-width: calc(100% - 40px);
+         box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+      }
+
+      .ab-hero-card-brand {
+         display: flex;
+         justify-content: center;
+         margin-bottom: 20px;
+      }
+
+      .ab-hero-card-logo img {
+         height: 48px;
+         width: auto;
+         display: block;
+      }
+
+      .ab-hero-card-desc {
+         text-align: center;
+         color: #475569;
+         font-size: 13px;
+         line-height: 1.6;
+         margin: 0 0 20px;
+         padding-bottom: 20px;
+         border-bottom: 1px solid #eef2f7;
+      }
+
+      .ab-hero-stats {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         border: 1px solid #eef2f7;
+         border-radius: 14px;
+         overflow: hidden;
+      }
+
+      .ab-hero-stat {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         padding: 14px 12px;
+         border-right: 1px solid #eef2f7;
+         border-bottom: 1px solid #eef2f7;
+      }
+
+      .ab-hero-stat:nth-child(2n) {
+         border-right: none;
+      }
+
+      .ab-hero-stat:nth-child(n+3) {
+         border-bottom: none;
+      }
+
+      .ab-hero-stat-icon {
+         width: 38px;
+         height: 38px;
+         min-width: 38px;
+         border-radius: 9px;
+         background: rgba(7, 82, 197, 0.1);
+         color: var(--ab-blue);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 16px;
+         flex-shrink: 0;
+         line-height: 1;
+      }
+
+      .ab-hero-stat-value {
+         font-size: 20px;
+         font-weight: 800;
+         color: var(--ab-navy);
+         line-height: 1.15;
+      }
+
+      .ab-hero-stat-label {
+         font-size: 12px;
+         color: #475569;
+         margin: 2px 0 0;
+         line-height: 1.35;
+         font-weight: 500;
+      }
+
+      /* Transform section */
+      .ab-transform-section {
+         padding: 65px 0 50px;
+         background: #fff;
+      }
+
+      .ab-transform-img-wrap {
+         position: relative;
+         padding-right: 36px;
+         padding-bottom: 36px;
+      }
+
+      .ab-transform-dots {
+         position: absolute;
+         left: -14px;
+         bottom: 32px;
+         top: auto;
+         width: 72px;
+         height: 120px;
+         background-image: radial-gradient(rgba(7, 82, 197, 0.45) 2px, transparent 2px);
+         background-size: 14px 14px;
+         z-index: 1;
+      }
+
+      .ab-transform-border {
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         width: 58%;
+         height: 58%;
+         background: var(--ab-navy);
+         border-radius: 20px;
+         z-index: 0;
+      }
+
+      .ab-transform-img {
+         border-radius: 20px;
+         overflow: hidden;
+         position: relative;
+         z-index: 2;
+         box-shadow: 0 12px 36px rgba(10, 26, 59, 0.08);
+      }
+
+      .ab-transform-img img {
+         width: 100%;
+         display: block;
+         min-height: 380px;
+         object-fit: cover;
+      }
+
+      .ab-transform-content {
+         padding-left: 24px;
+      }
+
+      .ab-transform-label {
+         color: var(--ab-red);
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 1.5px;
+         text-transform: uppercase;
+         margin-bottom: 12px;
+         display: block;
+      }
+
+      .ab-transform-title {
+         font-size: 44px;
+         font-weight: 700;
+         color: var(--ab-navy);
+         line-height: 1.22;
+         margin-bottom: 18px;
+         max-width: 540px;
+      }
+
+      .ab-transform-text {
+         color: #64748b;
+         font-size: 17px;
+         line-height: 1.75;
+         margin-bottom: 22px;
+         max-width: 560px;
+      }
+
+      .ab-transform-section .ab-check-list {
+         list-style: none;
+         padding: 0;
+         margin: 0 0 28px;
+      }
+
+      .ab-transform-section .ab-check-list li {
+         display: flex;
+         align-items: center;
+         gap: 14px;
+         margin-bottom: 12px;
+         color: var(--ab-navy);
+         font-size: 17px;
+         font-weight: 700;
+      }
+
+      .ab-transform-section .ab-check-icon {
+         width: 34px;
+         height: 34px;
+         border-radius: 50%;
+         background: var(--ab-navy);
+         color: #fff;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 13px;
+         flex-shrink: 0;
+      }
+
+      .ab-transform-section .ab-btn-navy {
+         background: var(--ab-navy);
+         color: #fff !important;
+         padding: 16px 36px;
+         border-radius: 50px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         transition: all 0.3s ease;
+      }
+
+      .ab-transform-section .ab-btn-navy:hover {
+         background: #081530;
+         color: #fff !important;
+         transform: translateY(-2px);
+      }
+
+      .ab-btn-navy {
+         background: var(--ab-navy);
+         color: #fff !important;
+         padding: 14px 32px;
+         border-radius: 50px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+         transition: all 0.3s ease;
+      }
+
+      .ab-btn-navy:hover {
+         background: #081530;
+         color: #fff !important;
+      }
+
+      /* Approach cards */
+      .ab-approach-section {
+         padding: 50px 0 65px;
+         background: #fff;
+      }
+
+      .ab-approach-section .ab-section-heading {
+         margin-bottom: 36px;
+      }
+
+      .ab-approach-section .ab-section-heading h2 {
+         margin-bottom: 12px;
+      }
+
+      .ab-approach-section .row > [class*="col-"] {
+         margin-bottom: 20px;
+      }
+
+      .ab-approach-card {
+         background: #fff;
+         border-radius: 16px;
+         padding: 28px 22px;
+         height: 100%;
+         text-align: center;
+         box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+         border: 1px solid #f1f5f9;
+         transition: transform 0.3s ease;
+      }
+
+      .ab-approach-card:hover {
+         transform: translateY(-4px);
+      }
+
+      .ab-approach-icon {
+         width: 64px;
+         height: 64px;
+         border-radius: 50%;
+         background: rgba(7, 82, 197, 0.1);
+         color: var(--ab-blue);
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 26px;
+         margin-bottom: 16px;
+      }
+
+      .ab-approach-card h4 {
+         font-size: 20px;
+         font-weight: 700;
+         color: var(--ab-navy);
+         margin-bottom: 10px;
+      }
+
+      .ab-approach-card p {
+         color: #64748b;
+         font-size: 15px;
+         line-height: 1.7;
+         margin: 0;
+      }
+
+      /* Why choose */
+      .ab-why-section {
+         background: var(--ab-navy);
+         padding: 100px 0;
+      }
+
+      .ab-why-section .ab-section-heading.light .ab-section-label {
+         color: var(--ab-red);
+      }
+
+      .ab-why-grid {
+         display: grid;
+         grid-template-columns: repeat(6, 1fr);
+         gap: 0;
+      }
+
+      .ab-why-item {
+         padding: 0 22px;
+         border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .ab-why-item:last-child {
+         border-right: none;
+      }
+
+      .ab-why-num {
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         background: rgba(7, 82, 197, 0.2);
+         border: 2px solid rgba(7, 82, 197, 0.85);
+         border-bottom-color: var(--ab-red);
+         border-left-color: var(--ab-red);
+         color: #fff;
+         font-weight: 700;
+         font-size: 14px;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 18px;
+      }
+
+      .ab-why-item h4 {
+         font-size: 17px;
+         font-weight: 700;
+         color: #fff;
+         margin: 0 0 12px;
+         line-height: 1.35;
+      }
+
+      .ab-why-item p {
+         color: rgba(255, 255, 255, 0.72);
+         font-size: 14px;
+         line-height: 1.65;
+         margin: 0;
+      }
+
+      @media (max-width: 1199px) {
+         .ab-why-grid {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 40px;
+         }
+
+         .ab-why-item {
+            border-right: none;
+            padding: 0 16px;
+         }
+
+         .ab-why-item:nth-child(1),
+         .ab-why-item:nth-child(2),
+         .ab-why-item:nth-child(4),
+         .ab-why-item:nth-child(5) {
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+         }
+
+         .ab-why-item:nth-child(3),
+         .ab-why-item:nth-child(6) {
+            border-right: none;
+         }
+      }
+
+      @media (max-width: 767px) {
+         .ab-why-grid {
+            grid-template-columns: 1fr;
+            row-gap: 32px;
+         }
+
+         .ab-why-item {
+            border-right: none !important;
+            padding: 0;
+         }
+      }
+
+      /* Values */
+      .ab-values-section {
+         padding: 100px 0;
+         background: #fff;
+      }
+
+      .ab-values-row {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 0;
+      }
+
+      .ab-value-item {
+         text-align: center;
+         padding: 30px 24px;
+         border-right: 1px solid #e2e8f0;
+      }
+
+      .ab-value-item:last-child {
+         border-right: none;
+      }
+
+      .ab-value-icon {
+         width: 72px;
+         height: 72px;
+         border-radius: 50%;
+         background: rgba(7, 82, 197, 0.1);
+         color: var(--ab-blue);
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 28px;
+         margin-bottom: 20px;
+      }
+
+      .ab-value-item h4 {
+         font-size: 20px;
+         font-weight: 700;
+         color: var(--ab-navy);
+         margin-bottom: 12px;
+      }
+
+      .ab-value-item p {
+         color: #64748b;
+         font-size: 15px;
+         line-height: 1.65;
+         margin: 0;
+      }
+
+      /* Industries */
+      .ab-industries-section {
+         padding: 100px 0 80px;
+         background: #f3f5f8;
+      }
+
+      .ab-industry-grid {
+         display: grid;
+         grid-template-columns: repeat(5, 1fr);
+         gap: 20px;
+      }
+
+      .ab-industry-card {
+         background: #fff;
+         border-radius: 18px;
+         padding: 32px 18px 28px;
+         text-align: center;
+         box-shadow: 0 10px 30px rgba(10, 26, 59, 0.06);
+         border: none;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .ab-industry-card:hover {
+         transform: translateY(-4px);
+         box-shadow: 0 14px 36px rgba(10, 26, 59, 0.1);
+      }
+
+      .ab-industry-icon {
+         width: auto;
+         height: auto;
+         border-radius: 0;
+         background: transparent;
+         color: var(--ab-blue);
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 34px;
+         margin-bottom: 16px;
+         line-height: 1;
+      }
+
+      .ab-industry-card span:last-child {
+         font-size: 15px;
+         font-weight: 600;
+         color: var(--ab-navy);
+         display: block;
+         line-height: 1.35;
+      }
+
+      /* CTA Banner */
+      .ab-cta-section {
+         padding: 0 0 100px;
+         background: #fff;
+      }
+
+      .ab-cta-banner {
+         background: var(--ab-navy);
+         border-radius: 18px;
+         padding: 44px 52px;
+         position: relative;
+         overflow: hidden;
+         box-shadow: 0 20px 50px rgba(10, 26, 59, 0.15);
+      }
+
+      .ab-cta-dots {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 90px;
+         height: 90px;
+         background-image: radial-gradient(rgba(7, 82, 197, 0.45) 2px, transparent 2px);
+         background-size: 11px 11px;
+         opacity: 0.55;
+         pointer-events: none;
+      }
+
+      .ab-cta-dots-left {
+         left: 24px;
+      }
+
+      .ab-cta-dots-right {
+         right: 24px;
+      }
+
+      .ab-cta-inner {
+         display: flex;
+         align-items: center;
+         gap: 28px;
+         position: relative;
+         z-index: 2;
+      }
+
+      .ab-cta-icon {
+         width: 72px;
+         height: 72px;
+         min-width: 72px;
+         border-radius: 50%;
+         background: rgba(7, 82, 197, 0.35);
+         color: #fff;
+         font-size: 30px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+      }
+
+      .ab-cta-text {
+         flex: 1;
+         min-width: 0;
+      }
+
+      .ab-cta-text h2 {
+         font-size: 32px;
+         font-weight: 700;
+         color: #fff;
+         margin: 0 0 10px;
+         line-height: 1.25;
+      }
+
+      .ab-cta-text p {
+         color: rgba(255, 255, 255, 0.75);
+         font-size: 16px;
+         line-height: 1.65;
+         margin: 0;
+         max-width: 520px;
+      }
+
+      .ab-cta-divider {
+         width: 1px;
+         height: 80px;
+         background: rgba(255, 255, 255, 0.15);
+         flex-shrink: 0;
+      }
+
+      .ab-cta-actions {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 14px;
+         flex-shrink: 0;
+      }
+
+      .ab-cta-section .ab-cta-btn-red {
+         background: var(--ab-red);
+         color: #fff !important;
+         padding: 14px 26px;
+         border-radius: 10px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         white-space: nowrap;
+         transition: all 0.3s ease;
+         border: none;
+      }
+
+      .ab-cta-section .ab-cta-btn-red:hover {
+         background: #a93226;
+         color: #fff !important;
+         transform: translateY(-2px);
+      }
+
+      .ab-cta-section .ab-cta-btn-outline {
+         background: transparent;
+         color: #fff !important;
+         padding: 13px 26px;
+         border-radius: 10px;
+         font-weight: 700;
+         font-size: 15px;
+         text-decoration: none;
+         border: 1.5px solid rgba(255, 255, 255, 0.4);
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         white-space: nowrap;
+         transition: all 0.3s ease;
+      }
+
+      .ab-cta-section .ab-cta-btn-outline:hover {
+         border-color: #fff;
+         color: #fff !important;
+         background: rgba(255, 255, 255, 0.05);
+      }
+
+      @media (max-width: 1199px) {
+         .ab-hero-card {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: none;
+            width: 100%;
+            max-width: 400px;
+            margin: 48px auto 0;
+         }
+
+         .ab-hero-inner {
+            min-height: auto;
+         }
+
+         .ab-industry-grid {
+            grid-template-columns: repeat(3, 1fr);
+         }
+
+         .ab-values-row {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         .ab-value-item {
+            border-right: none;
+            border-bottom: 1px solid #e2e8f0;
+         }
+      }
+
+      @media (max-width: 991px) {
+         .ab-hero {
+            padding: 125px 0 80px;
+         }
+
+         .ab-hero-right {
+            display: none;
+         }
+
+         .ab-hero-title {
+            font-size: 40px;
+         }
+
+         .ab-cta-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+         }
+
+         .ab-cta-divider {
+            display: none;
+         }
+
+         .ab-cta-actions {
+            flex-direction: column;
+            width: 100%;
+         }
+
+         .ab-cta-section .ab-cta-btn-red,
+         .ab-cta-section .ab-cta-btn-outline {
+            width: 100%;
+            justify-content: center;
+         }
+
+         .ab-cta-dots-left,
+         .ab-cta-dots-right {
+            opacity: 0.3;
+         }
+
+         .ab-industry-grid {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         .ab-transform-content {
+            padding-left: 0;
+            margin-top: 20px;
+         }
+
+         .ab-transform-title {
+            font-size: 32px;
+         }
+
+         .ab-transform-img img {
+            min-height: 300px;
+         }
+      }
+   </style>
 </head>
 
 <body class="loaded">
@@ -172,9 +1097,6 @@
                            <li>
                               <a href="about.html">About</a>
                            </li>
-                           <li>
-                              <a href="team.html">Team</a>
-                           </li>
                         </ul>
                      </nav>
                   </div>
@@ -203,612 +1125,340 @@
          <main>
 
             <!-- tp-faq-hero-area-start -->
-            <div class="tp-faq-hero-area pre-header tp-faq-hero-spacing p-relative"
-               style="background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 50%, #e8eef8 100%); position: relative; overflow: hidden; padding: 100px 0;">
-               <!-- Decorative shapes -->
-               <div
-                  style="position: absolute; top: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 1;">
+            <section class="ab-hero pre-header">
+               <div class="ab-hero-right">
+                  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&auto=format&fit=crop&q=80"
+                     alt="Modern skyscrapers">
                </div>
-               <div
-                  style="position: absolute; bottom: -80px; left: 5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(11, 14, 168, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 1;">
-               </div>
-
-               <div class="container-fluid container-1524 containers" style="position: relative; z-index: 2;">
-                  <div class="row align-items-center">
-                     <div class="col-xl-6 col-lg-6 col-md-12 mb-50 mb-lg-0">
-                        <div class="tp-faq-hero-title-wrap">
-                           <!-- Logo badge -->
-                           <div style="margin-bottom: 35px;">
-                              <div
-                                 style="display: inline-block; padding: 16px 28px; background: rgba(79, 70, 229, 0.08); border-radius: 50px; border: 1px solid rgba(79, 70, 229, 0.2);">
-                                 <span
-                                    style="font-size: 13px; font-weight: 600; color: #0b0ea8; letter-spacing: 1px; text-transform: uppercase;">Trusted
-                                    Financial Partner</span>
+               <div class="container-fluid container-1524">
+                  <div class="ab-hero-inner">
+                     <div class="row">
+                        <div class="col-lg-6 col-xl-5">
+                           <div class="ab-hero-content">
+                              <div class="ab-hero-eyebrow">
+                                 <span class="ab-hero-eyebrow-dash"></span>
+                                 <span class="ab-hero-eyebrow-text">Trusted Financial Partner</span>
                               </div>
-                           </div>
-
-                           <h2 class="tp-section-ai-title mb-30 fs-70 fs-xl-65 fs-lg-55 fs-sm-45 fs-xs-40 fw-700 ls-m-4 tp-ff-dm tp-text-common-black"
-                              style="line-height: 1.2;">About Preston Daub</h2>
-                           <p class="fs-18 mb-40 tp-ff-dm" style="color: #475569; line-height: 1.7; max-width: 550px;">
-                              At Preston Daub, collaboration and personalization form the cornerstone of our foundation.
-                              We are dedicated to fostering long-term, mutually beneficial relationships with our
-                              clients across diverse industries.</p>
-
-                           <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
-                              <a href="../contact-us.html"
-                                 class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm"
-                                 style="padding: 16px 40px; text-decoration: none;">
-                                 <span class="d-flex align-items-center justify-content-center">
-                                    <span class="btn-text">Get Started</span>
-                                 </span>
-                              </a>
-                              <a href="#our-story"
-                                 class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 ls-0 fw-700 tp-ff-dm"
-                                 style="padding: 16px 40px; text-decoration: none; background: #fff; color: #0b0ea8; border: 2px solid #0b0ea8;">
-                                 <span class="d-flex align-items-center justify-content-center">
-                                    <span class="btn-text">Learn More</span>
-                                 </span>
-                              </a>
-                           </div>
-
-                           <div class="tp-breadcrumb-list tp-breadcrumb-2-list pt-0">
-                              <ul>
-                                 <li><a href="../index.html" style="color: #475569; transition: all 0.3s ease;">Home</a>
-                                 </li>
-                                 <li><span style="color: #cbd5e1;"></span></li>
-                                 <li style="color: #0b0ea8; font-weight: 600;">About Us</li>
-                              </ul>
+                              <h1 class="ab-hero-title">About<br><span class="ab-hero-title-accent">Preston Daub</span></h1>
+                              <p class="ab-hero-desc">At Preston Daub, collaboration and personalization form the cornerstone of our foundation.
+                                 We are dedicated to fostering long-term, mutually beneficial relationships with our
+                                 clients across diverse industries.</p>
+                              <div class="ab-hero-actions">
+                                 <a href="../contact-us.html" class="ab-btn-red">Get Started <i class="fa-light fa-arrow-right"></i></a>
+                                 <a href="#our-story" class="ab-btn-outline">Learn More</a>
+                              </div>
                            </div>
                         </div>
                      </div>
-
-                     <!-- Brand showcase card -->
-                     <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div
-                           style="background: #fff; border-radius: 24px; padding: 60px 50px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); border: 1px solid rgba(79, 70, 229, 0.1); position: relative; overflow: hidden;">
-                           <!-- Card decoration -->
-                           <div
-                              style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, transparent 70%);">
+                     <div class="ab-hero-card">
+                        <div class="ab-hero-card-brand">
+                           <div class="ab-hero-card-logo">
+                              <img src="../assets/img/logo/logo-black.png" alt="Preston Daub Logo">
                            </div>
-
-                           <div style="position: relative; z-index: 2; text-align: center;">
-                              <!-- Logo showcase -->
-                              <div style="margin-bottom: 30px;">
-                                 <div
-                                    style="display: inline-block; padding: 30px; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.08) 100%); border-radius: 20px; border: 2px solid rgba(79, 70, 229, 0.2);">
-                                    <img src="../assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                                       style="height: 70px; width: auto;">
-                                 </div>
+                        </div>
+                        <p class="ab-hero-card-desc">Your trusted partner for business financing, capital advisory, and strategic investments across
+                           multiple industries globally.</p>
+                        <div class="ab-hero-stats">
+                           <div class="ab-hero-stat">
+                              <span class="ab-hero-stat-icon"><i class="fa-light fa-calendar-check"></i></span>
+                              <div>
+                                 <div class="ab-hero-stat-value">15+</div>
+                                 <p class="ab-hero-stat-label">Years Experience</p>
                               </div>
-
-                              <h3 class="fs-32 fw-700 mb-15 tp-ff-dm tp-text-common-black">Preston Daub</h3>
-                              <p class="fs-16 mb-35 tp-ff-dm" style="color: #64748b; line-height: 1.6;">Your trusted
-                                 partner for business financing, capital advisory, and strategic investments across
-                                 multiple industries globally.</p>
-
-                              <!-- Stats grid -->
-                              <div
-                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #e2e8f0;">
-                                 <div style="text-align: center;">
-                                    <div style="font-size: 32px; font-weight: 700; color: #0b0ea8; margin-bottom: 8px;">
-                                       15+</div>
-                                    <p style="font-size: 14px; color: #64748b; margin: 0;">Years Experience</p>
-                                 </div>
-                                 <div style="text-align: center;">
-                                    <div style="font-size: 32px; font-weight: 700; color: #0b0ea8; margin-bottom: 8px;">
-                                       500+</div>
-                                    <p style="font-size: 14px; color: #64748b; margin: 0;">Clients Served</p>
-                                 </div>
-                                 <div style="text-align: center;">
-                                    <div style="font-size: 32px; font-weight: 700; color: #0b0ea8; margin-bottom: 8px;">
-                                       $2B+</div>
-                                    <p style="font-size: 14px; color: #64748b; margin: 0;">Facilitated</p>
-                                 </div>
-                                 <div style="text-align: center;">
-                                    <div style="font-size: 32px; font-weight: 700; color: #0b0ea8; margin-bottom: 8px;">
-                                       Global</div>
-                                    <p style="font-size: 14px; color: #64748b; margin: 0;">Reach</p>
-                                 </div>
+                           </div>
+                           <div class="ab-hero-stat">
+                              <span class="ab-hero-stat-icon"><i class="fa-light fa-users"></i></span>
+                              <div>
+                                 <div class="ab-hero-stat-value">500+</div>
+                                 <p class="ab-hero-stat-label">Clients Served</p>
+                              </div>
+                           </div>
+                           <div class="ab-hero-stat">
+                              <span class="ab-hero-stat-icon"><i class="fa-light fa-chart-line"></i></span>
+                              <div>
+                                 <div class="ab-hero-stat-value">$2B+</div>
+                                 <p class="ab-hero-stat-label">Facilitated</p>
+                              </div>
+                           </div>
+                           <div class="ab-hero-stat">
+                              <span class="ab-hero-stat-icon"><i class="fa-light fa-lightbulb"></i></span>
+                              <div>
+                                 <div class="ab-hero-stat-value">Global</div>
+                                 <p class="ab-hero-stat-label">Reach</p>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- tp-faq-hero-area-end -->
 
             <!-- tp-about-feature-area-start -->
-            <div class="tp-about-feature-area fix pb-0">
-               <div class="conteiner-fluid p-0">
-                  <div class="row gx-0">
+            <section class="ab-transform-section">
+               <div class="container">
+                  <div class="row align-items-center g-4">
                      <div class="col-lg-6">
-                        <div class="tp-about-feature-thumb h-100">
-                           <img class="w-100 h-100" style="object-fit: cover; min-height: 600px;"
-                              src="../assets/img/breadcrumb/thumb-55.jpg" alt="Preston Daub Team Meeting">
+                        <div class="ab-transform-img-wrap">
+                           <div class="ab-transform-dots"></div>
+                           <div class="ab-transform-border"></div>
+                           <div class="ab-transform-img">
+                              <img src="../assets/img/breadcrumb/thumb-55.jpg" alt="Preston Daub Team Meeting">
+                           </div>
                         </div>
                      </div>
                      <div class="col-lg-6">
-                        <div class="tp-about-feature-info tp-bg-common-black-1 h-100"
-                           data-background="../assets/img/update-2/footer/footer-1-bg.jpg" style="padding: 80px 70px;">
-                           <span class="d-inline-block mb-20 fs-14 fw-600 text-uppercase"
-                              style="color: rgba(255,255,255,0.6); letter-spacing: 2px;">Ready to Grow?</span>
-                           <h2 class="fw-500 fs-55 fs-xl-45 fs-xs-32 lh-120-per tp-ff-dm tp-text-grey-5 mb-25 tp_fade_anim"
-                              data-delay=".3" data-fade-from="right">Transform your business today with expert guidance
-                           </h2>
-                           <div class="tp_fade_anim" data-delay=".4" data-fade-from="right">
-                              <p class="tp-ff-dm fs-18 lh-160-per tp-text-grey-6 mb-40">Leverage strategic financing,
-                                 sports investment opportunities, and cutting-edge analytics to streamline operations,
-                                 boost efficiency, and unlock new growth.</p>
-                           </div>
-                           <div class="tp-service-cst-info-list mb-45 tp_fade_anim" data-delay=".5"
-                              data-fade-from="right">
-                              <ul style="display: grid; gap: 15px;">
-                                 <li style="display: flex; align-items: center; gap: 12px;">
-                                    <span
-                                       style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(79, 70, 229, 0.3); border-radius: 50%;">
-                                       <svg width="14" height="11" viewBox="0 0 19 15" fill="none"
-                                          xmlns="http://www.w3.org/2000/svg">
-                                          <path
-                                             d="M18.7503 0.276674L7.8072 14.7403C7.57495 15.0311 7.22607 15.0888 6.93501 14.8568C6.87645 14.799 6.87645 14.799 6.81763 14.7403L0.0258056 5.79766C-0.032257 5.7399 0.0258056 5.68214 0.0258056 5.68214C0.083618 5.62438 0.141681 5.68214 0.141681 5.68214L7.23308 10.8441L18.4597 0.0438828C18.5175 -0.0146276 18.6341 -0.0146276 18.6919 0.0438828C18.7503 0.101393 18.7503 0.217914 18.7503 0.276674Z"
-                                             fill="#fff" />
-                                       </svg>
-                                    </span>
-                                    <span class="fs-16">Strategic Business Financing</span>
-                                 </li>
-                                 <li style="display: flex; align-items: center; gap: 12px;">
-                                    <span
-                                       style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(79, 70, 229, 0.3); border-radius: 50%;">
-                                       <svg width="14" height="11" viewBox="0 0 19 15" fill="none"
-                                          xmlns="http://www.w3.org/2000/svg">
-                                          <path
-                                             d="M18.7503 0.276674L7.8072 14.7403C7.57495 15.0311 7.22607 15.0888 6.93501 14.8568C6.87645 14.799 6.87645 14.799 6.81763 14.7403L0.0258056 5.79766C-0.032257 5.7399 0.0258056 5.68214 0.0258056 5.68214C0.083618 5.62438 0.141681 5.68214 0.141681 5.68214L7.23308 10.8441L18.4597 0.0438828C18.5175 -0.0146276 18.6341 -0.0146276 18.6919 0.0438828C18.7503 0.101393 18.7503 0.217914 18.7503 0.276674Z"
-                                             fill="#fff" />
-                                       </svg>
-                                    </span>
-                                    <span class="fs-16">Sports Investment Advisory</span>
-                                 </li>
-                                 <li style="display: flex; align-items: center; gap: 12px;">
-                                    <span
-                                       style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(79, 70, 229, 0.3); border-radius: 50%;">
-                                       <svg width="14" height="11" viewBox="0 0 19 15" fill="none"
-                                          xmlns="http://www.w3.org/2000/svg">
-                                          <path
-                                             d="M18.7503 0.276674L7.8072 14.7403C7.57495 15.0311 7.22607 15.0888 6.93501 14.8568C6.87645 14.799 6.87645 14.799 6.81763 14.7403L0.0258056 5.79766C-0.032257 5.7399 0.0258056 5.68214 0.0258056 5.68214C0.083618 5.62438 0.141681 5.68214 0.141681 5.68214L7.23308 10.8441L18.4597 0.0438828C18.5175 -0.0146276 18.6341 -0.0146276 18.6919 0.0438828C18.7503 0.101393 18.7503 0.217914 18.7503 0.276674Z"
-                                             fill="#fff" />
-                                       </svg>
-                                    </span>
-                                    <span class="fs-16">Mosaic Analytics Platform</span>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="tp_fade_anim" data-delay=".6" data-fade-from="right">
-                              <a href="../applynow.html"
-                                 class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-btn-switch-2-animation tp-text-common-white fw-700 tp-ff-dm"
-                                 style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); padding: 22px 40px;">
-                                 <span class="d-flex align-items-center justify-content-center">
-                                    <span class="btn-text">Get Started</span>
-                                    <span class="btn-icon" style="margin-left: 10px;">
-                                       <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
-                                          xmlns="http://www.w3.org/2000/svg">
-                                          <path
-                                             d="M20 6.00071C16.4166 4.67142 11.9705 2.40252 9.21414 0L11.1357 5.31243H0.688756C0.552576 5.31246 0.419232 5.35209 0.305998 5.42773C0.192725 5.50341 0.104852 5.61172 0.0527125 5.73756C0.00064999 5.86334 -0.0134432 6.0016 0.0130924 6.13511C0.0396547 6.26871 0.105682 6.39175 0.201995 6.48809C0.330914 6.61703 0.505697 6.68939 0.688048 6.6897H11.135L9.21414 12C11.9701 9.59697 16.4165 7.32913 20 6.00071Z"
-                                             fill="currentColor" />
-                                       </svg>
-                                    </span>
-                                 </span>
-                              </a>
-                           </div>
+                        <div class="ab-transform-content">
+                           <span class="ab-transform-label">Ready to Grow?</span>
+                           <h2 class="ab-transform-title">Transform your business today with expert guidance</h2>
+                           <p class="ab-transform-text">Leverage strategic financing, sports investment opportunities, and
+                              cutting-edge analytics to streamline operations, boost efficiency, and unlock new growth.</p>
+                           <ul class="ab-check-list">
+                              <li>
+                                 <span class="ab-check-icon"><i class="fa-light fa-check"></i></span>
+                                 Strategic Business Financing
+                              </li>
+                              <li>
+                                 <span class="ab-check-icon"><i class="fa-light fa-check"></i></span>
+                                 Sports Investment Advisory
+                              </li>
+                              <li>
+                                 <span class="ab-check-icon"><i class="fa-light fa-check"></i></span>
+                                 Mosaic Analytics Platform
+                              </li>
+                           </ul>
+                           <a href="../applynow.html" class="ab-btn-navy">Get Started <i
+                                 class="fa-light fa-arrow-right"></i></a>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- tp-about-feature-area-end -->
 
             <!-- our-approach-area-start -->
-            <div class="tp-approach-area pt-140 pb-120"
-               style="background: linear-gradient(180deg, #f8f9fc 0%, #fff 100%);">
+            <section class="ab-approach-section">
                <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12 text-center mb-70">
-                        <span class="tp-section-subtitle tp-ff-heading fw-500 fs-16 mb-20 d-inline-block"
-                           style="color: #0b0ea8;"><span class="borders d-inline-block"
-                              style="background: #0b0ea8;"></span>How We Work</span>
-                        <h2 class="tp-section-title fs-55 fs-xl-48 fs-lg-42 fw-700 tp-text-common-black mb-20">Our
-                           Approach</h2>
-                        <p class="fs-18 tp-text-grey-1 tp-ff-dm mb-0" style="max-width: 700px; margin: 0 auto;">Founded
-                           on deep expertise and strong relationships built on trust, we streamline administrative
-                           processes to deliver solutions and answers swiftly through our trusted network and efficient
-                           methodologies.</p>
+                  <div class="ab-section-heading dark">
+                     <div class="ab-section-heading-inner">
+                        <span class="ab-section-heading-line"></span>
+                        <span class="ab-section-label">How We Work</span>
+                        <span class="ab-section-heading-line"></span>
                      </div>
+                     <h2>Our Approach</h2>
+                     <p class="ab-section-subtitle">Founded on deep expertise and strong relationships built on trust, we
+                        streamline administrative processes to deliver solutions and answers swiftly through our trusted
+                        network and efficient methodologies.</p>
                   </div>
                   <div class="row">
                      <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-approach-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-approach-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 90px; height: 90px; background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); border-radius: 50%;">
-                              <i class="fa-light fa-user-gear fs-36" style="color: #fff;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Personalized Solutions</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We understand that every client has unique
-                              needs. Our solutions are tailored to align with your specific goals and circumstances.</p>
+                        <div class="ab-approach-card">
+                           <span class="ab-approach-icon"><i class="fa-light fa-user-gear"></i></span>
+                           <h4>Personalized Solutions</h4>
+                           <p>We understand that every client has unique needs. Our solutions are tailored to align with
+                              your specific goals and circumstances.</p>
                         </div>
                      </div>
                      <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-approach-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-approach-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 90px; height: 90px; background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); border-radius: 50%;">
-                              <i class="fa-light fa-user-tie fs-36" style="color: #fff;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Expert<br>Advisory</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">Our team of senior advisors brings decades of
-                              combined experience across finance, sports, and technology sectors.</p>
+                        <div class="ab-approach-card">
+                           <span class="ab-approach-icon"><i class="fa-light fa-user-tie"></i></span>
+                           <h4>Expert<br>Advisory</h4>
+                           <p>Our team of senior advisors brings decades of combined experience across finance, sports,
+                              and technology sectors.</p>
                         </div>
                      </div>
                      <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-approach-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-approach-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 90px; height: 90px; background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); border-radius: 50%;">
-                              <i class="fa-light fa-handshake fs-36" style="color: #fff;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Strategic Partnerships</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">Through our network of vendor and strategic
-                              partners, we provide access to exclusive opportunities and competitive rates.</p>
+                        <div class="ab-approach-card">
+                           <span class="ab-approach-icon"><i class="fa-light fa-handshake"></i></span>
+                           <h4>Strategic Partnerships</h4>
+                           <p>Through our network of vendor and strategic partners, we provide access to exclusive
+                              opportunities and competitive rates.</p>
                         </div>
                      </div>
                      <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-approach-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-approach-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 90px; height: 90px; background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); border-radius: 50%;">
-                              <i class="fa-light fa-infinity fs-36" style="color: #fff;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Long-Term Relationships</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We're committed to fostering mutually
-                              beneficial relationships that extend well beyond the initial transaction.</p>
+                        <div class="ab-approach-card">
+                           <span class="ab-approach-icon"><i class="fa-light fa-infinity"></i></span>
+                           <h4>Long-Term Relationships</h4>
+                           <p>We're committed to fostering mutually beneficial relationships that extend well beyond the
+                              initial transaction.</p>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- our-approach-area-end -->
 
             <!-- why-choose-us-area-start -->
-            <div class="tp-why-choose-area pt-140 pb-120" style="background: #0f172a;">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12 text-center mb-70">
-                        <span class="d-inline-block mb-20 fs-14 fw-600 text-uppercase"
-                           style="color: rgba(255,255,255,0.5); letter-spacing: 2px;">Why Us</span>
-                        <h2 class="tp-section-title fs-55 fs-xl-48 fs-lg-42 fw-700 mb-20" style="color: #fff;">Why
-                           Choose Preston Daub</h2>
+            <section class="ab-why-section">
+               <div class="container-fluid container-1524">
+                  <div class="ab-section-heading light">
+                     <div class="ab-section-heading-inner">
+                        <span class="ab-section-heading-line"></span>
+                        <span class="ab-section-label">Why Choose Us</span>
+                        <span class="ab-section-heading-line"></span>
                      </div>
+                     <h2>Why Choose Preston Daub</h2>
                   </div>
-                  <div class="row">
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">01</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Comprehensive Services</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">From business
-                              financing to sports investments and analytics software, we offer end-to-end solutions for
-                              diverse needs.</p>
-                        </div>
+                  <div class="ab-why-grid">
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">01</span>
+                        <h4>Comprehensive Services</h4>
+                        <p>From business financing to sports investments and analytics software, we offer end-to-end
+                           solutions for diverse needs.</p>
                      </div>
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">02</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Industry Expertise</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">Deep knowledge across
-                              multiple sectors including finance, sports, real estate, healthcare, and technology.</p>
-                        </div>
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">02</span>
+                        <h4>Industry Expertise</h4>
+                        <p>Deep knowledge across multiple sectors including finance, sports, real estate, healthcare,
+                           and technology.</p>
                      </div>
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">03</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Proven Track Record</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">Successfully
-                              facilitated investments and financing solutions for businesses and investors worldwide.
-                           </p>
-                        </div>
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">03</span>
+                        <h4>Proven Track Record</h4>
+                        <p>Successfully facilitated investments and financing solutions for businesses and investors
+                           worldwide.</p>
                      </div>
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">04</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Cutting-Edge Technology</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">Leveraging quantum
-                              computing and AI through Mosaic Software to deliver unmatched insights and analytics.</p>
-                        </div>
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">04</span>
+                        <h4>Cutting-Edge Technology</h4>
+                        <p>Leveraging quantum computing and AI through Mosaic Software to deliver unmatched insights
+                           and analytics.</p>
                      </div>
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">05</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Trusted Network</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">Extensive global
-                              network of lenders, investors, sports executives, and industry leaders.</p>
-                        </div>
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">05</span>
+                        <h4>Trusted Network</h4>
+                        <p>Extensive global network of lenders, investors, sports executives, and industry leaders.
+                        </p>
                      </div>
-                     <div class="col-lg-4 col-md-6 mb-30">
-                        <div class="tp-why-choose-item h-100"
-                           style="padding: 45px 35px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                           <span class="tp-counter fs-60 fw-700 mb-20 d-block"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">06</span>
-                           <h4 class="fs-22 mb-15 fw-600" style="color: #fff;">Client-First Mentality</h4>
-                           <p class="fs-15 lh-170-per mb-0" style="color: rgba(255,255,255,0.6);">We consistently strive
-                              to exceed expectations, putting your success at the center of everything we do.</p>
-                        </div>
+                     <div class="ab-why-item">
+                        <span class="ab-why-num">06</span>
+                        <h4>Client-First Mentality</h4>
+                        <p>We consistently strive to exceed expectations, putting your success at the center of
+                           everything we do.</p>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- why-choose-us-area-end -->
 
             <!-- our-values-area-start -->
-            <div class="tp-values-area pt-140 pb-120">
+            <section class="ab-values-section">
                <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12 text-center mb-70">
-                        <span class="tp-section-subtitle tp-ff-heading fw-500 fs-16 mb-20 d-inline-block"
-                           style="color: #0b0ea8;"><span class="borders d-inline-block"
-                              style="background: #0b0ea8;"></span>Our Foundation</span>
-                        <h2 class="tp-section-title fs-55 fs-xl-48 fs-lg-42 fw-700 tp-text-common-black mb-20">Our
-                           Values</h2>
+                  <div class="ab-section-heading dark">
+                     <div class="ab-section-heading-inner">
+                        <span class="ab-section-heading-line"></span>
+                        <span class="ab-section-label">Our Foundation</span>
+                        <span class="ab-section-heading-line"></span>
                      </div>
+                     <h2>Our Values</h2>
                   </div>
-                  <div class="row">
-                     <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-value-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-value-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 85px; height: 85px; background: rgba(79, 70, 229, 0.1); border-radius: 50%;">
-                              <i class="fa-light fa-shield-check fs-36" style="color: #0b0ea8;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Integrity</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We operate with complete transparency,
-                              honesty, and ethical standards in all our dealings.</p>
-                        </div>
+                  <div class="ab-values-row">
+                     <div class="ab-value-item">
+                        <span class="ab-value-icon"><i class="fa-light fa-shield-check"></i></span>
+                        <h4>Integrity</h4>
+                        <p>We operate with complete transparency, honesty, and ethical standards in all our dealings.</p>
                      </div>
-                     <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-value-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-value-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 85px; height: 85px; background: rgba(79, 70, 229, 0.1); border-radius: 50%;">
-                              <i class="fa-light fa-award fs-36" style="color: #0b0ea8;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Excellence</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We strive for excellence in every solution we
-                              deliver, consistently exceeding client expectations.</p>
-                        </div>
+                     <div class="ab-value-item">
+                        <span class="ab-value-icon"><i class="fa-light fa-award"></i></span>
+                        <h4>Excellence</h4>
+                        <p>We strive for excellence in every solution we deliver, consistently exceeding client
+                           expectations.</p>
                      </div>
-                     <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-value-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-value-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 85px; height: 85px; background: rgba(79, 70, 229, 0.1); border-radius: 50%;">
-                              <i class="fa-light fa-lightbulb fs-36" style="color: #0b0ea8;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Innovation</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We embrace new technologies and creative
-                              strategies to provide cutting-edge solutions.</p>
-                        </div>
+                     <div class="ab-value-item">
+                        <span class="ab-value-icon"><i class="fa-light fa-lightbulb"></i></span>
+                        <h4>Innovation</h4>
+                        <p>We embrace new technologies and creative strategies to provide cutting-edge solutions.</p>
                      </div>
-                     <div class="col-lg-3 col-md-6 mb-30">
-                        <div class="tp-value-item text-center h-100"
-                           style="padding: 50px 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
-                           <span class="tp-value-icon d-inline-flex align-items-center justify-content-center mb-30"
-                              style="width: 85px; height: 85px; background: rgba(79, 70, 229, 0.1); border-radius: 50%;">
-                              <i class="fa-light fa-handshake fs-36" style="color: #0b0ea8;"></i>
-                           </span>
-                           <h4 class="fs-22 tp-text-common-black-3 mb-15 fw-600">Partnership</h4>
-                           <p class="fs-15 lh-170-per tp-text-grey-1 mb-0">We build lasting, mutually beneficial
-                              relationships founded on trust and collaboration.</p>
-                        </div>
+                     <div class="ab-value-item">
+                        <span class="ab-value-icon"><i class="fa-light fa-handshake"></i></span>
+                        <h4>Partnership</h4>
+                        <p>We build lasting, mutually beneficial relationships founded on trust and collaboration.</p>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- our-values-area-end -->
 
             <!-- industries-we-serve-area-start -->
-            <div class="tp-industries-area pt-140 pb-120"
-               style="background: linear-gradient(180deg, #f8f9fc 0%, #fff 100%);">
+            <section class="ab-industries-section">
                <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12 text-center mb-70">
-                        <span class="tp-section-subtitle tp-ff-heading fw-500 fs-16 mb-20 d-inline-block"
-                           style="color: #0b0ea8;"><span class="borders d-inline-block"
-                              style="background: #0b0ea8;"></span>Our Reach</span>
-                        <h2 class="tp-section-title fs-55 fs-xl-48 fs-lg-42 fw-700 tp-text-common-black mb-20">
-                           Industries We Serve</h2>
-                        <p class="fs-18 tp-text-grey-1 tp-ff-dm mb-0" style="max-width: 700px; margin: 0 auto;">We work
-                           with businesses across diverse sectors, providing tailored financing and investment
-                           solutions.</p>
+                  <div class="ab-section-heading dark">
+                     <div class="ab-section-heading-inner">
+                        <span class="ab-section-heading-line"></span>
+                        <span class="ab-section-label">Industries We Serve</span>
+                        <span class="ab-section-heading-line"></span>
                      </div>
+                     <h2>Industries We Serve</h2>
                   </div>
-                  <div class="row justify-content-center">
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-hospital fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Medical & Healthcare</span>
-                        </div>
+                  <div class="ab-industry-grid">
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-hospital"></i></span>
+                        <span>Medical & Healthcare</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-buildings fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Real Estate</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-buildings"></i></span>
+                        <span>Real Estate</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-truck fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Transportation</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-truck"></i></span>
+                        <span>Transportation</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-store fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Retail</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-store"></i></span>
+                        <span>Retail</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-utensils fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Restaurants</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-utensils"></i></span>
+                        <span>Restaurants</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-industry fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Manufacturing</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-industry"></i></span>
+                        <span>Manufacturing</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-tooth fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Dental</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-tooth"></i></span>
+                        <span>Dental</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-heart-pulse fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Health Services</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-heart-pulse"></i></span>
+                        <span>Health Services</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-helmet-safety fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Construction</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-helmet-safety"></i></span>
+                        <span>Construction</span>
                      </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-25">
-                        <div class="tp-industry-item text-center h-100"
-                           style="padding: 35px 20px; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: all 0.3s ease;">
-                           <span class="d-inline-flex align-items-center justify-content-center mb-20"
-                              style="width: 60px; height: 60px; background: rgba(79, 70, 229, 0.1); border-radius: 12px;">
-                              <i class="fa-light fa-car-wrench fs-26" style="color: #0b0ea8;"></i>
-                           </span>
-                           <span class="fs-14 fw-600 d-block tp-text-common-black">Auto Repair</span>
-                        </div>
+                     <div class="ab-industry-card">
+                        <span class="ab-industry-icon"><i class="fa-light fa-car-wrench"></i></span>
+                        <span>Auto Repair</span>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- industries-we-serve-area-end -->
 
             <!-- cta-area-start -->
-            <div class="tp-cta-area tp-bg-common-black-1 pt-140 pb-140"
-               data-background="../assets/img/update-2/footer/footer-1-bg.jpg"
-               style="position: relative; overflow: hidden;">
+            <section class="ab-cta-section">
                <div class="container">
-                  <div class="row justify-content-center text-center">
-                     <div class="col-lg-9">
-                        <span class="d-inline-block mb-25 fs-14 fw-600 text-uppercase"
-                           style="color: rgba(255,255,255,0.5); letter-spacing: 2px;">Get Started Today</span>
-                        <h2 class="tp-section-title fs-55 fs-xl-48 fs-lg-42 fw-700 tp-text-common-white mb-25">Ready to
-                           Partner with Preston Daub?</h2>
-                        <p class="fs-18 mb-50 tp-ff-dm"
-                           style="color: rgba(255,255,255,0.7); max-width: 600px; margin-left: auto; margin-right: auto;">
-                           Let's discuss how we can help you achieve your business and investment goals.</p>
-                        <div class="tp-cta-buttons d-flex flex-wrap justify-content-center gap-4">
-                           <a href="../applynow.html"
-                              class="tp-btn-lg d-inline-block lh-0 fs-15 tp-btn-switch-2-animation tp-text-common-white fw-700 tp-ff-dm"
-                              style="background: linear-gradient(135deg, #0b0ea8 0%, #7c3aed 100%); padding: 22px 40px; border-radius: 50px;">
-                              <span class="d-flex align-items-center justify-content-center">
-                                 <span class="btn-text">Apply for Financing</span>
-                                 <span class="btn-icon" style="margin-left: 10px;">
-                                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="M20 6.00071C16.4166 4.67142 11.9705 2.40252 9.21414 0L11.1357 5.31243H0.688756C0.552576 5.31246 0.419232 5.35209 0.305998 5.42773C0.192725 5.50341 0.104852 5.61172 0.0527125 5.73756C0.00064999 5.86334 -0.0134432 6.0016 0.0130924 6.13511C0.0396547 6.26871 0.105682 6.39175 0.201995 6.48809C0.330914 6.61703 0.505697 6.68939 0.688048 6.6897H11.135L9.21414 12C11.9701 9.59697 16.4165 7.32913 20 6.00071Z"
-                                          fill="currentColor" />
-                                    </svg>
-                                 </span>
-                              </span>
-                           </a>
-                           <a href="../contact-us.html"
-                              class="tp-btn-lg d-inline-block lh-0 fs-15 tp-btn-switch-2-animation fw-700 tp-ff-dm"
-                              style="background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 20px 40px; border-radius: 50px;">
-                              <span class="d-flex align-items-center justify-content-center">
-                                 <span class="btn-text">Book Consultation</span>
-                                 <span class="btn-icon" style="margin-left: 10px;">
-                                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="M20 6.00071C16.4166 4.67142 11.9705 2.40252 9.21414 0L11.1357 5.31243H0.688756C0.552576 5.31246 0.419232 5.35209 0.305998 5.42773C0.192725 5.50341 0.104852 5.61172 0.0527125 5.73756C0.00064999 5.86334 -0.0134432 6.0016 0.0130924 6.13511C0.0396547 6.26871 0.105682 6.39175 0.201995 6.48809C0.330914 6.61703 0.505697 6.68939 0.688048 6.6897H11.135L9.21414 12C11.9701 9.59697 16.4165 7.32913 20 6.00071Z"
-                                          fill="currentColor" />
-                                    </svg>
-                                 </span>
-                              </span>
-                           </a>
-                           <a href="../mosaic-software.html"
-                              class="tp-btn-lg d-inline-block lh-0 fs-15 tp-btn-switch-2-animation fw-700 tp-ff-dm"
-                              style="background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 20px 40px; border-radius: 50px;">
-                              <span class="d-flex align-items-center justify-content-center">
-                                 <span class="btn-text">Request Demo</span>
-                                 <span class="btn-icon" style="margin-left: 10px;">
-                                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="M20 6.00071C16.4166 4.67142 11.9705 2.40252 9.21414 0L11.1357 5.31243H0.688756C0.552576 5.31246 0.419232 5.35209 0.305998 5.42773C0.192725 5.50341 0.104852 5.61172 0.0527125 5.73756C0.00064999 5.86334 -0.0134432 6.0016 0.0130924 6.13511C0.0396547 6.26871 0.105682 6.39175 0.201995 6.48809C0.330914 6.61703 0.505697 6.68939 0.688048 6.6897H11.135L9.21414 12C11.9701 9.59697 16.4165 7.32913 20 6.00071Z"
-                                          fill="currentColor" />
-                                    </svg>
-                                 </span>
-                              </span>
-                           </a>
+                  <div class="ab-cta-banner">
+                     <div class="ab-cta-dots ab-cta-dots-left" aria-hidden="true"></div>
+                     <div class="ab-cta-dots ab-cta-dots-right" aria-hidden="true"></div>
+                     <div class="ab-cta-inner">
+                        <div class="ab-cta-icon">
+                           <i class="fa-light fa-handshake"></i>
+                        </div>
+                        <div class="ab-cta-text">
+                           <h2>Ready to Partner with Preston Daub?</h2>
+                           <p>Let's discuss how we can help you achieve your business and investment goals.</p>
+                        </div>
+                        <div class="ab-cta-divider" aria-hidden="true"></div>
+                        <div class="ab-cta-actions">
+                           <a href="../applynow.html" class="ab-cta-btn-red">Apply for Financing <i class="fa-light fa-arrow-right"></i></a>
+                           <a href="../mosaic-software.html" class="ab-cta-btn-outline">Request a Demo <i class="fa-light fa-arrow-right"></i></a>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- cta-area-end -->
 
          </main>

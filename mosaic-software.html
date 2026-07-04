@@ -33,66 +33,527 @@
    <link rel="stylesheet" href="assets/css/toast-notification.css">
 
    <style>
-      /* Futuristic Tech Styles for Mosaic */
-      .tech-card {
-         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      :root {
+         --ms-navy: #0A1A3B;
+         --ms-red: #C0392B;
+         --ms-blue: #0752c5;
       }
 
-      .tech-card:hover {
-         transform: translateY(-8px) scale(1.02);
-         box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15) !important;
+      /* Section heading with red lines */
+      .ms-section-heading {
+         text-align: center;
+         margin-bottom: 50px;
       }
 
-      /* Glowing Effect */
-      .glow-cyan {
-         box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+      .ms-section-heading h2 {
+         font-size: 42px;
+         font-weight: 700;
+         margin: 0;
+         line-height: 1.2;
       }
 
-      .glow-purple {
-         box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+      .ms-section-heading.light h2 {
+         color: #ffffff;
       }
 
-      .glow-green {
-         box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+      .ms-section-heading.dark h2 {
+         color: var(--ms-navy);
       }
 
-      /* Floating Animation */
-      @keyframes float {
+      .ms-section-heading-inner {
+         display: inline-flex;
+         align-items: center;
+         gap: 20px;
+      }
 
-         0%,
-         100% {
-            transform: translateY(0);
+      .ms-section-heading-line {
+         width: 50px;
+         height: 3px;
+         background: var(--ms-red);
+         flex-shrink: 0;
+      }
+
+      .ms-section-subtitle {
+         color: #64748b;
+         font-size: 17px;
+         max-width: 560px;
+         margin: 16px auto 0;
+         line-height: 1.7;
+      }
+
+      /* Hero */
+      .ms-hero {
+         position: relative;
+         background: #ffffff;
+         overflow: hidden;
+         padding: 125px 0 90px;
+         min-height: auto;
+      }
+
+      .ms-hero-bg {
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 52%;
+         height: 100%;
+         background: var(--ms-navy);
+         z-index: 1;
+      }
+
+      .ms-hero-bg::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(135deg, rgba(10, 26, 59, 0.3) 0%, rgba(10, 26, 59, 0.85) 100%),
+            url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1400&auto=format&fit=crop&q=80') center/cover no-repeat;
+         opacity: 1;
+      }
+
+      .ms-hero-red-stripe {
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 5px;
+         height: 100%;
+         background: var(--ms-red);
+         z-index: 3;
+      }
+
+      .ms-hero-visual {
+         position: absolute;
+         right: 5%;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 46%;
+         max-width: 560px;
+         z-index: 2;
+      }
+
+      .ms-hero-visual img {
+         width: 100%;
+         border-radius: 12px;
+         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+         display: block;
+      }
+
+      .ms-hero-content {
+         position: relative;
+         z-index: 4;
+         max-width: 560px;
+      }
+
+      .ms-hero-label {
+         color: var(--ms-blue);
+         font-size: 14px;
+         font-weight: 600;
+         margin-bottom: 18px;
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+      }
+
+      .ms-hero-title {
+         font-size: 62px;
+         font-weight: 700;
+         line-height: 1.1;
+         margin-bottom: 24px;
+         color: var(--ms-navy);
+      }
+
+      .ms-hero-title span {
+         color: var(--ms-red);
+      }
+
+      .ms-hero-desc {
+         color: #555;
+         font-size: 18px;
+         line-height: 1.75;
+         margin-bottom: 32px;
+         max-width: 520px;
+      }
+
+      .ms-hero-actions {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 14px;
+         margin-bottom: 36px;
+      }
+
+      .ms-btn-primary {
+         background: var(--ms-red);
+         color: #fff !important;
+         padding: 15px 30px;
+         border-radius: 8px;
+         font-weight: 600;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+         transition: all 0.3s ease;
+         border: none;
+      }
+
+      .ms-btn-primary:hover {
+         background: #a93226;
+         color: #fff !important;
+         transform: translateY(-2px);
+         box-shadow: 0 8px 20px rgba(192, 57, 43, 0.3);
+      }
+
+      .ms-btn-outline {
+         background: #fff;
+         color: var(--ms-navy) !important;
+         padding: 15px 30px;
+         border-radius: 8px;
+         font-weight: 600;
+         font-size: 15px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         border: 1px solid #e0e0e0;
+         transition: all 0.3s ease;
+      }
+
+      .ms-btn-outline:hover {
+         border-color: var(--ms-navy);
+         color: var(--ms-navy) !important;
+      }
+
+      @media (max-width: 991px) {
+         .ms-hero {
+            padding: 125px 0 60px;
+            min-height: auto;
          }
 
-         50% {
-            transform: translateY(-10px);
+         .ms-hero-bg,
+         .ms-hero-visual {
+            display: none;
+         }
+
+         .ms-hero-title {
+            font-size: 42px;
+         }
+
+         .ms-section-heading h2 {
+            font-size: 32px;
+         }
+
+         .ms-section-heading-inner {
+            gap: 12px;
+         }
+
+         .ms-section-heading-line {
+            width: 30px;
+         }
+
+         .ms-overview-title {
+            font-size: 32px;
          }
       }
 
-      .floating {
-         animation: float 4s ease-in-out infinite;
+      /* Features */
+      .ms-features-section {
+         background: var(--ms-navy);
+         padding: 100px 0 80px;
       }
 
-      .floating-delay {
-         animation: float 4s ease-in-out infinite;
-         animation-delay: 1s;
+      .ms-feature-card {
+         background: #ffffff;
+         border-radius: 16px;
+         padding: 28px 28px 32px;
+         height: 100%;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      /* Pulse Animation */
-      @keyframes pulse-glow {
+      .ms-feature-card:hover {
+         transform: translateY(-4px);
+         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      }
 
-         0%,
-         100% {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      .ms-feature-icon {
+         width: 44px;
+         height: 44px;
+         border-radius: 10px;
+         background: var(--ms-red);
+         color: #fff;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 20px;
+         margin-bottom: 18px;
+      }
+
+      .ms-feature-card h4 {
+         font-size: 20px;
+         font-weight: 700;
+         color: var(--ms-navy);
+         margin-bottom: 12px;
+         line-height: 1.3;
+      }
+
+      .ms-feature-card p {
+         color: #64748b;
+         font-size: 15px;
+         line-height: 1.7;
+         margin: 0;
+      }
+
+      /* Platform Overview */
+      .ms-overview-section {
+         background: #ffffff;
+         padding: 100px 0;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .ms-overview-dots {
+         position: absolute;
+         right: 40px;
+         top: 60px;
+         width: 90px;
+         height: 90px;
+         background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+         background-size: 12px 12px;
+         opacity: 0.6;
+      }
+
+      .ms-overview-img {
+         border-radius: 16px;
+         overflow: hidden;
+         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      .ms-overview-img img {
+         width: 100%;
+         display: block;
+      }
+
+      .ms-overview-label {
+         color: var(--ms-red);
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 1.5px;
+         text-transform: uppercase;
+         margin-bottom: 14px;
+         display: block;
+      }
+
+      .ms-overview-title {
+         font-size: 42px;
+         font-weight: 700;
+         color: var(--ms-navy);
+         line-height: 1.2;
+         margin-bottom: 20px;
+      }
+
+      .ms-overview-title span {
+         color: var(--ms-red);
+      }
+
+      .ms-overview-text {
+         color: #666;
+         font-size: 17px;
+         line-height: 1.75;
+         margin-bottom: 28px;
+      }
+
+      .ms-check-list {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .ms-check-list li {
+         display: flex;
+         align-items: center;
+         gap: 14px;
+         margin-bottom: 14px;
+         color: #333;
+         font-size: 16px;
+      }
+
+      .ms-check-list li:last-child {
+         margin-bottom: 0;
+      }
+
+      .ms-check-icon {
+         width: 28px;
+         height: 28px;
+         border-radius: 50%;
+         background: rgba(192, 57, 43, 0.1);
+         color: var(--ms-red);
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 12px;
+         flex-shrink: 0;
+      }
+
+      /* Applications */
+      .ms-apps-section {
+         background: #f3f5f8;
+         padding: 100px 0;
+      }
+
+      .ms-app-card {
+         background: #ffffff;
+         border-radius: 16px;
+         overflow: hidden;
+         height: 100%;
+         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .ms-app-card:hover {
+         transform: translateY(-6px);
+         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+      }
+
+      .ms-app-card-img {
+         height: 180px;
+         overflow: hidden;
+         position: relative;
+      }
+
+      .ms-app-card-img img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+
+      .ms-app-card-body {
+         padding: 36px 24px 30px;
+         position: relative;
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .ms-app-card-icon {
+         width: 48px;
+         height: 48px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 20px;
+         position: absolute;
+         top: -24px;
+         left: 24px;
+         border: 3px solid #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .ms-app-icon-blue {
+         background: var(--ms-blue);
+         color: #fff;
+      }
+
+      .ms-app-icon-red {
+         background: var(--ms-red);
+         color: #fff;
+      }
+
+      .ms-app-card-body h4 {
+         font-size: 20px;
+         font-weight: 700;
+         color: var(--ms-navy);
+         margin: 16px 0 12px;
+      }
+
+      .ms-app-card-body p {
+         color: #64748b;
+         font-size: 15px;
+         line-height: 1.7;
+         margin-bottom: 18px;
+         flex: 1;
+      }
+
+      .ms-app-link {
+         color: var(--ms-red);
+         font-weight: 600;
+         font-size: 14px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 6px;
+         transition: gap 0.2s ease;
+      }
+
+      .ms-app-link:hover {
+         color: #a93226;
+         gap: 10px;
+      }
+
+      /* Why Choose */
+      .ms-why-section {
+         background: var(--ms-navy);
+         padding: 100px 0 80px;
+      }
+
+      .ms-why-card {
+         background: #ffffff;
+         border-radius: 16px;
+         padding: 28px 26px;
+         height: 100%;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .ms-why-card-head {
+         display: flex;
+         align-items: flex-start;
+         gap: 14px;
+         margin-bottom: 12px;
+      }
+
+      .ms-why-num {
+         width: 36px;
+         height: 36px;
+         min-width: 36px;
+         border-radius: 50%;
+         background: var(--ms-blue);
+         color: #fff;
+         font-weight: 700;
+         font-size: 15px;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .ms-why-card h4 {
+         font-size: 18px;
+         font-weight: 700;
+         color: var(--ms-navy);
+         margin: 6px 0 0;
+         line-height: 1.3;
+      }
+
+      .ms-why-card p {
+         color: #64748b;
+         font-size: 15px;
+         line-height: 1.65;
+         margin: 0;
+      }
+
+      /* Demo form section */
+      .ms-demo-section {
+         background: #ffffff;
+         padding: 100px 0;
+      }
+
+      .ms-demo-section .cst-cta-left {
+         border-bottom-right-radius: 0;
+      }
+
+      @media (min-width: 992px) {
+         .ms-demo-section .cst-cta-left {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
          }
-
-         50% {
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
-         }
-      }
-
-      .pulse-effect {
-         animation: pulse-glow 3s ease-in-out infinite;
       }
    </style>
 </head>
@@ -224,9 +685,6 @@
                            <li>
                               <a href="about/about.html">About</a>
                            </li>
-                           <li>
-                              <a href="about/team.html">Team</a>
-                           </li>
                         </ul>
                      </nav>
                   </div>
@@ -252,537 +710,311 @@
       <div id="smooth-content">
          <main>
 
-            <!-- Hero Section - Clean Professional Layout -->
-            <div class="tp-about-area pre-header pt-180 pb-100" style="background: #f8f9fa;">
+            <!-- Hero Section -->
+            <section class="ms-hero pre-header">
+               <div class="ms-hero-bg">
+                  <div class="ms-hero-red-stripe"></div>
+               </div>
+               <div class="ms-hero-visual d-none d-lg-block">
+                  <img src="assets/img/mosaicabout.jpg" alt="Mosaic Software Platform">
+               </div>
                <div class="container">
-                  <div class="row align-items-center">
-                     <div class="col-lg-6">
-                        <div class="mb-40">
-                           <span class="tp-ff-heading fw-500 fs-14 mb-15 d-inline-block" style="color: #0752c5;">
-                              <i class="fa-light fa-microchip me-2"></i>Quantum AI Platform
-                           </span>
-                           <h1 class="tp-section-title fs-65 fs-xl-55 fs-lg-48 fs-sm-38 fs-xs-32 fw-600 mb-25 tp-text-common-black"
-                              style="line-height: 1.15;">Mosaic Software</h1>
-                           <p class="fs-20 lh-170-per mb-35" style="color: #555; max-width: 520px;">A groundbreaking
-                              quantum computing AI platform designed specifically for the world of professional sports
-                              management.</p>
+                  <div class="ms-hero-content">
+                     <span class="ms-hero-label">
+                        <i class="fa-light fa-microchip"></i>Quantum AI Platform
+                     </span>
+                     <h1 class="ms-hero-title">Mosaic <span>Software</span></h1>
+                     <p class="ms-hero-desc">A groundbreaking quantum computing AI platform designed specifically for the world of professional sports management.</p>
+                     <div class="ms-hero-actions">
+                        <a href="#demo" class="ms-btn-primary">
+                           Request Demo <i class="fa-light fa-arrow-right"></i>
+                        </a>
+                        <a href="#features" class="ms-btn-outline">Learn More</a>
+                     </div>
+                     <div class="tp-breadcrumb-list">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><span></span></li>
+                           <li>Mosaic Software</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
 
-                           <div class="d-flex gap-3 flex-wrap mb-40">
-                              <a href="#demo" class="tp-btn-lg d-inline-flex align-items-center tp-bg-common-green-2"
-                                 style="color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none;">
-                                 Request Demo <i class="fa-light fa-arrow-right ms-2"></i>
-                              </a>
-                              <a href="#features" class="tp-btn-lg d-inline-flex align-items-center"
-                                 style="background: #fff; color: #1a1a2e; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid #e0e0e0;">
-                                 Learn More
-                              </a>
-                           </div>
-
-                           <div class="tp-breadcrumb-list">
-                              <ul>
-                                 <li><a href="index.html">Home</a></li>
-                                 <li><span></span></li>
-                                 <li>Mosaic Software</li>
-                              </ul>
-                           </div>
+            <!-- Key Features & Benefits -->
+            <section id="features" class="ms-features-section">
+               <div class="container">
+                  <div class="ms-section-heading light">
+                     <div class="ms-section-heading-inner">
+                        <span class="ms-section-heading-line"></span>
+                        <h2>Key Features &amp; Benefits</h2>
+                        <span class="ms-section-heading-line"></span>
+                     </div>
+                  </div>
+                  <div class="row g-4">
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-microchip"></i></div>
+                           <h4>Quantum Processing</h4>
+                           <p>Advanced quantum algorithms for lightning-fast player evaluation, financial modeling and fan engagement strategies.</p>
                         </div>
                      </div>
-                     <div class="col-lg-6">
-                        <div style="position: relative;">
-                           <img src="assets/img/mosaicabout.jpg" alt="Mosaic Software Platform"
-                              style="width: 100%; border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.12);">
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-brain-circuit"></i></div>
+                           <h4>AI Intelligence</h4>
+                           <p>Machine learning models trained on comprehensive sports data to deliver smarter strategies for player recruitment.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-chart-mixed"></i></div>
+                           <h4>Data Analytics</h4>
+                           <p>Real-time insights for strategic decision-making during games, financial health assessment, and fan engagement.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-chart-line-up"></i></div>
+                           <h4>Predictive Analytics</h4>
+                           <p>Forecast player performance, injury risks, and market trends using AI-driven predictive models.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-users"></i></div>
+                           <h4>Roster Optimization</h4>
+                           <p>Data-driven roster management that evaluates player performance, salary cap implications, and team chemistry.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-feature-card">
+                           <div class="ms-feature-icon"><i class="fa-light fa-money-bill"></i></div>
+                           <h4>Financial Management</h4>
+                           <p>Comprehensive financial analytics covering revenue streams, cost optimization, and budget forecasting.</p>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
 
-            <!-- Core Features Section -->
-            <div id="features" class="tp-about-process-area pt-100 pb-80" style="background: #f8f9fa;">
+            <!-- Platform Overview -->
+            <section class="ms-overview-section">
+               <div class="ms-overview-dots d-none d-lg-block"></div>
                <div class="container">
-                  <!-- <div class="row mb-50">
-                     <div class="col-12">
-                        <span class="tp-ff-heading fw-500 fs-14 mb-10 d-inline-block" style="color: #0752c5;">Core Features</span>
-                        <h2 class="tp-section-title fw-500 fs-45 fs-lg-38 fs-sm-32 mb-15">Platform Capabilities</h2>
-                        <p class="fs-18" style="color: #666; max-width: 600px;">Cutting-edge technology powering the future of sports management</p>
-                     </div>
-                  </div> -->
-                  <div class="row">
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-microchip" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">Quantum Processing</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Advanced quantum algorithms for lightning-fast player evaluation,
-                              financial modeling and fan engagement strategies.</p>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-brain-circuit" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">AI Intelligence</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Machine learning models trained on comprehensive sports data to
-                              deliver smarter strategies for player recruitment.</p>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-chart-mixed" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">Data Analytics</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Real-time insights for strategic decision-making during games,
-                              financial health assessment, and fan engagement.</p>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-chart-line-up" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">Predictive Analytics</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Forecast player performance, injury risks, and market trends using
-                              AI-driven predictive models.</p>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-users" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">Roster Optimization</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Data-driven roster management that evaluates player performance,
-                              salary cap implications, and team chemistry.</p>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="tp-about-process-item tp-about-process-2-item tp-bg-common-white-2 mb-40 h-100">
-                           <span class="tp-about-process-icon d-inline-block mb-30">
-                              <i class="fa-light fa-money-bill" style="font-size: 45px; color: #0752c5;"></i>
-                           </span>
-                           <h4 class="fs-24 fw-500 tp-text-common-black-3 lh-130-per mb-15">Financial Management</h4>
-                           <span class="tp-about-process-2-border d-block mb-2">
-                              <svg viewBox="0 0 354 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM349 3.5L354 5.88675V0.113249L349 2.5V3.5ZM4.5 3.5H349.5V2.5H4.5V3.5Z"
-                                    fill="#030303" fill-opacity="0.1" />
-                              </svg>
-                           </span>
-                           <p style="color: #666;">Comprehensive financial analytics covering revenue streams, cost
-                              optimization, and budget forecasting.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Platform Overview Section -->
-            <div class="tp-about-feature-area fix " style="background: #fff; padding-top: 50px;">
-               <div class="container">
-                  <div class="row align-items-center">
+                  <div class="row align-items-center g-4 g-lg-5">
                      <div class="col-lg-6">
-                        <div class="tp-about-feature-thumb mb-40">
-                           <img class="w-100" src="assets/img/mosaicabout.jpg" alt="Mosaic Software AI Platform"
-                              style="border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.1);">
+                        <div class="ms-overview-img">
+                           <img src="assets/img/mosaicabout.jpg" alt="Mosaic Software AI Platform">
                         </div>
                      </div>
                      <div class="col-lg-6">
-                        <div class="ps-lg-4">
-                           <span class="tp-ff-heading fw-500 fs-14 mb-15 d-inline-block"
-                              style="color: #0752c5;">Platform Overview</span>
-                           <h2 class="fw-500 fs-45 fs-lg-38 fs-sm-32 lh-120-per mb-20">Transforming Sports Management
-                           </h2>
-                           <p class="fs-18 lh-170-per mb-30" style="color: #666;">Mosaic Software is a groundbreaking
-                              quantum computing AI platform developed to address the critical challenges facing the
-                              sports industry. By integrating all aspects of an organization into a cohesive and
-                              powerful platform, Mosaic optimizes performance on and off the field.</p>
-                           <ul class="mb-0" style="list-style: none; padding: 0;">
-                              <li class="d-flex align-items-center mb-15">
-                                 <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                    style="width: 28px; height: 28px; background: #e8f4fd; border-radius: 50%;">
-                                    <i class="fa-light fa-check" style="color: #0752c5; font-size: 14px;"></i>
-                                 </span>
-                                 <span class="fs-16" style="color: #333;">Player Performance Analytics</span>
+                        <div class="ps-lg-3">
+                           <span class="ms-overview-label">Platform Overview</span>
+                           <h2 class="ms-overview-title">Transforming Sports <span>Management</span></h2>
+                           <p class="ms-overview-text">Mosaic Software is a groundbreaking quantum computing AI platform developed to address the critical challenges facing the sports industry. By integrating all aspects of an organization into a cohesive and powerful platform, Mosaic optimizes performance on and off the field.</p>
+                           <ul class="ms-check-list">
+                              <li>
+                                 <span class="ms-check-icon"><i class="fa-light fa-check"></i></span>
+                                 <span>Player Performance Analytics</span>
                               </li>
-                              <li class="d-flex align-items-center mb-15">
-                                 <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                    style="width: 28px; height: 28px; background: #e8f4fd; border-radius: 50%;">
-                                    <i class="fa-light fa-check" style="color: #0752c5; font-size: 14px;"></i>
-                                 </span>
-                                 <span class="fs-16" style="color: #333;">Financial Management & Insights</span>
+                              <li>
+                                 <span class="ms-check-icon"><i class="fa-light fa-check"></i></span>
+                                 <span>Financial Management &amp; Insights</span>
                               </li>
-                              <li class="d-flex align-items-center">
-                                 <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                    style="width: 28px; height: 28px; background: #e8f4fd; border-radius: 50%;">
-                                    <i class="fa-light fa-check" style="color: #0752c5; font-size: 14px;"></i>
-                                 </span>
-                                 <span class="fs-16" style="color: #333;">Fan Engagement Optimization</span>
+                              <li>
+                                 <span class="ms-check-icon"><i class="fa-light fa-check"></i></span>
+                                 <span>Fan Engagement Optimization</span>
                               </li>
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
 
             <!-- Platform Applications Section -->
-            <div class="tp-about-process-area pt-120 pb-120"
-               style="background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);">
+            <section class="ms-apps-section">
                <div class="container">
-                  <div class="row">
-                     <div class="col-12">
-                        <div class="mb-70 text-center">
-                           <h2 class="tp-section-title fw-700 fs-50 fs-lg-42 fs-sm-32 mb-20">Platform Applications</h2>
-                           <p class="fs-18" style="color: #64748b; max-width: 550px; margin: 0 auto;">Powerful solutions
-                              designed for every aspect of your sports organization</p>
+                  <div class="ms-section-heading dark">
+                     <div class="ms-section-heading-inner">
+                        <span class="ms-section-heading-line"></span>
+                        <h2>Platform Applications</h2>
+                        <span class="ms-section-heading-line"></span>
+                     </div>
+                     <p class="ms-section-subtitle">Powerful solutions designed for every aspect of your sports organization</p>
+                  </div>
+                  <div class="row g-4">
+                     <div class="col-lg-3 col-md-6">
+                        <div class="ms-app-card">
+                           <div class="ms-app-card-img">
+                              <img src="https://images.unsplash.com/photo-1766136809209-ae00e84d8a26?w=600&auto=format&fit=crop&q=80" alt="Team Management">
+                           </div>
+                           <div class="ms-app-card-body">
+                              <div class="ms-app-card-icon ms-app-icon-blue"><i class="fa-light fa-users"></i></div>
+                              <h4>Team Management</h4>
+                              <p>Optimize roster decisions, track player performance metrics, and make data-driven recruitment choices that align with your strategic goals.</p>
+                              <a href="#demo" class="ms-app-link">Learn more <i class="fa-light fa-arrow-right"></i></a>
+                           </div>
                         </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="ms-app-card">
+                           <div class="ms-app-card-img">
+                              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop&q=80" alt="Financial Operations">
+                           </div>
+                           <div class="ms-app-card-body">
+                              <div class="ms-app-card-icon ms-app-icon-red"><i class="fa-light fa-chart-pie"></i></div>
+                              <h4>Financial Operations</h4>
+                              <p>Monitor revenue streams, forecast financial performance, manage salary caps, and optimize budget allocation for maximum efficiency.</p>
+                              <a href="#demo" class="ms-app-link">Learn more <i class="fa-light fa-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="ms-app-card">
+                           <div class="ms-app-card-img">
+                              <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=600&auto=format&fit=crop&q=80" alt="Fan Engagement">
+                           </div>
+                           <div class="ms-app-card-body">
+                              <div class="ms-app-card-icon ms-app-icon-blue"><i class="fa-light fa-heart"></i></div>
+                              <h4>Fan Engagement</h4>
+                              <p>Analyze fan behavior patterns, optimize ticket pricing strategies, and create personalized experiences that drive loyalty and revenue.</p>
+                              <a href="#demo" class="ms-app-link">Learn more <i class="fa-light fa-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="ms-app-card">
+                           <div class="ms-app-card-img">
+                              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80" alt="Strategic Investments">
+                           </div>
+                           <div class="ms-app-card-body">
+                              <div class="ms-app-card-icon ms-app-icon-red"><i class="fa-light fa-lightbulb-on"></i></div>
+                              <h4>Strategic Investments</h4>
+                              <p>Identify and evaluate acquisition targets, assess franchise valuations, and make informed investment decisions with predictive analytics.</p>
+                              <a href="#demo" class="ms-app-link">Learn more <i class="fa-light fa-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- Why Choose Mosaic Section -->
+            <section class="ms-why-section">
+               <div class="container">
+                  <div class="ms-section-heading light">
+                     <div class="ms-section-heading-inner">
+                        <span class="ms-section-heading-line"></span>
+                        <h2>Why Choose Mosaic?</h2>
+                        <span class="ms-section-heading-line"></span>
                      </div>
                   </div>
                   <div class="row g-4">
-                     <!-- Card 1 - Team Management -->
-                     <div class="col-lg-6">
-                        <div
-                           style="background: #fff; border-radius: 24px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); height: 100%;">
-                           <div
-                              style="background: linear-gradient(135deg, #0752c5 0%, #0a3d8f 100%); padding: 30px 35px; position: relative; overflow: hidden;">
-                              <div
-                                 style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%;">
-                              </div>
-                              <div
-                                 style="position: absolute; bottom: -40px; right: 40px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;">
-                              </div>
-                              <div class="d-flex align-items-center position-relative">
-                                 <div class="me-20"
-                                    style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-light fa-users" style="font-size: 28px; color: #fff;"></i>
-                                 </div>&nbsp;&nbsp;&nbsp;
-                                 <h4 class="fs-26 fw-700 mb-0" style="color: #fff;">Team Management</h4>
-                              </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">1</span>
+                              <h4>Unmatched Speed</h4>
                            </div>
-                           <div style="padding: 35px; display: flex; flex-direction: column; height: 100%;">
-                              <p class="fs-17 mb-25" style="color: #64748b; line-height: 1.8; flex-grow: 1;">Optimize
-                                 roster decisions, track player performance metrics, and make data-driven recruitment
-                                 choices that align with your strategic goals.</p>
-                              <div class="d-flex flex-wrap gap-2">
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Roster
-                                    Analytics</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Performance
-                                    Tracking</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Recruitment
-                                    AI</span>
-                              </div>
-                           </div>
+                           <p>Quantum computing delivers insights in seconds, not hours</p>
                         </div>
                      </div>
-                     <!-- Card 2 - Financial Operations -->
-                     <div class="col-lg-6">
-                        <div
-                           style="background: #fff; border-radius: 24px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); height: 100%;">
-                           <div
-                              style="background: linear-gradient(135deg, #059669 0%, #047857 100%); padding: 30px 35px; position: relative; overflow: hidden;">
-                              <div
-                                 style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%;">
-                              </div>
-                              <div
-                                 style="position: absolute; bottom: -40px; right: 40px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;">
-                              </div>
-                              <div class="d-flex align-items-center position-relative">
-                                 <div class="me-20"
-                                    style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-light fa-chart-pie" style="font-size: 28px; color: #fff;"></i>
-                                 </div>&nbsp;&nbsp;&nbsp;
-                                 <h4 class="fs-26 fw-700 mb-0" style="color: #fff;">Financial Operations</h4>
-                              </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">2</span>
+                              <h4>Comprehensive Integration</h4>
                            </div>
-                           <div style="padding: 35px; display: flex; flex-direction: column; height: 100%;">
-                              <p class="fs-17 mb-25" style="color: #64748b; line-height: 1.8; flex-grow: 1;">Monitor
-                                 revenue streams, forecast financial performance, manage salary caps, and optimize
-                                 budget allocation for maximum efficiency.</p>
-                              <div class="d-flex flex-wrap gap-2">
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Revenue
-                                    Tracking</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Budget
-                                    Optimization</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Forecasting</span>
-                              </div>
-                           </div>
+                           <p>All organizational functions in one unified platform</p>
                         </div>
                      </div>
-                     <!-- Card 3 - Fan Engagement -->
-                     <div class="col-lg-6">
-                        <div
-                           style="background: #fff; border-radius: 24px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); height: 100%;">
-                           <div
-                              style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); padding: 30px 35px; position: relative; overflow: hidden;">
-                              <div
-                                 style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%;">
-                              </div>
-                              <div
-                                 style="position: absolute; bottom: -40px; right: 40px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;">
-                              </div>
-                              <div class="d-flex align-items-center position-relative">
-                                 <div class="me-20"
-                                    style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-light fa-heart" style="font-size: 28px; color: #fff;"></i>
-                                 </div>&nbsp;&nbsp;&nbsp;
-                                 <h4 class="fs-26 fw-700 mb-0" style="color: #fff;">Fan Engagement</h4>
-                              </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">3</span>
+                              <h4>Predictive Power</h4>
                            </div>
-                           <div style="padding: 35px; display: flex; flex-direction: column; height: 100%;">
-                              <p class="fs-17 mb-25" style="color: #64748b; line-height: 1.8; flex-grow: 1;">Analyze fan
-                                 behavior patterns, optimize ticket pricing strategies, and create personalized
-                                 experiences that drive loyalty and revenue.</p>
-                              <div class="d-flex flex-wrap gap-2">
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Behavior
-                                    Analytics</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Dynamic
-                                    Pricing</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Personalization</span>
-                              </div>
-                           </div>
+                           <p>AI-driven forecasting for proactive decision-making</p>
                         </div>
                      </div>
-                     <!-- Card 4 - Strategic Investments -->
-                     <div class="col-lg-6">
-                        <div
-                           style="background: #fff; border-radius: 24px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); height: 100%;">
-                           <div
-                              style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); padding: 30px 35px; position: relative; overflow: hidden;">
-                              <div
-                                 style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%;">
-                              </div>
-                              <div
-                                 style="position: absolute; bottom: -40px; right: 40px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;">
-                              </div>
-                              <div class="d-flex align-items-center position-relative">
-                                 <div class="me-20"
-                                    style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-light fa-lightbulb-on" style="font-size: 28px; color: #fff;"></i>
-                                 </div>&nbsp;&nbsp;&nbsp;
-                                 <h4 class="fs-26 fw-700 mb-0" style="color: #fff;">Strategic Investments</h4>
-                              </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">4</span>
+                              <h4>Competitive Advantage</h4>
                            </div>
-                           <div style="padding: 35px; display: flex; flex-direction: column; height: 100%;">
-                              <p class="fs-17 mb-25" style="color: #64748b; line-height: 1.8; flex-grow: 1;">Identify
-                                 and evaluate acquisition targets, assess franchise valuations, and make informed
-                                 investment decisions with predictive analytics.</p>
-                              <div class="d-flex flex-wrap gap-2">
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Deal
-                                    Analysis</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Valuation
-                                    Models</span>
-                                 <span
-                                    style="background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;">Market
-                                    Intelligence</span>
-                              </div>
+                           <p>Data intelligence that translates to wins on and off the field</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">5</span>
+                              <h4>Scalable Solution</h4>
                            </div>
+                           <p>Grows with your organization's needs and complexity</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="ms-why-card">
+                           <div class="ms-why-card-head">
+                              <span class="ms-why-num">6</span>
+                              <h4>User-Friendly</h4>
+                           </div>
+                           <p>Sophisticated analytics delivered through intuitive dashboards</p>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
-
-            <!-- Why Choose Mosaic Section -->
-            <div class="tp-service-details-area pt-60 pb-60 tp-bg-common-white-2">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-12">
-                        <div class="mb-50">
-                           <h2 class="tp-section-title fw-500">Why Choose Mosaic?</h2>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">1</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">Unmatched Speed</h4>
-                                 <p class="fs-16">Quantum computing delivers insights in seconds, not hours</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">2</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">Comprehensive Integration</h4>
-                                 <p class="fs-16">All organizational functions in one unified platform</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">3</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">Predictive Power</h4>
-                                 <p class="fs-16">AI-driven forecasting for proactive decision-making</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">4</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">Competitive Advantage</h4>
-                                 <p class="fs-16">Data intelligence that translates to wins on and off the field</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">5</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">Scalable Solution</h4>
-                                 <p class="fs-16">Grows with your organization's needs and complexity</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-service-details-content mb-40">
-                           <div class="d-flex align-items-start mb-20">
-                              <span class="d-inline-flex align-items-center justify-content-center me-15"
-                                 style="width: 40px; height: 40px; background: #0752c5; border-radius: 50%; color: #fff; font-weight: 600; flex-shrink: 0;">6</span>&nbsp;&nbsp;
-                              <div>
-                                 <h4 class="fs-20 fw-600 mb-5">User-Friendly</h4>
-                                 <p class="fs-16">Sophisticated analytics delivered through intuitive dashboards</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            </section>
 
 
             <!-- Demo Request Form Section -->
-            <div class="tp-service-details-area pt-100 pb-100"
-               style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
-               <div class="container">
+            <section id="demo" class="ms-demo-section">
+               <div class="container container-1480">
                   <div class="row justify-content-center">
-                     <!-- Right Form Panel -->
-                     <div class="col-lg-11">
-                        <div
-                           style="background: #fff; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.08); overflow: hidden;">
+                     <div class="col-xl-11 col-lg-12">
+                        <div class="cst-cta-card">
                            <div class="row g-0">
                               <!-- Left Info Panel -->
-                              <div class="col-lg-4">
-                                 <div class="h-100"
-                                    style="background: linear-gradient(145deg, #0752c5 0%, #0a3d8f 100%); padding: 50px; position: relative; overflow: hidden;">
-                                    <div
-                                       style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%;">
+                              <div class="col-lg-5">
+                                 <div class="cst-cta-left">
+                                    <div style="position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: rgba(255,255,255,0.04); border-radius: 50%; pointer-events: none;"></div>
+                                    <div style="position: absolute; bottom: -80px; left: -80px; width: 260px; height: 260px; background: rgba(255,255,255,0.03); border-radius: 50%; pointer-events: none;"></div>
+                                    <div class="cst-plane-decoration">
+                                       <svg viewBox="0 0 150 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M15 95C35 110 70 105 85 75C100 45 70 30 55 50C40 70 70 100 125 65" stroke="white" stroke-width="2" stroke-dasharray="6 6" />
+                                          <path d="M115 50L140 60L120 80L123 66L115 50Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round" />
+                                       </svg>
                                     </div>
-                                    <div
-                                       style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: rgba(255,255,255,0.03); border-radius: 50%;">
-                                    </div>
-
-                                    <div class="position-relative">
-                                       <h3 class="fs-32 fw-700 mb-25" style="color: #fff;">Experience the Future</h3>
-                                       <p class="fs-16 mb-40" style="color: rgba(255,255,255,0.85); line-height: 1.8;">
-                                          Get a personalized walkthrough of Mosaic's quantum-powered capabilities and
-                                          see how leading organizations gain their competitive edge.</p>
-
-                                       <div class="mb-30">
-                                          <div class="d-flex align-items-center mb-20">
-                                             <div class="me-15"
-                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fa-light fa-clock" style="color: #fff; font-size: 18px;"></i>
-                                             </div>
-                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">30-Minute
-                                                Session</span>
-                                          </div>
-                                          <div class="d-flex align-items-center mb-20">
-                                             <div class="me-15"
-                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fa-light fa-user-tie"
-                                                   style="color: #fff; font-size: 18px;"></i>
-                                             </div>
-                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">Expert-Led
-                                                Demo</span>
-                                          </div>
-                                          <div class="d-flex align-items-center">
-                                             <div class="me-15"
-                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fa-light fa-gift" style="color: #fff; font-size: 18px;"></i>
-                                             </div>
-                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">Free ROI
-                                                Assessment</span>
-                                          </div>
-                                       </div>
-
-                                       <div style="padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.15);">
-                                          <p class="fs-13 mb-0" style="color: rgba(255,255,255,0.6);">Limited demo slots
-                                             available. We'll respond within 24 hours.</p>
-                                       </div>
+                                    <div class="position-relative z-index-2">
+                                       <h3 class="cst-cta-title">Experience the Future</h3>
+                                       <p class="cst-cta-desc">Get a personalized walkthrough of Mosaic's quantum-powered capabilities and see how leading organizations gain their competitive edge.</p>
+                                       <ul class="cst-cta-list">
+                                          <li>
+                                             <span class="cst-cta-check"><i class="fa-solid fa-check"></i></span>
+                                             <span>30-Minute Session</span>
+                                          </li>
+                                          <li>
+                                             <span class="cst-cta-check"><i class="fa-solid fa-check"></i></span>
+                                             <span>Expert-Led Demo</span>
+                                          </li>
+                                          <li>
+                                             <span class="cst-cta-check"><i class="fa-solid fa-check"></i></span>
+                                             <span>Free ROI Assessment</span>
+                                          </li>
+                                       </ul>
+                                       <p class="fs-13 mt-30 mb-0" style="color: rgba(255,255,255,0.6);">Limited demo slots available. We'll respond within 24 hours.</p>
                                     </div>
                                  </div>
                               </div>
 
                               <!-- Right Form Panel -->
-                              <div class="col-lg-8">
-                                 <div class="cst-form-wrap" style="padding: 50px;">
+                              <div class="col-lg-7">
+                                 <div class="cst-form-wrap">
                                     <form id="mosaic-demo-form" method="POST" style="position: relative;">
                                        <input type="hidden" name="form_type" value="mosaic">
                                        <div id="form-success-message"
@@ -937,7 +1169,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
 
          </main>
 

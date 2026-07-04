@@ -12457,7 +12457,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
   background-size: cover;
   background-position: right 18%;
   background-repeat: no-repeat;
-  padding: 125px 0 50px;
+  padding: 210px 0 180px;
   overflow: hidden;
 }
 
@@ -12536,8 +12536,8 @@ only screen and (min-width: 576px) and (max-width: 767px),
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 65%;
-  height: 200px;
+  width: 85%;
+  height: 260px;
   z-index: 1;
   pointer-events: none;
 }
