@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Team - Preston Daub</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo/favicon.png">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #111827; }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
+    .topbar, .filters, .pager { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .topbar, .filters { margin-bottom: 20px; }
+    .btn, select, input {
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    .btn { cursor: pointer; font-weight: 600; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 18px; }
+    .label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 700; margin-bottom: 8px; }
+    .value { font-size: 30px; font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid #e5e7eb; font-size: 14px; }
+    th { background: #f8fafc; font-size: 12px; text-transform: uppercase; color: #6b7280; }
+    .status { display: inline-block; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; }
+    .status.active { background: #dcfce7; color: #166534; }
+    .status.inactive { background: #fee2e2; color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1 style="margin:0 0 6px;">Team</h1>
+        <div id="sessionText" style="color:#6b7280;">Checking admin session...</div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <a href="./dashboard.html" class="btn" style="text-decoration:none; color:inherit;">Dashboard</a>
+        <a href="./forms.html" class="btn" style="text-decoration:none; color:inherit;">Forms</a>
+        <a href="./news.html" class="btn" style="text-decoration:none; color:inherit;">News</a>
+        <a href="./settings.html" class="btn" style="text-decoration:none; color:inherit;">Settings</a>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+        <input id="searchInput" type="search" placeholder="Search name, role, bio">
+        <button class="btn" id="searchBtn">Apply</button>
+        <button class="btn" id="newMemberBtn">Add Member</button>
+      </div>
+      <div id="moduleStatus" style="color:#6b7280; font-size:14px;"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h2 id="formTitle" style="margin:0 0 16px; font-size:20px;">Add Team Member</h2>
+      <form id="teamMemberForm" style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:16px;">
+        <input type="hidden" id="memberId" name="id">
+        <input id="fullNameInput" name="full_name" placeholder="Full name" required>
+        <input id="roleInput" name="role" placeholder="Role / designation" required>
+        <input id="imageUrlInput" name="image_url" placeholder="Image URL">
+        <input id="linkedinInput" name="linkedin_url" placeholder="LinkedIn URL">
+        <input id="sortOrderInput" name="sort_order" type="number" placeholder="Display order" value="0">
+        <select id="activeInput" name="is_active">
+          <option value="true">Active</option>
+          <option value="false">Inactive</option>
+        </select>
+        <textarea id="bioInput" name="bio" placeholder="Bio" style="grid-column:1 / -1; min-height:100px; border:1px solid #d1d5db; border-radius:10px; padding:12px; font-size:14px;"></textarea>
+        <div style="grid-column:1 / -1; display:flex; gap:12px;">
+          <button class="btn" type="submit" id="saveMemberBtn">Save Member</button>
+          <button class="btn" type="button" id="resetMemberBtn">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="stats">
+      <div class="card"><div class="label">Total</div><div class="value" id="statTotal">0</div></div>
+      <div class="card"><div class="label">Active</div><div class="value" id="statActive">0</div></div>
+      <div class="card"><div class="label">Inactive</div><div class="value" id="statInactive">0</div></div>
+    </div>
+
+    <div class="card" style="padding:0;">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>LinkedIn</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="teamTable">
+          <tr><td colspan="5">Loading team members...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <button class="btn" id="prevBtn">Previous</button>
+      <div id="pageInfo">Page 1</div>
+      <button class="btn" id="nextBtn">Next</button>
+    </div>
+  </div>
+  <script src="assets/js/api-base.js"></script>
+  <script src="assets/js/admin-team.js"></script>
+</body>
+</html>

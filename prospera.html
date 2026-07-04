@@ -1,0 +1,1609 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Prospera | Preston Daub - Comprehensive Financial Services</title>
+   <meta name="description"
+      content="Prospera is a comprehensive suite of financial services and tools designed to support your business's growth through every stage of development.">
+   <meta name="keywords"
+      content="Prospera, capital advisory, financial services, investment sourcing, financial modeling, business growth, strategic advisory">
+   <meta name="author" content="Preston Daub">
+   <meta name="robots" content="index, follow">
+   <link rel="canonical" href="https://prestondaub.com/prospera.html">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://prestondaub.com/prospera.html">
+   <meta property="og:title" content="Prospera | Preston Daub - Comprehensive Financial Services">
+   <meta property="og:description"
+      content="Prospera is a comprehensive suite of financial services and tools designed to support your business's growth through every stage of development.">
+   <meta property="og:image" content="https://prestondaub.com/assets/img/logo/logo-black.png">
+
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/toast-notification.css">
+
+   <style>
+      /* Modern Card Hover Effects for Prospera */
+      .service-card {
+         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .service-card:hover {
+         transform: translateY(-12px);
+         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12) !important;
+      }
+
+      .service-card:hover img {
+         transform: scale(1.05);
+      }
+
+      .service-card img {
+         transition: transform 0.6s ease;
+      }
+
+      /* Stats Animation */
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(20px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .stat-item {
+         animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .stat-item:nth-child(2) {
+         animation-delay: 0.1s;
+      }
+
+      .stat-item:nth-child(3) {
+         animation-delay: 0.2s;
+      }
+
+      /* Custom Hero Section Redesign */
+      .prospera-hero-area {
+         position: relative;
+         background-color: #ffffff !important;
+         padding-top: 125px !important;
+         padding-bottom: 80px !important;
+         overflow: hidden;
+      }
+
+      /* Subtle grid background/pattern */
+      .prospera-hero-area::before {
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 300px;
+         height: 300px;
+         background-image: radial-gradient(#0752c5 1.5px, transparent 1.5px), radial-gradient(#0752c5 1.5px, transparent 1.5px);
+         background-size: 20px 20px;
+         background-position: 0 0, 10px 10px;
+         opacity: 0.08;
+         pointer-events: none;
+         mask-image: radial-gradient(circle at bottom left, black, transparent 70%);
+         -webkit-mask-image: radial-gradient(circle at bottom left, black, transparent 70%);
+      }
+
+      .hero-overline-wrap {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         margin-bottom: 25px;
+      }
+
+      .hero-overline-line {
+         width: 30px;
+         height: 2px;
+         background-color: #d61a21;
+         display: inline-block;
+      }
+
+      .hero-overline-text {
+         color: #d61a21;
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+      }
+
+      .hero-title-cst {
+         font-size: 68px;
+         font-weight: 700;
+         color: #0b1a30;
+         line-height: 1.15;
+         margin-bottom: 25px;
+      }
+      
+      @media (max-width: 1199px) {
+         .hero-title-cst {
+            font-size: 56px;
+         }
+      }
+      
+      @media (max-width: 991px) {
+         .hero-title-cst {
+            font-size: 46px;
+         }
+      }
+
+      .hero-desc-cst {
+         font-size: 18px;
+         line-height: 1.7;
+         color: #4a5568;
+         max-width: 520px;
+         margin-bottom: 40px;
+      }
+
+      /* Premium custom buttons */
+      .hero-btn-primary {
+         background: #003087 !important;
+         color: #ffffff !important;
+         padding: 15px 32px;
+         border-radius: 8px;
+         font-weight: 600;
+         font-size: 15px;
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         transition: all 0.3s ease;
+         border: none;
+         box-shadow: 0 4px 14px rgba(0, 48, 135, 0.2);
+         text-decoration: none;
+      }
+
+      .hero-btn-primary:hover {
+         background: #002266 !important;
+         transform: translateY(-2px);
+         box-shadow: 0 6px 20px rgba(0, 48, 135, 0.3);
+         color: #ffffff !important;
+      }
+
+      .hero-btn-secondary {
+         background: #ffffff !important;
+         color: #003087 !important;
+         padding: 15px 32px;
+         border-radius: 8px;
+         font-weight: 600;
+         font-size: 15px;
+         display: inline-flex;
+         align-items: center;
+         transition: all 0.3s ease;
+         border: 1.5px solid #003087 !important;
+         text-decoration: none;
+      }
+
+      .hero-btn-secondary:hover {
+         background: #f0f4ff !important;
+         transform: translateY(-2px);
+         color: #003087 !important;
+      }
+
+      /* Right Column Graphics */
+      .hero-graphic-wrap {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         min-height: 480px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      /* Background red shape */
+      .hero-bg-red-shape {
+         position: absolute;
+         left: -3%;
+         bottom: -6%;
+         width: 45%;
+         height: 35%;
+         background: #d61a21;
+         z-index: 1;
+         border-radius: 0 0 0 60px;
+         clip-path: polygon(0 0, 100% 100%, 0 100%);
+      }
+
+      /* Background blue shape */
+      .hero-bg-blue-shape {
+         position: absolute;
+         right: -8%;
+         bottom: -10%;
+         width: 80%;
+         height: 90%;
+         background: linear-gradient(135deg, #0a2540 0%, #003087 100%);
+         z-index: 1;
+         border-radius: 0 0 100px 0;
+         clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      /* Image container with custom clip-path and responsive container */
+      .hero-image-clip-container {
+         position: relative;
+         z-index: 2;
+         width: 90%;
+         height: auto;
+         overflow: hidden;
+         /* Using inline SVG clip-path */
+         clip-path: url(#hero-clip);
+         -webkit-clip-path: url(#hero-clip);
+         box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+      }
+
+      .hero-image-clip-container img {
+         width: 100%;
+         height: auto;
+         display: block;
+         transform: scale(1.01);
+         transition: transform 0.5s ease;
+      }
+
+      .hero-image-clip-container:hover img {
+         transform: scale(1.04);
+      }
+
+      /* Floating Support Badge */
+      .hero-support-badge {
+         position: absolute;
+         top: 5%;
+         right: -2%;
+         background: #d61a21;
+         color: #ffffff;
+         padding: 16px 24px;
+         border-radius: 16px;
+         z-index: 3;
+         box-shadow: 0 15px 35px rgba(214, 26, 33, 0.35);
+         display: flex;
+         align-items: center;
+         gap: 15px;
+         min-width: 170px;
+      }
+
+      .support-badge-icon {
+         font-size: 28px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .support-badge-content {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .support-badge-number {
+         font-size: 24px;
+         font-weight: 700;
+         line-height: 1;
+      }
+
+      .support-badge-label {
+         font-size: 11px;
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         opacity: 0.9;
+         margin-top: 2px;
+      }
+
+      @media (max-width: 991px) {
+         .hero-graphic-wrap {
+            margin-top: 60px;
+            min-height: 350px;
+         }
+         .hero-bg-blue-shape {
+            right: -4%;
+            width: 85%;
+         }
+         .hero-support-badge {
+            top: 2%;
+            right: 0;
+            padding: 12px 18px;
+         }
+         .support-badge-number {
+            font-size: 20px;
+         }
+      }
+   </style>
+</head>
+
+<body class="loaded">
+
+   <!-- loading-area-start -->
+   <div class="loader-wrap">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+         <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+      <div class="loader-wrap-heading">
+         <div class="load-text">
+            <span>P</span>
+            <span>R</span>
+            <span>E</span>
+            <span>S</span>
+            <span>T</span>
+            <span>O</span>
+            <span>N</span>
+            <span>&nbsp;</span>
+            <span>D</span>
+            <span>A</span>
+            <span>U</span>
+            <span>B</span>
+         </div>
+      </div>
+   </div>
+   <!-- loading-area-end -->
+
+   <!-- backtotop area start -->
+   <div class="scrollToTop">
+      <div class="arrowUp">
+         <i class="fa-light fa-arrow-up"></i>
+      </div>
+      <div class="water">
+         <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+            <use xlink:href="#wave"></use>
+         </svg>
+         <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+            <use xlink:href="#wave"></use>
+         </svg>
+         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 560 20" style="display: none;">
+            <symbol id="wave">
+               <path
+                  d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
+               </path>
+               <path
+                  d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z">
+               </path>
+               <path
+                  d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z">
+               </path>
+               <path
+                  d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z">
+               </path>
+            </symbol>
+         </svg>
+      </div>
+   </div>
+   <!-- backtotop area end -->
+
+
+   <header>
+      <div id="header-sticky"
+         class="tp-header-area pre-header tp-header-cst-wrap sticky-white-bg tp-header-blur header-transparent tp-header-lg-spacing">
+         <div class="container-fluid container-1800">
+            <div class="row align-items-center">
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                  <div class="tp-header-logo">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
+                           style="width:100%;max-width:300px;height:auto;display:block;">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl d-none d-xl-block">
+                  <div
+                     class="tp-main-menu tp-main-menu-cst tp-header-dropdown dropdown-white-bg d-flex justify-content-end">
+                     <nav class="tp-mobile-menu-active">
+                        <ul>
+                           <li class="has-dropdown">
+                              <a href="#">Financing Solutions
+                                 <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                       width="24px" fill="#363683">
+                                       <path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z" />
+                                    </svg>
+                                 </span>
+                              </a>
+                              <ul class="tp-submenu submenu">
+                                 <li><a href="financing-solutions/sba-loans.html">SBA & USDA Loans</a></li>
+                                 <li><a href="financing-solutions/equipment-financing.html">Equipment Financing</a></li>
+                                 <li><a href="financing-solutions/working-capital.html">Working Capital</a></li>
+                                 <li><a href="financing-solutions/line-of-credit.html">Line of Credit</a></li>
+                                 <li><a href="financing-solutions/bridge-loans.html">Bridge Loans</a></li>
+                                 <li><a href="financing-solutions/abl-loans.html">ABL Loans</a></li>
+                              </ul>
+                           </li>
+                           <li class="has-dropdown">
+                              <a href="prospera.html">Prospera
+                                 <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                       width="24px" fill="#363683">
+                                       <path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z" />
+                                    </svg>
+                                 </span>
+                              </a>
+                              <ul class="tp-submenu submenu">
+                                 <li><a href="prospera.html#capital-raise-services">Capital Raise</a></li>
+                                 <li><a href="prospera.html#advisory-consulting">Advisory & Consulting</a></li>
+                                 <li><a href="prospera.html#pitch-deck-presentation-solutions">Pitch Deck & Presentation
+                                       Services</a></li>
+                                 <li><a href="prospera.html#wealth-management">Wealth Management</a></li>
+                                 <li><a href="prospera.html#tax-advisory">Tax Advisory</a></li>
+                              </ul>
+                           </li>
+                           <li>
+                              <a href="commercial-real-estate.html">Commercial Real Estate</a>
+                           </li>
+                           <li>
+                              <a href="sports-investments.html">Sports Investments</a>
+                           </li>
+                           <li>
+                              <a href="mosaic-software.html">Mosaic Software</a>
+                           </li>
+                           <li>
+                              <a href="about/about.html">About</a>
+                           </li>
+                           <li>
+                              <a href="about/team.html">Team</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="col-xl-auto col-lg-8 col-md-8 col-sm-8 col-6">
+                  <div class="tp-header-right d-flex align-items-center justify-content-end">
+                     <div class="tp-header-btn d-none d-sm-inline-block">
+                        <a href="contact-us.html"
+                           class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                           <span class="d-flex align-items-center justify-content-center">
+                              <span class="btn-text">Contact Us</span>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <main>
+             <!-- Hero Section - Redesigned to match the provided image -->
+             <div class="tp-team-details-area pre-header pt-0 pb-0 prospera-hero-area">
+                <div class="container" style="position: relative; z-index: 2;">
+                   <div class="row align-items-center">
+                      <div class="col-lg-6">
+                         <div class="tp-team-details-title-wrap mb-40">
+                            <div class="hero-overline-wrap">
+                               <span class="hero-overline-line"></span>
+                               <span class="hero-overline-text">Driven by insight. Focused on your growth.</span>
+                            </div>
+                            <h1 class="hero-title-cst">Build Today.<br>Prosper Tomorrow<span style="color: #d61a21;">.</span></h1>
+                            <p class="hero-desc-cst">A comprehensive suite of financial services designed to support your business growth, from capital raising solutions to Advisory, Consulting, and Wealth. Let's build the necessary structure for you to secure a sustainable success.</p>
+
+                            <div class="d-flex gap-3 flex-wrap">
+                               <a href="#services" class="hero-btn-primary">
+                                  Our Services <i class="fa-light fa-arrow-right"></i>
+                               </a>
+                               <a href="#contact" class="hero-btn-secondary">
+                                  Get Started
+                               </a>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-lg-6">
+                         <div class="hero-graphic-wrap">
+                            <!-- Background decorative shapes -->
+                            <div class="hero-bg-red-shape"></div>
+                            <div class="hero-bg-blue-shape"></div>
+
+                            <!-- Responsive SVG clipPath wrapper -->
+                            <div class="hero-image-clip-container">
+                               <img src="assets/img/prosperaabout.jpg" alt="Financial Advisory Services - Prospera">
+                            </div>
+
+                            <!-- Floating Support Badge -->
+                            <div class="hero-support-badge">
+                               <div class="support-badge-icon">
+                                  <i class="fa-light fa-headset"></i>
+                               </div>
+                               <div class="support-badge-content">
+                                  <div class="support-badge-number">24/7</div>
+                                  <div class="support-badge-label">Support</div>
+                               </div>
+                            </div>
+
+                            <!-- Inline SVG clipPath definition -->
+                            <svg width="0" height="0" style="position: absolute;">
+                               <defs>
+                                  <clipPath id="hero-clip" clipPathUnits="objectBoundingBox">
+                                     <path d="M 0.22,0 L 0.95,0 A 0.05,0.05 0 0,1 1,0.05 L 1,0.91 A 0.05,0.05 0 0,1 0.95,0.96 L 0.07,0.81 A 0.05,0.05 0 0,1 0.02,0.74 L 0.14,0.07 A 0.05,0.05 0 0,1 0.22,0 Z" />
+                                  </clipPath>
+                               </defs>
+                            </svg>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+
+            <!-- Service Navigator -->
+            <div class="tp-about-process-area pt-80 pb-60" style="background: #f8fafc; border-top: 4px solid #C0392B;">
+               <div class="container">
+                  <div class="row mb-40 align-items-center">
+                     <div class="col-lg-6">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                           <span class="d-inline-block"
+                              style="color: #C0392B; background: rgba(192,57,43,0.1); padding: 8px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; width: fit-content;">WHAT
+                              PROSPERA OFFERS</span>
+                           <h2 class="fw-700 fs-45" style="color: #1a1a2e; line-height: 1.15; margin: 0;">Explore Our
+                              Offerings</h2>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <p class="fs-16 mb-0" style="color: #64748b; line-height: 1.7;">Browse Prospera's core
+                           capabilities below. Click any card to jump directly to the detailed section on this page.</p>
+                     </div>
+                  </div>
+
+                  <style>
+                     .prospera-nav-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                        gap: 20px;
+                     }
+
+                     .prospera-nav-card {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 15px;
+                        background: #fff;
+                        border-radius: 16px;
+                        padding: 20px;
+                        border: 1px solid #e2e8f0;
+                        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                     }
+
+                     .prospera-nav-card:hover {
+                        transform: translateY(-4px);
+                        border-color: #C0392B;
+                        box-shadow: 0 15px 30px rgba(192, 57, 43, 0.1);
+                     }
+
+                     .prospera-nav-icon {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, rgba(192, 57, 43, 0.12) 0%, rgba(192, 57, 43, 0.05) 100%);
+                        color: #C0392B;
+                        font-size: 20px;
+                        flex-shrink: 0;
+                     }
+
+                     .prospera-nav-card h3 {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: #1a1a2e;
+                        margin: 0 0 6px 0;
+                     }
+
+                     .prospera-nav-card p {
+                        font-size: 13px;
+                        line-height: 1.6;
+                        color: #64748b;
+                        margin: 0 0 10px 0;
+                     }
+
+                     .prospera-nav-link {
+                        color: #C0392B;
+                        font-size: 12px;
+                        font-weight: 700;
+                        display: inline-flex;
+                        align-items: center;
+                     }
+
+                     .prospera-section-anchor {
+                        scroll-margin-top: 100px;
+                     }
+
+                     .custom-badge {
+                        display: inline-block;
+                        background: #f1f5f9;
+                        color: #334155;
+                        font-size: 13px;
+                        padding: 6px 14px;
+                        border-radius: 50px;
+                        margin: 4px;
+                        font-weight: 500;
+                        border: 1px solid #e2e8f0;
+                     }
+
+                     .custom-badge-red {
+                        background: rgba(192, 57, 43, 0.08);
+                        color: #C0392B;
+                        border-color: rgba(192, 57, 43, 0.2);
+                     }
+
+                     .process-step-box {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 12px;
+                        padding: 20px;
+                        text-align: center;
+                        flex: 1;
+                        position: relative;
+                     }
+
+                     @media (max-width: 991.98px) {
+                        .prospera-nav-grid {
+                           grid-template-columns: repeat(2, minmax(0, 1fr));
+                        }
+                     }
+
+                     @media (max-width: 767.98px) {
+                        .prospera-nav-grid {
+                           grid-template-columns: 1fr;
+                        }
+                     }
+                  </style>
+
+                  <div class="prospera-nav-grid">
+                     <a href="#capital-raise-services" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-rocket"></i></div>
+                        <div>
+                           <h3>Capital Raise</h3>
+                           <p>Structure the story, strategy, and outreach needed to secure funding.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+
+                     <a href="#advisory-consulting" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-briefcase"></i></div>
+                        <div>
+                           <h3>Advisory & Consulting</h3>
+                           <p>Get strategic support for decision-making, planning, and execution.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+
+                     <a href="#pitch-deck-presentation-solutions" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-chalkboard-user"></i></div>
+                        <div>
+                           <h3>Pitch Deck & Presentations</h3>
+                           <p>Build investor-ready pitch materials that clearly communicate value.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+
+                     <a href="#marketing-solutions" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-chart-line"></i></div>
+                        <div>
+                           <h3>Marketing Solutions</h3>
+                           <p>Comprehensive marketing plans focused on driving growth and reach.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+
+                     <a href="#wealth-management" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-sack-dollar"></i></div>
+                        <div>
+                           <h3>Wealth Management</h3>
+                           <p>Personalized services for individuals, families, businesses, and estates.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+
+                     <a href="#tax-advisory" class="prospera-nav-card">
+                        <div class="prospera-nav-icon"><i class="fa-light fa-calculator"></i></div>
+                        <div>
+                           <h3>Tax Advisory</h3>
+                           <p>Placeholder section for upcoming strategic planning solutions.</p>
+                           <span class="prospera-nav-link">Jump to details <i
+                                 class="fa-light fa-arrow-right ms-1"></i></span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Capital Raise Section -->
+            <div id="capital-raise-services" class="tp-service-details-area pt-100 pb-100 prospera-section-anchor"
+               style="background: #ffffff;">
+               <div class="container">
+                  <div class="row align-items-center mb-60">
+                     <div class="col-lg-6">
+                        <div class="tp-service-details-content mr-50 mb-40">
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Capital Raise — Maximize Your
+                              Investment Opportunity</h2>
+                           <p class="fs-18 lh-160-per mb-20" style="color: #334155;">Selecting the right partner for
+                              capital raise services is essential for companies looking to secure funding. Preston Daub
+                              excels in providing personalized service and clear communication, adapting our strategies
+                              to fit the specific needs of each client. We prioritize understanding your unique vision
+                              and effectively presenting it to potential investors, creating a collaborative atmosphere
+                              that strengthens your chances of success.</p>
+                           <p class="fs-18 lh-160-per mb-30" style="color: #334155;">Our extensive network allows us to
+                              connect you with the ideal investors, ranging from family offices to private equity firms.
+                              We also offer a comprehensive suite of services that guide you through the entire
+                              capital-raising journey, from initial consultations to the development of polished pitch
+                              decks that highlight your business’s strengths.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Book Consultation</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="tp-service-details-img fix scale-up-img mb-40">
+                           <img class="img-cover scale-up"
+                              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                              alt="Capital Raise Services" style="border-radius: 20px;">
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Infographic Steps -->
+                  <div class="row">
+                     <div class="col-12">
+                        <h3 class="fs-24 fw-600 text-center mb-40" style="color: #1a1a2e;">Our Capital Raising Process
+                        </h3>
+                        <div class="d-flex flex-column flex-lg-row align-items-stretch justify-content-between gap-4">
+                           <div class="process-step-box">
+                              <span class="d-block fs-14 fw-700 mb-10" style="color: #C0392B;">STEP 01</span>
+                              <h5 class="fs-16 fw-600 mb-8" style="color: #1a1a2e;">Initial Consultation</h5>
+                              <p class="fs-13 text-muted mb-0">Understand your unique vision, financial baseline, and
+                                 growth goals.</p>
+                           </div>
+                           <div class="process-step-box">
+                              <span class="d-block fs-14 fw-700 mb-10" style="color: #C0392B;">STEP 02</span>
+                              <h5 class="fs-16 fw-600 mb-8" style="color: #1a1a2e;">Information Gathering</h5>
+                              <p class="fs-13 text-muted mb-0">Collect company financials, product metrics, and business
+                                 documents.</p>
+                           </div>
+                           <div class="process-step-box">
+                              <span class="d-block fs-14 fw-700 mb-10" style="color: #C0392B;">STEP 03</span>
+                              <h5 class="fs-16 fw-600 mb-8" style="color: #1a1a2e;">Pitch Deck Creation</h5>
+                              <p class="fs-13 text-muted mb-0">Draft a highly polished, investor-ready presentation of
+                                 your case.</p>
+                           </div>
+                           <div class="process-step-box">
+                              <span class="d-block fs-14 fw-700 mb-10" style="color: #C0392B;">STEP 04</span>
+                              <h5 class="fs-16 fw-600 mb-8" style="color: #1a1a2e;">Present to Investors</h5>
+                              <p class="fs-13 text-muted mb-0">Introduce your business to family offices and private
+                                 equity firms.</p>
+                           </div>
+                           <div class="process-step-box">
+                              <span class="d-block fs-14 fw-700 mb-10" style="color: #C0392B;">STEP 05</span>
+                              <h5 class="fs-16 fw-600 mb-8" style="color: #1a1a2e;">Secure Funding</h5>
+                              <p class="fs-13 text-muted mb-0">Navigate deal terms and finalize investments for future
+                                 growth.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Advisory & Consulting Section -->
+            <div id="advisory-consulting" class="tp-service-details-area pt-100 pb-100 prospera-section-anchor"
+               style="background: #f8fafc;">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6">
+                        <div class="tp-service-details-content mr-50 mb-40">
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Advisory & Consulting</h2>
+                           <p class="fs-18 lh-160-per mb-30" style="color: #334155;">Choosing Preston Daub for
+                              consulting and advisory work is a strategic decision that empowers businesses to achieve
+                              sustainable growth. Our team, comprised of former executives and industry leaders, offers
+                              tailored solutions that address unique challenges. We provide comprehensive business
+                              development strategies, from strategy creation and execution to startup advisement,
+                              ensuring alignment with your organization’s goals.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Book Consultation</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="bg-white shadow-sm mb-40"
+                           style="border-radius: 20px; border-top: 4px solid #C0392B; padding: 40px;">
+                           <h4 class="fs-22 fw-700 mb-20" style="color: #1a1a2e;">Industries Served</h4>
+                           <div class="mb-35">
+                              <span class="custom-badge custom-badge-red">Professional Sports</span>
+                              <span class="custom-badge custom-badge-red">Marketing</span>
+                              <span class="custom-badge custom-badge-red">Technology & Software</span>
+                              <span class="custom-badge custom-badge-red">Energy</span>
+                              <span class="custom-badge custom-badge-red">Construction</span>
+                              <span class="custom-badge custom-badge-red">Start-up Advisement</span>
+                              <span class="custom-badge custom-badge-red">Financing</span>
+                           </div>
+
+                           <h4 class="fs-22 fw-700 mb-20" style="color: #1a1a2e;">Services Provided</h4>
+                           <div>
+                              <span class="custom-badge"><i class="fa-light fa-chevrons-right me-1"></i> Business
+                                 Development</span>
+                              <span class="custom-badge"><i class="fa-light fa-chevrons-right me-1"></i> Strategy
+                                 Creation & Execution</span>
+                              <span class="custom-badge"><i class="fa-light fa-chevrons-right me-1"></i> Financial
+                                 Modeling</span>
+                              <span class="custom-badge"><i class="fa-light fa-chevrons-right me-1"></i> Startup
+                                 Advisement & Execution</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Pitch Deck & Presentation Solutions Section -->
+            <div id="pitch-deck-presentation-solutions"
+               class="tp-service-details-area pt-100 pb-100 prospera-section-anchor" style="background: #ffffff;">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 order-lg-last">
+                        <div class="tp-service-details-content ml-50 mb-40">
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Pitch Deck & Presentation Development
+                           </h2>
+                           <p class="fs-18 lh-160-per mb-30" style="color: #334155;">Unlock your company’s potential
+                              through powerful pitch decks, design solutions, and visual brand development services. Our
+                              trusted strategic partner has successfully helped over 800 clients earn over $150M in
+                              compensation and funding.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Book Consultation</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 order-lg-first">
+                        <div class="bg-slate-50 mb-40"
+                           style="border-radius: 20px; background: #f8fafc; border-top: 4px solid #C0392B; padding: 40px;">
+                           <h4 class="fs-22 fw-700 mb-25 text-center" style="color: #1a1a2e;">Our Creative Process</h4>
+                           <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-start gap-3 p-15 bg-white border-radius-10 shadow-sm"
+                                 style="border-radius: 10px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                                 <span class="fs-18 fw-700" style="color: #C0392B;">01</span>
+                                 <div>
+                                    <h5 class="fs-15 fw-700 mb-2">Discovery & Objectives</h5>
+                                    <p class="fs-13 text-muted mb-0">Kickoff call to align on business metrics, key
+                                       messages, and timelines.</p>
+                                 </div>
+                              </div>
+                              <div class="d-flex align-items-start gap-3 p-15 bg-white border-radius-10 shadow-sm"
+                                 style="border-radius: 10px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                                 <span class="fs-18 fw-700" style="color: #C0392B;">02</span>
+                                 <div>
+                                    <h5 class="fs-15 fw-700 mb-2">Whiteboard & Storytelling</h5>
+                                    <p class="fs-13 text-muted mb-0">Build the slide structure and pitch logic flow to
+                                       hook investor attention.</p>
+                                 </div>
+                              </div>
+                              <div class="d-flex align-items-start gap-3 p-15 bg-white border-radius-10 shadow-sm"
+                                 style="border-radius: 10px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                                 <span class="fs-18 fw-700" style="color: #C0392B;">03</span>
+                                 <div>
+                                    <h5 class="fs-15 fw-700 mb-2">Premium Deck Design</h5>
+                                    <p class="fs-13 text-muted mb-0">Implement brand standards, stock imagery, and
+                                       infographics to enhance details.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Integrated Marketing Solutions Section -->
+            <div id="marketing-solutions" class="tp-service-details-area pt-100 pb-100 prospera-section-anchor"
+               style="background: #f8fafc;">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6">
+                        <div class="tp-service-details-content mr-50 mb-40">
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Integrated Marketing Solutions</h2>
+                           <p class="fs-18 lh-160-per mb-30" style="color: #334155;">Through our strategic partnership,
+                              we provide customized marketing solutions designed to meet the specific needs of each
+                              client. Our comprehensive marketing plans focus on driving growth while making the process
+                              seamless and efficient. With a proven track record of over 100 clients and 7,500
+                              successful projects, our strategic partner is committed to delivering results and
+                              cultivating lasting relationships.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Book Consultation</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="bg-white shadow-sm mb-40"
+                           style="border-radius: 20px; border-top: 4px solid #C0392B; padding: 40px;">
+                           <h4 class="fs-22 fw-700 mb-20" style="color: #1a1a2e;">Integrated Solutions</h4>
+                           <div class="mb-25">
+                              <span class="custom-badge custom-badge-red">Brand Strategy</span>
+                              <span class="custom-badge custom-badge-red">Digital Marketing Campaigns</span>
+                              <span class="custom-badge custom-badge-red">Social Media Management</span>
+                              <span class="custom-badge custom-badge-red">Content Creation</span>
+                              <span class="custom-badge custom-badge-red">SEO & Analytics</span>
+                           </div>
+                           <h4 class="fs-22 fw-700 mb-15" style="color: #1a1a2e;">The Process</h4>
+                           <p class="fs-14 text-muted mb-0">We focus on clean execution and data-backed marketing
+                              structures, building campaign pathways that guide prospects to your brand efficiently.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Wealth Management Section -->
+            <div id="wealth-management" class="tp-service-details-area pt-100 pb-100 prospera-section-anchor"
+               style="background: #ffffff;">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 order-lg-last">
+                        <div class="tp-service-details-content ml-50 mb-40">
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Wealth Management</h2>
+                           <p class="fs-18 lh-160-per mb-30" style="color: #334155;">At Preston Daub, we understand that
+                              effective wealth management is essential for achieving your financial goals. That’s why we
+                              collaborate with a trusted financial planning professional who specializes in personalized
+                              services for individuals, families, businesses, and estates. With over 20 years of
+                              experience, this certified financial planner is dedicated to simplifying the complexities
+                              of financial management, ensuring that every client receives tailored guidance that aligns
+                              with their unique aspirations.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Book Consultation</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 order-lg-first">
+                        <div class="tp-service-details-img fix scale-up-img mb-40">
+                           <img class="img-cover scale-up"
+                              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                              alt="Wealth Management Advisory" style="border-radius: 20px;">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Tax Advisory Section (Placeholder) -->
+            <div id="tax-advisory" class="tp-service-details-area pt-100 pb-100 prospera-section-anchor"
+               style="background: #f8fafc;">
+               <div class="container">
+                  <div class="row justify-content-center text-center">
+                     <div class="col-lg-8">
+                        <div class="bg-white shadow-sm"
+                           style="border-radius: 24px; border-top: 4px solid #C0392B; padding: 50px;">
+                           <span class="d-inline-block mb-15"
+                              style="color: #C0392B; background: rgba(192,57,43,0.1); padding: 8px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; width: fit-content;">COMING
+                              SOON</span>
+                           <h2 class="fs-45 fw-700 mb-20" style="color: #1a1a2e;">Tax Advisory Solutions</h2>
+                           <p class="fs-18 lh-160-per mb-35" style="color: #334155;">We are currently finalizing our
+                              comprehensive tax advisory and corporate planning solutions. Preston Daub is actively
+                              expanding our professional network to provide strategic tax structuring, compliance
+                              management, and corporate advisory services designed to support businesses and
+                              high-net-worth individuals. Get in touch with us to be the first to know when these
+                              services launch.</p>
+                           <a href="#contact"
+                              class="tp-btn-lg d-inline-block lh-0 tp-round-26 fs-15 tp-bg-common-green-2 ls-0 tp-text-common-white fw-700 tp-ff-dm">
+                              <span class="d-flex align-items-center justify-content-center">
+                                 <span class="btn-text">Inquire Now</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Fee Structure Section - Modern Design -->
+            <div id="fee-structure" class="tp-service-details-area pt-120 pb-120 prospera-section-anchor"
+               style="background: #fff;">
+               <div class="container">
+                  <div class="row mb-70">
+                     <div class="col-12 text-center">
+                        <span class="d-inline-block mb-15"
+                           style="color: #0752c5; font-size: 13px; font-weight: 600; letter-spacing: 1px;">TRANSPARENT
+                           PRICING</span>
+                        <h2 class="fw-700 fs-50 fs-lg-42 fs-sm-35 mb-20" style="color: #1a1a2e;">Fee Structure</h2>
+                        <p style="max-width: 640px; margin: 0 auto 14px; color: #64748b; font-size: 18px;">No Retainer
+                           Required. Our transparent pricing model is designed to align with your success without
+                           forcing an upfront retainer.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: #64748b; font-size: 18px;">We offer flexible
+                           compensation structures tailored to your specific needs.</p>
+                     </div>
+                  </div>
+                  <div class="row g-4 justify-content-center">
+                     <div class="col-lg-4 col-md-6 d-flex">
+                        <div
+                           style="background: #f8fafc; border-radius: 24px; padding: 45px; text-align: center; height: 100%; border: 2px solid transparent; transition: all 0.3s ease; width: 100%; display: flex; flex-direction: column;">
+                           <div class="mb-25"
+                              style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(7,82,197,0.1) 0%, rgba(7,82,197,0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                              <i class="fa-light fa-trophy" style="font-size: 40px; color: #0752c5;"></i>
+                           </div>
+                           <h4 class="fs-28 fw-700 mb-15" style="color: #1a1a2e;">Success Fee</h4>
+                           <p class="fs-16 mb-25 flex-grow-1" style="color: #64748b; line-height: 1.8;">Paid upon
+                              completion of the project or raise. We only succeed when you succeed.</p>
+                           <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                              <span style="color: #0752c5; font-weight: 600; font-size: 14px;">
+                                 <i class="fa-light fa-check-circle me-2"></i>Aligned Interests
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 d-flex">
+                        <div
+                           style="background: #f8fafc; border-radius: 24px; padding: 45px; text-align: center; height: 100%; border: 2px solid transparent; transition: all 0.3s ease; width: 100%; display: flex; flex-direction: column;">
+                           <div class="mb-25"
+                              style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                              <i class="fa-light fa-chart-pie-simple" style="font-size: 40px; color: #10b981;"></i>
+                           </div>
+                           <h4 class="fs-28 fw-700 mb-15" style="color: #1a1a2e;">Equity Participation</h4>
+                           <p class="fs-16 mb-25 flex-grow-1" style="color: #64748b; line-height: 1.8;">In certain
+                              circumstances we may participate via equity to showcase our abilities to help your
+                              business achieve success.</p>
+                           <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                              <span style="color: #10b981; font-weight: 600; font-size: 14px;">
+                                 <i class="fa-light fa-check-circle me-2"></i>Long-term Partnership
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 d-flex">
+                        <div
+                           style="background: #f8fafc; border-radius: 24px; padding: 45px; text-align: center; height: 100%; border: 2px solid transparent; transition: all 0.3s ease; width: 100%; display: flex; flex-direction: column;">
+                           <div class="mb-25"
+                              style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                              <i class="fa-light fa-file-invoice-dollar" style="font-size: 40px; color: #f59e0b;"></i>
+                           </div>
+                           <h4 class="fs-28 fw-700 mb-15" style="color: #1a1a2e;">Flat fee or project based</h4>
+                           <p class="fs-16 mb-25 flex-grow-1" style="color: #64748b; line-height: 1.8;">Based on your
+                              project and scope, we will agree on a flat fee or project-based completion fee tailored to
+                              your needs.</p>
+                           <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                              <span style="color: #f59e0b; font-weight: 600; font-size: 14px;">
+                                 <i class="fa-light fa-check-circle me-2"></i>Predictable Pricing
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Contact Section - Modern Light Design -->
+            <div id="contact" class="tp-service-details-area pt-120 pb-120"
+               style="background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);">
+               <div class="container">
+                  <div class="row mb-70">
+                     <div class="col-12 text-center">
+                        <span class="d-inline-block px-20 py-10 mb-20"
+                           style="background: #0752c5; color: #fff; border-radius: 30px; font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 7px;">GET
+                           STARTED</span>
+                        <h2 class="fw-700 fs-50 fs-lg-42 fs-sm-35 mb-20" style="color: #1a1a2e;">Ready to Accelerate
+                           Your Growth?</h2>
+                        <p style="max-width: 600px; margin: 0 auto; color: #64748b; font-size: 18px;">Schedule a
+                           consultation with our team to explore how Prospera can support your business objectives.</p>
+                     </div>
+                  </div>
+                  <div class="row justify-content-center">
+                     <div class="col-lg-10">
+                        <div
+                           style="background: #fff; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.08); overflow: hidden;">
+                           <div class="row g-0">
+                              <!-- Left Info Panel -->
+                              <div class="col-lg-4">
+                                 <div class="h-100"
+                                    style="background: linear-gradient(145deg, #0752c5 0%, #0a3d8f 100%); padding: 50px; position: relative; overflow: hidden;">
+                                    <div
+                                       style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%;">
+                                    </div>
+                                    <div
+                                       style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: rgba(255,255,255,0.03); border-radius: 50%;">
+                                    </div>
+
+                                    <div class="position-relative">
+                                       <h3 class="fs-32 fw-700 mb-25" style="color: #fff;">Let's Talk About Your Goals
+                                       </h3>
+                                       <p class="fs-16 mb-40" style="color: rgba(255,255,255,0.85); line-height: 1.8;">
+                                          From debt sourcing and equity raises to strategic consulting—we provide the
+                                          financial expertise your business needs.</p>
+
+                                       <div class="mb-30">
+                                          <div class="d-flex align-items-center mb-20">
+                                             <div class="me-15"
+                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-light fa-sack-dollar"
+                                                   style="color: #fff; font-size: 18px;"></i>
+                                             </div>
+                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">Tailored
+                                                Capital Solutions</span>
+                                          </div>
+                                          <div class="d-flex align-items-center mb-20">
+                                             <div class="me-15"
+                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-light fa-chart-pie"
+                                                   style="color: #fff; font-size: 18px;"></i>
+                                             </div>
+                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">Equity Raise
+                                                Support</span>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-15"
+                                                style="width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-light fa-lightbulb"
+                                                   style="color: #fff; font-size: 18px;"></i>
+                                             </div>
+                                             <span style="color: rgba(255,255,255,0.9); font-size: 15px;">Strategic
+                                                Consulting</span>
+                                          </div>
+                                       </div>
+
+                                       <div style="padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.15);">
+                                          <p class="fs-13 mb-0" style="color: rgba(255,255,255,0.6);">Success-based fees
+                                             and equity participation options available.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <!-- Right Form Panel -->
+                              <div class="col-lg-8">
+                                 <div class="cst-form-wrap">
+                                    <form action="/api/forms/prospera" method="POST" id="prosperaForm">
+                                       <input type="hidden" name="form_type" value="prospera">
+                                       <div class="row">
+                                          <div class="col-md-6">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Organization Name <span
+                                                      style="color: #ef4444;">*</span></label>
+                                                <input type="text" name="company" class="mosaic-form-input"
+                                                   placeholder="Your Company" required>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Your Name <span
+                                                      style="color: #ef4444;">*</span></label>
+                                                <input type="text" name="name" class="mosaic-form-input"
+                                                   placeholder="Full Name" required>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Work Email <span
+                                                      style="color: #ef4444;">*</span></label>
+                                                <input type="email" name="email" class="mosaic-form-input"
+                                                   placeholder="you@company.com" required>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Phone Number <span
+                                                      style="color: #ef4444;">*</span></label>
+                                                <input type="tel" name="phone" class="mosaic-form-input"
+                                                   placeholder="(555) 000-0000" required>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Service Interest <span
+                                                      style="color: #ef4444;">*</span></label>
+                                                <select name="service" class="mosaic-form-select" required>
+                                                   <option value="">Select service...</option>
+                                                   <option value="Debt Sourcing">Debt Sourcing</option>
+                                                   <option value="Equity Raise">Equity Raise</option>
+                                                   <option value="Mergers & Acquisitions">Mergers & Acquisitions
+                                                   </option>
+                                                   <option value="Consulting Services">Consulting Services</option>
+                                                   <option value="Multiple Services">Multiple Services</option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                          <div class="col-12">
+                                             <div class="mb-15">
+                                                <label class="mosaic-form-label">Tell us about your needs <span
+                                                      style="color: #64748b; font-weight: 400;">(Optional)</span></label>
+                                                <textarea name="message" class="mosaic-form-input"
+                                                   placeholder="Brief description of your financing needs or business goals..."
+                                                   rows="4" style="resize: none;"></textarea>
+                                             </div>
+                                          </div>
+
+                                          <div class="col-12">
+                                             <button type="submit" class="mosaic-submit-btn" id="submitBtn">
+                                                <span>Schedule Consultation</span>
+                                                <i class="fa-light fa-arrow-right"></i>
+                                             </button>
+                                          </div>
+
+                                          <div class="col-12">
+                                             <p class="fs-13 text-center mt-15 mb-0" style="color: #64748b;">
+                                                <i class="fa-light fa-lock me-1"></i> Your information is secure. By
+                                                submitting, you agree to our <a href="#" style="color: #091734; font-weight: 600;">Privacy
+                                                   Policy</a>.
+                                             </p>
+                                             <!-- Success/Error Message Container -->
+                                             <div id="formMessageContainer" style="margin-top: 15px; min-height: 40px;">
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </main>
+
+         <footer>
+            <!-- tp-footer area start -->
+            <div class="tp-footer-area tp-bg-common-black-1 p-relative z-index-1 pt-100"
+               data-background="assets/img/update-2/footer/footer-1-bg.jpg">
+               <div class="tp-footer-wd-main">
+                  <div class="container-fluid container-1524">
+                     <div class="row mb-35">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget tp-footer-cst-widget mb-45 tp_fade_anim" data-delay=".3">
+                              <div class="tp-footer-logo mb-25">
+                                 <a href="index.html"><img data-width="250" src="assets/img/logo/logo-white.png"
+                                       alt="Preston Daub Logo"></a>
+                              </div>
+                              <p class="tp-footer-cst-dec fs-18 tp-ff-dm lh-28 mb-25">Built on Precision. Driven by
+                                 Trust.<br>
+                                 We help businesses and investors make smart,<br> well-informed decisions through
+                                 reliable solutions.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6">
+                           <div class="tp-footer-wd-widget tp-footer-cst-widget mb-40 ml-45 tp_fade_anim"
+                              data-delay=".5">
+                              <h3 class="tp-footer-widget-title tp-ff-dm fs-27 fw-600 mb-30 tp-text-grey-5">About
+                                 Preston</h3>
+                              <ul>
+                                 <li><a href="about/about.html">About Us</a></li>
+                                 <li><a href="about/news.html">News</a></li>
+                                 <li><a href="#">Blog</a></li>
+                                 <li><a href="#">Meet our Team</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                           <div class="tp-footer-wd-widget tp-footer-cst-widget ml-60 mb-40 tp_fade_anim"
+                              data-delay=".7">
+                              <h3 class="tp-footer-widget-title tp-ff-dm fs-27 fw-600 mb-30 tp-text-grey-5">What We
+                                 Offer</h3>
+                              <ul>
+                                 <li><a href="financing-solutions/sba-loans.html">Financing Solutions</a></li>
+                                 <li><a href="prospera.html">Prospera</a></li>
+                                 <li><a href="sports-investments.html">Sports Investments</a></li>
+                                 <li><a href="mosaic-software.html">Mosaic Software</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget-form tp-footer-cst-widget-form tp-footer-wd-widget-form mb-40">
+                              <h3 class="tp-footer-widget-title  tp-ff-dm fs-27 fw-600 mb-35 tp-text-grey-5 tp_fade_anim"
+                                 data-delay=".9">Newsletter</h3>
+                              <form class="p-relative mb-30 tp_fade_anim" data-delay=".9" action="#">
+                                 <input class="tp-input" type="text" placeholder="Email Address">
+                                 <button class="tp-button" type="submit">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M6.56328 13.2091V16.6876C6.56385 16.8058 6.60161 16.9208 6.6712 17.0164C6.74079 17.1119 6.83868 17.1832 6.95102 17.22C7.06335 17.2569 7.18443 17.2574 7.2971 17.2216C7.40976 17.1858 7.50831 17.1155 7.57878 17.0206L9.61353 14.2516L6.56328 13.2091ZM17.7645 0.104306C17.68 0.044121 17.5805 0.00848417 17.477 0.00133654C17.3735 -0.00581108 17.27 0.015809 17.178 0.0638058L0.303026 8.87631C0.205932 8.92762 0.125932 9.00617 0.0728436 9.1023C0.019755 9.19843 -0.00411253 9.30798 0.00417016 9.41748C0.0124529 9.52699 0.0525254 9.6317 0.11947 9.71875C0.186415 9.80581 0.277319 9.87143 0.381026 9.90756L5.07228 11.5111L15.063 2.96856L7.33203 12.2828L15.1943 14.9701C15.2723 14.9963 15.3551 15.0051 15.4369 14.996C15.5187 14.9868 15.5975 14.9599 15.6678 14.9171C15.7381 14.8743 15.7982 14.8167 15.8439 14.7482C15.8896 14.6798 15.9197 14.6021 15.9323 14.5208L17.9948 0.645806C18.01 0.543093 17.9966 0.438159 17.956 0.342598C17.9154 0.247038 17.8491 0.164569 17.7645 0.104306Z"
+                                          fill="#F3F1F2" />
+                                    </svg>
+                                 </button>
+                              </form>
+                              <div class="tp-footer-wd-social">
+                                 <div class="tp_fade_anim d-inline-block" data-delay=".3" data-fade-from="top"
+                                    data-ease="bounce">
+                                    <a href="https://www.facebook.com/share/184SLb7kX2/"><i
+                                          class="fa-brands fa-facebook"></i></a>
+                                 </div>
+                                 <div class="tp_fade_anim d-inline-block" data-delay=".7" data-fade-from="top"
+                                    data-ease="bounce">
+                                    <a href="https://www.instagram.com/prestondaub?igsh=MnQyZzRqa2hieWQ4"><i
+                                          class="fa-brands fa-instagram"></i></a>
+                                 </div>
+                                 <div class="tp_fade_anim d-inline-block" data-delay=".9" data-fade-from="top"
+                                    data-ease="bounce">
+                                    <a href="https://www.linkedin.com/company/preston-daub/"><i
+                                          class="fa-brands fa-linkedin"></i></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tp-footer-cst-bottom">
+                  <div class="container-fluid container-1524">
+                     <div class="row">
+                        <div class="col-lg-6 col-md-7">
+                           <div class="tp-footer-copyright">
+                              <p class="mb-10 tp-text-grey-5 tp-ff-dm">
+                                 <span>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M0.875 7C0.875 8.62445 1.52031 10.1824 2.66897 11.331C3.81763 12.4797 5.37555 13.125 7 13.125C8.62445 13.125 10.1824 12.4797 11.331 11.331C12.4797 10.1824 13.125 8.62445 13.125 7C13.125 5.37555 12.4797 3.81763 11.331 2.66897C10.1824 1.52031 8.62445 0.875 7 0.875C5.37555 0.875 3.81763 1.52031 2.66897 2.66897C1.52031 3.81763 0.875 5.37555 0.875 7ZM14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7ZM7.12775 4.368C6.06725 4.368 5.44162 5.173 5.44162 6.55725V7.48475C5.44162 8.85938 6.05675 9.639 7.12775 9.639C7.98438 9.639 8.56363 9.12625 8.64062 8.39825H9.77375V8.47962C9.68625 9.74662 8.589 10.6383 7.1225 10.6383C5.29288 10.6383 4.26213 9.46925 4.26213 7.48563V6.54675C4.26213 4.56838 5.313 3.3635 7.12337 3.3635C8.59425 3.3635 9.6915 4.28575 9.77375 5.614V5.691H8.64062C8.56363 4.92188 7.96863 4.368 7.12775 4.368Z"
+                                          fill="currentColor" />
+                                    </svg>
+                                 </span>
+                                 Copyright 2025 <a href="#" class="hover-text-grey">Preston Daub.</a> All Rights
+                                 Reserved. Developed by <a href="https://www.keryar.com"
+                                    class="hover-text-grey">Keryar</a>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                           <div class="tp-footer-copyright text-md-end">
+                              <p class="mb-10 tp-text-grey-5 tp-ff-dm"><a href="#" class="hover-text-grey">Privacy
+                                    Policy</a> | <a href="#" class="hover-text-grey">Terms & Conditions</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-footer area end -->
+         </footer>
+      </div>
+   </div>
+
+   <!-- JS here -->
+   <script src="assets/js/vendor/jquery.js"></script>
+   <script src="assets/js/bootstrap-bundle.js"></script>
+   <script src="assets/js/plugin.js"></script>
+   <script src="assets/js/three.js"></script>
+   <script src="assets/js/hover-effect.umd.js"></script>
+   <script src="assets/js/split-type.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/swiper-gl.js"></script>
+   <script src="assets/js/effect-slicer.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/purecounter.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/backtop.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/toast-notification.js"></script>
+   <script src="assets/js/slider-init.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/tp-cursor.js"></script>
+   <script src="assets/js/cookie-consent.js"></script>
+
+   <script>
+      // Scroll-triggered timeline circle animation with persistent highlighting
+      document.addEventListener('DOMContentLoaded', function () {
+         const timeline = document.getElementById('processTimeline');
+         const circles = document.querySelectorAll('.step-circle');
+         let maxCirclesActivated = 0; // Track the highest circle activated
+
+         // Initial state: only first circle is active
+         circles.forEach((circle, index) => {
+            if (index > 0) {
+               circle.classList.remove('active');
+            }
+         });
+
+         function handleScroll() {
+            const timelineRect = timeline.getBoundingClientRect();
+            const timelineTop = timelineRect.top;
+            const windowHeight = window.innerHeight;
+
+            // Calculate how far down the timeline is visible
+            const scrollProgress = Math.max(0, windowHeight - timelineTop);
+            const timelineHeight = timelineRect.height;
+
+            // Determine which circles should be active based on scroll position
+            let currentMaxActive = 0;
+
+            circles.forEach((circle, index) => {
+               const circlePosition = (index / (circles.length - 1)) * timelineHeight;
+
+               if (scrollProgress >= circlePosition) {
+                  currentMaxActive = index;
+                  if (!circle.classList.contains('active')) {
+                     circle.classList.add('active');
+                  }
+               }
+            });
+
+            // Update the max circles activated (never decrease)
+            if (currentMaxActive > maxCirclesActivated) {
+               maxCirclesActivated = currentMaxActive;
+            }
+
+            // Keep all circles up to maxCirclesActivated as active
+            circles.forEach((circle, index) => {
+               if (index <= maxCirclesActivated) {
+                  circle.classList.add('active');
+               }
+            });
+         }
+
+         window.addEventListener('scroll', handleScroll);
+         handleScroll(); // Call once on page load
+      });
+   </script>
+
+   <!-- Prospera Form Handler - Vanilla JS with Toast Notifications -->
+   <script>
+      // Wait for DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function () {
+         const form = document.getElementById('prosperaForm');
+         const submitBtn = document.getElementById('submitBtn');
+         const messageContainer = document.getElementById('formMessageContainer');
+
+         if (!form) {
+            console.error('Prospera form not found!');
+            return;
+         }
+
+         form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Store original button text
+            const originalHTML = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Processing...</span><i class="fa-light fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+
+            // Clear previous messages
+            if (messageContainer) {
+               messageContainer.innerHTML = '';
+            }
+
+            // Show loading toast
+            Toast.info('Submitting your information...', 10000, false);
+
+            // Collect form data
+            const formData = new FormData(form);
+
+            // Send to backend
+            fetch(form.getAttribute('action'), {
+               method: 'POST',
+               body: formData
+            })
+               .then(response => response.json())
+               .then(data => {
+                  // Reset button
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalHTML;
+
+                  // Clear loading toast and show result
+                  Toast.clearAll();
+
+                  if (data.success) {
+                     Toast.success(data.message || 'Thank you for your inquiry! We will contact you shortly.');
+
+                     // Also show inline message below privacy policy
+                     if (messageContainer) {
+                        messageContainer.innerHTML = `
+                        <div style="
+                           background: linear-gradient(135deg, #d1fae5 0%, #d1fae5 100%);
+                           border-left: 4px solid #10b981;
+                           padding: 15px 20px;
+                           border-radius: 8px;
+                           color: #065f46;
+                           text-align: center;
+                           font-size: 14px;
+                           animation: slideUp 0.4s ease forwards;
+                        ">
+                           <i class="fa-light fa-check-circle" style="margin-right: 8px; color: #10b981;"></i>
+                           <strong>${data.message || 'Thank you for your inquiry! We will contact you shortly.'}</strong>
+                        </div>
+                     `;
+
+                        // Scroll to message
+                        messageContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                        // Auto-dismiss after 3.5 seconds
+                        setTimeout(() => {
+                           const messageDiv = messageContainer.querySelector('div');
+                           if (messageDiv) {
+                              messageDiv.classList.add('inline-message-fade-out');
+                              // Remove from DOM after fade completes
+                              setTimeout(() => {
+                                 messageContainer.innerHTML = '';
+                              }, 400);
+                           }
+                        }, 3500);
+                     }
+
+                     form.reset();
+                  } else {
+                     Toast.error(data.message || 'An error occurred. Please try again.');
+
+                     // Also show inline error message
+                     if (messageContainer) {
+                        messageContainer.innerHTML = `
+                        <div style="
+                           background: linear-gradient(135deg, #fee2e2 0%, #fee2e2 100%);
+                           border-left: 4px solid #ef4444;
+                           padding: 15px 20px;
+                           border-radius: 8px;
+                           color: #7f1d1d;
+                           text-align: center;
+                           font-size: 14px;
+                           animation: slideUp 0.4s ease forwards;
+                        ">
+                           <i class="fa-light fa-exclamation-circle" style="margin-right: 8px; color: #ef4444;"></i>
+                           <strong>${data.message || 'An error occurred. Please try again.'}</strong>
+                        </div>
+                     `;
+                     }
+                  }
+               })
+               .catch(error => {
+                  // Reset button
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalHTML;
+
+                  // Clear loading toast and show error
+                  Toast.clearAll();
+                  Toast.error('Request failed: ' + error + '. Please try again.');
+
+                  // Show inline error message
+                  if (messageContainer) {
+                     messageContainer.innerHTML = `
+                     <div style="
+                        background: linear-gradient(135deg, #fee2e2 0%, #fee2e2 100%);
+                        border-left: 4px solid #ef4444;
+                        padding: 15px 20px;
+                        border-radius: 8px;
+                        color: #7f1d1d;
+                        text-align: center;
+                        font-size: 14px;
+                        animation: slideUp 0.4s ease forwards;
+                     ">
+                        <i class="fa-light fa-exclamation-circle" style="margin-right: 8px; color: #ef4444;"></i>
+                        <strong>Request failed. Please try again.</strong>
+                     </div>
+                  `;
+                  }
+
+                  console.error('Form submission error:', error);
+               });
+         });
+      });
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Profile - Preston Daub</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo/favicon.png">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #111827; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px; }
+    .field { margin-bottom: 14px; }
+    label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: #374151; }
+    input { width: 100%; border: 1px solid #d1d5db; background: white; border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+    .btn { border: 1px solid #d1d5db; background: white; border-radius: 10px; padding: 10px 12px; font-size: 14px; cursor: pointer; font-weight: 600; }
+    .message { margin-bottom: 16px; padding: 12px 14px; border-radius: 12px; display: none; }
+    .message.show { display: block; }
+    .message.error { background: #fef2f2; color: #991b1b; }
+    .message.success { background: #ecfdf5; color: #065f46; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1 style="margin:0 0 6px;">Profile</h1>
+        <div id="sessionText" style="color:#6b7280;">Checking admin session...</div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <a href="./dashboard.html" class="btn" style="text-decoration:none; color:inherit;">Dashboard</a>
+        <a href="./settings.html" class="btn" style="text-decoration:none; color:inherit;">Settings</a>
+        <a href="./logout.html" class="btn" style="text-decoration:none; color:inherit;">Logout</a>
+      </div>
+    </div>
+    <div id="message" class="message"></div>
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin-top:0;">Profile Details</h2>
+        <form id="profileForm">
+          <div class="field">
+            <label for="nameInput">Full Name</label>
+            <input id="nameInput" required>
+          </div>
+          <div class="field">
+            <label for="emailInput">Email</label>
+            <input id="emailInput" disabled>
+          </div>
+          <button class="btn" type="submit">Save Profile</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0;">Change Password</h2>
+        <form id="passwordForm">
+          <div class="field">
+            <label for="currentPasswordInput">Current Password</label>
+            <input id="currentPasswordInput" type="password" required>
+          </div>
+          <div class="field">
+            <label for="newPasswordInput">New Password</label>
+            <input id="newPasswordInput" type="password" required>
+          </div>
+          <div class="field">
+            <label for="confirmPasswordInput">Confirm New Password</label>
+            <input id="confirmPasswordInput" type="password" required>
+          </div>
+          <button class="btn" type="submit">Update Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/api-base.js"></script>
+  <script src="assets/js/admin-profile.js"></script>
+</body>
+</html>

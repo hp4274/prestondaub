@@ -1,0 +1,1 @@
+The bundled PHPMailer directory was removed from this repo. Outbound email is implemented in the Node stack (server/src/services/mail.service.js via Nodemailer). For ad-hoc PHP SMTP experiments, install phpmailer/phpmailer with Composer in a separate scratch project instead of vendoring it here.

@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>News Detail | Preston Daub</title>
+   <meta name="description" content="Latest Preston Daub news article">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo/favicon.png">
+   <link rel="stylesheet" href="../assets/css/bootstrap.css">
+   <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="../assets/css/spacing.css">
+   <link rel="stylesheet" href="../assets/css/main.css">
+   <style>
+      .article-detail-hero { min-height: 320px; background: linear-gradient(135deg, #0b0ea8 0%, #3d39d8 100%); display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; }
+      .article-detail-hero-content { max-width: 900px; padding: 40px 20px; }
+      .article-detail-meta { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; opacity:.95; }
+      .article-content-wrapper { max-width:800px; margin:60px auto; padding:0 20px; }
+      .article-cover-image { width:100%; max-height:500px; object-fit:cover; border-radius:12px; margin-bottom:32px; }
+      .article-body { font-size:18px; line-height:1.8; color:#2d3748; }
+      .article-footer { border-top:2px solid #e2e8f0; border-bottom:2px solid #e2e8f0; padding:24px 0; margin:48px 0; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+      .article-category-badge { background:linear-gradient(135deg, #edf2f7 0%, #f0f4ff 100%); color:#0b0ea8; padding:8px 16px; border-radius:24px; font-weight:700; text-transform:uppercase; font-size:12px; letter-spacing:.7px; }
+      .related-articles { background:#f7fafc; padding:60px 20px; margin-top:80px; }
+      .related-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1200px; margin:0 auto; }
+      .news-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+      .news-card-image { width:100%; height:220px; object-fit:cover; }
+      .news-card-content { padding:24px; }
+      .news-card-meta { display:flex; justify-content:space-between; gap:12px; margin-bottom:16px; font-size:12px; color:#718096; text-transform:uppercase; }
+      .article-state { max-width:800px; margin:60px auto; padding:0 20px; text-align:center; }
+   </style>
+</head>
+<body>
+   <main>
+      <section class="article-detail-hero">
+         <div class="article-detail-hero-content">
+            <h1 id="articleTitle">Loading article...</h1>
+            <div class="article-detail-meta">
+               <span id="articleDate"></span>
+               <span id="articleViews"></span>
+            </div>
+         </div>
+      </section>
+
+      <div id="articleContainer" class="article-state">Loading...</div>
+
+      <section id="relatedSection" class="related-articles" style="display:none;">
+         <div class="container">
+            <h2 class="text-center mb-5">Related Articles</h2>
+            <div id="relatedGrid" class="related-grid"></div>
+         </div>
+      </section>
+   </main>
+
+   <script>
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      function escapeHtml(value) {
+        return String(value || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function renderArticle(article) {
+        document.title = `${article.title} | Preston Daub News`;
+        document.getElementById('articleTitle').textContent = article.title || 'News Detail';
+        document.getElementById('articleDate').textContent = article.published_at_formatted || '';
+        document.getElementById('articleViews').textContent = `${article.views || 0} Views`;
+
+        document.getElementById('articleContainer').className = 'article-content-wrapper';
+        document.getElementById('articleContainer').innerHTML = `
+          ${article.cover_image_url ? `<img src="${escapeHtml(article.cover_image_url)}" alt="${escapeHtml(article.title)}" class="article-cover-image">` : ''}
+          <div class="article-body">${article.content || ''}</div>
+          <div class="article-footer">
+            <div class="article-category-badge">${escapeHtml(article.category || 'News')}</div>
+            <a href="./news.html" style="color:#0b0ea8; font-weight:700;">Back to News</a>
+          </div>
+        `;
+      }
+
+      function renderRelated(items) {
+        if (!items.length) return;
+        document.getElementById('relatedSection').style.display = 'block';
+        document.getElementById('relatedGrid').innerHTML = items.map((item) => `
+          <article class="news-card">
+            <img src="${escapeHtml(item.cover_image_url || '../assets/img/service/cst/thumb.jpg')}" alt="${escapeHtml(item.title)}" class="news-card-image">
+            <div class="news-card-content">
+              <div class="news-card-meta">
+                <span>${escapeHtml(item.category || 'News')}</span>
+                <span>${item.published_at ? new Date(item.published_at).toLocaleDateString('en-US', { day:'numeric', month:'short', year:'numeric' }) : ''}</span>
+              </div>
+              <h3><a href="./news-detail.html?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
+              <p>${escapeHtml((item.excerpt || '').slice(0, 140))}</p>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      async function loadArticle() {
+        if (!slug) {
+          window.location.href = './news.html';
+          return;
+        }
+
+        const response = await fetch(`/api/public/news/${encodeURIComponent(slug)}`);
+        if (!response.ok) {
+          window.location.href = './news.html';
+          return;
+        }
+
+        const data = await response.json();
+        renderArticle(data.article || {});
+        renderRelated(data.related_articles || []);
+      }
+
+      loadArticle().catch(() => {
+        window.location.href = './news.html';
+      });
+   </script>
+</body>
+</html>
