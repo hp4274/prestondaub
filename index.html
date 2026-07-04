@@ -40,6 +40,7 @@
    <link rel="stylesheet" href="assets/css/spacing.css">
    <link rel="stylesheet" href="assets/css/main.css">
    <link rel="stylesheet" href="assets/css/toast-notification.css">
+   <link rel="stylesheet" href="assets/css/mobile-responsive.css">
 </head>
 
 <body class="loaded">
@@ -830,33 +831,17 @@
             <!-- tp-testimonial-area-start -->
             <div class="tp-testimonial-area pt-120 pb-120" style="background-color: #f3f4f6; overflow: hidden;">
                <div class="container container-1524">
-                  <div class="row align-items-center">
+                  <div class="row align-items-center tp-testi-row">
                      <!-- Left Column -->
-                     <div class="col-xl-3 col-lg-4 col-md-12 mb-50 mb-lg-0">
+                     <div class="col-xl-3 col-lg-4 col-md-12 mb-50 mb-lg-0 tp-testi-header-col">
                         <div class="tp-testi-left">
                            <span class="tp-testi-subtitle">WHAT OUR CLIENTS SAY</span>
                            <h2 class="tp-testi-title">Real Stories.<br>Real Results.</h2>
-                           <div class="tp-testi-arrows d-flex align-items-center gap-3 mt-40">
-                              <button class="tp-testi-btn tp-testi-prev" aria-label="Previous">
-                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M19 12H5"></path>
-                                    <path d="M12 19l-7-7 7-7"></path>
-                                 </svg>
-                              </button>
-                              <button class="tp-testi-btn tp-testi-next" aria-label="Next">
-                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5l7 7-7 7"></path>
-                                 </svg>
-                              </button>
-                           </div>
                         </div>
                      </div>
 
                      <!-- Right Column (Slider) -->
-                     <div class="col-xl-9 col-lg-8 col-md-12">
+                     <div class="col-xl-9 col-lg-8 col-md-12 tp-testi-slider-col">
                         <div class="swiper tp-testimonial-it-slider">
                            <div class="swiper-wrapper">
                               <!-- Slide 1 -->
@@ -1029,6 +1014,26 @@
                                  </div>
                               </div>
                            </div>
+                        </div>
+                     </div>
+
+                     <!-- Slider navigation (below cards on mobile, left column on desktop) -->
+                     <div class="col-xl-3 col-lg-4 col-md-12 tp-testi-arrows-col">
+                        <div class="tp-testi-arrows d-flex align-items-center gap-3 mt-40">
+                           <button class="tp-testi-btn tp-testi-prev" aria-label="Previous">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                 <path d="M19 12H5"></path>
+                                 <path d="M12 19l-7-7 7-7"></path>
+                              </svg>
+                           </button>
+                           <button class="tp-testi-btn tp-testi-next" aria-label="Next">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                 <path d="M5 12h14"></path>
+                                 <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                           </button>
                         </div>
                      </div>
                   </div>

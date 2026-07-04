@@ -2610,5 +2610,119 @@
 			})
 			.catch(error => console.error('Navigation control error:', error));
 	}
+
+	// Custom Dynamic Mobile Menu Generator
+	$(function () {
+		if ($('.custom-mobile-drawer').length > 0) return;
+
+		const headerRight = $('.tp-header-right');
+		if (headerRight.length > 0) {
+			headerRight.append(
+				'<button class="custom-mobile-menu-btn d-xl-none" type="button" aria-label="Open Mobile Menu" aria-expanded="false">' +
+				'<i class="fa-light fa-bars"></i></button>'
+			);
+		}
+
+		const logoSrc = $('.tp-header-logo img').first().attr('src') || 'assets/img/logo/logo-black.png';
+		const relativePrefix = window.location.pathname.includes('/financing-solutions/') || window.location.pathname.includes('/about/') ? '../' : '';
+		const normalizedLogoSrc = logoSrc.startsWith('http') || logoSrc.startsWith('/') ? logoSrc : (relativePrefix + logoSrc.replace(/^\.\.\//, ''));
+
+		const drawerHtml = `
+			<div class="custom-mobile-overlay"></div>
+			<div class="custom-mobile-drawer" aria-hidden="true">
+				<div class="custom-mobile-drawer-header">
+					<a href="${relativePrefix}index.html">
+						<img src="${normalizedLogoSrc}" alt="Preston Daub Logo" style="height: 40px; width: auto; display: block;">
+					</a>
+					<button class="custom-mobile-drawer-close" type="button" aria-label="Close Mobile Menu">
+						<i class="fa-light fa-xmark"></i>
+					</button>
+				</div>
+				<nav class="custom-mobile-drawer-nav">
+					<ul class="custom-mobile-menu-list"></ul>
+				</nav>
+				<div class="custom-mobile-drawer-footer">
+					<a href="${relativePrefix}contact-us.html">Contact Us</a>
+				</div>
+			</div>
+		`;
+		$('body').append(drawerHtml);
+
+		const desktopMenuUl = $('.tp-mobile-menu-active > ul').first();
+		if (desktopMenuUl.length > 0) {
+			const clonedLis = desktopMenuUl.children().clone(true, true);
+			$('.custom-mobile-menu-list').append(clonedLis);
+
+			$('.custom-mobile-menu-list .tp-submenu, .custom-mobile-menu-list .submenu').each(function () {
+				$(this).removeClass('tp-submenu submenu').addClass('custom-mobile-drawer-submenu').hide();
+				const parentLink = $(this).siblings('a').first();
+				if (parentLink.find('.custom-mobile-menu-arrow').length === 0) {
+					parentLink.append(' <i class="fa-light fa-chevron-down custom-mobile-menu-arrow"></i>');
+				}
+			});
+
+			$('.custom-mobile-menu-list li.has-dropdown').removeClass('has-dropdown');
+		}
+
+		const drawer = $('.custom-mobile-drawer');
+		const overlay = $('.custom-mobile-overlay');
+		const menuBtn = $('.custom-mobile-menu-btn');
+
+		function openDrawer() {
+			drawer.addClass('active').attr('aria-hidden', 'false');
+			overlay.addClass('active');
+			menuBtn.attr('aria-expanded', 'true');
+			$('body').css('overflow', 'hidden');
+		}
+
+		function closeDrawer() {
+			drawer.removeClass('active').attr('aria-hidden', 'true');
+			overlay.removeClass('active');
+			menuBtn.attr('aria-expanded', 'false');
+			$('body').css('overflow', '');
+		}
+
+		$(document).on('click', '.custom-mobile-menu-btn', function () {
+			openDrawer();
+		});
+
+		$(document).on('click', '.custom-mobile-drawer-close, .custom-mobile-overlay', function () {
+			closeDrawer();
+		});
+
+		$(document).on('click', '.custom-mobile-menu-list > li > a', function (e) {
+			const submenu = $(this).siblings('.custom-mobile-drawer-submenu');
+			if (submenu.length > 0) {
+				e.preventDefault();
+				const parentLi = $(this).parent();
+
+				if (parentLi.hasClass('active')) {
+					parentLi.removeClass('active');
+					parentLi.find('.custom-mobile-menu-arrow').css('transform', '');
+					submenu.slideUp(300);
+				} else {
+					$('.custom-mobile-menu-list > li').removeClass('active');
+					$('.custom-mobile-menu-list .custom-mobile-menu-arrow').css('transform', '');
+					$('.custom-mobile-drawer-submenu').slideUp(300);
+
+					parentLi.addClass('active');
+					parentLi.find('.custom-mobile-menu-arrow').css('transform', 'rotate(180deg)');
+					submenu.slideDown(300);
+				}
+			}
+		});
+
+		$(document).on('click', '.custom-mobile-drawer-submenu a, .custom-mobile-menu-list > li > a[href]:not([href="#"])', function () {
+			if (!$(this).siblings('.custom-mobile-drawer-submenu').length) {
+				closeDrawer();
+			}
+		});
+
+		$(document).on('keydown', function (e) {
+			if (e.key === 'Escape') {
+				closeDrawer();
+			}
+		});
+	});
 })(jQuery);
 

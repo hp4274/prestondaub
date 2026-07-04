@@ -1,0 +1,642 @@
+/* ==========================================
+   Preston Daub Mobile Responsive Overrides
+   ========================================== */
+
+/* Global Mobile Fixes */
+@media (max-width: 991px) {
+   .container-1524, .container-1800, .containers {
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+   }
+}
+
+/* 1. Global Navigation & Spacing Overrides */
+@media (max-width: 767px) {
+   section, div {
+      /* Smooth out padding for section grids */
+      &[style*="padding: 100px"], &[style*="padding-top: 100px"], &[style*="padding-bottom: 100px"] {
+         padding-top: 50px !important;
+         padding-bottom: 50px !important;
+      }
+      &[style*="padding: 80px"], &[style*="padding-top: 80px"], &[style*="padding-bottom: 80px"] {
+         padding-top: 40px !important;
+         padding-bottom: 40px !important;
+      }
+   }
+}
+
+/* 2. Index Page Responsiveness */
+
+/* Header & logo — all pages using this stylesheet */
+@media (max-width: 991px) {
+   .tp-header-logo img {
+      max-width: 200px !important;
+   }
+
+   .tp-header-lg-spacing {
+      padding: 12px 0 !important;
+   }
+}
+
+@media (max-width: 575px) {
+   .tp-header-logo img {
+      max-width: 160px !important;
+   }
+}
+
+/* Hero */
+@media (max-width: 991px) {
+   .hero-bg-cover {
+      padding: 130px 0 100px !important;
+      background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 55%, rgba(255, 255, 255, 0.92) 72%, rgba(255, 255, 255, 0.55) 100%), url('../img/hero/index-hero.png') !important;
+      background-position: center bottom !important;
+      background-size: cover !important;
+   }
+
+   .tp-hero-cst-content h1 {
+      font-size: 42px !important;
+      line-height: 1.25 !important;
+   }
+
+   .hero-desc {
+      font-size: 16px !important;
+      max-width: 100% !important;
+   }
+
+   .hero-card-wrapper {
+      margin: 40px auto 0 !important;
+      max-width: 100% !important;
+   }
+
+   .hero-card {
+      padding: 24px 22px !important;
+   }
+
+   .hero-bottom-swoosh {
+      height: 140px !important;
+   }
+
+   .tp-hero-area {
+      margin-bottom: 28px !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .hero-bg-cover {
+      padding: 110px 0 85px !important;
+   }
+
+   .tp-hero-cst-content {
+      margin-bottom: 10px !important;
+   }
+
+   .tp-hero-cst-content h1 {
+      font-size: 34px !important;
+      line-height: 1.3 !important;
+      margin-bottom: 12px !important;
+   }
+
+   .hero-accent-line {
+      margin: 12px 0 18px !important;
+   }
+
+   .hero-desc {
+      font-size: 15px !important;
+      margin-bottom: 28px !important;
+   }
+
+   .hero-desc br {
+      display: none !important;
+   }
+
+   .hero-btn-group {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+   }
+
+   .hero-btn-primary,
+   .hero-btn-outline {
+      width: 100% !important;
+      height: 48px !important;
+      padding: 0 24px !important;
+      text-align: center !important;
+      justify-content: center !important;
+   }
+
+   .hero-card-wrapper {
+      margin-top: 32px !important;
+      margin-bottom: 20px !important;
+   }
+
+   .tp-hero-area {
+      margin-bottom: 36px !important;
+   }
+
+   .hero-card-label {
+      font-size: 16px !important;
+   }
+
+   .hero-bottom-swoosh {
+      height: 110px !important;
+   }
+}
+
+@media (max-width: 575px) {
+   .hero-bg-cover {
+      padding: 100px 0 75px !important;
+   }
+
+   .tp-hero-cst-content h1 {
+      font-size: 30px !important;
+   }
+
+   .tp-hero-area {
+      margin-bottom: 40px !important;
+   }
+
+   .service-section-compact {
+      margin-top: 52px !important;
+   }
+}
+
+/* Service slider */
+@media (max-width: 991px) {
+   .service-section-compact {
+      margin-top: 32px !important;
+   }
+
+   .service-section-compact .tp-hero-cst-bottom-slider,
+   .service-section-compact #service-bg-img {
+      height: 440px !important;
+   }
+
+   .service-overlay-title br {
+      display: none !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .service-section-compact {
+      height: auto !important;
+      min-height: auto !important;
+      margin-top: 44px !important;
+   }
+
+   .service-section-compact .tp-hero-cst-bottom-slider,
+   .service-section-compact #service-bg-img {
+      height: 380px !important;
+   }
+
+   .service-overlay-content {
+      padding: 24px 20px 28px !important;
+   }
+
+   .service-overlay-title {
+      font-size: 22px !important;
+      line-height: 1.3 !important;
+      margin-bottom: 10px !important;
+   }
+
+   .service-overlay-desc {
+      font-size: 14px !important;
+      margin-bottom: 18px !important;
+      max-width: 100% !important;
+   }
+
+   .service-overlay-btn {
+      padding: 10px 22px !important;
+      font-size: 14px !important;
+   }
+
+   .service-slider-arrow {
+      width: 36px !important;
+      height: 36px !important;
+   }
+
+   .service-slider-prev {
+      left: 12px !important;
+   }
+
+   .service-slider-next {
+      right: 12px !important;
+   }
+
+   .service-slider-dots {
+      bottom: 14px !important;
+   }
+
+   .service-slider-dot {
+      width: 10px !important;
+      height: 10px !important;
+   }
+}
+
+@media (max-width: 575px) {
+   .service-section-compact .tp-hero-cst-bottom-slider,
+   .service-section-compact #service-bg-img {
+      height: 340px !important;
+   }
+
+   .service-overlay-title {
+      font-size: 20px !important;
+   }
+}
+
+/* Solutions / pillars section (index) */
+@media (max-width: 991px) {
+   .tp-about-solutions-area {
+      padding-top: 60px !important;
+      padding-bottom: 10px !important;
+   }
+
+   .tp-about-solutions-area .row.mb-60 {
+      margin-bottom: 36px !important;
+   }
+
+   .solutions-heading {
+      font-size: 32px !important;
+   }
+
+   .solutions-heading br {
+      display: none !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .tp-about-solutions-area {
+      padding-top: 48px !important;
+   }
+
+   .tp-about-solutions-area .row.mb-60 {
+      margin-bottom: 24px !important;
+   }
+
+   .tp-about-solutions-area .mb-40 {
+      margin-bottom: 24px !important;
+   }
+
+   .pillar-icon-box {
+      width: 52px !important;
+      height: 52px !important;
+      margin-right: 14px !important;
+   }
+
+   .pillar-icon-box svg {
+      width: 22px !important;
+      height: 22px !important;
+   }
+
+   .tp-about-solutions-area .row.mb-50 {
+      margin-bottom: 28px !important;
+   }
+
+   .solutions-heading {
+      font-size: 28px !important;
+   }
+
+   .solutions-view-all {
+      width: 100% !important;
+      justify-content: flex-start !important;
+      margin-top: 8px !important;
+   }
+
+   .solution-card-content {
+      padding: 22px 20px 24px !important;
+   }
+
+   .solution-card-custom:hover {
+      transform: none !important;
+   }
+}
+
+/* Stats banner (index) */
+@media (max-width: 991px) {
+   .tp-stats-banner-wrap {
+      padding: 10px 0 40px !important;
+   }
+
+   .tp-stats-banner {
+      padding: 32px 20px !important;
+      border-radius: 18px !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .tp-stat-item {
+      justify-content: flex-start !important;
+      gap: 14px !important;
+      padding: 8px 0 !important;
+   }
+
+   .tp-stat-icon svg {
+      width: 48px !important;
+      height: 48px !important;
+   }
+
+   .tp-stat-number {
+      font-size: 30px !important;
+   }
+
+   .tp-stat-label {
+      font-size: 14px !important;
+   }
+
+   .tp-stat-col:not(:last-child) .tp-stat-item {
+      padding-bottom: 18px !important;
+      margin-bottom: 18px !important;
+   }
+}
+
+/* Testimonials (index) */
+@media (max-width: 991px) {
+   .tp-testimonial-area.pt-120 {
+      padding-top: 70px !important;
+   }
+
+   .tp-testimonial-area.pb-120 {
+      padding-bottom: 70px !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .tp-testimonial-area.pt-120 {
+      padding-top: 50px !important;
+   }
+
+   .tp-testimonial-area.pb-120 {
+      padding-bottom: 50px !important;
+   }
+
+   .tp-testi-left {
+      margin-bottom: 24px !important;
+      text-align: center !important;
+   }
+
+   .tp-testi-title {
+      font-size: 28px !important;
+   }
+
+   .tp-testi-title br {
+      display: none !important;
+   }
+
+   .tp-testi-arrows-col {
+      margin-top: 8px !important;
+   }
+
+   .tp-testi-arrows {
+      justify-content: center !important;
+      margin-top: 0 !important;
+   }
+
+   .tp-testi-card {
+      min-height: auto !important;
+      padding: 28px 22px !important;
+   }
+
+   .tp-testi-text {
+      font-size: 14px !important;
+   }
+}
+
+/* CTA section (index) */
+@media (max-width: 991px) {
+   .tp-service-details-area.pt-100 {
+      padding-top: 60px !important;
+   }
+
+   .tp-service-details-area.pb-100 {
+      padding-bottom: 60px !important;
+   }
+
+   .cst-cta-card {
+      border-radius: 20px !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .tp-service-details-area.pt-100 {
+      padding-top: 48px !important;
+   }
+
+   .tp-service-details-area.pb-100 {
+      padding-bottom: 48px !important;
+   }
+
+   .cst-cta-left {
+      padding: 32px 22px !important;
+      border-bottom-right-radius: 0 !important;
+   }
+
+   .cst-cta-title {
+      font-size: 28px !important;
+   }
+
+   .cst-cta-desc {
+      font-size: 15px !important;
+      margin-bottom: 28px !important;
+   }
+
+   .cst-plane-decoration {
+      display: none !important;
+   }
+
+   .cst-form-wrap {
+      padding: 28px 20px 32px !important;
+   }
+
+   .mosaic-submit-btn {
+      width: 100% !important;
+      justify-content: center !important;
+   }
+}
+
+/* Footer spacing on mobile */
+@media (max-width: 767px) {
+   .tp-footer-area.pt-100 {
+      padding-top: 60px !important;
+   }
+
+   .tp-footer-wd-widget.ml-45,
+   .tp-footer-wd-widget.ml-60 {
+      margin-left: 0 !important;
+   }
+
+   .tp-footer-cst-dec br {
+      display: none !important;
+   }
+
+   .tp-footer-copyright.text-md-end {
+      text-align: left !important;
+   }
+}
+
+/* 3. Financing Solution Pages (.sba-) */
+@media (max-width: 767px) {
+   .sba-hero-title {
+      font-size: 36px !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.5px !important;
+   }
+   .sba-hero-desc {
+      font-size: 15px !important;
+   }
+   .sba-hero-features {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      margin-top: 30px !important;
+      padding-top: 20px !important;
+   }
+}
+
+@media (max-width: 575px) {
+   .sba-hero-collage {
+      min-height: 280px !important;
+      height: 280px !important;
+      margin-top: 30px !important;
+   }
+   .sba-img-top {
+      right: 0 !important;
+      width: 100% !important;
+      height: 240px !important;
+      border-radius: 16px !important;
+   }
+   .sba-img-mid, .sba-img-bottom, .sba-dot-pattern {
+      display: none !important;
+   }
+}
+
+/* 4. Prospera Page Responsiveness */
+@media (max-width: 991px) {
+   .prospera-offering-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+   }
+   .prospera-process-container {
+      flex-direction: column !important;
+      gap: 25px !important;
+   }
+   .prospera-process-arrow {
+      transform: rotate(90deg) !important;
+      margin: 8px 0 !important;
+      padding: 0 !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .hero-title-cst {
+      font-size: 36px !important;
+      line-height: 1.2 !important;
+   }
+   .hero-desc-cst {
+      font-size: 15px !important;
+      margin-bottom: 25px !important;
+   }
+   .hero-graphic-wrap {
+      min-height: 280px !important;
+      margin-top: 30px !important;
+   }
+   .hero-support-badge {
+      display: none !important;
+   }
+   .prospera-offering-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+   }
+   .prospera-check-grid {
+      grid-template-columns: 1fr !important;
+      gap: 8px !important;
+   }
+   .prospera-card-blue, .prospera-card-red, .prospera-tags-card {
+      padding: 30px 20px !important;
+   }
+}
+
+/* 5. Commercial Real Estate Page Responsiveness */
+@media (max-width: 991px) {
+   .cre-stats-overlap {
+      margin-top: 0 !important;
+      margin-bottom: 30px !important;
+   }
+   .cre-stats-bar .row {
+      row-gap: 20px !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .cre-hero-title {
+      font-size: 36px !important;
+      line-height: 1.2 !important;
+   }
+   .cre-hero-eyebrow-text {
+      font-size: 12px !important;
+   }
+   .cre-hero-desc {
+      font-size: 14px !important;
+   }
+   .cre-collage-wrap {
+      padding-right: 0 !important;
+      padding-bottom: 0 !important;
+   }
+   .cre-collage-img-1 {
+      width: 100% !important;
+      border: 4px solid #ffffff !important;
+   }
+   .cre-collage-badge {
+      position: relative !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      margin-top: 20px !important;
+      max-width: 100% !important;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+   }
+}
+
+/* 6. Sports Investments Page Responsiveness */
+@media (max-width: 767px) {
+   .portfolio-horizontal-card {
+      flex-direction: column !important;
+      height: auto !important;
+      border-radius: 20px !important;
+   }
+   .portfolio-card-left-accent,
+   .portfolio-card-img-left,
+   .portfolio-card-img-right,
+   .portfolio-card-content {
+      width: 100% !important;
+      clip-path: none !important;
+      height: auto !important;
+   }
+   .portfolio-card-img-left,
+   .portfolio-card-img-right {
+      height: 220px !important;
+   }
+   .portfolio-card-content {
+      padding: 25px 20px !important;
+   }
+   .portfolio-stats-group {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      margin-left: 0 !important;
+   }
+   .stat-divider {
+      display: none !important;
+   }
+   .floating-badge {
+      display: none !important;
+   }
+}
+
+/* 7. Contact Us & Apply Now Forms */
+@media (max-width: 767px) {
+   .cst-cta-left {
+      padding: 30px 20px !important;
+   }
+   .cst-cta-title {
+      font-size: 28px !important;
+   }
+   .cst-form-wrap {
+      padding: 30px 20px !important;
+   }
+}
