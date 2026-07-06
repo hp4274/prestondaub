@@ -246,7 +246,7 @@
                            </div>
                         </div>
                         <div class="col-lg-5">
-                           <div class="hero-card-wrapper mb-15">
+                           <div class="hero-card-wrapper mb-15 d-none d-md-block">
                               <div class="hero-card">
                                  <div class="d-flex align-items-center hero-card-row">
                                     <img src="assets/img/logo/favicon.png" alt="Preston Daub Logo Icon"
@@ -292,6 +292,46 @@
                                  </div>
                               </div>
                            </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Mobile Trust Badges (Visible on mobile only) -->
+               <div class="hero-mobile-badges d-block d-md-none">
+                  <div class="container">
+                     <div class="mobile-badge-list">
+                        <div class="mobile-badge-item">
+                           <div class="mobile-badge-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                 <path d="m9 12 2 2 4-4" />
+                              </svg>
+                           </div>
+                           <span class="mobile-badge-label">Built on trust.</span>
+                        </div>
+                        <div class="mobile-badge-item">
+                           <div class="mobile-badge-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                 width="24px" fill="#C0392B">
+                                 <path
+                                    d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z" />
+                              </svg>
+                           </div>
+                           <span class="mobile-badge-label">Driven by partnership.</span>
+                        </div>
+                        <div class="mobile-badge-item">
+                           <div class="mobile-badge-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                 <circle cx="12" cy="12" r="10" />
+                                 <circle cx="12" cy="12" r="6" />
+                                 <circle cx="12" cy="12" r="2" />
+                              </svg>
+                           </div>
+                           <span class="mobile-badge-label">Focused on results.</span>
                         </div>
                      </div>
                   </div>
@@ -438,6 +478,27 @@
                   dots.forEach(function (dot, idx) {
                      dot.addEventListener('click', function () { goTo(idx); startTimer(); });
                   });
+
+                  // Touch Swipe Gestures for Mobile Viewport
+                  var startX = 0;
+                  var endX = 0;
+                  bgEl.addEventListener('touchstart', function (e) {
+                     startX = e.touches[0].clientX;
+                  }, { passive: true });
+
+                  bgEl.addEventListener('touchend', function (e) {
+                     endX = e.changedTouches[0].clientX;
+                     var threshold = 50; // swipe threshold in pixels
+                     if (startX - endX > threshold) {
+                        // Swiped left -> Go to next slide
+                        goTo(current + 1);
+                        startTimer();
+                     } else if (endX - startX > threshold) {
+                        // Swiped right -> Go to previous slide
+                        goTo(current - 1);
+                        startTimer();
+                     }
+                  }, { passive: true });
 
                   startTimer();
                })();
