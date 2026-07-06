@@ -869,9 +869,15 @@
          }
       }
 
+      .mosaic-form-select {
+         background: #fdfdfd url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23334155' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 16px center / 12px !important;
+         padding-right: 40px !important;
+      }
       @media (max-width: 767px) {
-         .prospera-offering-grid {
-            grid-template-columns: 1fr;
+         .cst-form-wrap .row > .col-md-6 {
+            width: 100% !important;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
          }
       }
    </style>
@@ -1416,38 +1422,38 @@
                         </div>
                      </div>
                      <div class="col-lg-8">
-                        <div style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
+                        <div class="cst-form-wrap" style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
                            <h3 style="font-size: 24px; font-weight: 700; color: #0b1a30; margin-bottom: 24px;">Let's Talk About Your Goals</h3>
                            <p style="font-size: 15px; color: #64748b; line-height: 1.6; margin-bottom: 28px;">From debt sourcing and equity raises to strategic consulting&mdash;we provide the financial expertise your business needs.</p>
                            <form action="/api/forms/prospera" method="POST" id="prosperaForm">
                               <input type="hidden" name="form_type" value="prospera">
                               <div class="row">
                                  <div class="col-md-6">
-                                    <div class="mb-20">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Organization Name <span style="color: #ef4444;">*</span></label>
                                        <input type="text" name="company" class="mosaic-form-input" placeholder="Your Company" required>
                                     </div>
                                  </div>
                                  <div class="col-md-6">
-                                    <div class="mb-20">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Your Name <span style="color: #ef4444;">*</span></label>
                                        <input type="text" name="name" class="mosaic-form-input" placeholder="Full Name" required>
                                     </div>
                                  </div>
                                  <div class="col-md-6">
-                                    <div class="mb-20">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Work Email <span style="color: #ef4444;">*</span></label>
                                        <input type="email" name="email" class="mosaic-form-input" placeholder="you@company.com" required>
                                     </div>
                                  </div>
                                  <div class="col-md-6">
-                                    <div class="mb-20">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Phone Number <span style="color: #ef4444;">*</span></label>
                                        <input type="tel" name="phone" class="mosaic-form-input" placeholder="(555) 000-0000" required>
                                     </div>
                                  </div>
                                  <div class="col-md-12">
-                                    <div class="mb-20">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Service Interest <span style="color: #ef4444;">*</span></label>
                                        <select name="service" class="mosaic-form-select" required>
                                           <option value="">Select service...</option>
@@ -1460,7 +1466,7 @@
                                     </div>
                                  </div>
                                  <div class="col-12">
-                                    <div class="mb-24">
+                                    <div class="mb-15">
                                        <label class="mosaic-form-label">Tell us about your needs <span style="color: #64748b; font-weight: 400;">(Optional)</span></label>
                                        <textarea name="message" class="mosaic-form-input" placeholder="Brief description of your financing needs or business goals..." rows="4" style="resize: none;"></textarea>
                                     </div>

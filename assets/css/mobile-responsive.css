@@ -991,25 +991,34 @@
       margin-bottom: 18px !important;
    }
 
-   /* CTA / Contact section */
-   .prospera-cta-section {
-      padding: 50px 0 !important;
-   }
+    /* CTA / Contact section */
+    .prospera-cta-section {
+       padding: 40px 0 !important;
+    }
 
-   .prospera-cta-section h2[style*="font-size: 44px"] {
-      font-size: 28px !important;
-      margin-bottom: 14px !important;
-   }
+    .prospera-cta-section .container {
+       padding-left: 15px !important;
+       padding-right: 15px !important;
+    }
 
-   .prospera-cta-section .col-lg-8 > div[style*="padding: 40px"] {
-      padding: 24px 18px !important;
-      border-radius: 16px !important;
-   }
+    .prospera-cta-section .row {
+       --bs-gutter-x: 16px !important;
+    }
 
-   .prospera-cta-section h3[style*="font-size: 24px"] {
-      font-size: 20px !important;
-      margin-bottom: 16px !important;
-   }
+    .prospera-cta-section h2[style*="font-size: 44px"] {
+       font-size: 28px !important;
+       margin-bottom: 14px !important;
+    }
+
+    .prospera-cta-section .cst-form-wrap {
+       padding: 24px 16px !important;
+       border-radius: 16px !important;
+    }
+
+    .prospera-cta-section h3[style*="font-size: 24px"] {
+       font-size: 20px !important;
+       margin-bottom: 16px !important;
+    }
 
    /* Images inside sections — keep aspect ratio, limit height */
    .prospera-section-anchor div[style*="min-height: 400px"] {
@@ -1173,6 +1182,11 @@
       font-size: 13.5px !important;
       border-radius: 8px !important;
       height: 40px !important;
+   }
+
+   .cst-form-wrap .mosaic-form-select {
+      padding-right: 36px !important;
+      background-position: right 12px center !important;
    }
 
    .cst-form-wrap textarea.mosaic-form-input {
