@@ -581,32 +581,121 @@
       font-size: 15px !important;
    }
 
-   .sba-hero-features {
-      grid-template-columns: 1fr !important;
-      gap: 16px !important;
-      margin-top: 30px !important;
-      padding-top: 20px !important;
-   }
-}
-
-@media (max-width: 575px) {
    .sba-hero-collage {
-      min-height: 280px !important;
-      height: 280px !important;
+      position: relative !important;
+      height: 290px !important;
+      min-height: auto !important;
+      width: 100% !important;
       margin-top: 30px !important;
+      margin-bottom: 10px !important;
+      display: block !important;
    }
 
    .sba-img-top {
-      right: 0 !important;
-      width: 100% !important;
-      height: 240px !important;
+      position: absolute !important;
+      top: 10px !important;
+      right: 15px !important;
+      left: auto !important;
+      width: 82% !important;
+      height: 170px !important;
       border-radius: 16px !important;
+      border: 4px solid #FFFFFF !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+      z-index: 4 !important;
+      display: block !important;
    }
 
-   .sba-img-mid,
-   .sba-img-bottom,
+   .sba-img-bottom {
+      position: absolute !important;
+      top: 135px !important;
+      left: 15px !important;
+      right: auto !important;
+      width: 48% !important;
+      height: 120px !important;
+      border-radius: 16px !important;
+      border: 4px solid #FFFFFF !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+      z-index: 5 !important;
+      display: block !important;
+      object-fit: cover !important;
+   }
+
+   .sba-img-mid {
+      position: absolute !important;
+      top: 165px !important;
+      right: 15px !important;
+      left: auto !important;
+      width: 48% !important;
+      height: 120px !important;
+      border-radius: 16px !important;
+      border: 4px solid #FFFFFF !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+      z-index: 6 !important;
+      display: block !important;
+      object-fit: cover !important;
+   }
+
    .sba-dot-pattern {
       display: none !important;
+   }
+
+   .sba-hero-features {
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+      margin-top: 10px !important;
+      padding-top: 25px !important;
+      border-top: 1px solid #E5E7EB !important;
+   }
+
+   .sba-hero-feature-item {
+      display: grid !important;
+      grid-template-columns: auto 1fr !important;
+      grid-template-rows: auto auto !important;
+      column-gap: 16px !important;
+      border-bottom: 1px solid #F1F5F9 !important;
+      padding-bottom: 16px !important;
+      margin-bottom: 16px !important;
+   }
+
+   .sba-hero-feature-item:last-child {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+   }
+
+   .sba-hero-feature-icon {
+      grid-column: 1 !important;
+      grid-row: 1 / span 2 !important;
+      margin-bottom: 0 !important;
+      width: 48px !important;
+      height: 48px !important;
+      border-radius: 12px !important;
+      font-size: 22px !important;
+      background-color: #FEE2E2 !important;
+      color: #C0392B !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+   }
+
+   .sba-hero-feature-title {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      color: #0A1A3B !important;
+      margin-bottom: 4px !important;
+      text-align: left !important;
+   }
+
+   .sba-hero-feature-text {
+      grid-column: 2 !important;
+      grid-row: 2 !important;
+      font-size: 14px !important;
+      color: #4B5563 !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+      text-align: left !important;
    }
 }
 
@@ -629,23 +718,158 @@
 }
 
 @media (max-width: 767px) {
+   .hero-overline-wrap {
+      margin-bottom: 20px !important;
+   }
+
+   .hero-overline-text {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      font-weight: 700 !important;
+   }
+
    .hero-title-cst {
-      font-size: 36px !important;
-      line-height: 1.2 !important;
+      font-size: 38px !important;
+      line-height: 1.15 !important;
+      font-weight: 800 !important;
+      margin-bottom: 20px !important;
    }
 
    .hero-desc-cst {
       font-size: 15px !important;
-      margin-bottom: 25px !important;
+      line-height: 1.65 !important;
+      color: #4b5563 !important;
+      margin-bottom: 30px !important;
+   }
+
+   .tp-team-details-title-wrap .d-flex.gap-3.flex-wrap {
+      flex-direction: column !important;
+      gap: 12px !important;
+   }
+
+   .hero-btn-primary,
+   .hero-btn-secondary {
+      width: 100% !important;
+      justify-content: center !important;
+      padding: 14px 24px !important;
+      font-size: 15px !important;
+      border-radius: 8px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
    }
 
    .hero-graphic-wrap {
-      min-height: 280px !important;
-      margin-top: 30px !important;
+      position: relative !important;
+      width: 100% !important;
+      height: 320px !important;
+      min-height: auto !important;
+      margin-top: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+   }
+
+   .hero-image-clip-container {
+      position: absolute !important;
+      top: 45px !important;
+      left: 8% !important;
+      width: 84% !important;
+      height: 220px !important;
+      clip-path: none !important;
+      -webkit-clip-path: none !important;
+      border-radius: 24px !important;
+      border: 6px solid #FFFFFF !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+      z-index: 2 !important;
+      display: block !important;
+   }
+
+   .hero-image-clip-container img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+   }
+
+   .hero-bg-red-shape {
+      position: absolute !important;
+      left: 3% !important;
+      top: 175px !important;
+      width: 32% !important;
+      height: 90px !important;
+      background: #d61a21 !important;
+      border-radius: 0 0 0 24px !important;
+      clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
+      z-index: 1 !important;
+      display: block !important;
+   }
+
+   .hero-bg-blue-shape {
+      position: absolute !important;
+      right: 3% !important;
+      top: 50px !important;
+      width: 74% !important;
+      height: 225px !important;
+      border-radius: 0 0 40px 0 !important;
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%) !important;
+      z-index: 1 !important;
+      display: block !important;
+   }
+
+   .hero-dot-pattern {
+      position: absolute !important;
+      top: 255px !important;
+      left: 20% !important;
+      width: 160px !important;
+      height: 50px !important;
+      background-image: radial-gradient(#0752c5 1.5px, transparent 1.5px) !important;
+      background-size: 15px 15px !important;
+      z-index: 0 !important;
+      opacity: 0.25 !important;
+      display: block !important;
    }
 
    .hero-support-badge {
-      display: none !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 2% !important;
+      background: #d61a21 !important;
+      color: #ffffff !important;
+      padding: 10px 16px !important;
+      border-radius: 12px !important;
+      z-index: 3 !important;
+      box-shadow: 0 10px 20px rgba(214, 26, 33, 0.25) !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      min-width: auto !important;
+   }
+
+   .support-badge-icon {
+      font-size: 20px !important;
+      display: flex !important;
+      align-items: center !important;
+   }
+
+   .support-badge-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+   }
+
+   .support-badge-number {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+   }
+
+   .support-badge-label {
+      font-size: 8px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      margin-top: 1px !important;
+      opacity: 0.9 !important;
    }
 
    .prospera-offering-grid {
@@ -662,6 +886,164 @@
    .prospera-card-red,
    .prospera-tags-card {
       padding: 30px 20px !important;
+   }
+
+   /* === Prospera Page — Mobile Spacing Overrides === */
+
+   /* Hero section */
+   .prospera-hero-area {
+      padding-top: 100px !important;
+      padding-bottom: 40px !important;
+   }
+
+   .prospera-hero-area .tp-team-details-title-wrap.mb-40 {
+      margin-bottom: 20px !important;
+   }
+
+   /* All body sections with inline padding: 80px 0 or 100px 0 */
+   .prospera-section-anchor {
+      padding: 50px 0 40px !important;
+   }
+
+   /* Section headings — inline 42px/46px headings */
+   .prospera-section-anchor h2[style*="font-size: 42px"],
+   .prospera-section-anchor h2[style*="font-size: 46px"] {
+      font-size: 28px !important;
+      line-height: 1.25 !important;
+   }
+
+   /* Section sub-headings — inline 36px/32px/26px headings */
+   .prospera-section-anchor h2[style*="font-size: 36px"],
+   .prospera-section-anchor h3[style*="font-size: 32px"],
+   .prospera-section-anchor h3[style*="font-size: 26px"] {
+      font-size: 24px !important;
+      line-height: 1.3 !important;
+   }
+
+   /* Row gutters & bottom margins inside sections */
+   .prospera-section-anchor .row.mb-70 {
+      margin-bottom: 40px !important;
+   }
+
+   .prospera-section-anchor .row.mb-40 {
+      margin-bottom: 24px !important;
+   }
+
+   .prospera-section-anchor .mb-60 {
+      margin-bottom: 36px !important;
+   }
+
+   /* Offerings card compact */
+   .prospera-offering-card {
+      padding: 20px !important;
+      gap: 14px !important;
+   }
+
+   /* Process cards */
+   .prospera-process-card {
+      padding: 24px 14px 20px !important;
+   }
+
+   .prospera-process-card h5 {
+      font-size: 14px !important;
+   }
+
+   .prospera-process-card p {
+      font-size: 11px !important;
+   }
+
+   /* Bordered detail cards */
+   .prospera-bordered-card {
+      padding: 28px 20px !important;
+   }
+
+   .prospera-bordered-card h3 {
+      font-size: 20px !important;
+   }
+
+   .prospera-bordered-card p {
+      font-size: 14px !important;
+      margin-bottom: 18px !important;
+   }
+
+   /* Tax Advisory card — extra top padding for COMING SOON badge */
+   #tax-advisory .prospera-bordered-card {
+      padding-top: 50px !important;
+   }
+
+   /* Fee structure section */
+   #fee-structure {
+      padding: 50px 0 !important;
+   }
+
+   .prospera-fee-card {
+      padding: 28px 20px !important;
+   }
+
+   .prospera-fee-card h4 {
+      font-size: 18px !important;
+   }
+
+   .prospera-fee-icon {
+      width: 60px !important;
+      height: 60px !important;
+      font-size: 26px !important;
+      margin-bottom: 18px !important;
+   }
+
+   /* CTA / Contact section */
+   .prospera-cta-section {
+      padding: 50px 0 !important;
+   }
+
+   .prospera-cta-section h2[style*="font-size: 44px"] {
+      font-size: 28px !important;
+      margin-bottom: 14px !important;
+   }
+
+   .prospera-cta-section .col-lg-8 > div[style*="padding: 40px"] {
+      padding: 24px 18px !important;
+      border-radius: 16px !important;
+   }
+
+   .prospera-cta-section h3[style*="font-size: 24px"] {
+      font-size: 20px !important;
+      margin-bottom: 16px !important;
+   }
+
+   /* Images inside sections — keep aspect ratio, limit height */
+   .prospera-section-anchor div[style*="min-height: 400px"] {
+      min-height: auto !important;
+      height: 280px !important;
+   }
+
+   .prospera-section-anchor div[style*="min-height: 400px"] img {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+   }
+
+   /* Tags card */
+   .prospera-tags-card h4[style*="font-size: 22px"] {
+      font-size: 18px !important;
+   }
+
+   /* Asymmetric process steps */
+   .prospera-asym-step {
+      padding: 12px !important;
+      gap: 12px !important;
+      margin-bottom: 12px !important;
+   }
+
+   .prospera-asym-step h5 {
+      font-size: 14px !important;
+   }
+
+   .prospera-asym-step p {
+      font-size: 12px !important;
    }
 }
 
@@ -767,7 +1149,7 @@
       padding: 20px 16px !important;
    }
 
-   .cst-form-wrap .row > .col-md-6 {
+   .cst-form-wrap .row>.col-md-6 {
       width: 50%;
       flex: 0 0 50%;
       max-width: 50%;

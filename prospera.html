@@ -733,13 +733,15 @@
       }
       .prospera-bordered-card .prospera-icon-left-wrap {
          display: flex;
-         align-items: center;
+         align-items: flex-start;
          gap: 16px;
          margin-bottom: 20px;
+         flex-wrap: nowrap;
       }
       .prospera-bordered-card .prospera-icon-left {
          width: 50px;
          height: 50px;
+         min-width: 50px;
          border-radius: 12px;
          background: rgba(7, 82, 197, 0.08);
          color: #0752c5;
@@ -747,6 +749,7 @@
          align-items: center;
          justify-content: center;
          font-size: 22px;
+         flex-shrink: 0;
       }
       .prospera-bordered-card .prospera-icon-left h3 {
          margin: 0;
@@ -1042,7 +1045,7 @@
                                   Our Services <i class="fa-light fa-arrow-right"></i>
                                </a>
                                <a href="#contact" class="hero-btn-secondary">
-                                  Get Started
+                                  Get Started <i class="fa-light fa-arrow-right" style="margin-left: 8px;"></i>
                                </a>
                             </div>
                          </div>
@@ -1052,6 +1055,7 @@
                             <!-- Background decorative shapes -->
                             <div class="hero-bg-red-shape"></div>
                             <div class="hero-bg-blue-shape"></div>
+                            <div class="hero-dot-pattern"></div>
 
                             <!-- Responsive SVG clipPath wrapper -->
                             <div class="hero-image-clip-container">
@@ -1324,8 +1328,8 @@
                   <div id="wealth-management" class="row align-items-stretch g-4">
                      <div class="col-lg-6">
                         <div class="prospera-bordered-card">
-                           <div class="prospera-icon-left-wrap">
-                              <div class="prospera-icon-left"><i class="fa-light fa-sack-dollar"></i></div>
+                           <div class="prospera-icon-left-wrap" style="display: flex; flex-direction: row; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: nowrap;">
+                              <div class="prospera-icon-left" style="flex-shrink: 0; min-width: 50px;"><i class="fa-light fa-sack-dollar"></i></div>
                               <h3 style="margin: 0;">Wealth Management</h3>
                            </div>
                            <p>At Preston Daub, we understand that effective wealth management is essential for achieving your financial goals. That's why we collaborate with a trusted financial planning professional who specializes in personalized services for individuals, families, businesses, and estates. With over 20 years of experience, this certified financial planner is dedicated to simplifying the complexities of financial management, ensuring that every client receives tailored guidance that aligns with their unique aspirations.</p>
@@ -1333,13 +1337,11 @@
                         </div>
                      </div>
                      <div id="tax-advisory" class="col-lg-6">
-                        <div class="prospera-bordered-card">
-                           <div class="prospera-icon-left-wrap">
-                              <div class="prospera-icon-left"><i class="fa-light fa-calculator"></i></div>
-                              <div style="display: flex; flex-direction: column;">
-                                 <span class="prospera-overline" style="margin-bottom: 2px; padding: 3px 10px; font-size: 10px; width: fit-content;">COMING SOON</span>
-                                 <h3 style="margin: 0;">Tax Advisory Solutions</h3>
-                              </div>
+                        <div class="prospera-bordered-card" style="position: relative; overflow: hidden;">
+                           <span class="prospera-overline" style="position: absolute; top: 20px; right: 20px; margin: 0; padding: 5px 14px; font-size: 10px; z-index: 2;">COMING SOON</span>
+                           <div class="prospera-icon-left-wrap" style="display: flex; flex-direction: row; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: nowrap;">
+                              <div class="prospera-icon-left" style="flex-shrink: 0; min-width: 50px;"><i class="fa-light fa-calculator"></i></div>
+                              <h3 style="margin: 0;">Tax Advisory Solutions</h3>
                            </div>
                            <p>We are currently finalizing our comprehensive tax advisory and corporate planning solutions. Preston Daub is actively expanding our professional network to provide strategic tax structuring, compliance management, and corporate advisory services designed to support businesses and high-net-worth individuals. Get in touch with us to be the first to know when these services launch.</p>
                            <a href="#contact" class="prospera-btn-blue-outline" style="margin-top: auto;">Inquire Now <i class="fa-light fa-arrow-right"></i></a>
