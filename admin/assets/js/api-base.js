@@ -10,7 +10,7 @@
     const host = window.location.hostname;
     const port = window.location.port;
     const isLocal = host === "127.0.0.1" || host === "localhost";
-    if (isLocal && port && port !== "4000") {
+    if (isLocal && port !== "4000") {
       base = `${window.location.protocol}//${host}:4000`;
     }
   }
@@ -19,6 +19,32 @@
 
   window.apiUrl = function apiUrl(path) {
     const p = String(path || "");
+    
+    const host = window.location.hostname;
+    const port = window.location.port;
+    const isLocal = host === "127.0.0.1" || host === "localhost";
+    const isPhpEnv = isLocal && port !== "4000";
+    
+    if (isPhpEnv) {
+      if (p.startsWith('/api/auth/login')) return 'login.php';
+      if (p.startsWith('/api/auth/me')) return 'api-auth-me.php';
+      if (p.startsWith('/api/auth/logout')) return 'api-logout.php';
+      if (p.startsWith('/api/admin/dashboard')) return 'api-dashboard.php';
+      if (p.startsWith('/api/admin/forms/poll')) return 'api-poll.php';
+      if (p.startsWith('/api/admin/forms/actions')) return 'api-action.php';
+      
+      const detailMatch = p.match(/^\/api\/admin\/forms\/([^\/?]+)\/detail/);
+      if (detailMatch) {
+        return `api-form-detail.php?id=${encodeURIComponent(detailMatch[1])}`;
+      }
+      
+      if (p.startsWith('/api/admin/forms')) {
+        const qIdx = p.indexOf('?');
+        const qs = qIdx !== -1 ? p.substring(qIdx) : '';
+        return 'api-forms.php' + qs;
+      }
+    }
+    
     const withSlash = p.startsWith("/") ? p : `/${p}`;
     return normalized ? normalized + withSlash : withSlash;
   };
