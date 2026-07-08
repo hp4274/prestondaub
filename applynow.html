@@ -222,13 +222,28 @@
                                           <div class="error-message">Business name is required</div>
                                        </div>
 
-                                       <!-- Years/Months in Business -->
+                                       <!-- Email Address -->
                                        <div class="col-lg-6 col-md-6 mb-15">
-                                          <label class="mosaic-form-label">YEARS/MONTHS
-                                             IN BUSINESS <span style="color: #dc2626;">*</span></label>
+                                          <label class="mosaic-form-label">EMAIL ADDRESS <span style="color: #dc2626;">*</span></label>
+                                          <input type="email" name="email" class="mosaic-form-input"
+                                             placeholder="Enter email address" required>
+                                          <div class="error-message">Valid email is required</div>
+                                       </div>
+
+                                       <!-- Phone Number -->
+                                       <div class="col-lg-6 col-md-6 mb-15">
+                                          <label class="mosaic-form-label">PHONE NUMBER</label>
+                                          <input type="tel" name="phone" class="mosaic-form-input"
+                                             placeholder="Enter phone number">
+                                          <div class="error-message">Phone number is required</div>
+                                       </div>
+
+                                       <!-- How Long Have You Been In Business -->
+                                       <div class="col-lg-6 col-md-6 mb-15">
+                                          <label class="mosaic-form-label">HOW LONG HAVE YOU BEEN IN BUSINESS? <span style="color: #dc2626;">*</span></label>
                                           <input type="text" name="years_in_business" class="mosaic-form-input"
                                              placeholder="e.g., 2 years, 6 months" required>
-                                          <div class="error-message">Years/Months in business is required</div>
+                                          <div class="error-message">This field is required</div>
                                        </div>
 
                                        <!-- Yearly Revenue -->
@@ -240,8 +255,16 @@
                                           <div class="error-message">Yearly revenue is required</div>
                                        </div>
 
+                                       <!-- Loan Amount Needed -->
+                                       <div class="col-lg-6 col-md-6 mb-15">
+                                          <label class="mosaic-form-label">LOAN AMOUNT NEEDED <span style="color: #dc2626;">*</span></label>
+                                          <input type="text" name="loan_amount" class="mosaic-form-input"
+                                             placeholder="e.g., $50,000" required>
+                                          <div class="error-message">Loan amount needed is required</div>
+                                       </div>
+
                                        <!-- Type of Loan -->
-                                       <div class="col-lg-12 col-md-12 mb-15">
+                                       <div class="col-lg-6 col-md-6 mb-15">
                                           <label class="mosaic-form-label">TYPE OF LOAN
                                              <span style="color: #dc2626;">*</span></label>
                                           <select name="financing_solution_type" id="loanTypeSelect"
@@ -251,9 +274,20 @@
                                              <option value="line-of-credit">Line of Credit</option>
                                              <option value="working-capital">Working Capital</option>
                                              <option value="bridge-loans">Bridge</option>
+                                             <option value="abl-loans">ABL Loan</option>
+                                             <option value="commercial-real-estate">Commercial Real Estate</option>
                                              <option value="conventional">Conventional</option>
                                           </select>
                                           <div class="error-message">Type of loan is required</div>
+                                       </div>
+
+                                       <!-- Description what loan is for -->
+                                       <div class="col-lg-12 col-md-12 mb-15">
+                                          <label class="mosaic-form-label">WHAT IS THIS LOAN FOR? <span style="color: #dc2626;">*</span></label>
+                                          <textarea name="loan_purpose" class="mosaic-form-input"
+                                             placeholder="Briefly describe what the loan will be used for..." rows="3"
+                                             style="resize: none;" required></textarea>
+                                          <div class="error-message">Description is required</div>
                                        </div>
                                     </div>
                                  </div>
@@ -516,12 +550,6 @@
             this.scrollIntoView({ behavior: 'smooth', block: 'start' });
          } else {
             errorAlert.classList.remove('show');
-            // Map legal_business_name to name for backend compatibility
-            const nameField = document.createElement('input');
-            nameField.type = 'hidden';
-            nameField.name = 'name';
-            nameField.value = document.querySelector('[name="legal_business_name"]').value;
-            this.appendChild(nameField);
 
             // Prevent default form submission and use AJAX
             e.preventDefault();
