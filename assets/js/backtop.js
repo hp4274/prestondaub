@@ -71,7 +71,11 @@
     // Click to scroll top
     $(".scrollToTop").on("click", function (event) {
       event.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, duration);
+      if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+        ScrollSmoother.get().scrollTo(0, true);
+      } else {
+        $("html, body").animate({ scrollTop: 0 }, duration);
+      }
       return false;
     });
   });

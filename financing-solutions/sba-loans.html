@@ -131,23 +131,8 @@
                                  <li><a href="abl-loans.html">ABL Loans</a></li>
                               </ul>
                            </li>
-                           <li class="has-dropdown">
-                              <a href="../prospera.html">Prospera
-                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                       width="24px" fill="#363683">
-                                       <path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z" />
-                                    </svg>
-                                 </span>
-                              </a>
-                              <ul class="tp-submenu submenu">
-                                 <li><a href="../prospera.html#capital-raise-services">Capital Raise</a></li>
-                                 <li><a href="../prospera.html#advisory-consulting">Advisory & Consulting</a></li>
-                                 <li><a href="../prospera.html#pitch-deck-presentation-solutions">Pitch Deck &
-                                       Presentation Services</a></li>
-                                 <li><a href="../prospera.html#wealth-management">Wealth Management</a></li>
-                                 <li><a href="../prospera.html#tax-advisory">Tax Advisory</a></li>
-                              </ul>
+                           <li>
+                              <a href="../prospera.html">Prospera</a>
                            </li>
                            <li>
                               <a href="../commercial-real-estate.html">Commercial Real Estate</a>
@@ -457,27 +442,175 @@
                   pointer-events: none;
                }
 
-               /* Other Financing Section */
+                                             /* Other Financing Section */
                .sba-other-section {
                   padding: 90px 0 100px;
-                  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+                  background: linear-gradient(180deg, #F8FAFC 0%, #FDEDEC 100%);
+               }
+
+               .sba-other-row {
+                  display: flex;
+                  flex-wrap: wrap;
+                  margin-right: -15px;
+                  margin-left: -15px;
+                  justify-content: center;
+               }
+
+               .sba-other-col {
+                  flex: 0 0 20%;
+                  max-width: 20%;
+                  padding-right: 15px;
+                  padding-left: 15px;
+                  margin-bottom: 30px;
                }
 
                .sba-other-card {
-                  background: #FFFFFF;
-                  border-radius: 16px;
-                  padding: 40px 25px;
+                  background-color: #FFFFFF;
+                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60' preserveAspectRatio='none'%3E%3Cpath d='M0 20 C 100 40, 200 10, 300 30 L 300 60 L 0 60 Z' fill='%23FDEDEC'/%3E%3Cpath d='M0 30 C 80 15, 220 45, 300 20 L 300 60 L 0 60 Z' fill='%23FADBD8' opacity='0.5'/%3E%3C/svg%3E");
+                  background-repeat: no-repeat;
+                  background-position: bottom;
+                  background-size: 100% 50px;
+                  border: 1px solid rgba(226, 232, 240, 0.8);
+                  border-radius: 20px;
+                  padding: 45px 20px 50px;
                   text-align: center;
                   height: 100%;
                   display: block;
-                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-                  transition: all 0.3s ease;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+                  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                   text-decoration: none;
+                  position: relative;
+                  overflow: hidden;
                }
 
                .sba-other-card:hover {
-                  transform: translateY(-6px);
-                  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+                  transform: translateY(-8px);
+                  box-shadow: 0 20px 40px rgba(192, 57, 43, 0.08);
+                  border-color: rgba(192, 57, 43, 0.3);
+               }
+
+               .sba-other-icon-wrap {
+                  background: #FDEDEC;
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 25px;
+                  border: 1px solid rgba(250, 219, 216, 0.6);
+                  transition: all 0.3s ease;
+               }
+
+               .sba-other-card:hover .sba-other-icon-wrap {
+                  background: #FADBD8;
+                  transform: scale(1.05);
+               }
+
+               .sba-other-card-title {
+                  font-size: 20px;
+                  font-weight: 700;
+                  color: #111827;
+                  margin-bottom: 10px;
+               }
+
+               .sba-other-card-line {
+                  width: 40px;
+                  height: 3px;
+                  background: #C0392B;
+                  margin: 0 auto 15px;
+                  border-radius: 2px;
+               }
+
+               .sba-other-card-desc {
+                  font-size: 14px;
+                  color: #6B7280;
+                  font-weight: 500;
+                  line-height: 1.5;
+                  margin-bottom: 0;
+               }
+
+               @media (max-width: 1199px) {
+                  .sba-other-col {
+                     flex: 0 0 33.333%;
+                     max-width: 33.333%;
+                  }
+               }
+
+               @media (max-width: 767px) {
+                  .sba-other-col {
+                     flex: 0 0 50%;
+                     max-width: 50%;
+                  }
+               }
+
+               @media (max-width: 575px) {
+                  .sba-other-col {
+                     flex: 0 0 100%;
+                     max-width: 100%;
+                  }
+               }
+
+               .sba-other-icon-wrap {
+                  background: #EFF6FF;
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 25px;
+                  border: 1px solid rgba(219, 234, 254, 0.6);
+                  transition: all 0.3s ease;
+               }
+
+               .sba-other-card:hover .sba-other-icon-wrap {
+                  background: #DBEAFE;
+                  transform: scale(1.05);
+               }
+
+               .sba-other-card-title {
+                  font-size: 20px;
+                  font-weight: 700;
+                  color: #0F172A;
+                  margin-bottom: 10px;
+               }
+
+               .sba-other-card-line {
+                  width: 40px;
+                  height: 3px;
+                  background: #0b57d0;
+                  margin: 0 auto 15px;
+                  border-radius: 2px;
+               }
+
+               .sba-other-card-desc {
+                  font-size: 14px;
+                  color: #64748B;
+                  font-weight: 500;
+                  line-height: 1.5;
+                  margin-bottom: 0;
+               }
+
+               @media (max-width: 1199px) {
+                  .sba-other-col {
+                     flex: 0 0 33.333%;
+                     max-width: 33.333%;
+                  }
+               }
+
+               @media (max-width: 767px) {
+                  .sba-other-col {
+                     flex: 0 0 50%;
+                     max-width: 50%;
+                  }
+               }
+
+               @media (max-width: 575px) {
+                  .sba-other-col {
+                     flex: 0 0 100%;
+                     max-width: 100%;
+                  }
                }
 
                @media (max-width: 991px) {
@@ -539,10 +672,9 @@
                      <div class="col-lg-6">
                         <h1 class="sba-hero-title">SBA &<br><span>USDA Loans</span></h1>
                         <div class="sba-red-line"></div>
-                        <p class="sba-hero-desc">When seeking financing for small businesses, partnering with a reliable
-                           lender can significantly impact success. Preston Daub excels in providing tailored solutions
-                           for SBA (Small Business Administration) and USDA (United States Department of Agriculture)
-                           loans.</p>
+                        <p class="sba-hero-desc">In small business financing, the right lending partner makes all the
+                           difference. Preston Daub connects you directly with top-tier SBA and USDA lenders, delivering
+                           competitive rates, rapid turnarounds, and a streamlined, hassle-free process.</p>
                         <a href="../applynow.html" class="sba-btn-red">
                            <span>Apply Now</span>
                            <i class="fa-light fa-arrow-right"></i>
@@ -551,15 +683,12 @@
                         <!-- Mobile-only collage -->
                         <div class="sba-hero-collage d-block d-lg-none">
                            <div class="sba-dot-pattern"></div>
-                           <img class="sba-img-top"
-                              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+                           <img class="sba-img-top" src="../assets/img/sba-loans/sba-financing-advisory.jpg"
                               alt="SBA Financing & Advisory">
-                           <img class="sba-img-mid"
-                              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80"
+                           <img class="sba-img-mid" src="../assets/img/sba-loans/small-business-growth.jpg"
                               alt="Small Business Growth">
-                           <img class="sba-img-bottom"
-                              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80"
-                              alt="USDA Agricultural Financing">
+                           <img class="sba-img-bottom" src="../assets/img/sba-loans/small-business-financing.jpg"
+                              alt="Small Business Financing">
                         </div>
 
                         <div class="sba-hero-features">
@@ -590,15 +719,12 @@
                      <div class="col-lg-6 d-none d-lg-block">
                         <div class="sba-hero-collage">
                            <div class="sba-dot-pattern"></div>
-                           <img class="sba-img-top"
-                              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+                           <img class="sba-img-top" src="../assets/img/sba-loans/sba-financing-advisory.jpg"
                               alt="SBA Financing & Advisory">
-                           <img class="sba-img-mid"
-                              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80"
+                           <img class="sba-img-mid" src="../assets/img/sba-loans/small-business-growth.jpg"
                               alt="Small Business Growth">
-                           <img class="sba-img-bottom"
-                              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80"
-                              alt="USDA Agricultural Financing">
+                           <img class="sba-img-bottom" src="../assets/img/sba-loans/small-business-financing.jpg"
+                              alt="Small Business Financing">
                         </div>
                      </div>
                   </div>
@@ -612,24 +738,21 @@
                      <div class="col-lg-6 mb-40 mb-lg-0">
                         <div class="sba-red-line"></div>
                         <h2 class="fs-40 fw-700 mb-25" style="color: #111827;">SBA & USDA Loans Overview</h2>
-                        <p class="fs-16 lh-170-per mb-20" style="color: #4B5563;">When seeking financing for small
-                           businesses, partnering with a reliable lender can significantly impact success. Preston Daub
-                           excels in providing tailored solutions for SBA (Small Business Administration) and USDA
-                           (United States Department of Agriculture) loans. By collaborating with the best in the
-                           industry, we ensure clients receive competitive rates and personalized service. Our
-                           commitment to understanding each business’s unique challenges and goals allows us to craft
-                           customized loan options that build trust and foster long-term relationships.</p>
-                        <p class="fs-16 lh-170-per mb-0" style="color: #4B5563;">We also prioritize a streamlined and
-                           efficient application process, making it easier for businesses to secure funding. Navigating
-                           the complexities of SBA and USDA loans can be daunting, but with our focus on minimizing
-                           paperwork and reducing turnaround times, clients can access the funds they need without
-                           unnecessary delays.</p>
+                        <p class="fs-16 lh-170-per mb-20" style="color: #4B5563;">The right lending partner changes
+                           everything. Preston Daub specializes in custom SBA and USDA loan solutions that align with
+                           your business goals. By partnering with premier lenders, we deliver competitive rates
+                           alongside a highly personalized strategy. We take the time to understand your specific
+                           challenges, building customized financing rooted in trust and long-term success.</p>
+                        <p class="fs-16 lh-170-per mb-0" style="color: #4B5563;">Government-backed loans don't have to
+                           mean endless red tape. We cut through the complexity with a streamlined application process
+                           that minimizes paperwork and accelerates approvals, getting you the capital you need without
+                           the wait.</p>
                      </div>
                      <div class="col-lg-6">
                         <div class="ps-lg-4">
                            <div class="sba-overview-img-wrap">
                               <img class="sba-overview-img"
-                                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+                                 src="../assets/img/sba-loans/sba-usda-commercial-loan-approval-and-financi.jpg"
                                  alt="SBA & USDA Commercial Loan Approval and Financing">
                               <div class="sba-overview-dots"></div>
                            </div>
@@ -742,8 +865,7 @@
                            <path d="M195,0 Q115,250 175,500 L180,500 Q120,250 200,0 Z" fill="#C0392B" opacity="0.6" />
                         </svg>
                      </div>
-                     <img class="sba-cta-img"
-                        src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1200&q=80"
+                     <img class="sba-cta-img" src="../assets/img/sba-loans/sba-usda-consultation.jpg"
                         alt="SBA & USDA Consultation">
                   </div>
                </div>
@@ -755,49 +877,60 @@
                   <div class="row mb-50">
                      <div class="col-12 text-center">
                         <h2 class="fs-36 fw-700 mb-15" style="color: #111827;">Other Financing Solutions</h2>
-                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing
-                           options tailored to meet your business needs.</p>
+                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing options tailored to meet your business needs.</p>
                      </div>
                   </div>
-                  <div class="row">
-                     <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
-                        <a href="line-of-credit.html" class="sba-other-card">
-                           <div class="mb-20">
-                              <i class="fa-light fa-landmark" style="font-size: 48px; color: #C0392B;"></i>
-                           </div>
-                           <h4 class="fs-20 fw-700 mb-10" style="color: #111827;">Line of Credit</h4>
-                           <p class="fs-14 mb-0" style="color: #6B7280;">Flexible revolving credit for your operations
-                           </p>
-                        </a>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
-                        <a href="equipment-financing.html" class="sba-other-card">
-                           <div class="mb-20">
-                              <i class="fa-light fa-truck" style="font-size: 48px; color: #C0392B;"></i>
-                           </div>
-                           <h4 class="fs-20 fw-700 mb-10" style="color: #111827;">Equipment Financing</h4>
-                           <p class="fs-14 mb-0" style="color: #6B7280;">Acquire machinery and vehicles with custom
-                              terms</p>
-                        </a>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
-                        <a href="working-capital.html" class="sba-other-card">
-                           <div class="mb-20">
-                              <i class="fa-light fa-money-bill" style="font-size: 48px; color: #C0392B;"></i>
-                           </div>
-                           <h4 class="fs-20 fw-700 mb-10" style="color: #111827;">Working Capital</h4>
-                           <p class="fs-14 mb-0" style="color: #6B7280;">Fuel daily operations & growth</p>
-                        </a>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
-                        <a href="bridge-loans.html" class="sba-other-card">
-                           <div class="mb-20">
-                              <i class="fa-light fa-coin-blank" style="font-size: 60px; color: #C0392B;"></i>
-                           </div>
-                           <h4 class="fs-20 fw-700 mb-10" style="color: #111827;">Bridge Loans</h4>
-                           <p class="fs-14 mb-0" style="color: #6B7280;">Short-term financing solutions</p>
-                        </a>
-                     </div>
+                  <div class="sba-other-row">
+                         <div class="sba-other-col">
+                            <a href="line-of-credit.html" class="sba-other-card">
+                               <div class="sba-other-icon-wrap">
+                                  <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
+                               </div>
+                               <h4 class="sba-other-card-title">Line of Credit</h4>
+                               <div class="sba-other-card-line"></div>
+                               <p class="sba-other-card-desc">Flexible revolving credit for your operations</p>
+                            </a>
+                         </div>
+                         <div class="sba-other-col">
+                            <a href="equipment-financing.html" class="sba-other-card">
+                               <div class="sba-other-icon-wrap">
+                                  <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
+                               </div>
+                               <h4 class="sba-other-card-title">Equipment Financing</h4>
+                               <div class="sba-other-card-line"></div>
+                               <p class="sba-other-card-desc">Acquire machinery and vehicles with custom terms</p>
+                            </a>
+                         </div>
+                         <div class="sba-other-col">
+                            <a href="working-capital.html" class="sba-other-card">
+                               <div class="sba-other-icon-wrap">
+                                  <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
+                               </div>
+                               <h4 class="sba-other-card-title">Working Capital</h4>
+                               <div class="sba-other-card-line"></div>
+                               <p class="sba-other-card-desc">Fuel daily operations & growth</p>
+                            </a>
+                         </div>
+                         <div class="sba-other-col">
+                            <a href="bridge-loans.html" class="sba-other-card">
+                               <div class="sba-other-icon-wrap">
+                                  <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
+                               </div>
+                               <h4 class="sba-other-card-title">Bridge Loans</h4>
+                               <div class="sba-other-card-line"></div>
+                               <p class="sba-other-card-desc">Short-term financing solutions</p>
+                            </a>
+                         </div>
+                         <div class="sba-other-col">
+                            <a href="abl-loans.html" class="sba-other-card">
+                               <div class="sba-other-icon-wrap">
+                                  <i class="fa-light fa-handshake" style="font-size: 36px; color: #C0392B;"></i>
+                               </div>
+                               <h4 class="sba-other-card-title">ABL Loans</h4>
+                               <div class="sba-other-card-line"></div>
+                               <p class="sba-other-card-desc">Unlock capital by leveraging inventory, receivables, equipment & other assets</p>
+                            </a>
+                         </div>
                   </div>
                </div>
             </section>

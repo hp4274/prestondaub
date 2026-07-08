@@ -48238,4 +48238,56 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   }
 }
 
+/* New Stats Banner style matching the image */
+.tp-stats-banner.new-stats-banner {
+  position: relative;
+  overflow: hidden;
+  background: #06152b;
+  border-radius: 24px;
+  padding: 40px 50px;
+  box-shadow: 0 20px 40px rgba(6, 21, 43, 0.25);
+}
+
+.new-stats-banner-col-left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.new-stats-banner-col-right {
+  padding-left: 40px;
+}
+
+.new-stats-banner-text {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .tp-stats-banner.new-stats-banner {
+    padding: 30px 20px;
+  }
+  .new-stats-banner-col-left {
+    justify-content: center;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .new-stats-banner-col-right {
+    padding-left: 0;
+  }
+  .new-stats-banner-text {
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

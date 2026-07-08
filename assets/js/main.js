@@ -288,9 +288,13 @@
             var target = $(this.getAttribute('href'));
             if (target.length) {
                 event.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top - -60
-                }, 1500);
+                if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+                    ScrollSmoother.get().scrollTo(target[0], true, "top 90px");
+                } else {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 90
+                    }, 1500);
+                }
             }
         });
     }

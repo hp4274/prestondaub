@@ -86,11 +86,11 @@
          grid-template-rows: auto auto;
          align-items: center;
          column-gap: 20px;
-         text-decoration: none;
+         text-decoration: none !important;
          height: 100%;
          position: relative;
          overflow: hidden;
-         cursor: default;
+         cursor: pointer;
       }
 
 
@@ -392,6 +392,96 @@
             flex-direction: column-reverse !important;
          }
       }
+
+      /* Sports Grid Collage (matching given image) */
+      .sports-hero-grid-wrapper {
+         position: relative;
+      }
+      .sports-grid-card {
+         background: #ffffff;
+         border-radius: 20px;
+         box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         overflow: hidden;
+         transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+         border: 1px solid #e2e8f0;
+         height: 100%;
+      }
+      .sports-grid-card:hover {
+         transform: translateY(-6px);
+         box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+         border-color: #cbd5e1;
+      }
+      .sports-grid-card-img-wrap {
+         border-radius: 20px 20px 0 0;
+         overflow: hidden;
+         aspect-ratio: 1 / 1.3;
+         width: 100%;
+      }
+      .sports-grid-card-img-wrap img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         display: block;
+         transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .sports-grid-card:hover .sports-grid-card-img-wrap img {
+         transform: scale(1.06);
+      }
+      .sports-grid-card-label-wrap {
+         padding: 12px 10px;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         width: 100%;
+         background: #ffffff;
+      }
+      .sports-grid-card-icon {
+         width: 26px;
+         height: 26px;
+         border-radius: 50%;
+         background: transparent;
+         border: 1.5px solid #0b1a30;
+         color: #0b1a30;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 11px;
+         flex-shrink: 0;
+         transition: all 0.3s ease;
+      }
+      .sports-grid-card:hover .sports-grid-card-icon {
+         background: #0b1a30;
+         color: #ffffff;
+      }
+      .sports-grid-card-text-container {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 3px;
+         overflow: hidden;
+      }
+      .sports-grid-card-title {
+         font-size: 8px;
+         font-weight: 800;
+         color: #0b1a30;
+         text-transform: uppercase;
+         letter-spacing: 0.5px;
+         line-height: 1.2;
+         font-family: var(--tp-ff-heading);
+      }
+      .sports-grid-card-bar {
+         width: 12px;
+         height: 2px;
+         background-color: #C0392B;
+         border-radius: 1px;
+         transition: width 0.3s ease;
+      }
+      .sports-grid-card:hover .sports-grid-card-bar {
+         width: 22px;
+      }
    </style>
 </head>
 
@@ -492,24 +582,9 @@
                                  <li><a href="financing-solutions/abl-loans.html">ABL Loans</a></li>
                               </ul>
                            </li>
-                           <li class="has-dropdown">
-                              <a href="prospera.html">Prospera
-                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                       width="24px" fill="#363683">
-                                       <path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z" />
-                                    </svg>
-                                 </span>
-                              </a>
-                              <ul class="tp-submenu submenu">
-                                 <li><a href="prospera.html#capital-raise-services">Capital Raise</a></li>
-                                 <li><a href="prospera.html#advisory-consulting">Advisory & Consulting</a></li>
-                                 <li><a href="prospera.html#pitch-deck-presentation-solutions">Pitch Deck & Presentation
-                                       Services</a></li>
-                                 <li><a href="prospera.html#wealth-management">Wealth Management</a></li>
-                                 <li><a href="prospera.html#tax-advisory">Tax Advisory</a></li>
-                              </ul>
-                           </li>
+                           <li>
+                               <a href="prospera.html">Prospera</a>
+                            </li>
                            <li>
                               <a href="commercial-real-estate.html">Commercial Real Estate</a>
                            </li>
@@ -629,57 +704,125 @@
                         </div>
 
                         <div class="col-lg-6 d-none d-lg-block">
-                           <!-- Sports Photos Parallelogram Collage Grid -->
-                           <div class="sports-hero-collage-wrapper"
-                              style="background: #ffffff; padding: 55px 24px; border-radius: 28px; transform: skewX(-15deg); box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08); display: flex; gap: 16px; position: relative; z-index: 10; max-width: 580px; margin: 0 auto;">
+                             <!-- Sports Photos Grid Container (matching reference image) -->
+                             <div class="sports-hero-grid-wrapper"
+                                style="background: transparent; padding: 0; border-radius: 0; box-shadow: none; display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 10; max-width: 600px; margin: 0 auto; overflow: visible; border: none;">
 
-                              <!-- Left Column -->
-                              <div style="display: flex; flex-direction: column; gap: 16px; flex: 1;">
-                                 <!-- Soccer Ball & Cleats -->
-                                 <div
-                                    style="height: 230px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.08);"
-                                    class="collage-item">
-                                    <img
-                                       src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"
-                                       alt="Soccer"
-                                       style="width: 100%; height: 100%; object-fit: cover; transform: skewX(15deg) scale(1.25); display: block; transition: transform 0.6s ease;">
-                                 </div>
-                                 <!-- Formula 1 Car -->
-                                 <div
-                                    style="height: 160px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.08);"
-                                    class="collage-item">
-                                    <img
-                                       src="https://images.unsplash.com/photo-1710553859743-f01ec8c9af2b?auto=format&fit=crop&w=600&q=80"
-                                       alt="Formula 1"
-                                       style="width: 100%; height: 100%; object-fit: cover; transform: skewX(15deg) scale(1.25); display: block; transition: transform 0.6s ease;">
-                                 </div>
-                              </div>
+                               <!-- Row 1: 4 Cards -->
+                               <div style="display: flex; gap: 10px; z-index: 2; position: relative; width: 100%;">
+                                  <!-- Soccer Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/soccer.jpg" alt="Soccer">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-futbol"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">Soccer</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- Basketball Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/basketball.jpg" alt="Basketball">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-basketball"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">Basketball</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- Cricket Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/cricket-match.jpg" alt="Cricket">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-cricket-bat-ball"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">Cricket</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- NHL Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/ice-hockey-game.jpg" alt="NHL">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-hockey-puck"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">National Hockey League</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
 
-                              <!-- Right Column (Staggered Downwards) -->
-                              <div
-                                 style="display: flex; flex-direction: column; gap: 16px; flex: 1; margin-top: 35px; margin-bottom: 0;">
-                                 <!-- Basketball Hoop -->
-                                 <div
-                                    style="height: 210px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.08);"
-                                    class="collage-item">
-                                    <img
-                                       src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80"
-                                       alt="Basketball"
-                                       style="width: 100%; height: 100%; object-fit: cover; transform: skewX(15deg) scale(1.25); display: block; transition: transform 0.6s ease;">
-                                 </div>
-                                 <!-- Stadium Arena Lights -->
-                                 <div
-                                    style="height: 180px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.08);"
-                                    class="collage-item">
-                                    <img
-                                       src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80"
-                                       alt="Stadium Lights"
-                                       style="width: 100%; height: 100%; object-fit: cover; transform: skewX(15deg) scale(1.25); display: block; transition: transform 0.6s ease;">
-                                 </div>
-                              </div>
+                               <!-- Row 2: 3 Cards -->
+                               <div style="display: flex; gap: 10px; justify-content: center; z-index: 2; position: relative; width: 100%; padding: 0 12.5%;">
+                                  <!-- MLB Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/baseball-game.jpg" alt="MLB">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">Major League Baseball</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- NFL Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/american-football-game.jpg" alt="NFL">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-football"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">National Football League</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- Formula 1 Card -->
+                                  <div style="flex: 1; min-width: 0;">
+                                     <div class="sports-grid-card">
+                                        <div class="sports-grid-card-img-wrap">
+                                           <img src="assets/img/sports-investments/formula-1.jpg" alt="Formula 1">
+                                        </div>
+                                        <div class="sports-grid-card-label-wrap">
+                                           <div class="sports-grid-card-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+                                           <div class="sports-grid-card-text-container">
+                                              <span class="sports-grid-card-title">Formula 1</span>
+                                              <div class="sports-grid-card-bar"></div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
 
-                           </div>
-                        </div>
+                            </div>
+                         </div>
                      </div>
                   </div>
                </div>
@@ -825,63 +968,63 @@
                   <div class="row g-4 justify-content-center">
                      <!-- Soccer Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#soccer" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-futbol"></i>
                            </div>
                            <h4>Soccer</h4>
                            <p>European Leagues, MLS & Club Ownership</p>
-                        </div>
+                        </a>
                      </div>
                      <!-- Cricket Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#cricket" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-cricket-bat-ball"></i>
                            </div>
                            <h4>Cricket</h4>
                            <p>IPL, Big Bash & Global T20 Franchises</p>
-                        </div>
+                        </a>
                      </div>
                      <!-- NHL Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#nhl" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-hockey-puck"></i>
                            </div>
                            <h4>NHL</h4>
                            <p>National Hockey League Expansion</p>
-                        </div>
+                        </a>
                      </div>
                      <!-- MLB Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#mlb" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-baseball"></i>
                            </div>
                            <h4>MLB</h4>
                            <p>Major League Baseball Franchises</p>
-                        </div>
+                        </a>
                      </div>
                      <!-- NFL Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#nfl" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-football"></i>
                            </div>
                            <h4>NFL</h4>
                            <p>National Football League Ownership</p>
-                        </div>
+                        </a>
                      </div>
                      <!-- NBA Card -->
                      <div class="col-lg-4 col-md-6">
-                        <div class="sport-nav-card">
+                        <a href="#nba" class="sport-nav-card tp-smooth">
                            <div class="icon-wrap">
                               <i class="fa-light fa-basketball"></i>
                            </div>
                            <h4>NBA</h4>
                            <p>National Basketball Association</p>
-                        </div>
+                        </a>
                      </div>
                   </div>
                </div>
@@ -894,7 +1037,7 @@
                      <!-- Image Left -->
                      <div class="portfolio-card-img-left">
                         <img
-                           src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/soccer-match.jpg"
                            alt="Soccer Match" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
 
@@ -911,6 +1054,57 @@
                         <div
                            style="position: absolute; top: 15px; right: 40px; font-size: 110px; font-weight: 900; color: #f1f5f9; pointer-events: none; line-height: 1; z-index: 1;">
                            01</div>
+
+                        <!-- Graphical Watermark (Soccer Ball - accurate truncated icosahedron) -->
+                        <svg class="sport-graphic" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 5px; bottom: 5px; width: 260px; height: 260px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <defs>
+                              <clipPath id="ball-clip">
+                                 <circle cx="250" cy="250" r="220" />
+                              </clipPath>
+                           </defs>
+                           <!-- Ball outline -->
+                           <circle cx="250" cy="250" r="220" fill="none" stroke="#C0392B" stroke-width="4" />
+                           <g clip-path="url(#ball-clip)">
+                              <!-- ===== Center Pentagon (P0) ===== -->
+                              <polygon points="250,175 293,206 276,258 224,258 207,206" fill="#C0392B" opacity="0.3" stroke="#C0392B" stroke-width="2.5" />
+
+                              <!-- ===== 5 Hexagons around center ===== -->
+                              <!-- Hex top: between P0-top edge and top pentagon -->
+                              <polygon points="250,175 293,206 310,152 278,105 222,105 190,152 207,206" fill="none" stroke="#C0392B" stroke-width="2" />
+                              <!-- Hex top-right: between P0-right and right pentagon -->
+                              <polygon points="293,206 276,258 330,290 372,256 365,192 310,152" fill="none" stroke="#C0392B" stroke-width="2" />
+                              <!-- Hex bottom-right -->
+                              <polygon points="276,258 224,258 202,318 230,370 302,370 330,290" fill="none" stroke="#C0392B" stroke-width="2" />
+                              <!-- Hex bottom-left -->
+                              <polygon points="224,258 207,206 145,192 120,256 170,290 202,318" fill="none" stroke="#C0392B" stroke-width="2" />
+                              <!-- Hex top-left -->
+                              <polygon points="207,206 250,175 222,105 190,152 145,192" fill="none" stroke="#C0392B" stroke-width="2" />
+
+                              <!-- ===== 5 Outer Pentagons ===== -->
+                              <!-- Pentagon top -->
+                              <polygon points="278,105 310,72 250,32 190,72 222,105" fill="#C0392B" opacity="0.22" stroke="#C0392B" stroke-width="2.5" />
+                              <!-- Pentagon top-right -->
+                              <polygon points="365,192 410,180 430,240 395,280 372,256" fill="#C0392B" opacity="0.22" stroke="#C0392B" stroke-width="2.5" />
+                              <!-- Pentagon bottom-right -->
+                              <polygon points="330,290 302,370 340,405 400,370 395,280" fill="#C0392B" opacity="0.22" stroke="#C0392B" stroke-width="2.5" />
+                              <!-- Pentagon bottom-left -->
+                              <polygon points="170,290 105,280 100,370 160,405 202,370" fill="#C0392B" opacity="0.22" stroke="#C0392B" stroke-width="2.5" />
+                              <!-- Pentagon top-left -->
+                              <polygon points="145,192 120,256 70,240 90,180 135,165" fill="#C0392B" opacity="0.22" stroke="#C0392B" stroke-width="2.5" />
+
+                              <!-- ===== Outer seam lines (connecting outer pentagons to ball edge) ===== -->
+                              <line x1="310" y1="72" x2="360" y2="48" stroke="#C0392B" stroke-width="2" />
+                              <line x1="190" y1="72" x2="140" y2="48" stroke="#C0392B" stroke-width="2" />
+                              <line x1="410" y1="180" x2="450" y2="135" stroke="#C0392B" stroke-width="2" />
+                              <line x1="430" y1="240" x2="470" y2="250" stroke="#C0392B" stroke-width="2" />
+                              <line x1="400" y1="370" x2="435" y2="410" stroke="#C0392B" stroke-width="2" />
+                              <line x1="340" y1="405" x2="340" y2="460" stroke="#C0392B" stroke-width="2" />
+                              <line x1="160" y1="405" x2="160" y2="460" stroke="#C0392B" stroke-width="2" />
+                              <line x1="100" y1="370" x2="65" y2="410" stroke="#C0392B" stroke-width="2" />
+                              <line x1="70" y1="240" x2="30" y2="250" stroke="#C0392B" stroke-width="2" />
+                              <line x1="90" y1="180" x2="50" y2="135" stroke="#C0392B" stroke-width="2" />
+                           </g>
+                        </svg>
 
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">SOCCER
@@ -960,6 +1154,19 @@
 
                      <!-- Content -->
                      <div class="portfolio-card-content">
+                        <!-- Graphical Watermark (Wicket & Pitch Pattern) -->
+                        <svg class="sport-graphic" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 10px; bottom: 10px; width: 220px; height: 220px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <g stroke="#0d1a3a" stroke-width="6" fill="none" stroke-linecap="round">
+                              <line x1="160" y1="120" x2="160" y2="320" />
+                              <line x1="200" y1="120" x2="200" y2="320" />
+                              <line x1="240" y1="120" x2="240" y2="320" />
+                              <line x1="152" y1="114" x2="200" y2="114" stroke-width="4" />
+                              <line x1="200" y1="114" x2="248" y2="114" stroke-width="4" />
+                              <line x1="50" y1="320" x2="350" y2="320" stroke-width="3" opacity="0.5" />
+                           </g>
+                           <circle cx="200" cy="320" r="120" fill="none" stroke="#0d1a3a" stroke-width="2" stroke-dasharray="10, 8" opacity="0.3" />
+                        </svg>
+
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">CRICKET
                            PORTFOLIO</span>
@@ -1003,7 +1210,7 @@
                      <!-- Image Right -->
                      <div class="portfolio-card-img-right">
                         <img
-                           src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/cricket-match.jpg"
                            alt="Cricket Match" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
                   </div>
@@ -1018,7 +1225,7 @@
                      <!-- Image Left -->
                      <div class="portfolio-card-img-left">
                         <img
-                           src="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/ice-hockey-game.jpg"
                            alt="Ice Hockey Game" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
 
@@ -1035,6 +1242,35 @@
                         <div
                            style="position: absolute; top: 15px; right: 40px; font-size: 110px; font-weight: 900; color: #f1f5f9; pointer-events: none; line-height: 1; z-index: 1;">
                            03</div>
+
+                        <!-- Graphical Watermark (Hockey Stick & Puck) -->
+                        <svg class="sport-graphic" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 5px; bottom: 5px; width: 250px; height: 250px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <!-- Hockey Stick - shaft (long diagonal handle) -->
+                           <line x1="100" y1="60" x2="310" y2="340" stroke="#C0392B" stroke-width="12" stroke-linecap="round" />
+                           <!-- Stick shaft highlight line -->
+                           <line x1="104" y1="64" x2="306" y2="336" stroke="#C0392B" stroke-width="4" opacity="0.3" />
+                           <!-- Stick blade (angled flat bottom) -->
+                           <path d="M 310,340 C 320,350 340,365 380,375 L 395,365 C 360,358 335,345 320,330 Z" fill="#C0392B" opacity="0.35" stroke="#C0392B" stroke-width="3" stroke-linejoin="round" />
+                           <!-- Stick tape wrapping on shaft (near blade) -->
+                           <line x1="280" y1="305" x2="295" y2="318" stroke="#C0392B" stroke-width="2.5" opacity="0.5" />
+                           <line x1="270" y1="292" x2="285" y2="305" stroke="#C0392B" stroke-width="2.5" opacity="0.5" />
+                           <line x1="260" y1="279" x2="275" y2="292" stroke="#C0392B" stroke-width="2.5" opacity="0.5" />
+                           <!-- Stick grip tape wrapping (near top) -->
+                           <line x1="120" y1="82" x2="132" y2="92" stroke="#C0392B" stroke-width="2" opacity="0.4" />
+                           <line x1="128" y1="92" x2="140" y2="102" stroke="#C0392B" stroke-width="2" opacity="0.4" />
+                           <line x1="136" y1="102" x2="148" y2="112" stroke="#C0392B" stroke-width="2" opacity="0.4" />
+                           <!-- Puck (thick disc next to blade) -->
+                           <ellipse cx="400" cy="410" rx="42" ry="16" fill="#C0392B" opacity="0.3" stroke="#C0392B" stroke-width="3" />
+                           <!-- Puck top edge -->
+                           <ellipse cx="400" cy="402" rx="42" ry="16" fill="none" stroke="#C0392B" stroke-width="2.5" />
+                           <!-- Puck side lines -->
+                           <line x1="358" y1="402" x2="358" y2="410" stroke="#C0392B" stroke-width="2.5" />
+                           <line x1="442" y1="402" x2="442" y2="410" stroke="#C0392B" stroke-width="2.5" />
+                           <!-- Second stick (crossed) -->
+                           <line x1="400" y1="60" x2="190" y2="340" stroke="#C0392B" stroke-width="10" stroke-linecap="round" opacity="0.5" />
+                           <!-- Second stick blade -->
+                           <path d="M 190,340 C 180,350 160,365 120,375 L 105,365 C 140,358 165,345 180,330 Z" fill="#C0392B" opacity="0.2" stroke="#C0392B" stroke-width="2.5" stroke-linejoin="round" />
+                        </svg>
 
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">NHL
@@ -1084,6 +1320,13 @@
 
                      <!-- Content -->
                      <div class="portfolio-card-content">
+                        <!-- Graphical Watermark (Baseball Stitching Pattern) -->
+                        <svg class="sport-graphic" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 10px; bottom: 10px; width: 220px; height: 220px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <path d="M 100,-50 A 250,250 0 0,0 350,300" fill="none" stroke="#C0392B" stroke-width="3" stroke-dasharray="8, 12" />
+                           <path d="M 300,-50 A 250,250 0 0,1 50,300" fill="none" stroke="#C0392B" stroke-width="3" stroke-dasharray="8, 12" />
+                           <polygon points="200,160 250,210 250,260 150,260 150,210" fill="none" stroke="#0d1a3a" stroke-width="3" opacity="0.3" />
+                        </svg>
+
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">MLB
                            PORTFOLIO</span>
@@ -1126,7 +1369,7 @@
                      <!-- Image Right -->
                      <div class="portfolio-card-img-right">
                         <img
-                           src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/baseball-game.jpg"
                            alt="Baseball Game" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
                   </div>
@@ -1141,7 +1384,7 @@
                      <!-- Image Left -->
                      <div class="portfolio-card-img-left">
                         <img
-                           src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/american-football-game.jpg"
                            alt="American Football Game"
                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
@@ -1159,6 +1402,28 @@
                         <div
                            style="position: absolute; top: 15px; right: 40px; font-size: 110px; font-weight: 900; color: #f1f5f9; pointer-events: none; line-height: 1; z-index: 1;">
                            05</div>
+
+                        <!-- Graphical Watermark (American Football) -->
+                        <svg class="sport-graphic" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 5px; bottom: 5px; width: 260px; height: 260px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <!-- Football body (prolate spheroid / pointed oval) tilted at 45 deg -->
+                           <g transform="rotate(-35 250 250)">
+                              <!-- Main football shape -->
+                              <ellipse cx="250" cy="250" rx="200" ry="95" fill="#C0392B" opacity="0.15" stroke="#C0392B" stroke-width="4" />
+                              <!-- Center seam line (vertical on ball) -->
+                              <line x1="250" y1="155" x2="250" y2="345" stroke="#C0392B" stroke-width="3" />
+                              <!-- Lace stitches across center seam -->
+                              <line x1="235" y1="200" x2="265" y2="200" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <line x1="235" y1="220" x2="265" y2="220" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <line x1="235" y1="240" x2="265" y2="240" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <line x1="235" y1="260" x2="265" y2="260" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <line x1="235" y1="280" x2="265" y2="280" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <line x1="235" y1="300" x2="265" y2="300" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round" />
+                              <!-- Top pointed tip stripe -->
+                              <ellipse cx="250" cy="250" rx="170" ry="80" fill="none" stroke="#C0392B" stroke-width="1.5" opacity="0.4" />
+                              <!-- Inner contour stripe -->
+                              <ellipse cx="250" cy="250" rx="140" ry="65" fill="none" stroke="#C0392B" stroke-width="1" opacity="0.3" />
+                           </g>
+                        </svg>
 
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">NFL
@@ -1207,6 +1472,15 @@
 
                      <!-- Content -->
                      <div class="portfolio-card-content">
+                        <!-- Graphical Watermark (Basketball Key & Ring Diagram) -->
+                        <svg class="sport-graphic" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 10px; bottom: 10px; width: 220px; height: 220px; opacity: 0.12; pointer-events: none; z-index: 1;">
+                           <path d="M 400,60 A 180,180 0 0,0 400,320" fill="none" stroke="#0d1a3a" stroke-width="4" />
+                           <rect x="250" y="130" width="150" height="120" fill="none" stroke="#0d1a3a" stroke-width="3" />
+                           <circle cx="250" cy="190" r="60" fill="none" stroke="#0d1a3a" stroke-width="3" />
+                           <line x1="380" y1="160" x2="380" y2="220" stroke="#0d1a3a" stroke-width="4" />
+                           <circle cx="365" cy="190" r="15" fill="none" stroke="#0d1a3a" stroke-width="3" />
+                        </svg>
+
                         <span
                            style="color: #C0392B; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; position: relative; z-index: 2;">NBA
                            PORTFOLIO</span>
@@ -1216,7 +1490,7 @@
                         <p
                            style="font-size: 14.5px; color: #475569; line-height: 1.5; margin-bottom: 20px; position: relative; z-index: 2;">
                            Preston Daub connects investors with ownership opportunities in NBA franchises through our
-                           trusted network. We facilitate introductions and help make the process happen, working with
+                           trusted network. We facilitate introductions and help make the process happen, guiding
                            investors to navigate this exclusive market. The NBA is a premier global sports entertainment
                            property with massive international reach, particularly in Asia and Europe. A strong digital
                            presence and lucrative new broadcast agreements highlight its upward growth trajectory.
@@ -1249,7 +1523,7 @@
                      <!-- Image Right -->
                      <div class="portfolio-card-img-right">
                         <img
-                           src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
+                           src="assets/img/sports-investments/basketball-hoop.jpg"
                            alt="Basketball Hoop" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                      </div>
                   </div>

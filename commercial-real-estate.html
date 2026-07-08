@@ -258,31 +258,57 @@
       }
 
       .cre-stat-icon {
-         width: 56px;
-         height: 56px;
+         width: 68px;
+         height: 68px;
          border-radius: 50%;
          display: flex;
          align-items: center;
          justify-content: center;
-         border: 2px solid rgba(255, 255, 255, 0.18);
-         background: rgba(255, 255, 255, 0.08);
+         border: 1px solid rgba(255, 255, 255, 0.12);
+         background: rgba(255, 255, 255, 0.03);
          color: #ffffff;
-         font-size: 22px;
+         font-size: 24px;
          flex-shrink: 0;
+         box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02);
       }
 
       .cre-stat-value {
-         font-size: 26px;
-         font-weight: 800;
+         font-size: 16px;
+         font-weight: 700;
          color: #ffffff;
-         margin: 0;
-         line-height: 1.2;
+         margin: 0 0 6px 0;
+         line-height: 1.3;
       }
 
       .cre-stat-label {
-         font-size: 14px;
+         font-size: 13px;
          color: #94a3b8;
          margin: 0;
+         line-height: 1.4;
+      }
+
+      .cre-stats-col {
+         border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      @media (min-width: 992px) {
+         .cre-stats-col:last-child {
+            border-right: none;
+         }
+      }
+
+      @media (max-width: 991px) {
+         .cre-stats-col {
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+         }
+         .cre-stats-col:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+         }
       }
 
       /* Our Approach Section Collage */
@@ -911,47 +937,47 @@
                 <div class="container">
                    <div class="cre-stats-bar">
                       <div class="row g-4 align-items-center">
-                         <div class="col-lg-3 col-md-6">
+                         <div class="col-lg-3 col-md-6 cre-stats-col">
                             <div class="cre-stat-item">
                                <div class="cre-stat-icon">
                                   <i class="fa-light fa-users"></i>
                                </div>
                                <div>
-                                  <h4 class="cre-stat-value">500+</h4>
-                                  <p class="cre-stat-label">Trusted Clients</p>
-                               </div>
+                                  <h4 class="cre-stat-value">Exclusive network</h4>
+                                  <p class="cre-stat-label">Access to a select network of investors and partners.</p>
+                                </div>
                             </div>
                          </div>
-                         <div class="col-lg-3 col-md-6">
-                            <div class="cre-stat-item">
-                               <div class="cre-stat-icon">
-                                  <i class="fa-light fa-eye-slash"></i>
-                               </div>
-                               <div>
-                                  <h4 class="cre-stat-value">Exclusive</h4>
-                                  <p class="cre-stat-label">Off-Market Access</p>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="col-lg-3 col-md-6">
-                            <div class="cre-stat-item">
-                               <div class="cre-stat-icon">
-                                  <i class="fa-light fa-handshake"></i>
-                               </div>
-                               <div>
-                                  <h4 class="cre-stat-value">Successful</h4>
-                                  <p class="cre-stat-label">Deals Facilitated</p>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="col-lg-3 col-md-6">
+                         <div class="col-lg-3 col-md-6 cre-stats-col">
                             <div class="cre-stat-item">
                                <div class="cre-stat-icon">
                                   <i class="fa-light fa-globe"></i>
                                </div>
                                <div>
-                                  <h4 class="cre-stat-value">Nationwide</h4>
-                                  <p class="cre-stat-label">Market Coverage</p>
+                                  <h4 class="cre-stat-value">Nationwide market coverage</h4>
+                                  <p class="cre-stat-label">Strategic presence across key markets nationwide.</p>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6 cre-stats-col">
+                            <div class="cre-stat-item">
+                               <div class="cre-stat-icon">
+                                  <i class="fa-light fa-handshake"></i>
+                               </div>
+                               <div>
+                                  <h4 class="cre-stat-value">Industry leading partnerships</h4>
+                                  <p class="cre-stat-label">Collaborating with trusted industry leaders.</p>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6 cre-stats-col">
+                            <div class="cre-stat-item">
+                               <div class="cre-stat-icon">
+                                  <i class="fa-light fa-gear"></i>
+                               </div>
+                               <div>
+                                  <h4 class="cre-stat-value">Customized solutions</h4>
+                                  <p class="cre-stat-label">Tailored strategies to meet your unique goals.</p>
                                </div>
                             </div>
                          </div>
