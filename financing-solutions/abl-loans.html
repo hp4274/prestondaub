@@ -132,8 +132,8 @@
                               </ul>
                            </li>
                            <li>
-                               <a href="../prospera.html">Prospera</a>
-                            </li>
+                              <a href="../prospera.html">Prospera</a>
+                           </li>
                            <li>
                               <a href="../commercial-real-estate.html">Commercial Real Estate</a>
                            </li>
@@ -177,7 +177,8 @@
                   padding: 125px 0 45px;
                   background: #FFFFFF;
                   position: relative;
-                  overflow: hidden;
+                  overflow: visible;
+                  z-index: 10;
                }
 
                .sba-hero-title {
@@ -279,7 +280,7 @@
                .sba-hero-section .hero-bottom-swoosh {
                   position: absolute;
                   right: 0;
-                  bottom: 0px;
+                  bottom: -40px;
                   width: 68%;
                   height: 380px;
                   z-index: 1;
@@ -338,8 +339,10 @@
 
                /* Overview Section */
                .sba-overview-section {
-                  padding: 30px 0 80px;
+                  padding: 60px 0 80px;
                   background-color: #FFFFFF;
+                  position: relative;
+                  z-index: 1;
                }
 
                .sba-overview-img-wrap {
@@ -442,7 +445,7 @@
                   pointer-events: none;
                }
 
-                                             /* Other Financing Section */
+               /* Other Financing Section */
                .sba-other-section {
                   padding: 90px 0 100px;
                   background: linear-gradient(180deg, #F8FAFC 0%, #FDEDEC 100%);
@@ -625,7 +628,7 @@
 
                   .sba-hero-section .hero-bottom-swoosh {
                      width: 100%;
-                     bottom: 0px;
+                     bottom: -30px;
                      height: 300px;
                   }
 
@@ -672,7 +675,9 @@
                      <div class="col-lg-6">
                         <h1 class="sba-hero-title">Asset-Based<br><span>Lending</span></h1>
                         <div class="sba-red-line"></div>
-                        <p class="sba-hero-desc">Unlock the value of your business assets to access flexible capital solutions. Preston Daub specializes in structuring asset-based loans that leverage your inventory, receivables, and equipment to fuel growth and operational stability.</p>
+                        <p class="sba-hero-desc">Unlock the value of your business assets to access flexible capital
+                           solutions. Preston Daub specializes in structuring asset-based loans that leverage your
+                           inventory, receivables, and equipment to fuel growth and operational stability.</p>
                         <a href="../applynow.html" class="sba-btn-red">
                            <span>Apply Now</span>
                            <i class="fa-light fa-arrow-right"></i>
@@ -681,14 +686,11 @@
                         <!-- Mobile-only collage -->
                         <div class="sba-hero-collage d-block d-lg-none">
                            <div class="sba-dot-pattern"></div>
-                           <img class="sba-img-top"
-                              src="../assets/img/abl-loans/asset-based-lending-advisory.jpg"
+                           <img class="sba-img-top" src="../assets/img/abl-loans/asset-based-lending-advisory.jpg"
                               alt="Asset-Based Lending Advisory">
-                           <img class="sba-img-mid"
-                              src="../assets/img/abl-loans/business-asset-valuation.jpg"
+                           <img class="sba-img-mid" src="../assets/img/abl-loans/business-asset-valuation.jpg"
                               alt="Business Asset Valuation">
-                           <img class="sba-img-bottom"
-                              src="../assets/img/abl-loans/warehouse-inventory-financing.jpg"
+                           <img class="sba-img-bottom" src="../assets/img/abl-loans/warehouse-inventory-financing.jpg"
                               alt="Warehouse Inventory Financing">
                         </div>
 
@@ -720,14 +722,11 @@
                      <div class="col-lg-6 d-none d-lg-block">
                         <div class="sba-hero-collage">
                            <div class="sba-dot-pattern"></div>
-                           <img class="sba-img-top"
-                              src="../assets/img/abl-loans/asset-based-lending-advisory.jpg"
+                           <img class="sba-img-top" src="../assets/img/abl-loans/asset-based-lending-advisory.jpg"
                               alt="Asset-Based Lending Advisory">
-                           <img class="sba-img-mid"
-                              src="../assets/img/abl-loans/business-asset-valuation.jpg"
+                           <img class="sba-img-mid" src="../assets/img/abl-loans/business-asset-valuation.jpg"
                               alt="Business Asset Valuation">
-                           <img class="sba-img-bottom"
-                              src="../assets/img/abl-loans/warehouse-inventory-financing.jpg"
+                           <img class="sba-img-bottom" src="../assets/img/abl-loans/warehouse-inventory-financing.jpg"
                               alt="Warehouse Inventory Financing">
                         </div>
                      </div>
@@ -742,8 +741,16 @@
                      <div class="col-lg-6 mb-40 mb-lg-0">
                         <div class="sba-red-line"></div>
                         <h2 class="fs-40 fw-700 mb-25" style="color: #111827;">Asset-Based Lending Overview</h2>
-                        <p class="fs-16 lh-170-per mb-20" style="color: #4B5563;">Asset-Based Lending (ABL) enables businesses to secure financing by leveraging the value of their tangible and intangible assets — including accounts receivable, inventory, machinery, and real estate. Unlike traditional loans that rely heavily on credit history, ABL focuses on the quality and value of your collateral, making it an ideal solution for companies with strong asset bases but fluctuating cash flows.</p>
-                        <p class="fs-16 lh-170-per mb-0" style="color: #4B5563;">Preston Daub structures ABL facilities that scale with your business. As your asset base grows, so does your borrowing capacity. Our team works closely with appraisers, auditors, and lenders to ensure your assets are properly valued and your facility is optimized for maximum capital availability.</p>
+                        <p class="fs-16 lh-170-per mb-20" style="color: #4B5563;">Asset-Based Lending (ABL) enables
+                           businesses to secure financing by leveraging the value of their tangible and intangible
+                           assets — including accounts receivable, inventory, machinery, and real estate. Unlike
+                           traditional loans that rely heavily on credit history, ABL focuses on the quality and value
+                           of your collateral, making it an ideal solution for companies with strong asset bases but
+                           fluctuating cash flows.</p>
+                        <p class="fs-16 lh-170-per mb-0" style="color: #4B5563;">Preston Daub structures ABL facilities
+                           that scale with your business. As your asset base grows, so does your borrowing capacity. Our
+                           team works closely with appraisers, auditors, and lenders to ensure your assets are properly
+                           valued and your facility is optimized for maximum capital availability.</p>
                      </div>
                      <div class="col-lg-6">
                         <div class="ps-lg-4">
@@ -775,7 +782,9 @@
                               <i class="fa-light fa-boxes-stacked"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Inventory Financing</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Convert your raw materials, work-in-progress, and finished goods into immediate working capital without liquidating stock.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Convert your raw materials,
+                              work-in-progress, and finished goods into immediate working capital without liquidating
+                              stock.</p>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 mb-30">
@@ -784,7 +793,9 @@
                               <i class="fa-light fa-file-invoice-dollar"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Receivables Advance</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Accelerate cash flow by borrowing against outstanding invoices and accounts receivable, bridging the gap between billing and collection.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Accelerate cash flow by
+                              borrowing against outstanding invoices and accounts receivable, bridging the gap between
+                              billing and collection.</p>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 mb-30">
@@ -793,7 +804,8 @@
                               <i class="fa-light fa-chart-line-up"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Scalable Facility</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Your borrowing capacity grows alongside your asset base, providing increasing liquidity as your business expands.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Your borrowing capacity grows
+                              alongside your asset base, providing increasing liquidity as your business expands.</p>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 mb-30">
@@ -802,7 +814,9 @@
                               <i class="fa-light fa-shield-check"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Flexible Collateral</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Leverage multiple asset types — equipment, real estate, intellectual property, and more — as collateral for your facility.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Leverage multiple asset types
+                              — equipment, real estate, intellectual property, and more — as collateral for your
+                              facility.</p>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 mb-30">
@@ -811,7 +825,9 @@
                               <i class="fa-light fa-handshake"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Lender Relationships</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Our extensive network of ABL lenders ensures competitive terms and structures tailored to your specific industry and asset profile.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Our extensive network of ABL
+                              lenders ensures competitive terms and structures tailored to your specific industry and
+                              asset profile.</p>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 mb-30">
@@ -820,7 +836,9 @@
                               <i class="fa-light fa-user-tie"></i>
                            </div>
                            <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Expert Advisory</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Work with experienced ABL specialists who guide you through structuring, valuation, and ongoing facility management.</p>
+                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Work with experienced ABL
+                              specialists who guide you through structuring, valuation, and ongoing facility management.
+                           </p>
                         </div>
                      </div>
                   </div>
@@ -831,8 +849,11 @@
             <section class="sba-cta-section">
                <div class="sba-cta-box">
                   <div class="sba-cta-left">
-                     <h2 class="fs-40 fw-700 mb-20" style="color: #0A1A3B; line-height: 1.2;">Ready to Unlock Your<br><span style="color: #C0392B;">Asset Value?</span></h2>
-                     <p class="fs-16 lh-160-per mb-35" style="color: #4B5563; max-width: 460px;">Connect with our ABL specialists today to structure an asset-based lending facility that maximizes your capital availability and supports business growth.</p>
+                     <h2 class="fs-40 fw-700 mb-20" style="color: #0A1A3B; line-height: 1.2;">Ready to Unlock
+                        Your<br><span style="color: #C0392B;">Asset Value?</span></h2>
+                     <p class="fs-16 lh-160-per mb-35" style="color: #4B5563; max-width: 460px;">Connect with our ABL
+                        specialists today to structure an asset-based lending facility that maximizes your capital
+                        availability and supports business growth.</p>
                      <a href="../applynow.html" class="sba-btn-red">
                         <span>Apply Now</span>
                         <i class="fa-light fa-arrow-right"></i>
@@ -847,8 +868,7 @@
                            <path d="M195,0 Q115,250 175,500 L180,500 Q120,250 200,0 Z" fill="#C0392B" opacity="0.6" />
                         </svg>
                      </div>
-                     <img class="sba-cta-img"
-                        src="../assets/img/abl-loans/abl-lending-consultation.jpg"
+                     <img class="sba-cta-img" src="../assets/img/abl-loans/abl-lending-consultation.jpg"
                         alt="ABL Lending Consultation">
                   </div>
                </div>
@@ -860,60 +880,61 @@
                   <div class="row mb-50">
                      <div class="col-12 text-center">
                         <h2 class="fs-36 fw-700 mb-15" style="color: #111827;">Other Financing Solutions</h2>
-                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing options tailored to meet your business needs.</p>
+                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing
+                           options tailored to meet your business needs.</p>
                      </div>
                   </div>
                   <div class="sba-other-row">
-                         <div class="sba-other-col">
-                            <a href="sba-loans.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-building-columns" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">SBA & USDA Loans</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Government-backed business financing</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="line-of-credit.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Line of Credit</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Flexible revolving credit for your operations</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="equipment-financing.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Equipment Financing</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Acquire machinery and vehicles with custom terms</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="working-capital.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Working Capital</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Fuel daily operations & growth</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="bridge-loans.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Bridge Loans</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Short-term financing solutions</p>
-                            </a>
-                         </div>
+                     <div class="sba-other-col">
+                        <a href="sba-loans.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-building-columns" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">SBA & USDA Loans</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Government-backed business financing</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="line-of-credit.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Line of Credit</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Flexible revolving credit for your operations</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="equipment-financing.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Equipment Financing</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Acquire machinery and vehicles with custom terms</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="working-capital.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Working Capital</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Fuel daily operations & growth</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="bridge-loans.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Bridge Loans</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Short-term financing solutions</p>
+                        </a>
+                     </div>
                   </div>
                </div>
             </section>

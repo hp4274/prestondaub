@@ -1,3 +1,3 @@
 <?php
-header("Location: dashboard.html");
+header("Location: dashboard.php");
 exit();

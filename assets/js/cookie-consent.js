@@ -531,3 +531,41 @@
         createBanner();
     }
 })();
+
+// Maintenance Mode Redirect Checker
+(function() {
+    'use strict';
+    
+    // Skip if we are inside the admin folder or on the maintenance page itself
+    if (window.location.pathname.includes('/admin/')) return;
+    if (window.location.pathname.includes('/maintenance.html')) return;
+    
+    // Determine the base path dynamically
+    // If the path contains "about" or "financing-solutions", the parent directory is "../"
+    let basePath = './';
+    if (window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/')) {
+        basePath = '../';
+    }
+    
+    // Support any custom dev server port (e.g. Live Server)
+    const isLiveServer = window.location.port !== '';
+    const apiEndpoint = isLiveServer 
+        ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php' 
+        : basePath + 'admin/api-maintenance-status.php';
+        
+    const redirectUrl = basePath + 'maintenance.html';
+
+    fetch(apiEndpoint)
+        .then(function(response) {
+            if (!response.ok) throw new Error('API unreachable');
+            return response.json();
+        })
+        .then(function(data) {
+            if (data && data.maintenance_mode) {
+                window.location.href = redirectUrl;
+            }
+        })
+        .catch(function(err) {
+            console.warn('Maintenance check bypassed:', err);
+        });
+})();

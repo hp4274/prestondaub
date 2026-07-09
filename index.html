@@ -2,6 +2,24 @@
 <html class="no-js" lang="en">
 
 <head>
+   <script>
+      (function() {
+         if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
+         var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
+         var basePath = isSubDir ? '../' : './';
+         var apiEndpoint = window.location.port 
+            ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
+            : basePath + 'admin/api-maintenance-status.php';
+         fetch(apiEndpoint)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+               if (data && data.maintenance_mode) {
+                  window.location.href = basePath + 'maintenance.html';
+               }
+            })
+            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+      })();
+   </script>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title>Preston Daub | Business Financing, Prospera Advisory & Sports Investments</title>
@@ -1120,7 +1138,7 @@
                               <!-- Right Form Panel -->
                               <div class="col-lg-7">
                                  <div class="cst-form-wrap">
-                                    <form action="/api/forms/contact" method="POST">
+                                    <form action="admin/submit-form.php?form_type=contact" method="POST">
                                        <div class="row">
                                           <!-- Row 1: Name & Email -->
                                           <div class="col-md-6">
@@ -1363,7 +1381,7 @@
    <script>
       document.addEventListener('DOMContentLoaded', function () {
          // Get the form (it doesn't have an id in the HTML, so we need to select it differently)
-         const contactForm = document.querySelector('form[action="/api/forms/contact"]');
+         const contactForm = document.querySelector('form[action="admin/submit-form.php?form_type=contact"]');
          if (!contactForm) {
             console.error('Contact form not found on index.html');
             return;
@@ -1393,7 +1411,9 @@
             const formData = new FormData(form);
 
             // Send to backend
-            fetch(form.getAttribute('action'), {
+            const formAction = form.getAttribute('action');
+            const actionUrl = window.location.port ? `http://localhost/prestondaub/${formAction}` : formAction;
+            fetch(actionUrl, {
                method: 'POST',
                body: formData
             })

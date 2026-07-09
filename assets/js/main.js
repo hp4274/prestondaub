@@ -2587,8 +2587,17 @@
 
 	function initTeamNavigation() {
 		// Check team module status and hide/show Team link accordingly
-		// Use absolute path from root to ensure it works from all pages
-		const apiPath = '/api/public/team-members';
+		// Resolve dynamic path relative to main.js to support all hosting layouts
+		let apiPath = 'admin/api-team-members.php';
+		const scripts = document.getElementsByTagName('script');
+		for (let i = 0; i < scripts.length; i++) {
+			const src = scripts[i].src;
+			if (src && src.indexOf('assets/js/main.js') !== -1) {
+				const base = src.substring(0, src.indexOf('assets/js/main.js'));
+				apiPath = base + 'admin/api-team-members.php';
+				break;
+			}
+		}
 		
 		fetch(apiPath)
 			.then(res => res.json())

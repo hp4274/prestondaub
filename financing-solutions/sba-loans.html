@@ -177,7 +177,8 @@
                   padding: 125px 0 45px;
                   background: #FFFFFF;
                   position: relative;
-                  overflow: hidden;
+                  overflow: visible;
+                  z-index: 10;
                }
 
                .sba-hero-title {
@@ -279,7 +280,7 @@
                .sba-hero-section .hero-bottom-swoosh {
                   position: absolute;
                   right: 0;
-                  bottom: 0px;
+                  bottom: -40px;
                   width: 68%;
                   height: 380px;
                   z-index: 1;
@@ -338,8 +339,10 @@
 
                /* Overview Section */
                .sba-overview-section {
-                  padding: 30px 0 80px;
+                  padding: 60px 0 80px;
                   background-color: #FFFFFF;
+                  position: relative;
+                  z-index: 1;
                }
 
                .sba-overview-img-wrap {
@@ -442,7 +445,7 @@
                   pointer-events: none;
                }
 
-                                             /* Other Financing Section */
+               /* Other Financing Section */
                .sba-other-section {
                   padding: 90px 0 100px;
                   background: linear-gradient(180deg, #F8FAFC 0%, #FDEDEC 100%);
@@ -625,7 +628,7 @@
 
                   .sba-hero-section .hero-bottom-swoosh {
                      width: 100%;
-                     bottom: 0px;
+                     bottom: -30px;
                      height: 300px;
                   }
 
@@ -877,60 +880,62 @@
                   <div class="row mb-50">
                      <div class="col-12 text-center">
                         <h2 class="fs-36 fw-700 mb-15" style="color: #111827;">Other Financing Solutions</h2>
-                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing options tailored to meet your business needs.</p>
+                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing
+                           options tailored to meet your business needs.</p>
                      </div>
                   </div>
                   <div class="sba-other-row">
-                         <div class="sba-other-col">
-                            <a href="line-of-credit.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Line of Credit</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Flexible revolving credit for your operations</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="equipment-financing.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Equipment Financing</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Acquire machinery and vehicles with custom terms</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="working-capital.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Working Capital</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Fuel daily operations & growth</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="bridge-loans.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">Bridge Loans</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Short-term financing solutions</p>
-                            </a>
-                         </div>
-                         <div class="sba-other-col">
-                            <a href="abl-loans.html" class="sba-other-card">
-                               <div class="sba-other-icon-wrap">
-                                  <i class="fa-light fa-handshake" style="font-size: 36px; color: #C0392B;"></i>
-                               </div>
-                               <h4 class="sba-other-card-title">ABL Loans</h4>
-                               <div class="sba-other-card-line"></div>
-                               <p class="sba-other-card-desc">Unlock capital by leveraging inventory, receivables, equipment & other assets</p>
-                            </a>
-                         </div>
+                     <div class="sba-other-col">
+                        <a href="line-of-credit.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Line of Credit</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Flexible revolving credit for your operations</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="equipment-financing.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Equipment Financing</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Acquire machinery and vehicles with custom terms</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="working-capital.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Working Capital</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Fuel daily operations & growth</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="bridge-loans.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">Bridge Loans</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Short-term financing solutions</p>
+                        </a>
+                     </div>
+                     <div class="sba-other-col">
+                        <a href="abl-loans.html" class="sba-other-card">
+                           <div class="sba-other-icon-wrap">
+                              <i class="fa-light fa-handshake" style="font-size: 36px; color: #C0392B;"></i>
+                           </div>
+                           <h4 class="sba-other-card-title">ABL Loans</h4>
+                           <div class="sba-other-card-line"></div>
+                           <p class="sba-other-card-desc">Unlock capital by leveraging inventory, receivables, equipment
+                              & other assets</p>
+                        </a>
+                     </div>
                   </div>
                </div>
             </section>

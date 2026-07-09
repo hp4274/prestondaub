@@ -1,2 +1,4 @@
-<?php
-require_once __DIR__ . '/../_archive/legacy-php-support/includes/footer.php';
+    </div> <!-- Close main-content -->
+  </div> <!-- Close admin-wrapper -->
+</body>
+</html>

@@ -1,3 +1,4 @@
 <?php
-header("Location: logout.html");
-exit();
+require_once __DIR__ . '/config/auth.php';
+logout();
+?>

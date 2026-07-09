@@ -2,6 +2,24 @@
 <html class="no-js" lang="en">
 
 <head>
+   <script>
+      (function() {
+         if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
+         var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
+         var basePath = isSubDir ? '../' : './';
+         var apiEndpoint = window.location.port 
+            ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
+            : basePath + 'admin/api-maintenance-status.php';
+         fetch(apiEndpoint)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+               if (data && data.maintenance_mode) {
+                  window.location.href = basePath + 'maintenance.html';
+               }
+            })
+            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+      })();
+   </script>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title>Apply Now | Preston Daub - Business Financing Application</title>
@@ -193,7 +211,7 @@
                               <span id="errorCount">Please fill in all required fields</span>
                            </div>
 
-                           <form action="/api/forms/financing" method="POST" id="applicationForm">
+                           <form action="admin/submit-form.php?form_type=financing" method="POST" id="applicationForm">
                               <input type="hidden" name="form_type" value="business-loans">
 
                               <div class="form-section mb-30"
@@ -564,7 +582,8 @@
 
             // Submit form via AJAX
             const formData = new FormData(this);
-            fetch('/api/forms/financing', {
+            const actionUrl = window.location.port ? 'http://localhost/prestondaub/admin/submit-form.php?form_type=financing' : 'admin/submit-form.php?form_type=financing';
+            fetch(actionUrl, {
                method: 'POST',
                body: formData
             })
@@ -575,7 +594,7 @@
 
                   if (data.success) {
                      // Show success toast
-                     Toast.success('Form submitted successfully! Redirecting...');
+                     Toast.success(data.message || 'Form submitted successfully!');
 
                      // Also show inline message below privacy policy
                      if (messageContainer) {
@@ -595,7 +614,7 @@
                         </div>
                      `;
 
-                        // Auto-dismiss after 3.5 seconds, then redirect
+                        // Auto-dismiss after 3.5 seconds
                         setTimeout(() => {
                            const messageDiv = messageContainer.querySelector('div');
                            if (messageDiv) {
@@ -605,13 +624,10 @@
                                  messageContainer.innerHTML = '';
                               }, 400);
                            }
-                        }, 1600); // Start fade at 1.6s, redirect at 2s
+                        }, 3500);
                      }
 
-                     // Redirect to home page or thank you page
-                     setTimeout(() => {
-                        window.location.href = 'index.html';
-                     }, 2000);
+                     this.reset();
                   } else {
                      // Show error toast
                      Toast.error('Error: ' + (data.message || 'Failed to submit form'));

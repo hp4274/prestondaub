@@ -2,6 +2,24 @@
 <html class="no-js" lang="en">
 
 <head>
+   <script>
+      (function() {
+         if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
+         var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
+         var basePath = isSubDir ? '../' : './';
+         var apiEndpoint = window.location.port 
+            ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
+            : basePath + 'admin/api-maintenance-status.php';
+         fetch(apiEndpoint)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+               if (data && data.maintenance_mode) {
+                  window.location.href = basePath + 'maintenance.html';
+               }
+            })
+            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+      })();
+   </script>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title>Prospera | Preston Daub - Comprehensive Financial Services</title>
@@ -1595,7 +1613,7 @@
                            <p style="font-size: 15px; color: #64748b; line-height: 1.6; margin-bottom: 28px;">From debt
                               sourcing and equity raises to strategic consulting&mdash;we provide the financial
                               expertise your business needs.</p>
-                           <form action="/api/forms/prospera" method="POST" id="prosperaForm">
+                           <form action="admin/submit-form.php?form_type=prospera" method="POST" id="prosperaForm">
                               <input type="hidden" name="form_type" value="prospera">
                               <div class="row">
                                  <div class="col-md-6">
@@ -1911,7 +1929,9 @@
             const formData = new FormData(form);
 
             // Send to backend
-            fetch(form.getAttribute('action'), {
+            const formAction = form.getAttribute('action');
+            const actionUrl = window.location.port ? `http://localhost/prestondaub/${formAction}` : formAction;
+            fetch(actionUrl, {
                method: 'POST',
                body: formData
             })
