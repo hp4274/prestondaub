@@ -12457,7 +12457,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
   background-size: cover;
   background-position: right 18%;
   background-repeat: no-repeat;
-  padding: 210px 0 180px;
+  padding: 180px 0 185px;
   overflow: hidden;
 }
 
@@ -12536,7 +12536,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 85%;
+  width: 100%;
   height: 260px;
   z-index: 1;
   pointer-events: none;
@@ -47709,6 +47709,10 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   transition: all 0.3s ease;
 }
 
+.tp-testimonial-it-slider .swiper-slide {
+  height: auto;
+}
+
 .tp-testi-card:hover {
   transform: translateY(-5px);
   box-shadow: none;
@@ -48159,11 +48163,11 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   padding: 0;
 }
 
-.custom-mobile-menu-list > li {
+.custom-mobile-menu-list>li {
   border-bottom: 1px solid #f1f5f9;
 }
 
-.custom-mobile-menu-list > li > a {
+.custom-mobile-menu-list>li>a {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48175,11 +48179,11 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   text-decoration: none;
 }
 
-.custom-mobile-menu-list > li > a:hover {
+.custom-mobile-menu-list>li>a:hover {
   color: #C0392B;
 }
 
-.custom-mobile-menu-list > li > a > span:not(.custom-mobile-menu-arrow) {
+.custom-mobile-menu-list>li>a>span:not(.custom-mobile-menu-arrow) {
   display: none;
 }
 
@@ -48273,6 +48277,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   .tp-stats-banner.new-stats-banner {
     padding: 30px 20px;
   }
+
   .new-stats-banner-col-left {
     justify-content: center;
     padding-right: 0;
@@ -48281,9 +48286,11 @@ only screen and (min-width: 576px) and (max-width: 767px) {
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
+
   .new-stats-banner-col-right {
     padding-left: 0;
   }
+
   .new-stats-banner-text {
     font-size: 22px;
     text-align: center;

@@ -3,21 +3,21 @@
 
 <head>
    <script>
-      (function() {
+      (function () {
          if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
          var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
          var basePath = isSubDir ? '../' : './';
-         var apiEndpoint = window.location.port 
+         var apiEndpoint = window.location.port
             ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
             : basePath + 'admin/api-maintenance-status.php';
          fetch(apiEndpoint)
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
                if (data && data.maintenance_mode) {
                   window.location.href = basePath + 'maintenance.html';
                }
             })
-            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+            .catch(function (err) { console.warn('Maintenance bypass:', err); });
       })();
    </script>
    <meta charset="utf-8">
@@ -585,6 +585,21 @@
          color: #C0392B;
       }
 
+      .prospera-offering-icon.green-icon {
+         background: rgba(39, 174, 96, 0.08);
+         color: #27ae60;
+      }
+
+      .prospera-offering-icon.purple-icon {
+         background: rgba(142, 68, 173, 0.08);
+         color: #8e44ad;
+      }
+
+      .prospera-offering-icon.orange-icon {
+         background: rgba(230, 126, 34, 0.08);
+         color: #e67e22;
+      }
+
       .prospera-offering-card h3 {
          font-size: 17px;
          font-weight: 700;
@@ -753,7 +768,7 @@
       .prospera-asym-step-num {
          width: 36px;
          height: 36px;
-         border-radius: 50%;
+         border-radius: 8px;
          background: #C0392B;
          color: #fff;
          display: flex;
@@ -1049,6 +1064,7 @@
                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                   <div class="tp-header-logo">
                      <a href="index.html">
+                        <!-- Path: assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
                            style="width:100%;max-width:300px;height:auto;display:block;">
                      </a>
@@ -1153,6 +1169,7 @@
 
                            <!-- Responsive SVG clipPath wrapper -->
                            <div class="hero-image-clip-container">
+                              <!-- Path: assets/img/prosperaabout.jpg | Size: 961x650 px -->
                               <img src="assets/img/prosperaabout.jpg" alt="Financial Advisory Services - Prospera">
                            </div>
 
@@ -1214,7 +1231,7 @@
                         </div>
                      </a>
                      <a href="#advisory-consulting" class="prospera-offering-card tp-smooth">
-                        <div class="prospera-offering-icon red-icon"><i class="fa-light fa-briefcase"></i></div>
+                        <div class="prospera-offering-icon orange-icon"><i class="fa-light fa-briefcase"></i></div>
                         <div>
                            <h3>Advisory &amp; Consulting</h3>
                            <p>Get strategic support for decision-making, planning, and execution.</p>
@@ -1223,7 +1240,7 @@
                         </div>
                      </a>
                      <a href="#pitch-deck-presentation-solutions" class="prospera-offering-card tp-smooth">
-                        <div class="prospera-offering-icon blue-icon"><i class="fa-light fa-chalkboard-user"></i></div>
+                        <div class="prospera-offering-icon green-icon"><i class="fa-light fa-chalkboard-user"></i></div>
                         <div>
                            <h3>Pitch Deck &amp; Presentations</h3>
                            <p>Build investor-ready pitch materials that clearly communicate value.</p>
@@ -1232,7 +1249,7 @@
                         </div>
                      </a>
                      <a href="#marketing-solutions" class="prospera-offering-card tp-smooth">
-                        <div class="prospera-offering-icon red-icon"><i class="fa-light fa-chart-line"></i></div>
+                        <div class="prospera-offering-icon purple-icon"><i class="fa-light fa-chart-line"></i></div>
                         <div>
                            <h3>Marketing Solutions</h3>
                            <p>Comprehensive marketing plans focused on driving growth and reach.</p>
@@ -1241,7 +1258,7 @@
                         </div>
                      </a>
                      <a href="#wealth-management" class="prospera-offering-card tp-smooth">
-                        <div class="prospera-offering-icon blue-icon"><i class="fa-light fa-sack-dollar"></i></div>
+                        <div class="prospera-offering-icon red-icon"><i class="fa-light fa-sack-dollar"></i></div>
                         <div>
                            <h3>Wealth Management</h3>
                            <p>Personalized services for individuals, families, businesses, and estates.</p>
@@ -1307,7 +1324,7 @@
                                  class="fa-light fa-chevron-right"></i></div>
                            <div class="prospera-process-card">
                               <div class="prospera-process-num">02</div>
-                              <div class="prospera-process-icon-wrap"><i class="fa-light fa-magnifying-glass-chart"></i>
+                              <div class="prospera-process-icon-wrap"><i class="fa-light fa-search"></i>
                               </div>
                               <h5>Information Gathering</h5>
                               <p>Collect company financials, product metrics, and business documents.</p>
@@ -1344,22 +1361,22 @@
             </div>
 
             <!-- Advisory & Consulting Section -->
-            <div id="advisory-consulting" class="prospera-section-anchor" style="padding: 80px 0; background: #f8fafc;">
+            <div id="advisory-consulting" class="prospera-section-anchor" style="padding: 50px 0; background: #0b1a30;">
                <div class="container">
                   <div class="row align-items-stretch g-4">
-                     <div class="col-lg-6">
-                        <div class="prospera-card-blue">
-                           <div class="prospera-card-image-wrap">
-                              <img src="assets/img/prospera/advisory-consulting.jpg" alt="Advisory & Consulting"
-                                 class="prospera-card-banner-img">
-                           </div>
-                           <h2 style="font-size: 36px; font-weight: 700;">Advisory &amp; Consulting</h2>
-                           <p>Get high-level advisory and startup consulting driven by former executives and industry
-                              leaders. We help structure business development strategies, financial modeling, and
-                              execution plans aligned with your growth goals.</p>
-                           <a href="#contact" class="prospera-btn-red">Book Consultation <i
-                                 class="fa-light fa-arrow-right"></i></a>
-                        </div>
+                     <div class="col-lg-6 d-flex flex-column justify-content-center">
+                        <!-- Path: assets/img/prospera/advisory-consulting.jpg | Size: 800x534 px -->
+                        <img src="assets/img/prospera/advisory-consulting.jpg" alt="Advisory & Consulting"
+                           style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                        <h2 style="font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 20px;">Advisory &amp;
+                           Consulting</h2>
+                        <p
+                           style="color: rgba(255, 255, 255, 0.8); line-height: 1.75; margin-bottom: 24px; font-size: 15px;">
+                           Get high-level advisory and startup consulting driven by former executives and industry
+                           leaders. We help structure business development strategies, financial modeling, and
+                           execution plans aligned with your growth goals.</p>
+                        <a href="#contact" class="prospera-btn-red" style="width: fit-content;">Book Consultation <i
+                              class="fa-light fa-arrow-right"></i></a>
                      </div>
                      <div class="col-lg-6">
                         <div class="prospera-tags-card">
@@ -1393,7 +1410,7 @@
             </div>
             <!-- Consulting Process + Pitch Deck Section -->
             <div id="pitch-deck-presentation-solutions" class="prospera-section-anchor"
-               style="padding: 80px 0; background: #ffffff;">
+               style="padding: 50px 0; background: #ffffff;">
                <div class="container">
                   <div class="row align-items-stretch g-4">
                      <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -1424,6 +1441,7 @@
                      <div class="col-lg-6">
                         <div class="prospera-card-red">
                            <div class="prospera-card-image-wrap">
+                              <!-- Path: assets/img/prospera/pitch-deck-presentation.jpg | Size: 800x600 px -->
                               <img src="assets/img/prospera/pitch-deck-presentation.jpg" alt="Pitch Deck Development"
                                  class="prospera-card-banner-img">
                            </div>
@@ -1438,65 +1456,66 @@
                </div>
             </div>
             <!-- Integrated Marketing Solutions -->
-            <div id="marketing-solutions" class="prospera-section-anchor" style="padding: 80px 0; background: #f8fafc;">
+            <div id="marketing-solutions" class="prospera-section-anchor" style="padding: 50px 0; background: #0b1a30;">
                <div class="container">
                   <div class="row align-items-stretch g-4 mb-40">
-                     <div class="col-lg-6">
-                        <div class="prospera-card-blue">
-                           <div class="prospera-card-image-wrap">
-                              <img src="assets/img/prospera/integrated-marketing.jpg" alt="Integrated Marketing"
-                                 class="prospera-card-banner-img">
-                           </div>
-                           <h3 style="font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 20px;">Integrated
-                              Marketing Solutions</h3>
-                           <p
-                              style="font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 24px;">
-                              Drive growth with custom digital campaigns, brand strategies, and analytics. Delivered via
-                              a strategic partnership with a track record of over 7,500 successful marketing projects.
-                           </p>
-                           <a href="#contact" class="prospera-btn-white-blue">Book Consultation <i
-                                 class="fa-light fa-arrow-right"></i></a>
-                        </div>
+                     <div class="col-lg-6 d-flex flex-column justify-content-center">
+                        <!-- Path: assets/img/prospera/integrated-marketing.jpg | Size: 800x570 px -->
+                        <img src="assets/img/prospera/integrated-marketing.jpg" alt="Integrated Marketing"
+                           style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                        <h3 style="font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 20px;">Integrated
+                           Marketing Solutions</h3>
+                        <p
+                           style="font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 24px;">
+                           Drive growth with custom digital campaigns, brand strategies, and analytics. Delivered via
+                           a strategic partnership with a track record of over 7,500 successful marketing projects.
+                        </p>
+                        <a href="#contact" class="prospera-btn-red" style="width: fit-content;">Book Consultation <i class="fa-light fa-arrow-right"></i></a>
                      </div>
                      <div class="col-lg-6">
-                        <div class="prospera-tags-card">
-                           <h4 style="font-size: 22px; font-weight: 700; color: #0b1a30; margin-bottom: 20px;">
+                        <div class="prospera-tags-card" style="padding: 30px;">
+                           <h4 style="font-size: 22px; font-weight: 700; color: #0b1a30; margin-bottom: 15px;">
                               Integrated Solutions</h4>
-                           <div style="margin-bottom: 30px;">
+                           <div style="margin-bottom: 25px;">
                               <span class="prospera-tag prospera-tag-red">Brand Strategy</span>
                               <span class="prospera-tag prospera-tag-red">Digital Marketing Campaigns</span>
                               <span class="prospera-tag prospera-tag-red">Social Media Management</span>
                               <span class="prospera-tag prospera-tag-red">Content Creation</span>
                               <span class="prospera-tag prospera-tag-red">SEO &amp; Analytics</span>
                            </div>
-                           <h4 style="font-size: 22px; font-weight: 700; color: #0b1a30; margin-bottom: 12px;">The
+                           <h4 style="font-size: 22px; font-weight: 700; color: #0b1a30; margin-bottom: 10px;">The
                               Process</h4>
-                           <p style="font-size: 15px; color: #64748b; line-height: 1.7; margin: 0;">We focus on clean
+                           <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">We focus on clean
                               execution and data-backed marketing structures, building campaign pathways that guide
                               prospects to your brand efficiently.</p>
                         </div>
                      </div>
                   </div>
-                  <!-- Wealth Management + Tax Advisory Side by Side -->
+               </div>
+            </div>
+
+            <!-- Wealth Management + Tax Advisory Side by Side -->
+            <div class="prospera-section-anchor" style="padding: 50px 0; background: #f8fafc;">
+               <div class="container">
                   <div id="wealth-management" class="row align-items-stretch g-4">
                      <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <h3 style="font-size: 26px; font-weight: 700; color: #0b1a30; margin-bottom: 28px;">Our Wealth
+                        <h3 style="font-size: 26px; font-weight: 700; color: #0b1a30; margin-bottom: 20px;">Our Wealth
                            Management Process</h3>
-                        <div class="prospera-asym-step">
+                        <div class="prospera-asym-step" style="padding: 12px; margin-bottom: 12px;">
                            <div class="prospera-asym-step-num">01</div>
                            <div>
                               <h5>Discovery &amp; Goals</h5>
                               <p>Analyze your financial landscape, immediate needs, and long-term objectives.</p>
                            </div>
                         </div>
-                        <div class="prospera-asym-step">
+                        <div class="prospera-asym-step" style="padding: 12px; margin-bottom: 12px;">
                            <div class="prospera-asym-step-num">02</div>
                            <div>
                               <h5>Custom Strategy</h5>
                               <p>Develop a personalized plan spanning retirement, assets, and tax optimization.</p>
                            </div>
                         </div>
-                        <div class="prospera-asym-step">
+                        <div class="prospera-asym-step" style="padding: 12px; margin-bottom: 12px;">
                            <div class="prospera-asym-step-num">03</div>
                            <div>
                               <h5>Execution &amp; Review</h5>
@@ -1505,205 +1524,229 @@
                         </div>
                      </div>
                      <div class="col-lg-6">
-                        <div class="prospera-card-red">
-                           <div class="prospera-card-image-wrap">
+                        <div class="prospera-card-red" style="padding: 30px;">
+                           <div class="prospera-card-image-wrap" style="margin: -30px -30px 20px -30px; height: 180px;">
+                              <!-- Path: assets/img/prospera/wealth-management.jpg | Size: 800x533 px -->
                               <img src="assets/img/prospera/wealth-management.jpg" alt="Wealth Management"
                                  class="prospera-card-banner-img">
                            </div>
-                           <h3 style="font-size: 32px; font-weight: 700;">Wealth Management</h3>
-                           <p>Secure your financial future with personalized wealth planning for individuals, families,
+                           <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 15px;">Wealth Management</h3>
+                           <p style="font-size: 14px; margin-bottom: 20px;">Secure your financial future with personalized wealth planning for individuals, families,
                               and estates. We collaborate with a certified financial planner boasting over 20 years of
                               experience to tailor your portfolio.</p>
-                           <a href="#contact" class="prospera-btn-white">Book Consultation <i
-                                 class="fa-light fa-arrow-right"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- Fee Structure Section -->
-            <div id="fee-structure" class="prospera-section-anchor" style="padding: 100px 0; background: #fff;">
-               <div class="container">
-                  <div class="text-center mb-60">
-                     <span
-                        style="color: #0752c5; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: block; margin-bottom: 10px;">TRANSPARENT
-                        PRICING</span>
-                     <h2 style="font-size: 46px; font-weight: 700; color: #0b1a30; margin-bottom: 16px;">Fee Structure
-                     </h2>
-                     <p
-                        style="max-width: 640px; margin: 0 auto 10px; color: #64748b; font-size: 17px; line-height: 1.7;">
-                        No Retainer Required. Our transparent pricing model is designed to align with your success
-                        without forcing an upfront retainer. We offer flexible compensation structures tailored to your
-                        specific needs.</p>
-                     <p style="max-width: 600px; margin: 0 auto; color: #64748b; font-size: 15px; font-style: italic;">
-                        *Fee structure is customized and varies based on your specific needs.</p>
-                  </div>
-                  <div class="row g-4 justify-content-center">
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="prospera-fee-card">
-                           <div class="prospera-fee-icon"
-                              style="background: linear-gradient(135deg, rgba(7,82,197,0.1) 0%, rgba(7,82,197,0.04) 100%);">
-                              <i class="fa-light fa-trophy" style="color: #0752c5;"></i>
-                           </div>
-                           <h4>Success Fee</h4>
-                           <p>Paid upon completion of the project or raise. We only succeed when you succeed.</p>
-                           <div class="prospera-fee-footer">
-                              <i class="fa-light fa-check-circle"></i> Aligned Interests
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="prospera-fee-card card-red">
-                           <div class="prospera-fee-icon"
-                              style="background: linear-gradient(135deg, rgba(192,57,43,0.1) 0%, rgba(192,57,43,0.04) 100%);">
-                              <i class="fa-light fa-chart-pie-simple" style="color: #C0392B;"></i>
-                           </div>
-                           <h4>Equity Participation</h4>
-                           <p>In certain circumstances we may participate via equity to showcase our abilities to help
-                              your business achieve success.</p>
-                           <div class="prospera-fee-footer" style="color: #C0392B;">
-                              <i class="fa-light fa-check-circle"></i> Long-term Partnership
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="prospera-fee-card">
-                           <div class="prospera-fee-icon"
-                              style="background: linear-gradient(135deg, rgba(7,82,197,0.1) 0%, rgba(7,82,197,0.04) 100%);">
-                              <i class="fa-light fa-file-invoice-dollar" style="color: #0752c5;"></i>
-                           </div>
-                           <h4>Flat fee or project based</h4>
-                           <p>Based on your project and scope, we will agree on a flat fee or project-based completion
-                              fee tailored to your needs.</p>
-                           <div class="prospera-fee-footer" style="color: #0752c5;">
-                              <i class="fa-light fa-check-circle"></i> Predictable Pricing
-                           </div>
+                           <a href="#contact" class="prospera-btn-white">Book Consultation <i class="fa-light fa-arrow-right"></i></a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
 
-            <!-- Contact Section -->
-            <div id="contact" class="prospera-cta-section">
-               <div class="container" style="position: relative; z-index: 1;">
-                  <div class="row align-items-center g-5">
-                     <div class="col-lg-4">
-                        <span class="prospera-overline"
-                           style="color: #fff; background: rgba(255,255,255,0.15); margin-bottom: 16px;">GET
-                           STARTED</span>
-                        <h2
-                           style="font-size: 44px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px;">
-                           Ready to Accelerate Your Growth?</h2>
-                        <p
-                           style="font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px;">
-                           Schedule a consultation with our team to explore how Prospera can support your business
-                           objectives.</p>
-                        <div>
-                           <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i> Expert Guidance
-                           </div>
-                           <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i> Tailored
-                              Strategies</div>
-                           <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i> Proven Results
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class="cst-form-wrap"
-                           style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
-                           <h3 style="font-size: 24px; font-weight: 700; color: #0b1a30; margin-bottom: 24px;">Let's
-                              Talk About Your Goals</h3>
-                           <p style="font-size: 15px; color: #64748b; line-height: 1.6; margin-bottom: 28px;">From debt
-                              sourcing and equity raises to strategic consulting&mdash;we provide the financial
-                              expertise your business needs.</p>
-                           <form action="admin/submit-form.php?form_type=prospera" method="POST" id="prosperaForm">
-                              <input type="hidden" name="form_type" value="prospera">
-                              <div class="row">
-                                 <div class="col-md-6">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Organization Name <span
-                                             style="color: #ef4444;">*</span></label>
-                                       <input type="text" name="company" class="mosaic-form-input"
-                                          placeholder="Your Company" required>
+            <!-- Fee Structure Section -->
+            <div id="fee-structure" class="prospera-section-anchor"
+               style="padding: 60px 0; background: #fff;">
+                           <div class="container">
+                              <div class="text-center mb-60">
+                                 <span
+                                    style="color: #0752c5; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: block; margin-bottom: 10px;">TRANSPARENT
+                                    PRICING</span>
+                                 <h2 style="font-size: 46px; font-weight: 700; color: #0b1a30; margin-bottom: 16px;">Fee
+                                    Structure
+                                 </h2>
+                                 <p
+                                    style="max-width: 640px; margin: 0 auto 10px; color: #64748b; font-size: 17px; line-height: 1.7;">
+                                    No Retainer Required. Our transparent pricing model is designed to align with your
+                                    success
+                                    without forcing an upfront retainer. We offer flexible compensation structures
+                                    tailored to your
+                                    specific needs.</p>
+                                 <p
+                                    style="max-width: 600px; margin: 0 auto; color: #64748b; font-size: 15px; font-style: italic;">
+                                    *Fee structure is customized and varies based on your specific needs.</p>
+                              </div>
+                              <div class="row g-4 justify-content-center">
+                                 <div class="col-lg-4 col-md-6 d-flex">
+                                    <div class="prospera-fee-card">
+                                       <div class="prospera-fee-icon"
+                                          style="background: linear-gradient(135deg, rgba(7,82,197,0.1) 0%, rgba(7,82,197,0.04) 100%);">
+                                          <i class="fa-light fa-trophy" style="color: #0752c5;"></i>
+                                       </div>
+                                       <h4>Success Fee</h4>
+                                       <p>Paid upon completion of the project or raise. We only succeed when you
+                                          succeed.</p>
+                                       <div class="prospera-fee-footer">
+                                          <i class="fa-light fa-check-circle"></i> Aligned Interests
+                                       </div>
                                     </div>
                                  </div>
-                                 <div class="col-md-6">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Your Name <span
-                                             style="color: #ef4444;">*</span></label>
-                                       <input type="text" name="name" class="mosaic-form-input" placeholder="Full Name"
-                                          required>
+                                 <div class="col-lg-4 col-md-6 d-flex">
+                                    <div class="prospera-fee-card card-red">
+                                       <div class="prospera-fee-icon"
+                                          style="background: linear-gradient(135deg, rgba(192,57,43,0.1) 0%, rgba(192,57,43,0.04) 100%);">
+                                          <i class="fa-light fa-chart-pie-simple" style="color: #C0392B;"></i>
+                                       </div>
+                                       <h4>Equity Participation</h4>
+                                       <p>In certain circumstances we may participate via equity to showcase our
+                                          abilities to help
+                                          your business achieve success.</p>
+                                       <div class="prospera-fee-footer" style="color: #C0392B;">
+                                          <i class="fa-light fa-check-circle"></i> Long-term Partnership
+                                       </div>
                                     </div>
                                  </div>
-                                 <div class="col-md-6">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Work Email <span
-                                             style="color: #ef4444;">*</span></label>
-                                       <input type="email" name="email" class="mosaic-form-input"
-                                          placeholder="you@company.com" required>
+                                 <div class="col-lg-4 col-md-6 d-flex">
+                                    <div class="prospera-fee-card">
+                                       <div class="prospera-fee-icon"
+                                          style="background: linear-gradient(135deg, rgba(7,82,197,0.1) 0%, rgba(7,82,197,0.04) 100%);">
+                                          <i class="fa-light fa-file-invoice-dollar" style="color: #0752c5;"></i>
+                                       </div>
+                                       <h4>Flat fee or project based</h4>
+                                       <p>Based on your project and scope, we will agree on a flat fee or project-based
+                                          completion
+                                          fee tailored to your needs.</p>
+                                       <div class="prospera-fee-footer" style="color: #0752c5;">
+                                          <i class="fa-light fa-check-circle"></i> Predictable Pricing
+                                       </div>
                                     </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Phone Number <span
-                                             style="color: #ef4444;">*</span></label>
-                                       <input type="tel" name="phone" class="mosaic-form-input"
-                                          placeholder="(555) 000-0000" required>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-12">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Service Interest <span
-                                             style="color: #ef4444;">*</span></label>
-                                       <select name="service" class="mosaic-form-select" required>
-                                          <option value="">Select service...</option>
-                                          <option value="Debt Sourcing">Debt Sourcing</option>
-                                          <option value="Equity Raise">Equity Raise</option>
-                                          <option value="Mergers &amp; Acquisitions">Mergers &amp; Acquisitions</option>
-                                          <option value="Consulting Services">Consulting Services</option>
-                                          <option value="Multiple Services">Multiple Services</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="col-12">
-                                    <div class="mb-15">
-                                       <label class="mosaic-form-label">Tell us about your needs <span
-                                             style="color: #64748b; font-weight: 400;">(Optional)</span></label>
-                                       <textarea name="message" class="mosaic-form-input"
-                                          placeholder="Brief description of your financing needs or business goals..."
-                                          rows="4" style="resize: none;"></textarea>
-                                    </div>
-                                 </div>
-                                 <div class="col-12">
-                                    <button type="submit" class="mosaic-submit-btn" id="submitBtn">
-                                       <span>Schedule Consultation</span>
-                                       <i class="fa-light fa-arrow-right"></i>
-                                    </button>
-                                 </div>
-                                 <div class="col-12">
-                                    <p class="fs-13 text-center mt-15 mb-0" style="color: #64748b;">
-                                       <i class="fa-light fa-lock me-1"></i> Your information is secure. By submitting,
-                                       you agree to our <a href="#" style="color: #091734; font-weight: 600;">Privacy
-                                          Policy</a>.
-                                    </p>
-                                    <p class="fs-12 text-center mt-5 mb-0" style="color: #94a3b8;">
-                                       Success-based fees and equity participation options available.
-                                    </p>
-                                    <!-- Success/Error Message Container -->
-                                    <div id="formMessageContainer" style="margin-top: 15px; min-height: 40px;"></div>
                                  </div>
                               </div>
-                           </form>
+                           </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+
+                        <!-- Contact Section -->
+                        <div id="contact" class="prospera-cta-section">
+                           <div class="container" style="position: relative; z-index: 1;">
+                              <div class="row align-items-center g-5">
+                                 <div class="col-lg-4">
+                                    <span class="prospera-overline"
+                                       style="color: #fff; background: rgba(255,255,255,0.15); margin-bottom: 16px;">GET
+                                       STARTED</span>
+                                    <h2
+                                       style="font-size: 44px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px;">
+                                       Ready to Accelerate Your Growth?</h2>
+                                    <p
+                                       style="font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px;">
+                                       Schedule a consultation with our team to explore how Prospera can support your
+                                       business
+                                       objectives.</p>
+                                    <div>
+                                       <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i> Expert
+                                          Guidance
+                                       </div>
+                                       <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i>
+                                          Tailored
+                                          Strategies</div>
+                                       <div class="prospera-cta-feature"><i class="fa-solid fa-circle-check"></i> Proven
+                                          Results
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-8">
+                                    <div class="cst-form-wrap"
+                                       style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
+                                       <h3
+                                          style="font-size: 24px; font-weight: 700; color: #0b1a30; margin-bottom: 24px;">
+                                          Let's
+                                          Talk About Your Goals</h3>
+                                       <p
+                                          style="font-size: 15px; color: #64748b; line-height: 1.6; margin-bottom: 28px;">
+                                          From debt
+                                          sourcing and equity raises to strategic consulting&mdash;we provide the
+                                          financial
+                                          expertise your business needs.</p>
+                                       <form action="admin/submit-form.php?form_type=prospera" method="POST"
+                                          id="prosperaForm">
+                                          <input type="hidden" name="form_type" value="prospera">
+                                          <div class="row">
+                                             <div class="col-md-6">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Organization Name <span
+                                                         style="color: #ef4444;">*</span></label>
+                                                   <input type="text" name="company" class="mosaic-form-input"
+                                                      placeholder="Your Company" required>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Your Name <span
+                                                         style="color: #ef4444;">*</span></label>
+                                                   <input type="text" name="name" class="mosaic-form-input"
+                                                      placeholder="Full Name" required>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Work Email <span
+                                                         style="color: #ef4444;">*</span></label>
+                                                   <input type="email" name="email" class="mosaic-form-input"
+                                                      placeholder="you@company.com" required>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Phone Number <span
+                                                         style="color: #ef4444;">*</span></label>
+                                                   <input type="tel" name="phone" class="mosaic-form-input"
+                                                      placeholder="(555) 000-0000" required>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-12">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Service Interest <span
+                                                         style="color: #ef4444;">*</span></label>
+                                                   <select name="service" class="mosaic-form-select" required>
+                                                      <option value="">Select service...</option>
+                                                      <option value="Debt Sourcing">Debt Sourcing</option>
+                                                      <option value="Equity Raise">Equity Raise</option>
+                                                      <option value="Mergers &amp; Acquisitions">Mergers &amp;
+                                                         Acquisitions</option>
+                                                      <option value="Consulting Services">Consulting Services</option>
+                                                      <option value="Multiple Services">Multiple Services</option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <div class="col-12">
+                                                <div class="mb-15">
+                                                   <label class="mosaic-form-label">Tell us about your needs <span
+                                                         style="color: #64748b; font-weight: 400;">(Optional)</span></label>
+                                                   <textarea name="message" class="mosaic-form-input"
+                                                      placeholder="Brief description of your financing needs or business goals..."
+                                                      rows="4" style="resize: none;"></textarea>
+                                                </div>
+                                             </div>
+                                             <div class="col-12">
+                                                <button type="submit" class="mosaic-submit-btn" id="submitBtn">
+                                                   <span>Schedule Consultation</span>
+                                                   <i class="fa-light fa-arrow-right"></i>
+                                                </button>
+                                             </div>
+                                             <div class="col-12">
+                                                <p class="fs-13 text-center mt-15 mb-0" style="color: #64748b;">
+                                                   <i class="fa-light fa-lock me-1"></i> Your information is secure. By
+                                                   submitting,
+                                                   you agree to our <a href="#"
+                                                      style="color: #091734; font-weight: 600;">Privacy
+                                                      Policy</a>.
+                                                </p>
+                                                <p class="fs-12 text-center mt-5 mb-0" style="color: #94a3b8;">
+                                                   Success-based fees and equity participation options available.
+                                                </p>
+                                                <!-- Success/Error Message Container -->
+                                                <div id="formMessageContainer"
+                                                   style="margin-top: 15px; min-height: 40px;"></div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
 
          </main>
 
          <footer>
             <!-- tp-footer area start -->
+            <!-- Background Path: assets/img/update-2/footer/footer-1-bg.jpg | Size: 1920x662 px -->
             <div class="tp-footer-area tp-bg-common-black-1 p-relative z-index-1 pt-100"
                data-background="assets/img/update-2/footer/footer-1-bg.jpg">
                <div class="tp-footer-wd-main">
@@ -1712,7 +1755,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                            <div class="tp-footer-widget tp-footer-cst-widget mb-45 tp_fade_anim" data-delay=".3">
                               <div class="tp-footer-logo mb-25">
-                                 <a href="index.html"><img data-width="250" src="assets/img/logo/logo-white.png"
+                                 <a href="index.html"><!-- Path: assets/img/logo/logo-white.png | Size: 1038x174 px -->
+<img data-width="250" src="assets/img/logo/logo-white.png"
                                        alt="Preston Daub Logo"></a>
                               </div>
                               <p class="tp-footer-cst-dec fs-18 tp-ff-dm lh-28 mb-25">Built on Precision. Driven by

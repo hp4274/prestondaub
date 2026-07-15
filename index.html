@@ -3,21 +3,21 @@
 
 <head>
    <script>
-      (function() {
+      (function () {
          if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
          var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
          var basePath = isSubDir ? '../' : './';
-         var apiEndpoint = window.location.port 
+         var apiEndpoint = window.location.port
             ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
             : basePath + 'admin/api-maintenance-status.php';
          fetch(apiEndpoint)
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
                if (data && data.maintenance_mode) {
                   window.location.href = basePath + 'maintenance.html';
                }
             })
-            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+            .catch(function (err) { console.warn('Maintenance bypass:', err); });
       })();
    </script>
    <meta charset="utf-8">
@@ -130,6 +130,7 @@
                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                   <div class="tp-header-logo">
                      <a href="index.html">
+                        <!-- Path: assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
                            style="width:100%;max-width:300px;height:auto;display:block;">
                      </a>
@@ -256,6 +257,7 @@
                            <div class="hero-card-wrapper mb-15 d-none d-md-block">
                               <div class="hero-card">
                                  <div class="d-flex align-items-center hero-card-row">
+                                    <!-- Path: assets/img/logo/favicon.png | Size: 169x174 px -->
                                     <img src="assets/img/logo/favicon.png" alt="Preston Daub Logo Icon"
                                        class="hero-card-logo">
                                     <div>
@@ -381,8 +383,9 @@
                         <div class="service-overlay-content service-overlay-slide-2">
                            <h3 class="service-overlay-title tp-ff-dm fw-700">Strategic Partnerships.<br>Measurable
                               Results.</h3>
-                           <p class="service-overlay-desc tp-ff-dm fs-16">We align our success with yours — delivering
-                              tailored financial solutions that drive real, sustainable growth.</p>
+                           <p class="service-overlay-desc tp-ff-dm fs-16">We align our success with yours, delivering
+                              tailored financial solutions that drive real, sustainable growth through trusted
+                              partnerships and long-term success.</p>
                            <a href="about/about.html"
                               class="service-overlay-btn d-inline-flex align-items-center tp-ff-dm fw-700 fs-15">
                               <span>Learn More</span>
@@ -624,9 +627,8 @@
                                     <line x1="6" y1="20" x2="6" y2="14"></line>
                                  </svg>
                               </div>
-                              <img
-                                 src="assets/img/solutions/financing-solutions.jpg"
-                                 alt="Financing Solutions">
+                              <!-- Path: assets/img/solutions/financing-solutions.jpg | Size: 896x1280 px -->
+                              <img src="assets/img/solutions/financing-solutions.jpg" alt="Financing Solutions">
                            </div>
                            <div class="solution-card-content">
                               <div>
@@ -659,9 +661,8 @@
                                     <polyline points="17 6 23 6 23 12"></polyline>
                                  </svg>
                               </div>
-                              <img
-                                 src="assets/img/solutions/prospera.jpg"
-                                 alt="Prospera — Capital Advisory">
+                              <!-- Path: assets/img/solutions/prospera.jpg | Size: 626x626 px -->
+                              <img src="assets/img/solutions/prospera.jpg" alt="Prospera — Capital Advisory">
                            </div>
                            <div class="solution-card-content">
                               <div>
@@ -698,9 +699,8 @@
                                     </path>
                                  </svg>
                               </div>
-                              <img
-                                 src="assets/img/solutions/sports-investments.jpg"
-                                 alt="Sports Investments">
+                              <!-- Path: assets/img/solutions/sports-investments.jpg | Size: 500x282 px -->
+                              <img src="assets/img/solutions/sports-investments.jpg" alt="Sports Investments">
                            </div>
                            <div class="solution-card-content">
                               <div>
@@ -734,9 +734,8 @@
                                     <rect x="3" y="14" width="7" height="7"></rect>
                                  </svg>
                               </div>
-                              <img
-                                 src="assets/img/solutions/mosaic-software.jpg"
-                                 alt="Mosaic Software">
+                              <!-- Path: assets/img/solutions/mosaic-software.jpg | Size: 1024x1024 px -->
+                              <img src="assets/img/solutions/mosaic-software.jpg" alt="Mosaic Software">
                            </div>
                            <div class="solution-card-content">
                               <div>
@@ -774,9 +773,8 @@
                                     <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
                                  </svg>
                               </div>
-                              <img
-                                 src="assets/img/solutions/commercial-real-estate.jpg"
-                                 alt="Commercial Real Estate">
+                              <!-- Path: assets/img/solutions/commercial-real-estate.jpg | Size: 800x533 px -->
+                              <img src="assets/img/solutions/commercial-real-estate.jpg" alt="Commercial Real Estate">
                            </div>
                            <div class="solution-card-content">
                               <div>
@@ -903,6 +901,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Jacquelyn R.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -932,6 +931,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Morgan P.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -960,6 +960,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Jose M.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -988,6 +989,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Jacquelyn R.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -1017,6 +1019,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Morgan P.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -1045,6 +1048,7 @@
                                     </p>
                                     <div class="tp-testi-author d-flex align-items-center gap-3">
                                        <div class="tp-testi-avatar">
+                                          <!-- Path: assets/img/placeholder-team.svg | Size: SVG Vector -->
                                           <img src="assets/img/placeholder-team.svg" alt="Jose M.">
                                        </div>
                                        <div class="tp-testi-info">
@@ -1241,6 +1245,7 @@
 
          <footer>
             <!-- tp-footer area start -->
+            <!-- Background Path: assets/img/update-2/footer/footer-1-bg.jpg | Size: 1920x662 px -->
             <div class="tp-footer-area tp-bg-common-black-1 p-relative z-index-1 pt-100"
                data-background="assets/img/update-2/footer/footer-1-bg.jpg">
                <div class="tp-footer-wd-main">
@@ -1249,7 +1254,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                            <div class="tp-footer-widget tp-footer-cst-widget mb-45 tp_fade_anim" data-delay=".3">
                               <div class="tp-footer-logo mb-25">
-                                 <a href="index.html"><img data-width="250" src="assets/img/logo/logo-white.png"
+                                 <a href="index.html"><!-- Path: assets/img/logo/logo-white.png | Size: 1038x174 px -->
+                                    <img data-width="250" src="assets/img/logo/logo-white.png"
                                        alt="Preston Daub Logo"></a>
                               </div>
                               <p class="tp-footer-cst-dec fs-18 tp-ff-dm lh-28 mb-25">Built on Precision. Driven by

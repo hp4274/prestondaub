@@ -3,21 +3,21 @@
 
 <head>
    <script>
-      (function() {
+      (function () {
          if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
          var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
          var basePath = isSubDir ? '../' : './';
-         var apiEndpoint = window.location.port 
+         var apiEndpoint = window.location.port
             ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
             : basePath + 'admin/api-maintenance-status.php';
          fetch(apiEndpoint)
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
                if (data && data.maintenance_mode) {
                   window.location.href = basePath + 'maintenance.html';
                }
             })
-            .catch(function(err) { console.warn('Maintenance bypass:', err); });
+            .catch(function (err) { console.warn('Maintenance bypass:', err); });
       })();
    </script>
    <meta charset="utf-8">
@@ -646,6 +646,7 @@
                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                   <div class="tp-header-logo">
                      <a href="index.html">
+                        <!-- Path: assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
                            style="width:100%;max-width:300px;height:auto;display:block;">
                      </a>
@@ -723,6 +724,7 @@
                   <div class="ms-hero-red-stripe"></div>
                </div>
                <div class="ms-hero-visual d-none d-lg-block">
+                  <!-- Path: assets/img/mosaicabout.jpg | Size: 961x650 px -->
                   <img src="assets/img/mosaicabout.jpg" alt="Mosaic Software Platform">
                </div>
                <div class="container">
@@ -813,6 +815,7 @@
                   <div class="row align-items-center g-4 g-lg-5">
                      <div class="col-lg-6">
                         <div class="ms-overview-img">
+                           <!-- Path: assets/img/mosaic-platform-overview.png | Size: 1024x1024 px -->
                            <img src="assets/img/mosaic-platform-overview.png"
                               alt="Mosaic Software AI Sports Management Platform - Analytics Dashboard">
                         </div>
@@ -861,12 +864,15 @@
                      <div class="col-lg-3 col-md-6">
                         <div class="ms-app-card">
                            <div class="ms-app-card-img">
+                              <!-- Path: assets/img/mosaic-software/team-management.jpg | Size: 1200x1443 px -->
                               <img src="assets/img/mosaic-software/team-management.jpg" alt="Team Management">
                            </div>
                            <div class="ms-app-card-body">
                               <div class="ms-app-card-icon ms-app-icon-blue"><i class="fa-light fa-users"></i></div>
-                              <h4>Soccer Team</h4>
-                              <p>Manage squad depth across transfer windows, scout talent with xG and pass-completion analytics, and track match fitness to build a winning formation aligned with your club's vision.</p>
+                              <h4>Team Management</h4>
+                              <p>Manage squad depth across transfer windows, scout talent with xG and pass-completion
+                                 analytics, and track match fitness to build a winning formation aligned with your
+                                 club's vision.</p>
                               <a href="#demo" class="ms-app-link">Learn more <i class="fa-light fa-arrow-right"></i></a>
                            </div>
                         </div>
@@ -874,6 +880,7 @@
                      <div class="col-lg-3 col-md-6">
                         <div class="ms-app-card">
                            <div class="ms-app-card-img">
+                              <!-- Path: assets/img/mosaic-software/financial-operations.jpg | Size: 612x408 px -->
                               <img src="assets/img/mosaic-software/financial-operations.jpg" alt="Financial Operations">
                            </div>
                            <div class="ms-app-card-body">
@@ -888,6 +895,7 @@
                      <div class="col-lg-3 col-md-6">
                         <div class="ms-app-card">
                            <div class="ms-app-card-img">
+                              <!-- Path: assets/img/mosaic-software/fan-engagement.jpg | Size: 1024x1024 px -->
                               <img src="assets/img/mosaic-software/fan-engagement.jpg" alt="Fan Engagement">
                            </div>
                            <div class="ms-app-card-body">
@@ -902,6 +910,7 @@
                      <div class="col-lg-3 col-md-6">
                         <div class="ms-app-card">
                            <div class="ms-app-card-img">
+                              <!-- Path: assets/img/mosaic-software/strategic-investments.jpg | Size: 1536x1024 px -->
                               <img src="assets/img/mosaic-software/strategic-investments.jpg"
                                  alt="Strategic Investments">
                            </div>
@@ -1041,7 +1050,8 @@
                               <!-- Right Form Panel -->
                               <div class="col-lg-7">
                                  <div class="cst-form-wrap">
-                                    <form id="mosaic-demo-form" action="admin/submit-form.php?form_type=mosaic" method="POST" style="position: relative;">
+                                    <form id="mosaic-demo-form" action="admin/submit-form.php?form_type=mosaic"
+                                       method="POST" style="position: relative;">
                                        <input type="hidden" name="form_type" value="mosaic">
                                        <div id="form-success-message"
                                           style="display: none; background: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
@@ -1202,6 +1212,7 @@
 
          <footer>
             <!-- tp-footer area start -->
+            <!-- Background Path: assets/img/update-2/footer/footer-1-bg.jpg | Size: 1920x662 px -->
             <div class="tp-footer-area tp-bg-common-black-1 p-relative z-index-1 pt-100"
                data-background="assets/img/update-2/footer/footer-1-bg.jpg">
                <div class="tp-footer-wd-main">
@@ -1210,7 +1221,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                            <div class="tp-footer-widget tp-footer-cst-widget mb-45 tp_fade_anim" data-delay=".3">
                               <div class="tp-footer-logo mb-25">
-                                 <a href="index.html"><img data-width="250" src="assets/img/logo/logo-white.png"
+                                 <a href="index.html"><!-- Path: assets/img/logo/logo-white.png | Size: 1038x174 px -->
+<img data-width="250" src="assets/img/logo/logo-white.png"
                                        alt="Preston Daub Logo"></a>
                               </div>
                               <p class="tp-footer-cst-dec fs-18 tp-ff-dm lh-28 mb-25">Built on Precision. Driven by
