@@ -165,8 +165,23 @@ elseif ($formType === 'prospera') {
         $stmt->close();
     }
 }
+require_once __DIR__ . '/includes/Mailer.php';
 
 if ($executed) {
+    // Attempt to send email alerts asynchronously/quietly so database save still succeeds if mail times out
+    try {
+        $mailer = new Mailer();
+        // 1. Send alert to admin
+        $mailer->sendAdminAlert($formType, $input);
+        
+        // 2. Send branded confirmation / thank you receipt to the user who filled the form
+        if (!empty($email)) {
+            $mailer->sendUserConfirmation($formType, $email, $name, $input);
+        }
+    } catch (Exception $e) {
+        error_log("Form notification mailer error: " . $e->getMessage());
+    }
+
     echo json_encode([
         'success' => true,
         'message' => 'Your submission was received successfully!'
