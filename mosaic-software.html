@@ -103,7 +103,7 @@
       /* Hero */
       .ms-hero {
          position: relative;
-         background: #ffffff;
+         background: var(--ms-navy);
          overflow: hidden;
          padding: 125px 0 90px;
          min-height: auto;
@@ -112,10 +112,9 @@
       .ms-hero-bg {
          position: absolute;
          top: 0;
-         right: 0;
-         width: 52%;
+         left: 0;
+         width: 100%;
          height: 100%;
-         background: var(--ms-navy);
          z-index: 1;
       }
 
@@ -123,8 +122,8 @@
          content: '';
          position: absolute;
          inset: 0;
-         background: linear-gradient(135deg, rgba(10, 26, 59, 0.3) 0%, rgba(10, 26, 59, 0.85) 100%),
-            url('assets/img/mosaic-software/css-bg-5.jpg') center/cover no-repeat;
+         background: linear-gradient(90deg, rgba(10, 26, 59, 0.92) 0%, rgba(10, 26, 59, 0.65) 50%, rgba(10, 26, 59, 0.35) 100%),
+            url('assets/img/mosaic-software/Hero.jpg') center/cover no-repeat;
          opacity: 1;
       }
 
@@ -138,31 +137,15 @@
          z-index: 3;
       }
 
-      .ms-hero-visual {
-         position: absolute;
-         right: 5%;
-         top: 50%;
-         transform: translateY(-50%);
-         width: 46%;
-         max-width: 560px;
-         z-index: 2;
-      }
-
-      .ms-hero-visual img {
-         width: 100%;
-         border-radius: 12px;
-         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
-         display: block;
-      }
-
       .ms-hero-content {
          position: relative;
          z-index: 4;
          max-width: 560px;
+         color: #ffffff;
       }
 
       .ms-hero-label {
-         color: var(--ms-blue);
+         color: rgba(255, 255, 255, 0.7);
          font-size: 14px;
          font-weight: 600;
          margin-bottom: 18px;
@@ -176,7 +159,7 @@
          font-weight: 700;
          line-height: 1.1;
          margin-bottom: 24px;
-         color: var(--ms-navy);
+         color: #ffffff;
       }
 
       .ms-hero-title span {
@@ -184,7 +167,7 @@
       }
 
       .ms-hero-desc {
-         color: #555;
+         color: rgba(255, 255, 255, 0.8);
          font-size: 18px;
          line-height: 1.75;
          margin-bottom: 32px;
@@ -245,9 +228,9 @@
             min-height: auto;
          }
 
-         .ms-hero-bg,
-         .ms-hero-visual {
-            display: none;
+         .ms-hero-bg::before {
+            background: linear-gradient(180deg, rgba(10, 26, 59, 0.92) 0%, rgba(10, 26, 59, 0.75) 100%),
+               url('assets/img/mosaic-software/Hero.jpg') center/cover no-repeat;
          }
 
          .ms-hero-title {
@@ -723,10 +706,7 @@
                <div class="ms-hero-bg">
                   <div class="ms-hero-red-stripe"></div>
                </div>
-               <div class="ms-hero-visual d-none d-lg-block">
-                  <!-- Path: assets/img/mosaicabout.jpg | Size: 961x650 px -->
-                  <img src="assets/img/mosaicabout.jpg" alt="Mosaic Software Platform">
-               </div>
+
                <div class="container">
                   <div class="ms-hero-content">
                      <span class="ms-hero-label">
@@ -816,7 +796,7 @@
                      <div class="col-lg-6">
                         <div class="ms-overview-img">
                            <!-- Path: assets/img/mosaic-platform-overview.png | Size: 1024x1024 px -->
-                           <img src="assets/img/mosaic-platform-overview.png"
+                           <img src="assets/img/mosaic-software/mosaic-platform-overview.jpg"
                               alt="Mosaic Software AI Sports Management Platform - Analytics Dashboard">
                         </div>
                      </div>
@@ -1222,7 +1202,7 @@
                            <div class="tp-footer-widget tp-footer-cst-widget mb-45 tp_fade_anim" data-delay=".3">
                               <div class="tp-footer-logo mb-25">
                                  <a href="index.html"><!-- Path: assets/img/logo/logo-white.png | Size: 1038x174 px -->
-<img data-width="250" src="assets/img/logo/logo-white.png"
+                                    <img data-width="250" src="assets/img/logo/logo-white.png"
                                        alt="Preston Daub Logo"></a>
                               </div>
                               <p class="tp-footer-cst-dec fs-18 tp-ff-dm lh-28 mb-25">Built on Precision. Driven by
