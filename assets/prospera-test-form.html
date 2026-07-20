@@ -1,68 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>Prospera Form Test</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <h1>Prospera Form Test</h1>
     <form id="testForm">
-        <h3>Test Prospera Form Submission</h3>
-        
-        <label>Organization Name *</label>
-        <input type="text" name="company" value="Test Company" required>
-        
-        <label>Your Name *</label>
-        <input type="text" name="name" value="Test User" required>
-        
-        <label>Work Email *</label>
-        <input type="email" name="email" value="test@example.com" required>
-        
-        <label>Phone Number *</label>
-        <input type="tel" name="phone" value="5551234567" required>
-        
-        <label>Service Interest *</label>
-        <select name="service" required>
-            <option value="">Select...</option>
-            <option value="Equity Raise">Equity Raise</option>
-            <option value="Debt Sourcing">Debt Sourcing</option>
-        </select>
-        
-        <label>Message (optional)</label>
-        <textarea name="message" rows="4">Test message</textarea>
-        
-        <input type="hidden" name="form_type" value="prospera">
-        
-        <button type="submit">Submit Test Form</button>
+      <h3>Test Prospera Form Submission</h3>
+
+      <label>Organization Name *</label>
+      <input type="text" name="company" value="Test Company" required />
+
+      <label>Your Name *</label>
+      <input type="text" name="name" value="Test User" required />
+
+      <label>Work Email *</label>
+      <input type="email" name="email" value="test@example.com" required />
+
+      <label>Phone Number *</label>
+      <input type="tel" name="phone" value="5551234567" required />
+
+      <label>Service Interest *</label>
+      <select name="service" required>
+        <option value="">Select...</option>
+        <option value="Equity Raise">Equity Raise</option>
+        <option value="Debt Sourcing">Debt Sourcing</option>
+      </select>
+
+      <label>Message (optional)</label>
+      <textarea name="message" rows="4">Test message</textarea>
+
+      <input type="hidden" name="form_type" value="prospera" />
+
+      <button type="submit">Submit Test Form</button>
     </form>
-    
+
     <div id="result"></div>
-    
+
     <script>
-        document.getElementById('testForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const resultDiv = document.getElementById('result');
-            
-            fetch('prospera-submit.php', {
-                method: 'POST',
-                body: formData
+      document
+        .getElementById("testForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const resultDiv = document.getElementById("result");
+
+          fetch("prospera-submit.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              resultDiv.innerHTML =
+                '<div class="message ' +
+                (data.success ? "success" : "error") +
+                '">' +
+                (data.success ? "✓ Success: " : "✗ Error: ") +
+                data.message +
+                "</div>";
+
+              if (data.success) {
+                console.log("Form saved successfully");
+              }
             })
-            .then(response => response.json())
-            .then(data => {
-                resultDiv.innerHTML = '<div class="message ' + (data.success ? 'success' : 'error') + '">' + 
-                    (data.success ? '✓ Success: ' : '✗ Error: ') + data.message + '</div>';
-                    
-                if (data.success) {
-                    console.log('Form saved successfully');
-                }
-            })
-            .catch(error => {
-                resultDiv.innerHTML = '<div class="message error">Request failed: ' + error + '</div>';
-                console.error('Error:', error);
+            .catch((error) => {
+              resultDiv.innerHTML =
+                '<div class="message error">Request failed: ' +
+                error +
+                "</div>";
+              console.error("Error:", error);
             });
         });
     </script>
-</body>
+  </body>
 </html>

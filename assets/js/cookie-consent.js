@@ -3,37 +3,45 @@
  * Professional GDPR-compliant cookie consent for Preston Daub
  */
 
-(function() {
-    'use strict';
+(function () {
+  "use strict";
 
-    const COOKIE_NAME = 'prestondaub_cookie_consent';
-    const COOKIE_EXPIRY_DAYS = 365;
+  const COOKIE_NAME = "prestondaub_cookie_consent";
+  const COOKIE_EXPIRY_DAYS = 365;
 
-    // Check if consent was already given
-    function hasConsent() {
-        return document.cookie.split(';').some(function(item) {
-            return item.trim().indexOf(COOKIE_NAME + '=') === 0;
-        });
-    }
+  // Check if consent was already given
+  function hasConsent() {
+    return document.cookie.split(";").some(function (item) {
+      return item.trim().indexOf(COOKIE_NAME + "=") === 0;
+    });
+  }
 
-    // Set consent cookie
-    function setConsent(value) {
-        const date = new Date();
-        date.setTime(date.getTime() + (COOKIE_EXPIRY_DAYS * 24 * 60 * 60 * 1000));
-        document.cookie = COOKIE_NAME + '=' + value + ';expires=' + date.toUTCString() + ';path=/;SameSite=Lax';
-    }
+  // Set consent cookie
+  function setConsent(value) {
+    const date = new Date();
+    date.setTime(date.getTime() + COOKIE_EXPIRY_DAYS * 24 * 60 * 60 * 1000);
+    document.cookie =
+      COOKIE_NAME +
+      "=" +
+      value +
+      ";expires=" +
+      date.toUTCString() +
+      ";path=/;SameSite=Lax";
+  }
 
-    // Get consent value
-    function getConsentValue() {
-        const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
-        return match ? match[2] : null;
-    }
+  // Get consent value
+  function getConsentValue() {
+    const match = document.cookie.match(
+      new RegExp("(^| )" + COOKIE_NAME + "=([^;]+)"),
+    );
+    return match ? match[2] : null;
+  }
 
-    // Create and inject the cookie banner
-    function createBanner() {
-        if (hasConsent()) return;
+  // Create and inject the cookie banner
+  function createBanner() {
+    if (hasConsent()) return;
 
-        const bannerHTML = `
+    const bannerHTML = `
             <div id="cookie-consent-banner" class="cookie-consent-banner">
                 <div class="cookie-consent-container">
                     <div class="cookie-consent-content">
@@ -115,9 +123,9 @@
             </div>
         `;
 
-        // Inject CSS
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = `
+    // Inject CSS
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
             .cookie-consent-banner {
                 position: fixed;
                 bottom: 0;
@@ -468,104 +476,120 @@
                 }
             }
         `;
-        document.head.appendChild(styleSheet);
+    document.head.appendChild(styleSheet);
 
-        // Inject HTML
-        document.body.insertAdjacentHTML('beforeend', bannerHTML);
+    // Inject HTML
+    document.body.insertAdjacentHTML("beforeend", bannerHTML);
 
-        // Add event listeners
-        const banner = document.getElementById('cookie-consent-banner');
-        const modal = document.getElementById('cookie-settings-modal');
+    // Add event listeners
+    const banner = document.getElementById("cookie-consent-banner");
+    const modal = document.getElementById("cookie-settings-modal");
 
-        document.getElementById('cookie-accept-btn').addEventListener('click', function() {
-            setConsent('all');
-            hideBanner(banner);
-        });
+    document
+      .getElementById("cookie-accept-btn")
+      .addEventListener("click", function () {
+        setConsent("all");
+        hideBanner(banner);
+      });
 
-        document.getElementById('cookie-reject-btn').addEventListener('click', function() {
-            setConsent('essential');
-            hideBanner(banner);
-        });
+    document
+      .getElementById("cookie-reject-btn")
+      .addEventListener("click", function () {
+        setConsent("essential");
+        hideBanner(banner);
+      });
 
-        document.getElementById('cookie-settings-btn').addEventListener('click', function() {
-            modal.classList.add('active');
-        });
+    document
+      .getElementById("cookie-settings-btn")
+      .addEventListener("click", function () {
+        modal.classList.add("active");
+      });
 
-        document.getElementById('cookie-modal-close').addEventListener('click', function() {
-            modal.classList.remove('active');
-        });
+    document
+      .getElementById("cookie-modal-close")
+      .addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-        document.getElementById('cookie-save-preferences').addEventListener('click', function() {
-            const analytics = document.getElementById('analytics-cookies').checked;
-            const marketing = document.getElementById('marketing-cookies').checked;
-            
-            let consent = 'essential';
-            if (analytics && marketing) consent = 'all';
-            else if (analytics) consent = 'analytics';
-            else if (marketing) consent = 'marketing';
-            
-            setConsent(consent);
-            modal.classList.remove('active');
-            hideBanner(banner);
-        });
+    document
+      .getElementById("cookie-save-preferences")
+      .addEventListener("click", function () {
+        const analytics = document.getElementById("analytics-cookies").checked;
+        const marketing = document.getElementById("marketing-cookies").checked;
 
-        // Close modal on backdrop click
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
+        let consent = "essential";
+        if (analytics && marketing) consent = "all";
+        else if (analytics) consent = "analytics";
+        else if (marketing) consent = "marketing";
 
-    function hideBanner(banner) {
-        banner.classList.add('hidden');
-        setTimeout(function() {
-            banner.remove();
-        }, 500);
-    }
+        setConsent(consent);
+        modal.classList.remove("active");
+        hideBanner(banner);
+      });
 
-    // Initialize
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', createBanner);
-    } else {
-        createBanner();
-    }
+    // Close modal on backdrop click
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+
+  function hideBanner(banner) {
+    banner.classList.add("hidden");
+    setTimeout(function () {
+      banner.remove();
+    }, 500);
+  }
+
+  // Initialize
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", createBanner);
+  } else {
+    createBanner();
+  }
 })();
 
 // Maintenance Mode Redirect Checker
-(function() {
-    'use strict';
-    
-    // Skip if we are inside the admin folder or on the maintenance page itself
-    if (window.location.pathname.includes('/admin/')) return;
-    if (window.location.pathname.includes('/maintenance.html')) return;
-    
-    // Determine the base path dynamically
-    // If the path contains "about" or "financing-solutions", the parent directory is "../"
-    let basePath = './';
-    if (window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/')) {
-        basePath = '../';
-    }
-    
-    // Support any custom dev server port (e.g. Live Server)
-    const isLiveServer = window.location.port !== '';
-    const apiEndpoint = isLiveServer 
-        ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php' 
-        : basePath + 'admin/api-maintenance-status.php';
-        
-    const redirectUrl = basePath + 'maintenance.html';
+(function () {
+  "use strict";
 
-    fetch(apiEndpoint)
-        .then(function(response) {
-            if (!response.ok) throw new Error('API unreachable');
-            return response.json();
-        })
-        .then(function(data) {
-            if (data && data.maintenance_mode) {
-                window.location.href = redirectUrl;
-            }
-        })
-        .catch(function(err) {
-            console.warn('Maintenance check bypassed:', err);
-        });
+  // Skip if we are inside the admin folder or on the maintenance page itself
+  if (window.location.pathname.includes("/admin/")) return;
+  if (window.location.pathname.includes("/maintenance.html")) return;
+
+  // Determine the base path dynamically
+  // If the path contains "about" or "financing-solutions", the parent directory is "../"
+  let basePath = "./";
+  if (
+    window.location.pathname.includes("/about/") ||
+    window.location.pathname.includes("/financing-solutions/")
+  ) {
+    basePath = "../";
+  }
+
+  // Support any custom dev server port (e.g. Live Server)
+  const isLiveServer = window.location.port !== "";
+  const apiEndpoint = isLiveServer
+    ? window.location.protocol +
+      "//" +
+      window.location.hostname +
+      "/prestondaub/admin/api-maintenance-status.php"
+    : basePath + "admin/api-maintenance-status.php";
+
+  const redirectUrl = basePath + "maintenance.html";
+
+  fetch(apiEndpoint)
+    .then(function (response) {
+      if (!response.ok) throw new Error("API unreachable");
+      return response.json();
+    })
+    .then(function (data) {
+      if (data && data.maintenance_mode) {
+        window.location.href = redirectUrl;
+      }
+    })
+    .catch(function (err) {
+      console.warn("Maintenance check bypassed:", err);
+    });
 })();

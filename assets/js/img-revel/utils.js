@@ -7,11 +7,15 @@ const docEl = document.documentElement;
  * @param {string} [selector='img'] - CSS selector for target images.
  * @returns {Promise} - Resolves when all specified images are loaded.
  */
-const preloadImages = (selector = 'img') => {
-    return new Promise((resolve) => {
-        // The imagesLoaded library is used to ensure all images (including backgrounds) are fully loaded.
-        imagesLoaded(document.querySelectorAll(selector), {background: true}, resolve);
-    });
+const preloadImages = (selector = "img") => {
+  return new Promise((resolve) => {
+    // The imagesLoaded library is used to ensure all images (including backgrounds) are fully loaded.
+    imagesLoaded(
+      document.querySelectorAll(selector),
+      { background: true },
+      resolve,
+    );
+  });
 };
 
 /**
@@ -41,33 +45,32 @@ const distance = (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1);
  * @param {Event} ev - The mouse or touch event.
  * @returns {Object} - Object containing the x and y coordinates of the cursor or finger.
  */
-const getPointerPos = ev => {
-    let posx = 0;
-    let posy = 0;
-    
-    // If the event is not provided, use the global window event object.
-    if (!ev) ev = window.event;
+const getPointerPos = (ev) => {
+  let posx = 0;
+  let posy = 0;
 
-    // Handle touch events
-    if (ev.touches) {
-        if (ev.touches.length > 0) { // Check if there are any touches available
-            posx = ev.touches[0].pageX;
-            posy = ev.touches[0].pageY;
-        }
+  // If the event is not provided, use the global window event object.
+  if (!ev) ev = window.event;
+
+  // Handle touch events
+  if (ev.touches) {
+    if (ev.touches.length > 0) {
+      // Check if there are any touches available
+      posx = ev.touches[0].pageX;
+      posy = ev.touches[0].pageY;
     }
-    else if (ev.clientX || ev.clientY) {
-        let content = document.querySelector('.content')
-        if(content){
-            const rect = content.getBoundingClientRect();
-            posx = ev.clientX - rect.left;
-            posy = ev.clientY - rect.top;
-        }
+  } else if (ev.clientX || ev.clientY) {
+    let content = document.querySelector(".content");
+    if (content) {
+      const rect = content.getBoundingClientRect();
+      posx = ev.clientX - rect.left;
+      posy = ev.clientY - rect.top;
     }
+  }
 
-
-    // Return the position.
-    return {x: posx, y: posy};
-}
+  // Return the position.
+  return { x: posx, y: posy };
+};
 
 /**
  * Computes the distance between current and last recorded mouse positions.
@@ -77,12 +80,12 @@ const getPointerPos = ev => {
  * @returns {number} - Distance between the two mouse positions.
  */
 const getMouseDistance = (mousePos, lastMousePos) => {
-    return distance(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y);
+  return distance(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y);
 };
 
 /**
  * Computes the new position in an array after moving by a given offset.
- * The array is treated as circular, meaning subtracting from the beginning 
+ * The array is treated as circular, meaning subtracting from the beginning
  * wraps to the end of the array.
  *
  * @function
@@ -92,16 +95,16 @@ const getMouseDistance = (mousePos, lastMousePos) => {
  * @returns {number} The new position in the array after moving by the offset.
  */
 const getNewPosition = (position, offset, arr) => {
-    // Ensure offset is non-negative and is within the range of the array's length
-    const realOffset = Math.abs(offset) % arr.length;
-    
-    // Check if subtracting the offset stays within the array's bounds
-    if (position - realOffset >= 0) {
-        return position - realOffset;
-    } else {
-        // If not, wrap around to the end of the array and compute the new position
-        return arr.length - (realOffset - position);
-    }
+  // Ensure offset is non-negative and is within the range of the array's length
+  const realOffset = Math.abs(offset) % arr.length;
+
+  // Check if subtracting the offset stays within the array's bounds
+  if (position - realOffset >= 0) {
+    return position - realOffset;
+  } else {
+    // If not, wrap around to the end of the array and compute the new position
+    return arr.length - (realOffset - position);
+  }
 };
 
 /**
@@ -111,34 +114,36 @@ const getNewPosition = (position, offset, arr) => {
  * @param {number} numCols - The number of columns in the grid.
  */
 const setClipPath = (clipInnerElements, numRows, numCols) => {
-    if (clipInnerElements.length !== numRows * numCols) {
-        console.error('Mismatch between provided grid dimensions and number of elements.');
-        return;
+  if (clipInnerElements.length !== numRows * numCols) {
+    console.error(
+      "Mismatch between provided grid dimensions and number of elements.",
+    );
+    return;
+  }
+
+  for (let i = 0; i < numRows; i++) {
+    for (let j = 0; j < numCols; j++) {
+      const idx = i * numCols + j;
+
+      const top = (100 / numRows) * i + "%";
+      const bottom = (100 / numRows) * (i + 1) + "%";
+      const left = (100 / numCols) * j + "%";
+      const right = (100 / numCols) * (j + 1) + "%";
+
+      const clipPathValue = `polygon(${left} ${top}, ${right} ${top}, ${right} ${bottom}, ${left} ${bottom})`;
+
+      clipInnerElements[idx].style.clipPath = clipPathValue;
     }
-
-    for (let i = 0; i < numRows; i++) {
-        for (let j = 0; j < numCols; j++) {
-            const idx = i * numCols + j;
-
-            const top = (100 / numRows) * i + '%';
-            const bottom = (100 / numRows) * (i + 1) + '%';
-            const left = (100 / numCols) * j + '%';
-            const right = (100 / numCols) * (j + 1) + '%';
-
-            const clipPathValue = `polygon(${left} ${top}, ${right} ${top}, ${right} ${bottom}, ${left} ${bottom})`;
-
-            clipInnerElements[idx].style.clipPath = clipPathValue;
-        }
-    }
-}
+  }
+};
 
 // Exporting utility functions for use in other modules.
 export {
-    preloadImages,
-    lerp,
-    distance,
-    getPointerPos,
-    getMouseDistance,
-    getNewPosition,
-    setClipPath
+  preloadImages,
+  lerp,
+  distance,
+  getPointerPos,
+  getMouseDistance,
+  getNewPosition,
+  setClipPath,
 };

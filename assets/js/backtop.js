@@ -20,7 +20,7 @@
       transition: "none",
       WebkitTransition: "none",
       strokeDasharray: pathLength + " " + pathLength,
-      strokeDashoffset: pathLength
+      strokeDashoffset: pathLength,
     });
 
     // Force browser to recalc
@@ -29,7 +29,7 @@
     // Set up transition
     $progressPath.css({
       transition: "stroke-dashoffset 10ms linear",
-      WebkitTransition: "stroke-dashoffset 10ms linear"
+      WebkitTransition: "stroke-dashoffset 10ms linear",
     });
 
     // Update progress on scroll
@@ -71,7 +71,7 @@
     // Click to scroll top
     $(".scrollToTop").on("click", function (event) {
       event.preventDefault();
-      if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+      if (typeof ScrollSmoother !== "undefined" && ScrollSmoother.get()) {
         ScrollSmoother.get().scrollTo(0, true);
       } else {
         $("html, body").animate({ scrollTop: 0 }, duration);

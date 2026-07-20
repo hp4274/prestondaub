@@ -1,55 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <script>
-        (function() {
-            var isLiveServer = window.location.port !== '';
-            var apiEndpoint = isLiveServer 
-                ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
-                : './admin/api-maintenance-status.php';
-            fetch(apiEndpoint)
-                .then(function(res) { return res.json(); })
-                .then(function(data) {
-                    if (data && !data.maintenance_mode) {
-                        window.location.href = './index.html';
-                    }
-                })
-                .catch(function(err) { console.warn('Maintenance check bypass:', err); });
-        })();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preston Daub - Under Maintenance</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="maintenance-card">
-        <div class="brand-logo">
-            Preston<span>Daub</span>
-        </div>
+      <div class="brand-logo">Preston<span>Daub</span></div>
 
-        <div class="icon-container">
-            <div class="pulse-ring"></div>
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-        </div>
+      <div class="icon-container">
+        <div class="pulse-ring"></div>
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+      </div>
 
-        <h1>Pardon Our Dust</h1>
-        <p>Our digital space is undergoing planned maintenance to upgrade services. We will be back online shortly. Thank you for your patience.</p>
+      <h1>Pardon Our Dust</h1>
+      <p>
+        Our digital space is undergoing planned maintenance to upgrade services.
+        We will be back online shortly. Thank you for your patience.
+      </p>
 
-        <div class="loader-bar">
-            <div class="loader-fill"></div>
-        </div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
 
-        <div class="contact-info">
-            <span>Need immediate support?</span>
-            <a href="mailto:info@prestondaub.com">
-                <i class="fa-solid fa-envelope cst-margin-right-6"></i>info@prestondaub.com
-            </a>
-        </div>
+      <div class="contact-info">
+        <span>Need immediate support?</span>
+        <a href="mailto:info@prestondaub.com">
+          <i class="fa-solid fa-envelope cst-margin-right-6"></i
+          >info@prestondaub.com
+        </a>
+      </div>
     </div>
-</body>
+  </body>
 </html>

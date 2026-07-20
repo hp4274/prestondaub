@@ -1,87 +1,76 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<head>
-   <script>
-      (function() {
-         if (window.location.pathname.includes('/admin/') || window.location.pathname.includes('/maintenance.html')) return;
-         var isSubDir = window.location.pathname.includes('/about/') || window.location.pathname.includes('/financing-solutions/');
-         var basePath = isSubDir ? '../' : './';
-         var apiEndpoint = window.location.port 
-            ? window.location.protocol + '//' + window.location.hostname + '/prestondaub/admin/api-maintenance-status.php'
-            : basePath + 'admin/api-maintenance-status.php';
-         fetch(apiEndpoint)
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-               if (data && data.maintenance_mode) {
-                  window.location.href = basePath + 'maintenance.html';
-               }
-            })
-            .catch(function(err) { console.warn('Maintenance bypass:', err); });
-      })();
-   </script>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>News Detail | Preston Daub</title>
-   <meta name="description" content="Latest Preston Daub news article">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo/favicon.png">
-   <link rel="stylesheet" href="../assets/css/bootstrap.css">
-   <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
-   <link rel="stylesheet" href="../assets/css/magnific-popup.css">
-   <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
-   <link rel="stylesheet" href="../assets/css/spacing.css">
-   <link rel="stylesheet" href="../assets/css/main.css">
-   <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
-   
-</head>
-<body>
-   <main>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>News Detail | Preston Daub</title>
+    <meta name="description" content="Latest Preston Daub news article" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/logo/favicon.png"
+    />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome-pro.css" />
+    <link rel="stylesheet" href="../assets/css/spacing.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
+  </head>
+  <body>
+    <main>
       <section class="article-detail-hero">
-         <div class="article-detail-hero-content">
-            <h1 id="articleTitle">Loading article...</h1>
-            <div class="article-detail-meta">
-               <span id="articleDate"></span>
-               <span id="articleViews"></span>
-            </div>
-         </div>
+        <div class="article-detail-hero-content">
+          <h1 id="articleTitle">Loading article...</h1>
+          <div class="article-detail-meta">
+            <span id="articleDate"></span>
+            <span id="articleViews"></span>
+          </div>
+        </div>
       </section>
 
       <div id="articleContainer" class="article-state">Loading...</div>
 
       <section id="relatedSection" class="related-articles cst-display-none">
-         <div class="container">
-            <h2 class="text-center mb-5">Related Articles</h2>
-            <div id="relatedGrid" class="related-grid"></div>
-         </div>
+        <div class="container">
+          <h2 class="text-center mb-5">Related Articles</h2>
+          <div id="relatedGrid" class="related-grid"></div>
+        </div>
       </section>
-   </main>
+    </main>
 
-   <script src="../assets/js/cookie-consent.js"></script>
-   <script>
+    <script src="../assets/js/cookie-consent.js"></script>
+    <script>
       const params = new URLSearchParams(window.location.search);
-      const slug = params.get('slug');
+      const slug = params.get("slug");
 
       function escapeHtml(value) {
-        return String(value || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
       }
 
       function renderArticle(article) {
         document.title = `${article.title} | Preston Daub News`;
-        document.getElementById('articleTitle').textContent = article.title || 'News Detail';
-        document.getElementById('articleDate').textContent = article.published_at_formatted || '';
-        document.getElementById('articleViews').textContent = `${article.views || 0} Views`;
+        document.getElementById("articleTitle").textContent =
+          article.title || "News Detail";
+        document.getElementById("articleDate").textContent =
+          article.published_at_formatted || "";
+        document.getElementById("articleViews").textContent =
+          `${article.views || 0} Views`;
 
-        document.getElementById('articleContainer').className = 'article-content-wrapper';
-        document.getElementById('articleContainer').innerHTML = `
-          ${article.cover_image_url ? `<img src="${escapeHtml(article.cover_image_url)}" alt="${escapeHtml(article.title)}" class="article-cover-image">` : ''}
-          <div class="article-body">${article.content || ''}</div>
+        document.getElementById("articleContainer").className =
+          "article-content-wrapper";
+        document.getElementById("articleContainer").innerHTML = `
+          ${article.cover_image_url ? `<img src="${escapeHtml(article.cover_image_url)}" alt="${escapeHtml(article.title)}" class="article-cover-image">` : ""}
+          <div class="article-body">${article.content || ""}</div>
           <div class="article-footer">
-            <div class="article-category-badge">${escapeHtml(article.category || 'News')}</div>
+            <div class="article-category-badge">${escapeHtml(article.category || "News")}</div>
             <a href="./news.html" class="cst-style-7edce4c6">Back to News</a>
           </div>
         `;
@@ -89,32 +78,40 @@
 
       function renderRelated(items) {
         if (!items.length) return;
-        document.getElementById('relatedSection').style.display = 'block';
-        document.getElementById('relatedGrid').innerHTML = items.map((item) => `
+        document.getElementById("relatedSection").style.display = "block";
+        document.getElementById("relatedGrid").innerHTML = items
+          .map(
+            (item) => `
           <article class="news-card">
-            <img src="${escapeHtml(item.cover_image_url || '../assets/img/service/cst/thumb.jpg')}" alt="${escapeHtml(item.title)}" class="news-card-image">
+            <img src="${escapeHtml(item.cover_image_url || "../assets/img/service/cst/thumb.jpg")}" alt="${escapeHtml(item.title)}" class="news-card-image">
             <div class="news-card-content">
               <div class="news-card-meta">
-                <span>${escapeHtml(item.category || 'News')}</span>
-                <span>${item.published_at ? new Date(item.published_at).toLocaleDateString('en-US', { day:'numeric', month:'short', year:'numeric' }) : ''}</span>
+                <span>${escapeHtml(item.category || "News")}</span>
+                <span>${item.published_at ? new Date(item.published_at).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric" }) : ""}</span>
               </div>
               <h3><a href="./news-detail.html?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
-              <p>${escapeHtml((item.excerpt || '').slice(0, 140))}</p>
+              <p>${escapeHtml((item.excerpt || "").slice(0, 140))}</p>
             </div>
           </article>
-        `).join('');
+        `,
+          )
+          .join("");
       }
 
       async function loadArticle() {
         if (!slug) {
-          window.location.href = './news.html';
+          window.location.href = "./news.html";
           return;
         }
 
-        const baseUrl = window.location.port ? 'http://localhost/prestondaub/admin/get-published-news.php' : '../admin/get-published-news.php';
-        const response = await fetch(`${baseUrl}?slug=${encodeURIComponent(slug)}`);
+        const baseUrl = window.location.port
+          ? "http://localhost/prestondaub/admin/get-published-news.php"
+          : "../admin/get-published-news.php";
+        const response = await fetch(
+          `${baseUrl}?slug=${encodeURIComponent(slug)}`,
+        );
         if (!response.ok) {
-          window.location.href = './news.html';
+          window.location.href = "./news.html";
           return;
         }
 
@@ -124,8 +121,8 @@
       }
 
       loadArticle().catch(() => {
-        window.location.href = './news.html';
+        window.location.href = "./news.html";
       });
-   </script>
-</body>
+    </script>
+  </body>
 </html>
