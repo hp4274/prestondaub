@@ -100,7 +100,7 @@
             <use xlink:href="#wave"></use>
          </svg>
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 560 20" style="display: none;">
+            viewBox="0 0 560 20" class="cst-display-none">
             <symbol id="wave">
                <path
                   d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
@@ -171,7 +171,7 @@
                      <a href="../index.html">
                         <!-- Path: ../assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="../assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                           style="width:100%;max-width:300px;height:auto;display:block;">
+                           class="cst-style-00c6ead3">
                      </a>
                   </div>
                </div>
@@ -244,199 +244,9 @@
       <div id="smooth-content">
          <main>
             <!-- Team Section - Modern Grid Layout -->
-            <div style="padding: 100px 20px; background: #f8f9fa;">
+            <div class="cst-style-8e6773f3">
                <div class="container">
-                  <style>
-                     /* Team Grid Styles */
-                     .team-grid {
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        gap: 32px;
-                        margin-top: 60px;
-                        width: 100%;
-                     }
-
-                     @media (max-width: 1200px) {
-                        .team-grid {
-                           grid-template-columns: repeat(2, 1fr);
-                        }
-                     }
-
-                     @media (max-width: 768px) {
-                        .team-grid {
-                           grid-template-columns: 1fr;
-                           gap: 24px;
-                        }
-                     }
-
-                     .team-card {
-                        background: #ffffff;
-                        border: none;
-                        border-radius: 12px;
-                        overflow: hidden;
-                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-                        transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-                        display: flex;
-                        flex-direction: column;
-                        height: 100%;
-                     }
-
-                     .team-card:hover {
-                        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-                        transform: translateY(-6px);
-                     }
-
-                     .team-card-image {
-                        width: 100%;
-                        height: 250px;
-                        object-fit: cover;
-                        display: block;
-                        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                     }
-
-                     .team-card-content {
-                        padding: 28px;
-                        flex-grow: 1;
-                        display: flex;
-                        flex-direction: column;
-                     }
-
-                     .team-card-name {
-                        font-size: 18px;
-                        font-weight: 600;
-                        color: #202124;
-                        margin: 0 0 4px 0;
-                     }
-
-                     .team-card-designation {
-                        color: #0b0ea8;
-                        font-size: 12px;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                        margin: 0 0 12px 0;
-                     }
-
-                     .team-card-bio {
-                        color: #5f6368;
-                        font-size: 14px;
-                        line-height: 1.6;
-                        margin: 0 0 16px 0;
-                        flex-grow: 1;
-                     }
-
-                     .team-card-email {
-                        color: #0b0ea8;
-                        font-size: 13px;
-                        text-decoration: none;
-                        margin: 0 0 12px 0;
-                        display: inline-block;
-                        transition: color 0.3s;
-                     }
-
-                     .team-card-email:hover {
-                        color: #080a7a;
-                     }
-
-                     .team-card-social {
-                        display: flex;
-                        gap: 12px;
-                        margin-top: auto;
-                     }
-
-                     .team-card-social a {
-                        width: 32px;
-                        height: 32px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: #f0f2f5;
-                        border-radius: 50%;
-                        color: #0b0ea8;
-                        text-decoration: none;
-                        font-size: 14px;
-                        transition: all 0.3s;
-                     }
-
-                     .team-card-social a:hover {
-                        background: #0b0ea8;
-                        color: white;
-                     }
-
-                     .team-header {
-                        margin-bottom: 50px;
-                        text-align: center;
-                     }
-
-                     .team-header h2 {
-                        font-size: 52px;
-                        font-weight: 700;
-                        color: #202124;
-                        margin: 0 0 16px 0;
-                        line-height: 1.15;
-                        letter-spacing: -0.5px;
-                     }
-
-                     .team-header p {
-                        color: #5f6368;
-                        font-size: 16px;
-                        margin: 0;
-                        max-width: 600px;
-                        line-height: 1.6;
-                        margin-left: auto;
-                        margin-right: auto;
-                     }
-
-                     .team-loading {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 60px 20px;
-                        color: #5f6368;
-                     }
-
-                     .team-loading-spinner {
-                        width: 40px;
-                        height: 40px;
-                        border: 4px solid #f0f0f0;
-                        border-top-color: #0b0ea8;
-                        border-radius: 50%;
-                        animation: spin 0.8s linear infinite;
-                        margin-bottom: 16px;
-                     }
-
-                     @keyframes spin {
-                        to {
-                           transform: rotate(360deg);
-                        }
-                     }
-
-                     .team-empty {
-                        grid-column: 1 / -1;
-                        text-align: center;
-                        padding: 60px 20px;
-                        color: #5f6368;
-                     }
-
-                     @media (max-width: 768px) {
-                        .team-header h2 {
-                           font-size: 36px;
-                        }
-
-                        .team-card-content {
-                           padding: 20px;
-                        }
-
-                        .team-card-name {
-                           font-size: 16px;
-                        }
-
-                        .team-card-image {
-                           height: 200px;
-                        }
-                     }
-                  </style>
+                  
 
                   <!-- Header -->
                   <div class="team-header pt-80">
@@ -446,7 +256,7 @@
                   </div>
 
                   <!-- Loading Indicator -->
-                  <div id="team-loading" style="display: none;">
+                  <div id="team-loading" class="cst-display-none">
                      <div class="team-loading">
                         <div class="team-loading-spinner"></div>
                         <p>Loading team members...</p>
@@ -457,9 +267,9 @@
                   <div class="team-grid" id="team-grid"></div>
 
                   <!-- No Team Members Message -->
-                  <div id="no-team" style="display: none;">
+                  <div id="no-team" class="cst-display-none">
                      <div class="team-empty">
-                        <p style="font-size: 16px; color: #5f6368;">Team members will be displayed here soon.</p>
+                        <p class="cst-style-8249ce5b">Team members will be displayed here soon.</p>
                      </div>
                   </div>
                </div>

@@ -102,7 +102,7 @@
             <use xlink:href="#wave"></use>
          </svg>
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 560 20" style="display: none;">
+            viewBox="0 0 560 20" class="cst-display-none">
             <symbol id="wave">
                <path
                   d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
@@ -173,7 +173,7 @@
                      <a href="../index.html">
                         <!-- Path: ../assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="../assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                           style="width:100%;max-width:300px;height:auto;display:block;">
+                           class="cst-style-00c6ead3">
                      </a>
                   </div>
                </div>
@@ -245,225 +245,9 @@
       <div id="smooth-content">
          <main>
             <!-- News Blog Section - Modern Minimalist Grid -->
-            <div style="padding: 100px 20px; background: #f8f9fa;">
+            <div class="cst-style-8e6773f3">
                <div class="container">
-                  <style>
-                     /* Modern Minimalist News UI */
-                     .news-grid {
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        gap: 32px;
-                        margin-top: 60px;
-                        width: 100%;
-                     }
-
-                     /* Responsive 3-column grid */
-                     @media (max-width: 1200px) {
-                        .news-grid {
-                           grid-template-columns: repeat(2, 1fr);
-                        }
-                     }
-
-                     @media (max-width: 768px) {
-                        .news-grid {
-                           grid-template-columns: 1fr;
-                           gap: 24px;
-                        }
-                     }
-
-                     .news-card {
-                        background: #ffffff;
-                        border: none;
-                        border-radius: 12px;
-                        overflow: hidden;
-                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-                        transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-                        display: flex;
-                        flex-direction: column;
-                        height: 100%;
-                        position: relative;
-                     }
-
-                     .news-card:hover {
-                        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-                        transform: translateY(-6px);
-                     }
-
-                     .news-card-image {
-                        width: 100%;
-                        height: 200px;
-                        object-fit: cover;
-                        display: block;
-                        transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-                        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                     }
-
-                     .news-card:hover .news-card-image {
-                        transform: scale(1.06);
-                     }
-
-                     .news-card-content {
-                        padding: 28px;
-                        flex-grow: 1;
-                        display: flex;
-                        flex-direction: column;
-                     }
-
-                     .news-card-meta {
-                        display: flex;
-                        gap: 10px;
-                        align-items: center;
-                        margin-bottom: 12px;
-                        font-size: 11px;
-                     }
-
-                     .news-card-category {
-                        background: #f0f2f5;
-                        color: #0b0ea8;
-                        padding: 5px 12px;
-                        border-radius: 16px;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                        font-size: 10px;
-                        transition: all 0.3s;
-                     }
-
-                     .news-card:hover .news-card-category {
-                        background: #0b0ea8;
-                        color: white;
-                     }
-
-                     .news-card-date {
-                        color: #5f6368;
-                        font-size: 11px;
-                        font-weight: 500;
-                     }
-
-                     .news-card-title {
-                        font-size: 18px;
-                        font-weight: 600;
-                        color: #202124;
-                        margin: 12px 0;
-                        line-height: 1.4;
-                        flex-grow: 1;
-                     }
-
-                     .news-card-title a {
-                        color: #202124;
-                        text-decoration: none;
-                        transition: color 0.3s;
-                     }
-
-                     .news-card-title a:hover {
-                        color: #0b0ea8;
-                     }
-
-                     .news-card-footer {
-                        margin-top: 16px;
-                        padding-top: 16px;
-                        border-top: 1px solid #f0f0f0;
-                     }
-
-                     .read-more-btn {
-                        color: #0b0ea8;
-                        text-decoration: none;
-                        font-weight: 600;
-                        font-size: 13px;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 6px;
-                        transition: all 0.3s;
-                        text-transform: uppercase;
-                        letter-spacing: 0.4px;
-                     }
-
-                     .read-more-btn:hover {
-                        gap: 12px;
-                        color: #080a7a;
-                     }
-
-                     .news-header {
-                        margin-bottom: 50px;
-                        text-align: center;
-                     }
-
-                     .news-header h2 {
-                        font-size: 52px;
-                        font-weight: 700;
-                        color: #202124;
-                        margin: 0 0 16px 0;
-                        line-height: 1.15;
-                        letter-spacing: -0.5px;
-                     }
-
-                     .news-header p {
-                        color: #5f6368;
-                        font-size: 16px;
-                        margin: 0;
-                        max-width: 600px;
-                        line-height: 1.6;
-                        margin-left: auto;
-                        margin-right: auto;
-                     }
-
-                     .pagination-wrap {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 16px;
-                        margin-top: 80px;
-                        flex-wrap: wrap;
-                     }
-
-                     .pagination-btn {
-                        padding: 12px 24px;
-                        border: 1px solid #dadce0;
-                        background: #ffffff;
-                        border-radius: 8px;
-                        cursor: pointer;
-                        font-weight: 600;
-                        color: #0b0ea8;
-                        transition: all 0.3s;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 8px;
-                        text-decoration: none;
-                        font-size: 13px;
-                        text-transform: uppercase;
-                        letter-spacing: 0.4px;
-                     }
-
-                     .pagination-btn:hover {
-                        background: #f8f9fa;
-                        border-color: #0b0ea8;
-                        box-shadow: 0 2px 8px rgba(11, 14, 168, 0.15);
-                     }
-
-                     .pagination-info {
-                        display: flex;
-                        align-items: center;
-                        color: #5f6368;
-                        font-size: 13px;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        letter-spacing: 0.4px;
-                     }
-
-                     @media (max-width: 768px) {
-                        .news-header h2 {
-                           font-size: 36px;
-                        }
-
-                        .news-card-content {
-                           padding: 20px;
-                        }
-
-                        .news-card-title {
-                           font-size: 16px;
-                        }
-                     }
-                  </style>
+                  
 
                   <!-- Header -->
                   <div class="news-header pt-80">
@@ -473,7 +257,7 @@
                   </div>
 
                   <!-- Category Filter -->
-                  <div style="margin-bottom: 40px;">
+                  <div class="cst-margin-bottom-40">
                      <div class="category-filter-wrapper">
                         <button class="category-filter-btn active" data-category="all">All Articles</button>
                         <div id="category-filters" class="category-filters-container"></div>
@@ -481,25 +265,25 @@
                   </div>
 
                   <!-- Loading Indicator -->
-                  <div id="news-loading" style="display: none; text-align: center; padding: 40px;">
-                     <div style="display: inline-block;">
+                  <div id="news-loading" class="cst-style-aaf69c93">
+                     <div class="cst-display-inline-block">
                         <div
-                           style="width: 40px; height: 40px; border: 4px solid #f0f0f0; border-top-color: #0b0ea8; border-radius: 50%; animation: spin 0.8s linear infinite;">
+                           class="cst-style-19314a6b">
                         </div>
                      </div>
-                     <p style="margin-top: 16px; color: #5f6368;">Loading articles...</p>
+                     <p class="cst-style-dc3cca0b">Loading articles...</p>
                   </div>
 
                   <!-- News Grid -->
                   <div class="news-grid" id="news-grid"></div>
 
                   <!-- No Articles Message -->
-                  <div id="no-articles" style="display: none; text-align: center; padding: 60px 20px;">
-                     <p style="font-size: 16px; color: #5f6368;">No articles found. Check back soon for updates!</p>
+                  <div id="no-articles" class="cst-style-d465ee30">
+                     <p class="cst-style-8249ce5b">No articles found. Check back soon for updates!</p>
                   </div>
 
                   <!-- Pagination -->
-                  <div class="pagination-wrap" id="pagination-wrap" style="display: none;">
+                  <div class="pagination-wrap cst-display-none" id="pagination-wrap">
                      <button id="prev-btn" class="pagination-btn">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M14 3L6 11l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -518,181 +302,7 @@
                      </button>
                   </div>
 
-                  <style>
-                     /* ===== CATEGORY FILTER: SCALABLE & FUTURE-PROOF ===== */
-
-                     .category-filter-wrapper {
-                        display: flex;
-                        gap: 12px;
-                        align-items: center;
-                        justify-content: center;
-                        margin-bottom: 50px;
-                        flex-wrap: wrap;
-                        width: 100%;
-                        padding: 0;
-                     }
-
-                     .category-filters-container {
-                        display: flex;
-                        gap: 12px;
-                        align-items: center;
-                        justify-content: center;
-                        flex-wrap: wrap;
-                        width: 100%;
-                        padding: 8px 0;
-                     }
-
-                     /* ===== DESKTOP: HORIZONTAL SCROLLABLE (1200px+) ===== */
-                     @media (min-width: 1200px) {
-                        .category-filter-wrapper {
-                           flex-wrap: nowrap;
-                           overflow: visible;
-                           position: relative;
-                        }
-
-                        .category-filters-container {
-                           overflow-x: auto;
-                           overflow-y: hidden;
-                           scroll-behavior: smooth;
-                           -webkit-overflow-scrolling: touch;
-                           flex-wrap: nowrap;
-                           padding: 8px 0;
-                           flex: 1;
-                           max-width: 100%;
-                           min-width: 0;
-                        }
-
-                        /* Smooth horizontal scroll */
-                        .category-filters-container {
-                           scrollbar-width: thin;
-                           scrollbar-color: #0b0ea8 rgba(0, 0, 0, 0.05);
-                        }
-
-                        /* Webkit scrollbar styling */
-                        .category-filters-container::-webkit-scrollbar {
-                           height: 6px;
-                           background: rgba(0, 0, 0, 0.03);
-                           border-radius: 10px;
-                        }
-
-                        .category-filters-container::-webkit-scrollbar-track {
-                           background: rgba(0, 0, 0, 0.03);
-                           border-radius: 10px;
-                        }
-
-                        .category-filters-container::-webkit-scrollbar-thumb {
-                           background: #0b0ea8;
-                           border-radius: 10px;
-                           transition: background 0.3s;
-                        }
-
-                        .category-filters-container::-webkit-scrollbar-thumb:hover {
-                           background: #080a7a;
-                        }
-                     }
-
-                     /* ===== TABLET: SMART WRAPPING (768px - 1199px) ===== */
-                     @media (max-width: 1199px) and (min-width: 768px) {
-                        .category-filter-wrapper {
-                           flex-wrap: wrap;
-                           gap: 12px;
-                        }
-
-                        .category-filters-container {
-                           flex-wrap: wrap;
-                           gap: 12px;
-                           justify-content: center;
-                           width: 100%;
-                           max-width: 100%;
-                           overflow: visible;
-                        }
-                     }
-
-                     /* ===== MOBILE: OPTIMIZED STACKING (<768px) ===== */
-                     @media (max-width: 767px) {
-                        .category-filter-wrapper {
-                           flex-direction: column;
-                           gap: 16px;
-                           width: 100%;
-                        }
-
-                        .category-filters-container {
-                           flex-wrap: wrap;
-                           gap: 10px;
-                           justify-content: center;
-                           width: 100%;
-                           padding: 8px 0;
-                        }
-                     }
-
-                     /* ===== BUTTON STYLING (ALL BREAKPOINTS) ===== */
-                     .category-filter-btn {
-                        padding: 10px 18px;
-                        border: 1px solid #dadce0;
-                        background: #ffffff;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        font-weight: 600;
-                        color: #5f6368;
-                        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-                        font-size: 13px;
-                        white-space: nowrap;
-                        flex-shrink: 0;
-                        text-transform: capitalize;
-                        letter-spacing: 0.3px;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        min-height: 36px;
-                        user-select: none;
-                     }
-
-                     .category-filter-btn:hover {
-                        border-color: #0b0ea8;
-                        color: #0b0ea8;
-                        background: #f8f9fa;
-                        box-shadow: 0 2px 8px rgba(11, 14, 168, 0.12);
-                        transform: translateY(-1px);
-                     }
-
-                     .category-filter-btn.active {
-                        background: #0b0ea8;
-                        color: white;
-                        border-color: #0b0ea8;
-                        box-shadow: 0 4px 12px rgba(11, 14, 168, 0.2);
-                     }
-
-                     .category-filter-btn.active:hover {
-                        background: #080a7a;
-                        border-color: #080a7a;
-                        box-shadow: 0 6px 16px rgba(11, 14, 168, 0.25);
-                        transform: translateY(-2px);
-                     }
-
-                     /* ===== RESPONSIVE BUTTON SIZING ===== */
-                     @media (max-width: 768px) {
-                        .category-filter-btn {
-                           padding: 9px 16px;
-                           font-size: 12px;
-                           min-height: 34px;
-                        }
-                     }
-
-                     @media (max-width: 480px) {
-                        .category-filter-btn {
-                           padding: 8px 14px;
-                           font-size: 11px;
-                           min-height: 32px;
-                        }
-                     }
-
-                     /* ===== LOADING ANIMATION ===== */
-                     @keyframes spin {
-                        to {
-                           transform: rotate(360deg);
-                        }
-                     }
-                  </style>
+                  
                </div>
             </div>
 
@@ -957,7 +567,7 @@
                      <h3 class="news-card-title">
                         <a href="news-detail.html?slug=${this.escapeHtml(article.slug)}">${this.escapeHtml(article.title)}</a>
                      </h3>
-                     <p style="color: #718096; font-size: 15px; line-height: 1.6; margin: 12px 0 0 0;">${this.escapeHtml(excerpt)}</p>
+                     <p class="cst-style-b5c7cf49">${this.escapeHtml(excerpt)}</p>
                      <div class="news-card-footer">
                         <a href="news-detail.html?slug=${this.escapeHtml(article.slug)}" class="read-more-btn">
                            Read More
@@ -1028,7 +638,7 @@
 
          showError(message) {
             const grid = document.getElementById('news-grid');
-            grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #e53e3e;">${this.escapeHtml(message)}</div>`;
+            grid.innerHTML = `<div class="cst-style-5eafdc92">${this.escapeHtml(message)}</div>`;
          }
 
          escapeHtml(text) {

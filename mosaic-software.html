@@ -51,513 +51,7 @@
    <link rel="stylesheet" href="assets/css/toast-notification.css">
    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
 
-   <style>
-      :root {
-         --ms-navy: #0A1A3B;
-         --ms-red: #C0392B;
-         --ms-blue: #0752c5;
-      }
-
-      /* Section heading with red lines */
-      .ms-section-heading {
-         text-align: center;
-         margin-bottom: 50px;
-      }
-
-      .ms-section-heading h2 {
-         font-size: 42px;
-         font-weight: 700;
-         margin: 0;
-         line-height: 1.2;
-      }
-
-      .ms-section-heading.light h2 {
-         color: #ffffff;
-      }
-
-      .ms-section-heading.dark h2 {
-         color: var(--ms-navy);
-      }
-
-      .ms-section-heading-inner {
-         display: inline-flex;
-         align-items: center;
-         gap: 20px;
-      }
-
-      .ms-section-heading-line {
-         width: 50px;
-         height: 3px;
-         background: var(--ms-red);
-         flex-shrink: 0;
-      }
-
-      .ms-section-subtitle {
-         color: #64748b;
-         font-size: 17px;
-         max-width: 560px;
-         margin: 16px auto 0;
-         line-height: 1.7;
-      }
-
-      /* Hero */
-      .ms-hero {
-         position: relative;
-         background: var(--ms-navy);
-         overflow: hidden;
-         padding: 125px 0 90px;
-         min-height: auto;
-      }
-
-      .ms-hero-bg {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         z-index: 1;
-      }
-
-      .ms-hero-bg::before {
-         content: '';
-         position: absolute;
-         inset: 0;
-         background: linear-gradient(90deg, rgba(10, 26, 59, 0.92) 0%, rgba(10, 26, 59, 0.65) 50%, rgba(10, 26, 59, 0.35) 100%),
-            url('assets/img/mosaic-software/Hero.jpg') center/cover no-repeat;
-         opacity: 1;
-      }
-
-      .ms-hero-red-stripe {
-         position: absolute;
-         left: 0;
-         top: 0;
-         width: 5px;
-         height: 100%;
-         background: var(--ms-red);
-         z-index: 3;
-      }
-
-      .ms-hero-content {
-         position: relative;
-         z-index: 4;
-         max-width: 560px;
-         color: #ffffff;
-      }
-
-      .ms-hero-label {
-         color: rgba(255, 255, 255, 0.7);
-         font-size: 14px;
-         font-weight: 600;
-         margin-bottom: 18px;
-         display: inline-flex;
-         align-items: center;
-         gap: 8px;
-      }
-
-      .ms-hero-title {
-         font-size: 62px;
-         font-weight: 700;
-         line-height: 1.1;
-         margin-bottom: 24px;
-         color: #ffffff;
-      }
-
-      .ms-hero-title span {
-         color: var(--ms-red);
-      }
-
-      .ms-hero-desc {
-         color: rgba(255, 255, 255, 0.8);
-         font-size: 18px;
-         line-height: 1.75;
-         margin-bottom: 32px;
-         max-width: 520px;
-      }
-
-      .ms-hero-actions {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 14px;
-         margin-bottom: 36px;
-      }
-
-      .ms-btn-primary {
-         background: var(--ms-red);
-         color: #fff !important;
-         padding: 15px 30px;
-         border-radius: 8px;
-         font-weight: 600;
-         font-size: 15px;
-         text-decoration: none;
-         display: inline-flex;
-         align-items: center;
-         gap: 8px;
-         transition: all 0.3s ease;
-         border: none;
-      }
-
-      .ms-btn-primary:hover {
-         background: #a93226;
-         color: #fff !important;
-         transform: translateY(-2px);
-         box-shadow: 0 8px 20px rgba(192, 57, 43, 0.3);
-      }
-
-      .ms-btn-outline {
-         background: #fff;
-         color: var(--ms-navy) !important;
-         padding: 15px 30px;
-         border-radius: 8px;
-         font-weight: 600;
-         font-size: 15px;
-         text-decoration: none;
-         display: inline-flex;
-         align-items: center;
-         border: 1px solid #e0e0e0;
-         transition: all 0.3s ease;
-      }
-
-      .ms-btn-outline:hover {
-         border-color: var(--ms-navy);
-         color: var(--ms-navy) !important;
-      }
-
-      @media (max-width: 991px) {
-         .ms-hero {
-            padding: 125px 0 60px;
-            min-height: auto;
-         }
-
-         .ms-hero-bg::before {
-            background: linear-gradient(180deg, rgba(10, 26, 59, 0.92) 0%, rgba(10, 26, 59, 0.75) 100%),
-               url('assets/img/mosaic-software/Hero.jpg') center/cover no-repeat;
-         }
-
-         .ms-hero-title {
-            font-size: 42px;
-         }
-
-         .ms-section-heading h2 {
-            font-size: 32px;
-         }
-
-         .ms-section-heading-inner {
-            gap: 12px;
-         }
-
-         .ms-section-heading-line {
-            width: 30px;
-         }
-
-         .ms-overview-title {
-            font-size: 32px;
-         }
-      }
-
-      /* Features */
-      .ms-features-section {
-         background: var(--ms-navy);
-         padding: 100px 0 80px;
-      }
-
-      .ms-feature-card {
-         background: #ffffff;
-         border-radius: 16px;
-         padding: 28px 28px 32px;
-         height: 100%;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .ms-feature-card:hover {
-         transform: translateY(-4px);
-         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-      }
-
-      .ms-feature-icon {
-         width: 44px;
-         height: 44px;
-         border-radius: 10px;
-         background: var(--ms-red);
-         color: #fff;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         font-size: 20px;
-         margin-bottom: 18px;
-      }
-
-      .ms-feature-card h4 {
-         font-size: 20px;
-         font-weight: 700;
-         color: var(--ms-navy);
-         margin-bottom: 12px;
-         line-height: 1.3;
-      }
-
-      .ms-feature-card p {
-         color: #64748b;
-         font-size: 15px;
-         line-height: 1.7;
-         margin: 0;
-      }
-
-      /* Platform Overview */
-      .ms-overview-section {
-         background: #ffffff;
-         padding: 100px 0;
-         position: relative;
-         overflow: hidden;
-      }
-
-      .ms-overview-dots {
-         position: absolute;
-         right: 40px;
-         top: 60px;
-         width: 90px;
-         height: 90px;
-         background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
-         background-size: 12px 12px;
-         opacity: 0.6;
-      }
-
-      .ms-overview-img {
-         border-radius: 16px;
-         overflow: hidden;
-         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-      }
-
-      .ms-overview-img img {
-         width: 100%;
-         display: block;
-      }
-
-      .ms-overview-label {
-         color: var(--ms-red);
-         font-size: 13px;
-         font-weight: 700;
-         letter-spacing: 1.5px;
-         text-transform: uppercase;
-         margin-bottom: 14px;
-         display: block;
-      }
-
-      .ms-overview-title {
-         font-size: 42px;
-         font-weight: 700;
-         color: var(--ms-navy);
-         line-height: 1.2;
-         margin-bottom: 20px;
-      }
-
-      .ms-overview-title span {
-         color: var(--ms-red);
-      }
-
-      .ms-overview-text {
-         color: #666;
-         font-size: 17px;
-         line-height: 1.75;
-         margin-bottom: 28px;
-      }
-
-      .ms-check-list {
-         list-style: none;
-         padding: 0;
-         margin: 0;
-      }
-
-      .ms-check-list li {
-         display: flex;
-         align-items: center;
-         gap: 14px;
-         margin-bottom: 14px;
-         color: #333;
-         font-size: 16px;
-      }
-
-      .ms-check-list li:last-child {
-         margin-bottom: 0;
-      }
-
-      .ms-check-icon {
-         width: 28px;
-         height: 28px;
-         border-radius: 50%;
-         background: rgba(192, 57, 43, 0.1);
-         color: var(--ms-red);
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         font-size: 12px;
-         flex-shrink: 0;
-      }
-
-      /* Applications */
-      .ms-apps-section {
-         background: #f3f5f8;
-         padding: 100px 0;
-      }
-
-      .ms-app-card {
-         background: #ffffff;
-         border-radius: 16px;
-         overflow: hidden;
-         height: 100%;
-         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-         display: flex;
-         flex-direction: column;
-      }
-
-      .ms-app-card:hover {
-         transform: translateY(-6px);
-         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
-      }
-
-      .ms-app-card-img {
-         height: 180px;
-         overflow: hidden;
-         position: relative;
-      }
-
-      .ms-app-card-img img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-
-      .ms-app-card-body {
-         padding: 36px 24px 30px;
-         position: relative;
-         flex: 1;
-         display: flex;
-         flex-direction: column;
-      }
-
-      .ms-app-card-icon {
-         width: 48px;
-         height: 48px;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         font-size: 20px;
-         position: absolute;
-         top: -24px;
-         left: 24px;
-         border: 3px solid #fff;
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .ms-app-icon-blue {
-         background: var(--ms-blue);
-         color: #fff;
-      }
-
-      .ms-app-icon-red {
-         background: var(--ms-red);
-         color: #fff;
-      }
-
-      .ms-app-card-body h4 {
-         font-size: 20px;
-         font-weight: 700;
-         color: var(--ms-navy);
-         margin: 16px 0 12px;
-      }
-
-      .ms-app-card-body p {
-         color: #64748b;
-         font-size: 15px;
-         line-height: 1.7;
-         margin-bottom: 18px;
-         flex: 1;
-      }
-
-      .ms-app-link {
-         color: var(--ms-red);
-         font-weight: 600;
-         font-size: 14px;
-         text-decoration: none;
-         display: inline-flex;
-         align-items: center;
-         gap: 6px;
-         transition: gap 0.2s ease;
-      }
-
-      .ms-app-link:hover {
-         color: #a93226;
-         gap: 10px;
-      }
-
-      /* Why Choose */
-      .ms-why-section {
-         background: var(--ms-navy);
-         padding: 100px 0 80px;
-      }
-
-      .ms-why-card {
-         background: #ffffff;
-         border-radius: 16px;
-         padding: 28px 26px;
-         height: 100%;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .ms-why-card-head {
-         display: flex;
-         align-items: flex-start;
-         gap: 14px;
-         margin-bottom: 12px;
-      }
-
-      .ms-why-num {
-         width: 36px;
-         height: 36px;
-         min-width: 36px;
-         border-radius: 50%;
-         background: var(--ms-blue);
-         color: #fff;
-         font-weight: 700;
-         font-size: 15px;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-      }
-
-      .ms-why-card h4 {
-         font-size: 18px;
-         font-weight: 700;
-         color: var(--ms-navy);
-         margin: 6px 0 0;
-         line-height: 1.3;
-      }
-
-      .ms-why-card p {
-         color: #64748b;
-         font-size: 15px;
-         line-height: 1.65;
-         margin: 0;
-      }
-
-      /* Demo form section */
-      .ms-demo-section {
-         background: #ffffff;
-         padding: 100px 0;
-      }
-
-      .ms-demo-section .cst-cta-left {
-         border-bottom-right-radius: 0;
-      }
-
-      @media (min-width: 992px) {
-         .ms-demo-section .cst-cta-left {
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
-         }
-      }
-   </style>
+   
 </head>
 
 <body class="loaded">
@@ -599,7 +93,7 @@
             <use xlink:href="#wave"></use>
          </svg>
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 560 20" style="display: none;">
+            viewBox="0 0 560 20" class="cst-display-none">
             <symbol id="wave">
                <path
                   d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
@@ -631,7 +125,7 @@
                      <a href="index.html">
                         <!-- Path: assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                           style="width:100%;max-width:300px;height:auto;display:block;">
+                           class="cst-style-00c6ead3">
                      </a>
                   </div>
                </div>
@@ -989,10 +483,10 @@
                               <div class="col-lg-5">
                                  <div class="cst-cta-left">
                                     <div
-                                       style="position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: rgba(255,255,255,0.04); border-radius: 50%; pointer-events: none;">
+                                       class="cst-style-b4d9ffe8">
                                     </div>
                                     <div
-                                       style="position: absolute; bottom: -80px; left: -80px; width: 260px; height: 260px; background: rgba(255,255,255,0.03); border-radius: 50%; pointer-events: none;">
+                                       class="cst-style-874c76e2">
                                     </div>
                                     <div class="cst-plane-decoration">
                                        <svg viewBox="0 0 150 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1021,7 +515,7 @@
                                              <span>Free ROI Assessment</span>
                                           </li>
                                        </ul>
-                                       <p class="fs-13 mt-30 mb-0" style="color: rgba(255,255,255,0.6);">Limited demo
+                                       <p class="fs-13 mt-30 mb-0 cst-color-rgba2552552550d6">Limited demo
                                           slots available. We'll respond within 24 hours.</p>
                                     </div>
                                  </div>
@@ -1031,21 +525,21 @@
                               <div class="col-lg-7">
                                  <div class="cst-form-wrap">
                                     <form id="mosaic-demo-form" action="admin/submit-form.php?form_type=mosaic"
-                                       method="POST" style="position: relative;">
+                                       method="POST" class="cst-position-relative">
                                        <input type="hidden" name="form_type" value="mosaic">
                                        <div id="form-success-message"
-                                          style="display: none; background: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                                          <i class="fa-light fa-check-circle" style="margin-right: 8px;"></i> Thank you!
+                                          class="cst-style-4de03d8a">
+                                          <i class="fa-light fa-check-circle cst-margin-right-8"></i> Thank you!
                                           Your demo request has been received. Check your email for confirmation.
                                        </div>
                                        <div id="form-error-message"
-                                          style="display: none; background: #fee2e2; border: 1px solid #fca5a5; color: #7f1d1d; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                          class="cst-style-b0221020">
                                        </div>
                                        <div class="row">
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Organization Name <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <input type="text" name="organization" class="mosaic-form-input"
                                                    placeholder="Your Organization" required>
                                              </div>
@@ -1053,7 +547,7 @@
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Your Name <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <input type="text" name="name" class="mosaic-form-input"
                                                    placeholder="Full Name" required>
                                              </div>
@@ -1061,7 +555,7 @@
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Job Title <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <input type="text" name="title" class="mosaic-form-input"
                                                    placeholder="Your Job Title" required>
                                              </div>
@@ -1069,7 +563,7 @@
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Work Email <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <input type="email" name="email" class="mosaic-form-input"
                                                    placeholder="you@company.com" required>
                                              </div>
@@ -1077,7 +571,7 @@
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Phone Number <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <input type="tel" name="phone" class="mosaic-form-input"
                                                    placeholder="(555) 000-0000" required>
                                              </div>
@@ -1085,7 +579,7 @@
                                           <div class="col-md-6">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Organization Type <span
-                                                      style="color: #ef4444;">*</span></label>
+                                                      class="cst-color-ef4444">*</span></label>
                                                 <select name="organization_type" class="mosaic-form-select" required>
                                                    <option value="">Select type...</option>
                                                    <option value="Professional Team">Professional Team</option>
@@ -1101,7 +595,7 @@
                                           <div class="col-12">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label mb-2">What are you most interested in?
-                                                   <span style="color: #ef4444;">*</span></label>
+                                                   <span class="cst-color-ef4444">*</span></label>
                                                 <div class="row g-2">
                                                    <div class="col-md-4 col-6">
                                                       <label class="mosaic-checkbox-label">
@@ -1152,10 +646,10 @@
                                           <div class="col-12">
                                              <div class="mb-15">
                                                 <label class="mosaic-form-label">Tell us about your goals <span
-                                                      style="color: #64748b; font-weight: 400;">(Optional)</span></label>
-                                                <textarea name="challenges" class="mosaic-form-input"
+                                                      class="cst-style-ca1cee3d">(Optional)</span></label>
+                                                <textarea name="challenges" class="mosaic-form-input cst-resize-none"
                                                    placeholder="Brief description of your goals..." rows="4"
-                                                   style="resize: none;"></textarea>
+                                                  ></textarea>
                                              </div>
                                           </div>
 
@@ -1167,15 +661,15 @@
                                           </div>
 
                                           <div class="col-12">
-                                             <p class="fs-13 text-center mt-15 mb-0" style="color: #64748b;">
+                                             <p class="fs-13 text-center mt-15 mb-0 cst-color-64748b">
                                                 <i class="fa-light fa-lock me-1"></i> Your information is secure. By
                                                 submitting, you agree to our <a href="#"
-                                                   style="color: #091734; font-weight: 600;">Privacy
+                                                   class="cst-style-905f8d79">Privacy
                                                    Policy</a>.
                                              </p>
                                           </div>
 
-                                          <div id="formMessageContainer" style="margin-top: 20px; min-height: 60px;">
+                                          <div id="formMessageContainer" class="cst-style-705dfb3c">
                                           </div>
                                        </div>
                                     </form>
@@ -1381,17 +875,8 @@
                   // Also show inline message below privacy policy
                   if (messageContainer) {
                      messageContainer.innerHTML = `
-                        <div style="
-                           background: linear-gradient(135deg, #d1fae5 0%, #d1fae5 100%);
-                           border-left: 4px solid #10b981;
-                           padding: 15px 20px;
-                           border-radius: 8px;
-                           color: #065f46;
-                           text-align: center;
-                           font-size: 14px;
-                           animation: slideUp 0.4s ease forwards;
-                        ">
-                           <i class="fa-light fa-check-circle" style="margin-right: 8px; color: #10b981;"></i>
+                        <div class="cst-style-83f7e2d2">
+                           <i class="fa-light fa-check-circle cst-style-e7931c52"></i>
                            <strong>${data.message || 'Thank you for your interest!'}</strong>
                         </div>
                      `;
@@ -1418,17 +903,8 @@
                   // Also show inline error message
                   if (messageContainer) {
                      messageContainer.innerHTML = `
-                        <div style="
-                           background: linear-gradient(135deg, #fee2e2 0%, #fee2e2 100%);
-                           border-left: 4px solid #ef4444;
-                           padding: 15px 20px;
-                           border-radius: 8px;
-                           color: #7f1d1d;
-                           text-align: center;
-                           font-size: 14px;
-                           animation: slideUp 0.4s ease forwards;
-                        ">
-                           <i class="fa-light fa-exclamation-circle" style="margin-right: 8px; color: #ef4444;"></i>
+                        <div class="cst-style-9f099805">
+                           <i class="fa-light fa-exclamation-circle cst-style-8a010512"></i>
                            <strong>${data.message || 'An error occurred. Please try again.'}</strong>
                         </div>
                      `;
@@ -1460,17 +936,8 @@
                // Show inline error message
                if (messageContainer) {
                   messageContainer.innerHTML = `
-                     <div style="
-                        background: linear-gradient(135deg, #fee2e2 0%, #fee2e2 100%);
-                        border-left: 4px solid #ef4444;
-                        padding: 15px 20px;
-                        border-radius: 8px;
-                        color: #7f1d1d;
-                        text-align: center;
-                        font-size: 14px;
-                        animation: slideUp 0.4s ease forwards;
-                     ">
-                        <i class="fa-light fa-exclamation-circle" style="margin-right: 8px; color: #ef4444;"></i>
+                     <div class="cst-style-2d1cc45a">
+                        <i class="fa-light fa-exclamation-circle cst-style-8a010512"></i>
                         <strong>An error occurred. Please try again later.</strong>
                      </div>
                   `;

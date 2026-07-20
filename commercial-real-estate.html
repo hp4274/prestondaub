@@ -51,739 +51,7 @@
    <link rel="stylesheet" href="assets/css/toast-notification.css">
    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
 
-   <style>
-      .cre-accent-red {
-         color: #C0392B !important;
-      }
-
-      .cre-btn-red {
-         background-color: #C0392B !important;
-         color: #fff !important;
-         transition: all 0.3s ease;
-      }
-
-      .cre-btn-red:hover {
-         background-color: #a82e22 !important;
-         transform: translateY(-2px);
-         box-shadow: 0 10px 20px rgba(192, 57, 43, 0.2);
-         color: #fff !important;
-      }
-
-      /* Hero Section */
-      .cre-hero-section {
-         background-color: #0A1A3B;
-         color: #ffffff;
-         position: relative;
-         overflow: hidden;
-         padding: 125px 0 120px;
-         min-height: 620px;
-      }
-
-      .cre-hero-right {
-         position: absolute;
-         top: 0;
-         right: 0;
-         width: 48%;
-         height: 100%;
-         z-index: 1;
-      }
-
-      .cre-hero-image-container {
-         width: 100%;
-         height: 100%;
-         position: relative;
-         clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
-         overflow: hidden;
-      }
-
-      .cre-hero-image-container img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-
-      .cre-hero-border-line {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: #C0392B;
-         z-index: 0;
-         clip-path: polygon(calc(18% - 4px) 0, 100% 0, 100% 100%, -4px 100%);
-      }
-
-      .cre-hero-content {
-         max-width: 640px;
-      }
-
-      .cre-hero-eyebrow {
-         display: flex;
-         align-items: center;
-         gap: 10px;
-         margin-bottom: 28px;
-      }
-
-      .cre-hero-eyebrow-dash {
-         width: 20px;
-         height: 2px;
-         background-color: #C0392B;
-         flex-shrink: 0;
-      }
-
-      .cre-hero-eyebrow-text {
-         color: #ffffff;
-         font-size: 13px;
-         font-weight: 700;
-         letter-spacing: 1.5px;
-         text-transform: uppercase;
-      }
-
-      .cre-hero-title {
-         color: #ffffff;
-         font-weight: 700;
-         line-height: 1.1;
-         margin-bottom: 28px;
-      }
-
-      .cre-hero-title span {
-         color: #C0392B;
-      }
-
-      .cre-hero-desc {
-         color: rgba(255, 255, 255, 0.9);
-         font-size: 18px;
-         line-height: 1.75;
-         margin-bottom: 36px;
-         max-width: 560px;
-      }
-
-      .cre-hero-actions {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 16px;
-         align-items: center;
-      }
-
-      .cre-hero-btn-primary {
-         background: #C0392B;
-         color: #ffffff !important;
-         padding: 15px 32px;
-         border-radius: 50px;
-         font-weight: 700;
-         font-size: 15px;
-         border: none;
-         display: inline-flex;
-         align-items: center;
-         gap: 10px;
-         transition: all 0.3s ease;
-         text-decoration: none;
-      }
-
-      .cre-hero-btn-primary:hover {
-         background: #a93226;
-         transform: translateY(-2px);
-         box-shadow: 0 10px 20px rgba(192, 57, 43, 0.3);
-         color: #ffffff !important;
-      }
-
-      .cre-hero-btn-secondary {
-         background: #ffffff;
-         color: #0A1A3B !important;
-         padding: 15px 32px;
-         border-radius: 50px;
-         font-weight: 700;
-         font-size: 15px;
-         border: none;
-         display: inline-flex;
-         align-items: center;
-         gap: 10px;
-         transition: all 0.3s ease;
-         text-decoration: none;
-      }
-
-      .cre-hero-btn-secondary:hover {
-         background: #f1f5f9;
-         transform: translateY(-2px);
-         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-         color: #0A1A3B !important;
-      }
-
-      @media (max-width: 991px) {
-         .cre-hero-section {
-            padding: 125px 0 60px;
-            min-height: auto;
-         }
-
-         .cre-hero-right {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            margin-top: 40px;
-         }
-
-         .cre-hero-image-container {
-            clip-path: none;
-            border-radius: 24px;
-         }
-
-         .cre-hero-border-line {
-            display: none;
-         }
-
-         .cre-hero-desc {
-            font-size: 16px;
-         }
-      }
-
-      /* Stats Bar – overlapping hero & body */
-      .cre-stats-overlap {
-         position: relative;
-         z-index: 10;
-         margin-top: -70px;
-         margin-bottom: -70px;
-         pointer-events: none;
-      }
-
-      .cre-stats-overlap .cre-stats-bar {
-         pointer-events: auto;
-      }
-
-      .cre-stats-bar {
-         background: #0A1A3B;
-         border-radius: 20px;
-         padding: 30px 40px;
-         position: relative;
-         border: 1px solid rgba(255, 255, 255, 0.08);
-         box-shadow: 0 20px 45px rgba(10, 26, 59, 0.15);
-      }
-
-      @media (max-width: 991px) {
-         .cre-stats-overlap {
-            margin-top: -50px;
-            margin-bottom: -50px;
-         }
-
-         .cre-stats-bar {
-            padding: 25px;
-         }
-      }
-
-      .cre-stat-item {
-         display: flex;
-         align-items: center;
-         gap: 20px;
-      }
-
-      .cre-stat-icon {
-         width: 68px;
-         height: 68px;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         border: 1px solid rgba(255, 255, 255, 0.12);
-         background: rgba(255, 255, 255, 0.03);
-         color: #ffffff;
-         font-size: 24px;
-         flex-shrink: 0;
-         box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02);
-      }
-
-      .cre-stat-value {
-         font-size: 16px;
-         font-weight: 700;
-         color: #ffffff;
-         margin: 0 0 6px 0;
-         line-height: 1.3;
-         min-height: 42px;
-      }
-
-      .cre-stat-label {
-         font-size: 13px;
-         color: #ffffff;
-         margin: 0;
-         line-height: 1.4;
-      }
-
-      .cre-stats-col {
-         border-right: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      @media (min-width: 992px) {
-         .cre-stats-col:last-child {
-            border-right: none;
-         }
-      }
-
-      @media (max-width: 991px) {
-         .cre-stats-col {
-            border-right: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-         }
-
-         .cre-stats-col:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-         }
-      }
-
-      /* Our Approach Section Collage */
-      .cre-collage-wrap {
-         position: relative;
-         padding-right: 30px;
-         padding-bottom: 30px;
-      }
-
-      .cre-collage-dots {
-         position: absolute;
-         left: -20px;
-         top: -20px;
-         width: 100px;
-         height: 100px;
-         background-image: radial-gradient(#C0392B 2px, transparent 2px);
-         background-size: 12px 12px;
-         opacity: 0.3;
-         z-index: 1;
-      }
-
-      .cre-collage-img-1 {
-         border-radius: 24px;
-         overflow: hidden;
-         border: 8px solid #f8fafc;
-         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-         position: relative;
-         z-index: 2;
-         width: 90%;
-      }
-
-      .cre-collage-img-1 img {
-         width: 100%;
-         height: auto;
-         display: block;
-      }
-
-      .cre-collage-badge {
-         position: absolute;
-         bottom: -15px;
-         left: -15px;
-         background: #ffffff;
-         border-radius: 16px;
-         padding: 20px 25px;
-         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-         z-index: 3;
-         max-width: 290px;
-         border-left: 4px solid #C0392B;
-      }
-
-      .cre-badge-tag {
-         background: rgba(192, 57, 43, 0.08);
-         color: #C0392B;
-         padding: 4px 12px;
-         border-radius: 10px;
-         font-size: 11px;
-         font-weight: 700;
-         letter-spacing: 1px;
-         text-transform: uppercase;
-         display: inline-block;
-         margin-bottom: 8px;
-      }
-
-      .cre-badge-title {
-         font-size: 18px;
-         font-weight: 700;
-         color: #0A1A3B;
-         margin: 0 0 6px 0;
-      }
-
-      .cre-badge-text {
-         font-size: 13px;
-         color: #64748b;
-         margin: 0;
-         line-height: 1.4;
-      }
-
-      /* Features Cards */
-      .cre-feature-card {
-         background: #ffffff;
-         border-radius: 24px;
-         padding: 40px;
-         border: 1px solid #e2e8f0;
-         box-shadow: 0 15px 45px rgba(0, 0, 0, 0.02);
-         transition: all 0.3s ease;
-         height: 100%;
-      }
-
-      .cre-feature-card:hover {
-         transform: translateY(-5px);
-         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-         border-color: #C0392B;
-      }
-
-      .cre-feature-icon-wrap {
-         width: 64px;
-         height: 64px;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         background: rgba(11, 14, 168, 0.08);
-         color: #0b0ea8;
-         font-size: 26px;
-         margin-bottom: 25px;
-      }
-
-      .cre-feature-card h3 {
-         font-size: 24px;
-         font-weight: 700;
-         color: #0A1A3B;
-         margin-bottom: 15px;
-      }
-
-      .cre-feature-line {
-         width: 40px;
-         height: 3px;
-         background-color: #C0392B;
-         margin-bottom: 20px;
-      }
-
-      /* Why Choose Section */
-      .cre-why-section {
-         background-color: #0A1A3B;
-         padding: 100px 0;
-         color: #ffffff;
-      }
-
-      .cre-why-card {
-         padding: 30px 40px;
-         text-align: center;
-         height: 100%;
-      }
-
-      .cre-why-icon-wrap {
-         width: 70px;
-         height: 70px;
-         border-radius: 50%;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         background: rgba(255, 255, 255, 0.1);
-         border: 2px solid rgba(255, 255, 255, 0.15);
-         color: #ffffff;
-         font-size: 28px;
-         margin-bottom: 25px;
-      }
-
-      .cre-why-card h4 {
-         font-size: 22px;
-         font-weight: 700;
-         color: #ffffff;
-         margin-bottom: 15px;
-      }
-
-      .cre-why-card p {
-         color: #94a3b8;
-         font-size: 15px;
-         line-height: 1.6;
-         margin: 0;
-      }
-
-      .cre-why-col {
-         border-right: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .cre-why-col:last-child {
-         border-right: none;
-      }
-
-      @media (max-width: 991px) {
-         .cre-why-col {
-            border-right: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-         }
-
-         .cre-why-col:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-         }
-      }
-
-      /* Industries Grid */
-      .cre-industries-section {
-         padding: 100px 0;
-         background: #f8fafc;
-      }
-
-      .cre-industry-grid {
-         display: grid;
-         grid-template-columns: repeat(5, 1fr);
-         gap: 20px;
-      }
-
-      @media (max-width: 1200px) {
-         .cre-industry-grid {
-            grid-template-columns: repeat(3, 1fr);
-         }
-      }
-
-      @media (max-width: 768px) {
-         .cre-industry-grid {
-            grid-template-columns: repeat(2, 1fr);
-         }
-      }
-
-      .cre-industry-card {
-         background: #ffffff;
-         border-radius: 16px;
-         border: 1px solid #e2e8f0;
-         padding: 30px 20px;
-         text-align: center;
-         transition: all 0.3s ease;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-      }
-
-      .cre-industry-card:hover {
-         transform: translateY(-5px);
-         border-color: #C0392B;
-         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
-      }
-
-      .cre-industry-icon {
-         font-size: 32px;
-         color: #0b0ea8;
-         margin-bottom: 15px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-      }
-
-      .cre-industry-card span {
-         font-size: 15px;
-         font-weight: 700;
-         color: #0A1A3B;
-      }
-
-      /* CTA Section */
-      .cre-cta-section {
-         padding: 80px 0;
-         background: #ffffff;
-      }
-
-      .cre-cta-banner {
-         background: #0A1A3B;
-         border-radius: 16px;
-         padding: 40px 48px;
-         position: relative;
-         overflow: hidden;
-         border-left: 4px solid #C0392B;
-         box-shadow: 0 20px 50px rgba(10, 26, 59, 0.15);
-      }
-
-      .cre-cta-inner {
-         display: flex;
-         align-items: center;
-         gap: 36px;
-      }
-
-      @media (max-width: 991px) {
-         .cre-cta-banner {
-            padding: 32px 24px;
-         }
-
-         .cre-cta-inner {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-         }
-      }
-
-      .cre-cta-icon-container {
-         width: 72px;
-         height: 72px;
-         min-width: 72px;
-         border-radius: 50%;
-         background: rgba(11, 14, 168, 0.35);
-         color: #ffffff;
-         font-size: 30px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         flex-shrink: 0;
-      }
-
-      .cre-cta-text {
-         flex: 1;
-         min-width: 0;
-      }
-
-      .cre-cta-text h2 {
-         font-size: 32px;
-         font-weight: 700;
-         color: #ffffff;
-         line-height: 1.25;
-         margin: 0 0 10px 0;
-      }
-
-      .cre-cta-text p {
-         color: rgba(255, 255, 255, 0.72);
-         font-size: 15px;
-         line-height: 1.65;
-         margin: 0;
-         max-width: 520px;
-      }
-
-      @media (max-width: 991px) {
-         .cre-cta-text h2 {
-            font-size: 26px;
-         }
-      }
-
-      .cre-cta-divider {
-         width: 1px;
-         height: 88px;
-         background: rgba(255, 255, 255, 0.15);
-         flex-shrink: 0;
-      }
-
-      @media (max-width: 991px) {
-         .cre-cta-divider {
-            display: none;
-         }
-      }
-
-      .cre-cta-actions {
-         display: flex;
-         flex-direction: column;
-         gap: 12px;
-         flex-shrink: 0;
-         min-width: 260px;
-      }
-
-      @media (max-width: 991px) {
-         .cre-cta-actions {
-            width: 100%;
-            min-width: 0;
-         }
-      }
-
-      .cre-cta-btn-primary {
-         background: #C0392B;
-         color: #ffffff !important;
-         padding: 14px 28px;
-         border-radius: 10px;
-         font-weight: 700;
-         font-size: 15px;
-         border: none;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         gap: 10px;
-         transition: all 0.3s ease;
-         text-decoration: none;
-         width: 100%;
-      }
-
-      .cre-cta-btn-primary:hover {
-         background: #a93226;
-         transform: translateY(-2px);
-         box-shadow: 0 10px 20px rgba(192, 57, 43, 0.3);
-         color: #ffffff !important;
-      }
-
-      .cre-cta-btn-outline {
-         border: 1.5px solid rgba(255, 255, 255, 0.35);
-         color: #ffffff !important;
-         padding: 13px 28px;
-         border-radius: 10px;
-         font-weight: 700;
-         font-size: 15px;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         gap: 10px;
-         transition: all 0.3s ease;
-         background: transparent;
-         text-decoration: none;
-         width: 100%;
-      }
-
-      .cre-cta-btn-outline:hover {
-         border-color: #ffffff;
-         background: rgba(255, 255, 255, 0.05);
-         color: #ffffff !important;
-      }
-
-      /* Contact Modal */
-      .cre-modal-overlay {
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: rgba(10, 26, 59, 0.8);
-         backdrop-filter: blur(8px);
-         z-index: 9999;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         opacity: 0;
-         pointer-events: none;
-         transition: all 0.3s ease;
-      }
-
-      .cre-modal-overlay.active {
-         opacity: 1;
-         pointer-events: auto;
-      }
-
-      .cre-modal-content {
-         background: #ffffff;
-         border-radius: 24px;
-         width: 100%;
-         max-width: 700px;
-         padding: 40px;
-         position: relative;
-         transform: scale(0.9);
-         transition: all 0.3s ease;
-         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
-      }
-
-      .cre-modal-overlay.active .cre-modal-content {
-         transform: scale(1);
-      }
-
-      .cre-modal-close {
-         position: absolute;
-         top: 20px;
-         right: 20px;
-         background: #f1f5f9;
-         border: none;
-         width: 36px;
-         height: 36px;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         cursor: pointer;
-         font-size: 18px;
-         color: #64748b;
-         transition: all 0.2s ease;
-      }
-
-      .cre-modal-close:hover {
-         background: #e2e8f0;
-         color: #0f172a;
-      }
-   </style>
+   
 </head>
 
 <body class="loaded">
@@ -805,7 +73,7 @@
             <use xlink:href="#wave"></use>
          </svg>
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 560 20" style="display: none;">
+            viewBox="0 0 560 20" class="cst-display-none">
             <symbol id="wave">
                <path
                   d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
@@ -837,7 +105,7 @@
                      <a href="index.html">
                         <!-- Path: assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                           style="width:100%;max-width:300px;height:auto;display:block;">
+                           class="cst-style-00c6ead3">
                      </a>
                   </div>
                </div>
@@ -908,7 +176,7 @@
          <main>
             <!-- Hero Section -->
             <section class="cre-hero-section">
-               <div class="container" style="position: relative; z-index: 2;">
+               <div class="container cst-style-c962d74f">
                   <div class="row">
                      <div class="col-lg-6">
                         <div class="cre-hero-content">
@@ -1002,7 +270,7 @@
             </div>
 
             <!-- Our Approach Section -->
-            <section id="approach" class="cre-approach-section" style="background:#ffffff; padding:130px 0 100px;">
+            <section id="approach" class="cre-approach-section cst-style-25419b65">
                <div class="container">
                   <div class="row align-items-center mb-60">
                      <div class="col-lg-6 mb-40 mb-lg-0">
@@ -1024,20 +292,20 @@
                      <div class="col-lg-6">
                         <div class="ps-lg-4">
                            <span
-                              style="color: #C0392B; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">OUR
+                              class="cst-style-9535a3f3">OUR
                               APPROACH</span>
                            <h2
-                              style="font-size: 42px; font-weight: 700; color: #0A1A3B; line-height: 1.2; margin-bottom: 20px;">
+                              class="cst-style-932a4df3">
                               Building Paths for Prime Real Estate Transactions</h2>
-                           <div style="width: 50px; height: 3px; background-color: #C0392B; margin-bottom: 25px;"></div>
-                           <p style="color: #525252; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+                           <div class="cst-style-fd8c88d6"></div>
+                           <p class="cst-style-f4ea111b">
                               While we are not licensed brokers, we pride ourselves on being trusted facilitators in the
                               commercial real estate space. Our clients rely on us to navigate the complexities of the
                               market and connect them with qualified investors and firms. We understand that each
                               transaction is unique, and we tailor our approach to meet the specific needs of our
                               clients and their prospective partners.
                            </p>
-                           <p style="color: #525252; font-size: 16px; line-height: 1.8; margin: 0;">
+                           <p class="cst-style-610d13f7">
                               By working behind the scenes, we protect the confidentiality of key assets and provide
                               smooth, relationship-based capital and asset introductions.
                            </p>
@@ -1054,7 +322,7 @@
                            </div>
                            <h3>Exclusive Off-Market Properties</h3>
                            <div class="cre-feature-line"></div>
-                           <p style="color: #525252; font-size: 15px; line-height: 1.7; margin: 0;">
+                           <p class="cst-style-dafed16a">
                               Our clients benefit from access to a curated selection of off-market properties that are
                               not available through traditional channels. This exclusivity provides a competitive
                               advantage for investors looking to acquire prime real estate assets.
@@ -1068,7 +336,7 @@
                            </div>
                            <h3>Building Relationships</h3>
                            <div class="cre-feature-line"></div>
-                           <p style="color: #525252; font-size: 15px; line-height: 1.7; margin: 0;">
+                           <p class="cst-style-dafed16a">
                               At the core of our business is the belief that strong relationships drive success. We
                               foster open communication and collaboration between all parties involved, ensuring that
                               each transaction is handled with transparency and professionalism.
@@ -1084,11 +352,11 @@
                <div class="container">
                   <div class="text-center mb-60">
                      <span
-                        style="color: #C0392B; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">STRATEGIC
+                        class="cst-style-9535a3f3">STRATEGIC
                         EDGE</span>
-                     <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; margin-bottom: 15px;">Why Choose
+                     <h2 class="cst-style-74473478">Why Choose
                         Preston Daub?</h2>
-                     <p style="max-width: 600px; margin: 0 auto; color: #94a3b8; font-size: 16px; line-height: 1.7;">
+                     <p class="cst-style-6649b529">
                         Confidentiality, market insight, and target connections built to generate value.</p>
                   </div>
                   <div class="row g-0">
@@ -1130,9 +398,9 @@
             <section class="cre-industries-section">
                <div class="container">
                   <div class="text-center mb-60">
-                     <h2 style="font-size: 42px; font-weight: 700; color: #0A1A3B; margin-bottom: 15px;">Industries We
+                     <h2 class="cst-style-c1017377">Industries We
                         Serve</h2>
-                     <div style="width: 50px; height: 3px; background-color: #C0392B; margin: 0 auto;"></div>
+                     <div class="cst-style-07b04e8b"></div>
                   </div>
                   <div class="cre-industry-grid">
                      <div class="cre-industry-card">
@@ -1209,8 +477,8 @@
             <div id="creContactModal" class="cre-modal-overlay" onclick="closeCreModalOnBackdrop(event);">
                <div class="cre-modal-content">
                   <button class="cre-modal-close" onclick="closeCreModal();"><i class="fa-solid fa-xmark"></i></button>
-                  <h3 class="fw-700 mb-10" style="color: #0A1A3B; font-size: 28px;">Connect with an Advisor</h3>
-                  <p class="mb-35" style="color: #64748b;">Submit the form below and an exclusive real estate
+                  <h3 class="fw-700 mb-10 cst-style-492d9d1f">Connect with an Advisor</h3>
+                  <p class="mb-35 cst-color-64748b">Submit the form below and an exclusive real estate
                      facilitator will follow up.</p>
 
                   <form id="cre-contact-form" action="server/contact-handler.php" method="POST">
@@ -1218,56 +486,56 @@
                         <div class="col-md-6">
                            <div class="mb-15">
                               <label
-                                 style="font-size: 14px; font-weight: 600; color: #0A1A3B; margin-bottom: 6px; display: block;">Full
-                                 Name <span style="color: #ef4444;">*</span></label>
+                                 class="cst-style-9bd1019e">Full
+                                 Name <span class="cst-color-ef4444">*</span></label>
                               <input type="text" name="name" placeholder="Your Name" required
-                                 style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 15px;">
+                                 class="cst-style-49c3ac04">
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="mb-15">
                               <label
-                                 style="font-size: 14px; font-weight: 600; color: #0A1A3B; margin-bottom: 6px; display: block;">Work
-                                 Email <span style="color: #ef4444;">*</span></label>
+                                 class="cst-style-9bd1019e">Work
+                                 Email <span class="cst-color-ef4444">*</span></label>
                               <input type="email" name="email" placeholder="you@company.com" required
-                                 style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 15px;">
+                                 class="cst-style-49c3ac04">
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="mb-15">
                               <label
-                                 style="font-size: 14px; font-weight: 600; color: #0A1A3B; margin-bottom: 6px; display: block;">Phone
-                                 Number <span style="color: #ef4444;">*</span></label>
+                                 class="cst-style-9bd1019e">Phone
+                                 Number <span class="cst-color-ef4444">*</span></label>
                               <input type="tel" name="phone" placeholder="(555) 000-0000" required
-                                 style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 15px;">
+                                 class="cst-style-49c3ac04">
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="mb-15">
                               <label
-                                 style="font-size: 14px; font-weight: 600; color: #0A1A3B; margin-bottom: 6px; display: block;">Property
-                                 / Investment Type <span style="color: #ef4444;">*</span></label>
+                                 class="cst-style-9bd1019e">Property
+                                 / Investment Type <span class="cst-color-ef4444">*</span></label>
                               <input type="text" name="property_type" placeholder="e.g. Apartments, Hotel, Office"
                                  required
-                                 style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 15px;">
+                                 class="cst-style-49c3ac04">
                            </div>
                         </div>
                         <div class="col-12">
                            <div class="mb-15">
                               <label
-                                 style="font-size: 14px; font-weight: 600; color: #0A1A3B; margin-bottom: 6px; display: block;">Your
-                                 Requirements / Goals <span style="color: #ef4444;">*</span></label>
+                                 class="cst-style-9bd1019e">Your
+                                 Requirements / Goals <span class="cst-color-ef4444">*</span></label>
                               <textarea name="message"
                                  placeholder="Describe the property details or investment objectives..." rows="4"
-                                 style="resize: none; width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 15px;"
-                                 required></textarea>
+                                
+                                 required class="cst-style-913dd70b"></textarea>
                            </div>
                         </div>
                         <div class="col-12">
                            <div id="cre-form-message"
-                              style="display: none; padding: 15px; border-radius: 8px; margin-bottom: 20px;"></div>
+                              class="cst-style-85f0d550"></div>
                            <button type="submit"
-                              style="background: #C0392B; color: #fff; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; width: 100%; box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3); font-size: 16px; cursor: pointer;">
+                              class="cst-style-f40e4451">
                               <span>Request Information</span>
                               <i class="fa-light fa-arrow-right ms-2"></i>
                            </button>

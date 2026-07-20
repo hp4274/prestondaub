@@ -73,7 +73,7 @@
             <use xlink:href="#wave"></use>
          </svg>
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 560 20" style="display: none;">
+            viewBox="0 0 560 20" class="cst-display-none">
             <symbol id="wave">
                <path
                   d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
@@ -105,7 +105,7 @@
                      <a href="../index.html">
                         <!-- Path: ../assets/img/logo/logo-black.png | Size: 1038x174 px -->
                         <img src="../assets/img/logo/logo-black.png" alt="Preston Daub Logo"
-                           style="width:100%;max-width:300px;height:auto;display:block;">
+                           class="cst-style-00c6ead3">
                      </a>
                   </div>
                </div>
@@ -175,504 +175,7 @@
    <div id="smooth-wrapper">
       <div id="smooth-content">
          <main>
-            <style>
-               /* ABL Loans Page Custom Design Structure (Matching SBA & USDA Loans) */
-               .sba-hero-section {
-                  padding: 125px 0 45px;
-                  background: #FFFFFF;
-                  position: relative;
-                  overflow: visible;
-                  z-index: 10;
-               }
-
-               .sba-hero-title {
-                  font-size: 58px;
-                  font-weight: 800;
-                  line-height: 1.12;
-                  color: #0A1A3B;
-                  letter-spacing: -1px;
-               }
-
-               .sba-hero-title span {
-                  color: #C0392B;
-               }
-
-               .sba-red-line {
-                  width: 45px;
-                  height: 3px;
-                  background-color: #C0392B;
-                  margin: 20px 0 25px;
-               }
-
-               .sba-hero-desc {
-                  font-size: 17px;
-                  line-height: 1.7;
-                  color: #4B5563;
-                  margin-bottom: 35px;
-                  max-width: 520px;
-               }
-
-               .sba-btn-red {
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 12px;
-                  background-color: #C0392B;
-                  color: #FFFFFF;
-                  font-size: 16px;
-                  font-weight: 700;
-                  padding: 16px 36px;
-                  border-radius: 30px;
-                  transition: all 0.3s ease;
-                  box-shadow: 0 10px 25px rgba(192, 57, 43, 0.25);
-               }
-
-               .sba-btn-red:hover {
-                  background-color: #A93226;
-                  color: #FFFFFF;
-                  transform: translateY(-2px);
-                  box-shadow: 0 15px 30px rgba(192, 57, 43, 0.35);
-               }
-
-               .sba-hero-features {
-                  margin-top: 55px;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 20px;
-                  border-top: 1px solid #E5E7EB;
-                  padding-top: 35px;
-               }
-
-               .sba-hero-feature-item {
-                  display: flex;
-                  flex-direction: column;
-               }
-
-               .sba-hero-feature-icon {
-                  width: 42px;
-                  height: 42px;
-                  border-radius: 10px;
-                  background-color: #FEE2E2;
-                  color: #C0392B;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 20px;
-                  margin-bottom: 12px;
-               }
-
-               .sba-hero-feature-title {
-                  font-size: 16px;
-                  font-weight: 700;
-                  color: #111827;
-                  margin-bottom: 4px;
-               }
-
-               .sba-hero-feature-text {
-                  font-size: 13px;
-                  color: #6B7280;
-                  line-height: 1.4;
-                  margin: 0;
-               }
-
-               /* Right Hero Collage */
-               .sba-hero-collage {
-                  position: relative;
-                  height: 560px;
-                  width: 100%;
-               }
-
-               .sba-hero-section .hero-bottom-swoosh {
-                  position: absolute;
-                  right: 0;
-                  bottom: 20px;
-                  width: 100%; height: 260px;
-                  z-index: 1;
-               }
-
-               .sba-dot-pattern {
-                  position: absolute;
-                  bottom: 25px;
-                  right: 15px;
-                  width: 160px;
-                  height: 160px;
-                  background-image: radial-gradient(#FFFFFF 2px, transparent 2px);
-                  background-size: 18px 18px;
-                  z-index: 3;
-                  opacity: 0.85;
-               }
-
-               .sba-img-top {
-                  position: absolute;
-                  top: 15px;
-                  right: -60px;
-                  width: 86%;
-                  height: 330px;
-                  object-fit: cover;
-                  border-bottom-left-radius: 90px;
-                  border-top-left-radius: 30px;
-                  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                  z-index: 4;
-               }
-
-               .sba-img-mid {
-                  position: absolute;
-                  top: 210px;
-                  right: -5px;
-                  width: 52%;
-                  height: 250px;
-                  object-fit: cover;
-                  border-radius: 24px;
-                  border: 7px solid #FFFFFF;
-                  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-                  z-index: 5;
-               }
-
-               .sba-img-bottom {
-                  position: absolute;
-                  top: 280px;
-                  left: 10px;
-                  width: 52%;
-                  height: 250px;
-                  object-fit: cover;
-                  border-radius: 24px;
-                  border: 7px solid #FFFFFF;
-                  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-                  z-index: 6;
-               }
-
-               /* Overview Section */
-               .sba-overview-section {
-                  padding: 60px 0 80px;
-                  background-color: #FFFFFF;
-                  position: relative;
-                  z-index: 1;
-               }
-
-               .sba-overview-img-wrap {
-                  position: relative;
-                  z-index: 1;
-               }
-
-               .sba-overview-img {
-                  width: 100%;
-                  border-radius: 24px;
-                  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-               }
-
-               .sba-overview-dots {
-                  position: absolute;
-                  bottom: -30px;
-                  right: -30px;
-                  width: 160px;
-                  height: 140px;
-                  background-image: radial-gradient(#3B82F6 2px, transparent 2px);
-                  background-size: 16px 16px;
-                  z-index: -1;
-               }
-
-               /* Key Features Section */
-               .sba-features-section {
-                  padding: 50px 0;
-                  background-color: #0A1A3B;
-               }
-
-               .sba-feature-card {
-                  background: #FFFFFF;
-                  border-radius: 16px;
-                  padding: 26px 24px;
-                  height: 100%;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                  transition: transform 0.3s ease;
-               }
-
-               .sba-feature-card:hover {
-                  transform: translateY(-5px);
-               }
-
-               .sba-feature-icon-badge {
-                  width: 46px;
-                  height: 46px;
-                  border-radius: 50%;
-                  background-color: #FEE2E2;
-                  color: #C0392B;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 20px;
-                  margin-bottom: 14px;
-               }
-
-               /* CTA Split Banner Section */
-               .sba-cta-section {
-                  background-color: #FFFFFF;
-               }
-
-               .sba-cta-box {
-                  position: relative;
-                  overflow: hidden;
-                  display: flex;
-                  align-items: stretch;
-                  background: #EFF4FB;
-               }
-
-               .sba-cta-left {
-                  padding: 85px 70px;
-                  z-index: 2;
-                  flex: 1;
-                  max-width: 52%;
-               }
-
-               .sba-cta-right {
-                  flex: 1;
-                  max-width: 48%;
-                  position: relative;
-                  min-height: 420px;
-               }
-
-               .sba-cta-img {
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-               }
-
-               .sba-cta-slash {
-                  position: absolute;
-                  top: 0;
-                  left: -90px;
-                  width: 200px;
-                  height: 100%;
-                  z-index: 2;
-                  pointer-events: none;
-               }
-
-               /* Other Financing Section */
-               .sba-other-section {
-                  padding: 90px 0 100px;
-                  background: linear-gradient(180deg, #F8FAFC 0%, #FDEDEC 100%);
-               }
-
-               .sba-other-row {
-                  display: flex;
-                  flex-wrap: wrap;
-                  margin-right: -15px;
-                  margin-left: -15px;
-                  justify-content: center;
-               }
-
-               .sba-other-col {
-                  flex: 0 0 20%;
-                  max-width: 20%;
-                  padding-right: 15px;
-                  padding-left: 15px;
-                  margin-bottom: 30px;
-               }
-
-               .sba-other-card {
-                  background-color: #FFFFFF;
-                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60' preserveAspectRatio='none'%3E%3Cpath d='M0 20 C 100 40, 200 10, 300 30 L 300 60 L 0 60 Z' fill='%23FDEDEC'/%3E%3Cpath d='M0 30 C 80 15, 220 45, 300 20 L 300 60 L 0 60 Z' fill='%23FADBD8' opacity='0.5'/%3E%3C/svg%3E");
-                  background-repeat: no-repeat;
-                  background-position: bottom;
-                  background-size: 100% 50px;
-                  border: 1px solid rgba(226, 232, 240, 0.8);
-                  border-radius: 20px;
-                  padding: 45px 20px 50px;
-                  text-align: center;
-                  height: 100%;
-                  display: block;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-                  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                  text-decoration: none;
-                  position: relative;
-                  overflow: hidden;
-               }
-
-               .sba-other-card:hover {
-                  transform: translateY(-8px);
-                  box-shadow: 0 20px 40px rgba(192, 57, 43, 0.08);
-                  border-color: rgba(192, 57, 43, 0.3);
-               }
-
-               .sba-other-icon-wrap {
-                  background: #FDEDEC;
-                  width: 100px;
-                  height: 100px;
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 25px;
-                  border: 1px solid rgba(250, 219, 216, 0.6);
-                  transition: all 0.3s ease;
-               }
-
-               .sba-other-card:hover .sba-other-icon-wrap {
-                  background: #FADBD8;
-                  transform: scale(1.05);
-               }
-
-               .sba-other-card-title {
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #111827;
-                  margin-bottom: 10px;
-                  min-height: 56px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-               }
-
-               .sba-other-card-line {
-                  width: 40px;
-                  height: 3px;
-                  background: #C0392B;
-                  margin: 0 auto 15px;
-                  border-radius: 2px;
-               }
-
-               .sba-other-card-desc {
-                  font-size: 14px;
-                  color: #6B7280;
-                  font-weight: 500;
-                  line-height: 1.5;
-                  margin-bottom: 0;
-               }
-
-               @media (max-width: 1199px) {
-                  .sba-other-col {
-                     flex: 0 0 33.333%;
-                     max-width: 33.333%;
-                  }
-               }
-
-               @media (max-width: 767px) {
-                  .sba-other-col {
-                     flex: 0 0 50%;
-                     max-width: 50%;
-                  }
-               }
-
-               @media (max-width: 575px) {
-                  .sba-other-col {
-                     flex: 0 0 100%;
-                     max-width: 100%;
-                  }
-               }
-
-               .sba-other-icon-wrap {
-                  background: #EFF6FF;
-                  width: 100px;
-                  height: 100px;
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 25px;
-                  border: 1px solid rgba(219, 234, 254, 0.6);
-                  transition: all 0.3s ease;
-               }
-
-               .sba-other-card:hover .sba-other-icon-wrap {
-                  background: #DBEAFE;
-                  transform: scale(1.05);
-               }
-
-               .sba-other-card-title {
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #0F172A;
-                  margin-bottom: 10px;
-                  min-height: 56px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-               }
-
-               .sba-other-card-line {
-                  width: 40px;
-                  height: 3px;
-                  background: #0b57d0;
-                  margin: 0 auto 15px;
-                  border-radius: 2px;
-               }
-
-               .sba-other-card-desc {
-                  font-size: 14px;
-                  color: #64748B;
-                  font-weight: 500;
-                  line-height: 1.5;
-                  margin-bottom: 0;
-               }
-
-               @media (max-width: 1199px) {
-                  .sba-other-col {
-                     flex: 0 0 33.333%;
-                     max-width: 33.333%;
-                  }
-               }
-
-               @media (max-width: 767px) {
-                  .sba-other-col {
-                     flex: 0 0 50%;
-                     max-width: 50%;
-                  }
-               }
-
-               @media (max-width: 575px) {
-                  .sba-other-col {
-                     flex: 0 0 100%;
-                     max-width: 100%;
-                  }
-               }
-
-               @media (max-width: 991px) {
-                  .sba-hero-title {
-                     font-size: 44px;
-                  }
-
-                  .sba-hero-collage {
-                     min-height: 480px;
-                     margin-top: 40px;
-                  }
-
-                  .sba-hero-section .hero-bottom-swoosh {
-                     width: 100%;
-                     bottom: 0px;
-                     height: 300px;
-                  }
-
-                  .sba-cta-box {
-                     flex-direction: column;
-                  }
-
-                  .sba-cta-left {
-                     max-width: 100%;
-                     padding: 50px 30px;
-                  }
-
-                  .sba-cta-right {
-                     max-width: 100%;
-                     min-height: 320px;
-                  }
-
-                  .sba-cta-slash {
-                     display: none;
-                  }
-               }
-
-               @media (max-width: 575px) {
-                  .sba-hero-title {
-                     font-size: 36px;
-                  }
-
-                  .sba-hero-features {
-                     grid-template-columns: 1fr;
-                     gap: 25px;
-                  }
-               }
-            </style>
+            
 
             <!-- Hero Section -->
             <section class="sba-hero-section">
@@ -752,14 +255,14 @@
                   <div class="row align-items-center">
                      <div class="col-lg-6 mb-40 mb-lg-0">
                         <div class="sba-red-line"></div>
-                        <h2 class="fs-40 fw-700 mb-25" style="color: #111827;">Asset-Based Lending Overview</h2>
-                        <p class="fs-16 lh-170-per mb-20" style="color: #4B5563;">Asset-Based Lending (ABL) enables
+                        <h2 class="fs-40 fw-700 mb-25 cst-color-111827">Asset-Based Lending Overview</h2>
+                        <p class="fs-16 lh-170-per mb-20 cst-color-4B5563">Asset-Based Lending (ABL) enables
                            businesses to secure financing by leveraging the value of their tangible and intangible
                            assets â€” including accounts receivable, inventory, machinery, and real estate. Unlike
                            traditional loans that rely heavily on credit history, ABL focuses on the quality and value
                            of your collateral, making it an ideal solution for companies with strong asset bases but
                            fluctuating cash flows.</p>
-                        <p class="fs-16 lh-170-per mb-0" style="color: #4B5563;">Preston Daub structures ABL facilities
+                        <p class="fs-16 lh-170-per mb-0 cst-color-4B5563">Preston Daub structures ABL facilities
                            that scale with your business. As your asset base grows, so does your borrowing capacity. Our
                            team works closely with appraisers, auditors, and lenders to ensure your assets are properly
                            valued and your facility is optimized for maximum capital availability.</p>
@@ -794,8 +297,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-boxes-stacked"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Inventory Financing</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Convert your raw materials,
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Inventory Financing</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Convert your raw materials,
                               work-in-progress, and finished goods into immediate working capital without liquidating
                               stock.</p>
                         </div>
@@ -805,8 +308,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-file-invoice-dollar"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Receivables Advance</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Accelerate cash flow by
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Receivables Advance</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Accelerate cash flow by
                               borrowing against outstanding invoices and accounts receivable, bridging the gap between
                               billing and collection.</p>
                         </div>
@@ -816,8 +319,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-chart-line-up"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Scalable Facility</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Your borrowing capacity grows
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Scalable Facility</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Your borrowing capacity grows
                               alongside your asset base, providing increasing liquidity as your business expands.</p>
                         </div>
                      </div>
@@ -826,8 +329,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-shield-check"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Flexible Collateral</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Leverage multiple asset types
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Flexible Collateral</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Leverage multiple asset types
                               â€” equipment, real estate, intellectual property, and more â€” as collateral for your
                               facility.</p>
                         </div>
@@ -837,8 +340,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-handshake"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Lender Relationships</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Our extensive network of ABL
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Lender Relationships</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Our extensive network of ABL
                               lenders ensures competitive terms and structures tailored to your specific industry and
                               asset profile.</p>
                         </div>
@@ -848,8 +351,8 @@
                            <div class="sba-feature-icon-badge">
                               <i class="fa-light fa-user-tie"></i>
                            </div>
-                           <h4 class="fs-20 fw-700 mb-15" style="color: #111827;">Expert Advisory</h4>
-                           <p class="fs-15 mb-0" style="color: #4B5563; line-height: 1.6;">Work with experienced ABL
+                           <h4 class="fs-20 fw-700 mb-15 cst-color-111827">Expert Advisory</h4>
+                           <p class="fs-15 mb-0 cst-style-0c64bee1">Work with experienced ABL
                               specialists who guide you through structuring, valuation, and ongoing facility management.
                            </p>
                         </div>
@@ -862,9 +365,9 @@
             <section class="sba-cta-section">
                <div class="sba-cta-box">
                   <div class="sba-cta-left">
-                     <h2 class="fs-40 fw-700 mb-20" style="color: #0A1A3B; line-height: 1.2;">Ready to Unlock
-                        Your<br><span style="color: #C0392B;">Asset Value?</span></h2>
-                     <p class="fs-16 lh-160-per mb-35" style="color: #4B5563; max-width: 460px;">Connect with our ABL
+                     <h2 class="fs-40 fw-700 mb-20 cst-style-5764edf8">Ready to Unlock
+                        Your<br><span class="cst-color-C0392B">Asset Value?</span></h2>
+                     <p class="fs-16 lh-160-per mb-35 cst-style-30ad8b08">Connect with our ABL
                         specialists today to structure an asset-based lending facility that maximizes your capital
                         availability and supports business growth.</p>
                      <a href="../applynow.html" class="sba-btn-red">
@@ -874,7 +377,7 @@
                   </div>
                   <div class="sba-cta-right">
                      <div class="sba-cta-slash">
-                        <svg viewBox="0 0 200 500" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                        <svg viewBox="0 0 200 500" preserveAspectRatio="none" class="cst-style-a898fd7d">
                            <path d="M130,0 Q50,250 110,500 L0,500 L0,0 Z" fill="#EFF4FB" />
                            <path d="M130,0 Q50,250 110,500 L165,500 Q105,250 185,0 Z" fill="#0A1A3B" />
                            <path d="M180,0 Q100,250 160,500 L172,500 Q112,250 192,0 Z" fill="#C0392B" />
@@ -893,8 +396,8 @@
                <div class="container">
                   <div class="row mb-50">
                      <div class="col-12 text-center">
-                        <h2 class="fs-36 fw-700 mb-15" style="color: #111827;">Other Financing Solutions</h2>
-                        <p class="fs-16 mb-0" style="color: #6B7280;">Discover our comprehensive range of financing
+                        <h2 class="fs-36 fw-700 mb-15 cst-color-111827">Other Financing Solutions</h2>
+                        <p class="fs-16 mb-0 cst-color-6B7280">Discover our comprehensive range of financing
                            options tailored to meet your business needs.</p>
                      </div>
                   </div>
@@ -902,7 +405,7 @@
                      <div class="sba-other-col">
                         <a href="sba-loans.html" class="sba-other-card">
                            <div class="sba-other-icon-wrap">
-                              <i class="fa-light fa-building-columns" style="font-size: 36px; color: #C0392B;"></i>
+                              <i class="fa-light fa-building-columns cst-style-8f2d1683"></i>
                            </div>
                            <h4 class="sba-other-card-title">SBA & USDA Loans</h4>
                            <div class="sba-other-card-line"></div>
@@ -912,7 +415,7 @@
                      <div class="sba-other-col">
                         <a href="line-of-credit.html" class="sba-other-card">
                            <div class="sba-other-icon-wrap">
-                              <i class="fa-light fa-landmark" style="font-size: 36px; color: #C0392B;"></i>
+                              <i class="fa-light fa-landmark cst-style-8f2d1683"></i>
                            </div>
                            <h4 class="sba-other-card-title">Line of Credit</h4>
                            <div class="sba-other-card-line"></div>
@@ -922,7 +425,7 @@
                      <div class="sba-other-col">
                         <a href="equipment-financing.html" class="sba-other-card">
                            <div class="sba-other-icon-wrap">
-                              <i class="fa-light fa-truck" style="font-size: 36px; color: #C0392B;"></i>
+                              <i class="fa-light fa-truck cst-style-8f2d1683"></i>
                            </div>
                            <h4 class="sba-other-card-title">Equipment Financing</h4>
                            <div class="sba-other-card-line"></div>
@@ -932,7 +435,7 @@
                      <div class="sba-other-col">
                         <a href="working-capital.html" class="sba-other-card">
                            <div class="sba-other-icon-wrap">
-                              <i class="fa-light fa-money-bill" style="font-size: 36px; color: #C0392B;"></i>
+                              <i class="fa-light fa-money-bill cst-style-8f2d1683"></i>
                            </div>
                            <h4 class="sba-other-card-title">Working Capital</h4>
                            <div class="sba-other-card-line"></div>
@@ -942,7 +445,7 @@
                      <div class="sba-other-col">
                         <a href="bridge-loans.html" class="sba-other-card">
                            <div class="sba-other-icon-wrap">
-                              <i class="fa-light fa-coin-blank" style="font-size: 36px; color: #C0392B;"></i>
+                              <i class="fa-light fa-coin-blank cst-style-8f2d1683"></i>
                            </div>
                            <h4 class="sba-other-card-title">Bridge Loans</h4>
                            <div class="sba-other-card-line"></div>
