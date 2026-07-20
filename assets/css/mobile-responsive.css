@@ -4,6 +4,7 @@
 
 /* Global Mobile Fixes */
 @media (max-width: 991px) {
+
   .container-1524,
   .container-1800,
   .containers {
@@ -14,8 +15,10 @@
 
 /* 1. Global Navigation & Spacing Overrides */
 @media (max-width: 767px) {
+
   section,
   div {
+
     /* Smooth out padding for section grids */
     &[style*="padding: 100px"],
     &[style*="padding-top: 100px"],
@@ -57,13 +60,11 @@
   .hero-bg-cover {
     padding: 130px 0 100px !important;
     background-image:
-      linear-gradient(
-        to bottom,
+      linear-gradient(to bottom,
         #ffffff 0%,
         #ffffff 55%,
         rgba(255, 255, 255, 0.92) 72%,
-        rgba(255, 255, 255, 0.55) 100%
-      ),
+        rgba(255, 255, 255, 0.55) 100%),
       url("../img/hero/index-hero.png") !important;
     background-position: center bottom !important;
     background-size: cover !important;
@@ -101,12 +102,10 @@
   .hero-bg-cover {
     padding: 110px 0 85px !important;
     background-image:
-      linear-gradient(
-        to right,
+      linear-gradient(to right,
         #ffffff 38%,
         rgba(255, 255, 255, 0.75) 55%,
-        rgba(255, 255, 255, 0) 85%
-      ),
+        rgba(255, 255, 255, 0) 85%),
       url("../img/hero/index-hero.png") !important;
     background-position: 68% center !important;
     background-size: cover !important;
@@ -151,12 +150,13 @@
   .hero-btn-outline {
     width: 230px !important;
     height: 46px !important;
-    padding: 0 20px !important;
+    padding: 0 40px 0 16px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
   }
+
 
   .hero-btn-icon {
     position: absolute !important;
@@ -335,6 +335,7 @@
 }
 
 @media (max-width: 575px) {
+
   .service-section-compact .tp-hero-cst-bottom-slider,
   .service-section-compact #service-bg-img {
     height: 340px !important;
@@ -758,7 +759,6 @@
     gap: 12px !important;
   }
 
-  .hero-btn-primary,
   .hero-btn-secondary {
     width: 100% !important;
     justify-content: center !important;
@@ -804,10 +804,10 @@
 
   .hero-bg-red-shape {
     position: absolute !important;
-    left: 3% !important;
-    top: 175px !important;
-    width: 32% !important;
-    height: 90px !important;
+    left: -5% !important;
+    top: 165px !important;
+    width: 95% !important;
+    height: 180px !important;
     background: #d61a21 !important;
     border-radius: 0 0 0 24px !important;
     clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
@@ -819,8 +819,8 @@
     position: absolute !important;
     right: 3% !important;
     top: 50px !important;
-    width: 74% !important;
-    height: 225px !important;
+    width: 95% !important;
+    height: 280px !important;
     border-radius: 0 0 40px 0 !important;
     clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%) !important;
     z-index: 1 !important;
@@ -833,10 +833,8 @@
     left: 20% !important;
     width: 160px !important;
     height: 50px !important;
-    background-image: radial-gradient(
-      #0752c5 1.5px,
-      transparent 1.5px
-    ) !important;
+    background-image: radial-gradient(#0752c5 1.5px,
+        transparent 1.5px) !important;
     background-size: 15px 15px !important;
     z-index: 0 !important;
     opacity: 0.25 !important;
@@ -1223,7 +1221,7 @@
     gap: 8px !important;
   }
 
-  .cre-stat-item > div:last-child {
+  .cre-stat-item>div:last-child {
     min-width: 0 !important;
     flex: 1 !important;
   }
@@ -1284,7 +1282,7 @@
     flex-wrap: wrap !important;
   }
 
-  .sports-hero-row-1 > div {
+  .sports-hero-row-1>div {
     flex: 0 0 calc(50% - 5px) !important;
   }
 
@@ -1292,7 +1290,7 @@
     padding: 0 !important;
   }
 
-  .sports-hero-row-2 > div {
+  .sports-hero-row-2>div {
     flex: 1 !important;
     min-width: 0 !important;
   }
@@ -1353,7 +1351,7 @@
     padding: 20px 16px !important;
   }
 
-  .cst-form-wrap .row > .col-md-6 {
+  .cst-form-wrap .row>.col-md-6 {
     width: 50%;
     flex: 0 0 50%;
     max-width: 50%;
@@ -1522,11 +1520,9 @@
 
   .ms-hero-bg::before {
     background:
-      linear-gradient(
-        180deg,
+      linear-gradient(180deg,
         rgba(10, 26, 59, 0.92) 0%,
-        rgba(10, 26, 59, 0.75) 100%
-      ),
+        rgba(10, 26, 59, 0.75) 100%),
       url("assets/img/mosaic-software/Hero.jpg") center/cover no-repeat;
   }
 
@@ -1616,7 +1612,7 @@
     max-width: 100%;
   }
 
-  .cst-form-wrap .row > .col-md-6 {
+  .cst-form-wrap .row>.col-md-6 {
     width: 100% !important;
     flex: 0 0 100% !important;
     max-width: 100% !important;

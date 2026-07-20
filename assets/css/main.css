@@ -12794,16 +12794,16 @@ body.tp-magic-cursor #magic-cursor {
 }
 
 .hero-btn-primary {
-  background-color: #c0392b;
+  background-color: #d61a21;
   color: #ffffff;
   height: 52px;
   padding: 0 32px;
   border-radius: 26px;
-  box-shadow: 0 8px 20px rgba(192, 57, 43, 0.25);
+  box-shadow: 0 8px 20px rgba(214, 26, 33, 0.25);
 }
 
 .hero-btn-primary:hover {
-  background-color: #a93226;
+  background-color: #b5151c;
   color: #ffffff;
 }
 
@@ -51997,7 +51997,7 @@ p {
 }
 
 /* Premium custom buttons */
-.hero-btn-primary {
+.prospera-hero-btn-primary {
   background: #003087 !important;
   color: #ffffff !important;
   padding: 15px 32px;
@@ -52013,14 +52013,14 @@ p {
   text-decoration: none;
 }
 
-.hero-btn-primary:hover {
+.prospera-hero-btn-primary:hover {
   background: #002266 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 48, 135, 0.3);
   color: #ffffff !important;
 }
 
-.hero-btn-secondary {
+.prospera-hero-btn-secondary {
   background: #ffffff !important;
   color: #003087 !important;
   padding: 15px 32px;
@@ -52034,7 +52034,7 @@ p {
   text-decoration: none;
 }
 
-.hero-btn-secondary:hover {
+.prospera-hero-btn-secondary:hover {
   background: #f0f4ff !important;
   transform: translateY(-2px);
   color: #003087 !important;
